@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function check(){
+			if(document.reg.upwd.value!=document.reg.upwd2.value){
+				alert("两次填入的密码不一致！")
+				return false;
+			}
+		}
+
+	</script>
+</head>
+<body>
+    <h1>会员注册</h1>
+	<form action="112.php?m=user&a=reg" name="reg" method="post" onsubmit="return check()">
+	<table>
+		<tr>
+			<td>
+				用户名&nbsp;:<input type='text' name='uname'></input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				密&nbsp;&nbsp;码:<input type='text' name='upwd'></input>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				确认密码:<input type='text' name='upwd2'></input>
+			</td>
+		</tr>
+		<tr>
+			<td>保存时间:
+				<input type='radio' checked="checked" name=0>不保存</input>
+				<input type='radio' name="ctime" value=3600>一小时</input>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				邮&nbsp;&nbsp;箱:<input type='text' name='email'></input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Q&nbsp;&nbsp;&nbsp;Q:<input type='text' name='qq'></input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				电&nbsp;&nbsp;话:<input type='text' name='tel'></input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' value='注册'></input>&nbsp;
+				<a href="112.php?m=user&a=login_h">登录</a></td>
+		</tr>
+	</table>
+
+		
+
+
+	</form>
+
+</body>
+</html>

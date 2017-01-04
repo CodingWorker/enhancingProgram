@@ -1,0 +1,12 @@
+<?php 
+$uname=empty($_POST['uname']) ? "请填写姓名" : $_POST['uname'];
+$age=empty($_POST['age']) ? "请填写年龄" : $_POST['age'];
+$tel=empty($_POST['tel']) ? "请填写电话" : $_POST['tel'];
+$address=empty($_POST['address']) ? "请填写地址" : $_POST['address'];
+$qq=empty($_POST['qq']) ? "请填写qq" : $_POST['qq'];
+$coment=empty($_POST['coment']) ? "请做自我评价" : $_POST['coment'];
+echo "姓名：{$uname}<br/>年龄：{$age}电话：{$tel}QQ:{$qq}自我评价：{$coment}"
+
+
+
+?>

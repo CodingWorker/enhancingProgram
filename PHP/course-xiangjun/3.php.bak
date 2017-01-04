@@ -1,0 +1,28 @@
+<?php
+/*
+$houdunwang="后盾网视频发布论坛";
+$bbs=&$houdunwang;
+$bbs="dfadads";
+echo $houdunwang;
+echo $bbs;
+
+//魔术常量
+echo __FILE__;
+echo __LINE__;
+echo __METHOD__;
+*/
+//检测变量是否存在
+$houdunwang="fdfs";
+$f=isset($houdunwang);
+var_dump($f);
+if ($f){
+	echo $houdunwang."<br>";
+}else{
+	echo "变量不存在<br>";
+}
+define("URL","www.baidiu.com");
+$s=defined("URL");
+$ss=defined("URL1");
+var_dump($ss);
+var_dump($s);
+?>

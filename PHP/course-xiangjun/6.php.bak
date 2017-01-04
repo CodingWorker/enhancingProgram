@@ -1,0 +1,23 @@
+<?php
+	//PHP是一个弱类型的语言，变量类型由值来决定
+	//getType(变量或常量）
+	//is_int() is_float() is_array() is_object() is_null() is_resource() is_bool()
+	$houdunwang=12;
+	var_dump($houdunwang);
+	if (is_string(houdunwang)){
+	echo "是一个字符串类型";
+	}else{
+	echo "不是字符串类型";
+	};
+	echo gettype($houdunwang);
+
+
+
+
+
+
+
+
+
+
+?>
