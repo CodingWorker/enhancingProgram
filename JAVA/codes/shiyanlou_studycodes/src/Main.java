@@ -1,4 +1,5 @@
 import com.test.testcodes.Hello;
+import com.test.testcodes.HelloChild;
 
 public class Main {
     //变量定义
@@ -39,6 +40,12 @@ public class Main {
         Hello.SubHello2 sh22=new Hello.SubHello2();    //静态类成员属于类，直接new 即可
 
         h.helloInfo();
+        HelloChild hc=new HelloChild();
+        hc.test();
+        Hello hcc=new HelloChild();
+        hcc.test();     //hcc是Hello的引用，但是调用的是HelloChild的方法
+        System.out.println(hcc.getClass());    //输出：class com.test.testcodes.HelloChild
+//        hcc.tt();   //父类引用只能调用子类重写的方法不能调用子类独有的方法
     }
 
     private static int test(){
