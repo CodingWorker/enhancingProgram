@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CollectionTest/CollectionTest.iml" filepath="$PROJECT_DIR$/CollectionTest/CollectionTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/DynamicClass/DynamicClass.iml" filepath="$PROJECT_DIR$/DynamicClass/DynamicClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/EnumTest/EnumTest.iml" filepath="$PROJECT_DIR$/EnumTest/EnumTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloSwing/HelloSwing.iml" filepath="$PROJECT_DIR$/HelloSwing/HelloSwing.iml" />
       <module fileurl="file://$PROJECT_DIR$/IOTest/IOTest.iml" filepath="$PROJECT_DIR$/IOTest/IOTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Math/Math.iml" filepath="$PROJECT_DIR$/Math/Math.iml" />
       <module fileurl="file://$PROJECT_DIR$/StringUtil/StringUtil.iml" filepath="$PROJECT_DIR$/StringUtil/StringUtil.iml" />
