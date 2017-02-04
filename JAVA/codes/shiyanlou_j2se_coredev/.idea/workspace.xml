@@ -22,46 +22,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TEKVTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKVTest.java">
+      <file leaf-file-name="CreateThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultiProcessors/src/CreateThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-              <folding>
-                <element signature="e#268#277#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TEKV.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKV.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenericArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/GenericArray.java">
+      <file leaf-file-name="Thread1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Thread1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySwingWindow.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HelloSwing/src/com/shiyanlou/test/MySwingWindow.java">
+      <file leaf-file-name="Thread2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Thread2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,6 +100,10 @@
         <option value="$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKVTest.java" />
         <option value="$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/GenericArray.java" />
         <option value="$PROJECT_DIR$/HelloSwing/src/com/shiyanlou/test/MySwingWindow.java" />
+        <option value="$PROJECT_DIR$/MultiProcessors/src/CreateThread.java" />
+        <option value="$PROJECT_DIR$/MultiProcessors/src/Thread2.java" />
+        <option value="$PROJECT_DIR$/MultiProcessors/src/Main.java" />
+        <option value="$PROJECT_DIR$/MultiProcessors/src/Thread1.java" />
       </list>
     </option>
   </component>
@@ -121,9 +121,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="601" />
+    <option name="x" value="625" />
     <option name="y" value="49" />
-    <option name="width" value="1224" />
+    <option name="width" value="1200" />
     <option name="height" value="909" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -357,6 +357,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="MultiProcessors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shiyanlou_j2se_coredev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shiyanlou_j2se_coredev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MultiProcessors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shiyanlou_j2se_coredev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shiyanlou_j2se_coredev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Math" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -576,27 +608,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.MySwingWindow">
-    <configuration default="false" name="TryCatchTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.shiyanlou.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.shiyanlou.test.TryCatchTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TryCatchTest" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -674,6 +686,21 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="HelloSwing" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MultiProcessors" />
       <envs />
       <method />
     </configuration>
@@ -1069,19 +1096,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.TryCatchTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="2" class="java.lang.String" itemvalue="Application.EnumTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.TEKVTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.MySwingWindow" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.EnumTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TEKVTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MySwingWindow" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MySwingWindow" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TEKVTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.EnumTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TryCatchTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MySwingWindow" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TEKVTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.EnumTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -1098,15 +1125,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1486176446166</updated>
-      <workItem from="1486176449577" duration="22861000" />
+      <workItem from="1486176449577" duration="24549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22861000" />
+    <option name="totallyTimeSpent" value="24549000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="601" y="49" width="1224" height="909" extended-state="0" />
+    <frame x="625" y="49" width="1200" height="909" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1121,7 +1148,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13402061" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19473684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1365,21 +1392,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKVTest.java">
+    <entry file="file://$PROJECT_DIR$/HelloSwing/src/com/shiyanlou/test/MySwingWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="135">
+          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
-            <element signature="e#268#277#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,13 +1410,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HelloSwing/src/com/shiyanlou/test/MySwingWindow.java">
+    <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKV.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="189">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TEKVTest/src/com/shiyanlou/test/TEKVTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#268#277#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessors/src/CreateThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Thread2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessors/src/Thread1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
