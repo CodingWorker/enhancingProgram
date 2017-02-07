@@ -1,9 +1,0 @@
-.c-border .c-span5{width:100px}
-.c-border .c-span6{width:122px}
-.c-border .c-span7{width:144px}
-.c-border .c-span8{width:166px}
-.c-border .c-span9{width:188px}
-.c-border .c-span10{width:210px}
-.c-border .c-span11{width:232px}
-.c-border .c-span12{width:254px}
-.c-border .c-span13{width:276px}
