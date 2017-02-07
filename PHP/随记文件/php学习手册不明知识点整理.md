@@ -735,13 +735,28 @@ var_dump($matches);
 	参数:preg_filter($pattern,$replacement,$subject[,int $limit  = -1  [, int &$count  ]] )
 	preg_filter() 等价于 preg_replace()  除了它仅仅返回(可能经过转化)与目标匹配的结果.
 
+	<?php
+	$str=<<<eof
+	.c-border .c-span5{width:100px}
+	.c-border .c-span6{width:122px}
+	eof;
+
+	$pattern="/width/m";
+	var_dump(preg_filter($pattern,".......",$str));
+	var_dump($str);
+	var_dump(preg_replace($pattern,"...",$str));
+	var_dump($str);
+
+
 **`preg_grep()`**
 
 	preg_grep(string $pattern  , array $input  [, int $flags  = 0  ] )
 	返回给定数组 input 中与模式 pattern  匹配的元素组成的数组. 
 	flags:设置为 PREG_GREP_INVERT , 这个函数返回输入数组中与 给定模式 pattern  不匹配的元素组成的数组.
 
+
 **`preg_last_error()`返回最后一次PCRE正则执行的错误代码**
+
 
 **`preg_match_all()`**
 
@@ -749,23 +764,27 @@ var_dump($matches);
 	搜索 subject 中所有匹配 pattern 给定正则表达式 的匹配结果并且将它们以 flag 指定顺序输出到 matches 中. 
 	flags  可以结合下面标记使用(注意不能同时使用 PREG_PATTERN_ORDER 和 PREG_SET_ORDER )： 
 
+
 **`preg_match()`**
 
 	int preg_match  ( string $pattern  , string $subject  [, array &$matches  [, int $flags  = 0  [, int $offset  = 0  ]]] )
 	搜索 subject 与 pattern 给定的正则表达式的一个匹配，返回0或1，该函数匹配到一次就不会继续匹配了
 
-**`preg_quote()` 正则表达式字符**
+
+**`preg_quote()` 正则表达式字符**,在字符串中含有特殊字符时非常有用，就是将特殊字符加上反斜杠转义。
 
 	string preg_quote  ( string $str  [, string $delimiter  = NULL    ] )
 	echo preg_quote("()sdd[]");
 	输出： 
 	\(\)sdd\[\]
 
+
 **`preg_replace_callback()`**
 
 	mixed  preg_replace_callback  ( mixed  $pattern  , callable  $callback  , mixed  $subject  [, int $limit  = -1  [, int &$count  ]] )
 	执行一个正则表达式搜索并且使用一个回调进行替换 
 	callback:一个回调函数，在每次需要替换时调用，调用时函数得到的参数是从 subject  中匹配到的结果。回调函数返回真正参与替换的字符串。
+
 
 **`preg_split()`通过一个正则表达式分隔字符串**
 
@@ -788,7 +807,8 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	setcookie("a",'aa',time()+3600,'/','baidu.com');//失败，根本就不能成功
 
 
-**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间设置成0或者不设置此值
+**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间设置成0或者
+不设置此值（不设置此值时默认在浏览器关闭时失效）
 
 **注意事项：**
 
@@ -796,6 +816,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 2. `setcookie()`后，在当前页还不能访问，必须刷新第二次进入时才能访问里面的变量
 3. 不同的浏览器对cookie处理不同，客户端可以禁用cookie，浏览器也会限制cookie数量，一个浏览器能创建的cookie数量最多为300个，并且每个不能超过4k,每个站点能设置的cookie总数不能超过50个
 4. cookie是保存在客户端的，用户禁用了cookie,你的cookie也就没用了，避免过度依赖cookie，要想好如果cookie被禁用时的解决方案
+
 
 **setcookie()**
 
@@ -806,7 +827,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	 cookie值
 	 cookie的生命周期
 	 cookie适用的路径，即在这些路径都可以访问
-	 cookie适用的域名空间,只能是本域名，不能是其他网站的域名
+	 cookie适用的域名空间,只能是本域名，不能是其他网站的域名，**否则设置不成功**
 	 返回布尔值，如果在之前有html输出，则设置失败返回false,否则返回true，即使客户端浏览器禁用了cookie也会返回true
 
 	eg.
@@ -819,6 +840,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	 ?> 
 	
 	删除cookie时只需要将cookie的有效期设置过去
+
 
 **setrawcookie()**
 
@@ -837,7 +859,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 
 
 
-#              SESSION               
+#   SESSION               
 
 
 **sesson数据除了存储在文件中，也可以存储在数据库中，甚至当前会话的session可以存储在内存**
@@ -890,7 +912,8 @@ $_SESSION全局数组
 
     Sessions follow a simple workflow. When a session is started, PHP will either retrieve an existing session using the ID passed (usually from a session cookie) or if no session is passed it will create a new session. 
 
-session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时(即使用了session_start)，服务器会使用传递的载有sessionid的cookie来调用session文件或者创建一个新的session(当没有传递此cookie时)
+session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时(即使用了session_start)，服务器会使用传递的载有sessionid的
+cookie来调用session文件或者创建一个新的session(当没有传递此cookie时)
 If the session.auto_start directive is set to 1 , a session will automatically start on request startup. 
 自动开启session，即在脚本自动调用session_start，不用明确写出该语句了
 
@@ -923,6 +946,7 @@ If the session.auto_start directive is set to 1 , a session will automatically s
 	使用session_write_close()之前，都不能访问session文件，进而
 	不能读取数据
 	File based sessions (the default in PHP) lock the session file once a session is opened via session_start()  or implicitly via session.auto_start. Once locked, no other script can access the same session file until it has been closed by the first script terminating or calling session_write_close() . 
+
 
 **基于此，session使用完后要及时关掉，session_write_close()或者使用session_commit()**
 
@@ -979,15 +1003,18 @@ open-read-write-close[-destroy-gc]
 
     删除存储的某一session文件;但该sessionid还存在客户端的cookie中
 
+
 **unset()销毁变量**
 
 	删除session中的某一变量和值，也可以使用$_SESSION=array()删除所有变量和值
+
 
 **`setcookie()`**
 
 	通过更改sessionid的时间可以删除sessionid
 	setcookie(session_name(),"",time()-3600);
 	但服务器端的session文件保留，需要使用session_destroy删除文件    
+
 
 **    session_name()**
 
@@ -996,10 +1023,12 @@ open-read-write-close[-destroy-gc]
 
 	session-id存在cookie中的名字
 
+
 **`session_encode()`**
 
 	不接受任何参数，返回session文件中的原内容
 	将当前会话数据编码为一个字符串,返回当前会话编码后的内容,就是session文件里存储的内容格式，但使用$_SESSION取得变量时，会自动解码为PHP数组格式
+
 
 **`session_get_cookie_params()`**
 
@@ -1016,6 +1045,7 @@ open-read-write-close[-destroy-gc]
 	  'secure' => boolean false
 	  'httponly' => boolean false
 
+
 **`ini_get(string参数)`**
 
 	可以通过ini_get()函数获得配置文件中的值
@@ -1024,6 +1054,7 @@ open-read-write-close[-destroy-gc]
 	string 'D:/wamp/tmp' (length=11)
 
 **ini_set()**设置配置项的值
+
 
 **    session_id()**
 
@@ -1161,6 +1192,7 @@ open-read-write-close[-destroy-gc]
 
 
 
+
 ##安全 
 平衡安全性和可用性
 
@@ -1171,6 +1203,9 @@ open-read-write-close[-destroy-gc]
 **php.ini中配置项：`allow_url_fopen`**
 
 	可以打开网站代码，此配置项开启时可以使用fopen和file_get_contents,否则不能使用这两个函数
+
+
+-------------------------------------------20170208
 
 ##Directory类
 
