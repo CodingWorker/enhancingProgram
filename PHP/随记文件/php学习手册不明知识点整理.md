@@ -1205,11 +1205,19 @@ open-read-write-close[-destroy-gc]
 	可以打开网站代码，此配置项开启时可以使用fopen和file_get_contents,否则不能使用这两个函数
 
 
--------------------------------------------20170208
-
 ##Directory类
 
 Directory实例是通过dir()**类似函数**来创建的，而不是new操作符，即**$dir=dir(目录名)**;而不是$dir=new dir();
+<?php
+$dir=dir('F:/');
+var_dump(gettype($dir));    //object 
+foreach($dir as $k=>$v){
+    var_dump($k);
+    var_dump($v);
+}
+var_dump($dir);
+var_dump($dir->path);
+
 
 类介绍：
 	
@@ -1251,6 +1259,21 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 	    read()从目录句柄中读取条目，与readdir()功能相同，默认为$this
 	    rewind()倒回目录句柄，与rewinddir()功能相同，默认为$this
 
+<?php
+$dir=dir('f:');
+while($f=readdir($dir->handle)){
+    var_dump($f);
+}
+
+$dir->close();
+var_dump('==============================');
+$dir_res=opendir('f:');
+while($f=readdir($dir_res)){
+    var_dump($f);
+}
+
+closedir($dir_res);
+
 
 
 #Directory目录处理函数
@@ -1271,6 +1294,7 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 	chdir("a");
 	echo getcwd();
 	touch("a.txt");//文件创建在了a的文件目录里面
+
 
 2. chroot
 
@@ -1377,7 +1401,7 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 6. copy
 
 	语法：bool copy  ( string $source  , string $dest  [, resource $context  ] )
-	copy — 拷贝文件,将文件从原始地拷贝到目标地，会覆盖同名文件，成功返回true，失败返回false
+	copy — 拷贝文件,将文件从原始地拷贝到目标地，会**覆盖同名文件**，成功返回true，失败返回false
 	// echo basename("C:WEEWWEEweew.e","t..p");
 	$sourse='D:\wamp\www\PHPstudy\test.txt';//相对绝对路径均可，包含文件名
 	$dest='D:\wamp\www\PHPstudy\test1\test.txt';//必须包括拷贝后的文件名,相对绝对路径均可
@@ -1607,6 +1631,7 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 	$file=file("http://www.baidu.com");
 	var_dump(implode("",$file));
 
+
 23. fileatime
 
 	fileatime — 取得文件的最近一次访问时间,仅接受一个参数，为文件名包含路径
@@ -1620,6 +1645,7 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 	返回时间戳，失败时返回false
 	$filename='D:\wamp\www\PHPstudy\test1\test.txt';
 	echo Date("Y-M-D h:i:s",fileatime($filename));
+
 
 25. filegroup — 取得文件的组的ID,仅接受一个参数，为文件名包含路径
 返回所属组ID，失败时返回false
@@ -1991,6 +2017,8 @@ Directory实例是通过dir()**类似函数**来创建的，而不是new操作�
 		
 		$filename='test1';
 		var_dump(is_readable($filename));//该目录存在且可读
+
+--------------------------------20170210
 
 51. is_uploaded_file
 
