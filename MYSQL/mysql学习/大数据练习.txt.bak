@@ -1,0 +1,312 @@
+插入1000000条数据
+
+create function rn()
+returns smallint
+begin
+declare res smallint default 0;
+set res=floor(30000+rand()10000) ; #这里3000和13000的位置可以更改为你需要的范围。
+return res;
+end/
+
+create function rs(n int)
+returns varchar(1024)
+begin
+declare chars char(52) default 'abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ';
+declare res varchar(1024) default '';
+declare i int default 0;
+repeat
+set i = i + 1;
+set res = concat(res,substring(chars,floor(1+rand()*52),1));
+until i=n end repeat;
+return res;
+end/
+
+create procedure inst(n int)
+begin
+declare i int default 0;
+set autocommit = 0;
+repeat
+set i = i + 1;
+insert into xxx values(rn(),rs(20),rs(30),rs(40),rs(50));
+until i=n  end repeat;
+commit;
+set autocommit = 1;
+end/
+
+mysql> call inst(1000000)/
+Query OK, 0 rows affected (15 min 59.52 sec)  用时15分钟59.52秒
+---------------------------------------------------------------------------
+|                    测试性能
+|=================================================================
+没有建立索引
+mysql> alter table test01 drop index uid_index; #删除索引，在存在其他索引时可能更耗时
+Query OK, 1000000 rows affected (7.61 sec)
+Records: 1000000  Duplicates: 0  Warnings: 0
+
+mysql> delimiter ;
+mysql> select count(uid) from test01 where uid = 3500;
++------------+
+| count(uid) |
++------------+
+|         92 |
++------------+
+1 row in set (0.40 sec)
+
+
+mysql> select count(*) from test01 where uid=6000;
++----------+
+| count(*) |
++----------+
+|      103 |
++----------+
+1 row in set (0.34 sec)  相比索引时慢了
+
+mysql> select * from test01 where uid=3500;
+92 rows in set (0.33 sec)   相比有索引事也慢了
+
+mysql> select count(*) from test01 where ts1='aaaaaaaaaaaaaaaaaaaa';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.40 sec)
+
+mysql> select count(*) from test01 where ts1='afafaffafafadfafafaf';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.40 sec)
+
+
+mysql> select count(*) from test01 where ts1='yixOBqadqubYLLxdXJkj';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.40 sec)
+
+mysql> select count(*) from test01 where uid >6000;
++----------+
+| count(*) |
++----------+
+|   701138 |
++----------+
+1 row in set (0.39 sec)
+
+
+mysql> select count(*) from test01 where uid <3500;
++----------+
+| count(*) |
++----------+
+|    49919 |
++----------+
+1 row in set (0.35 sec)
+
+mysql> select count(*) from test01 where uid >10000;
++----------+
+| count(*) |
++----------+
+|   299962 |
++----------+
+1 row in set (0.37 sec)
+
+mysql> select count(*) from test01 where uid =12345;
++----------+
+| count(*) |
++----------+
+|       80 |
++----------+
+1 row in set (0.34 sec)
+
+select * from test01 where tid>999990 order by tid asc;
+10 rows in set (0.02 sec)   比加索引慢
+
+mysql> select count(uid) from test01 where uid >12500 order by uid asc;
++------------+
+| count(uid) |
++------------+
+|      49871 |
++------------+
+1 row in set (0.33 sec)  比加索引慢
+
+mysql> select count(*) from test01 where uid between 5000 and 10000;
++----------+
+| count(*) |
++----------+
+|   500775 |
++----------+
+1 row in set (0.50 sec)
+
+
+==========================================================
+下面对该uid建立索引
+mysql> create index uid_index on test01 (uid);
+Query OK, 1000000 rows affected (8.29 sec)   共用时8.29秒
+Records: 1000000  Duplicates: 0  Warnings: 0
+
+mysql> select count(uid) from test01 where uid = 3500;
++------------+
+| count(uid) |
++------------+
+|         92 |
++------------+
+1 row in set (0.08 sec)  与上面相比建立索引后提升了5倍
+
+mysql> select * from test01 where uid = 3500;
+92 rows in set (0.00 sec)
+
+mysql> select count(*) from test01 where uid=6000;
++----------+
+| count(*) |
++----------+
+|      103 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from test01 where ts1='aaaaaaaaaaaaaaaaaaaa';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.46 sec)  相比上面的没有太大的差别方而更长了，因为索引建立在uid上，
+
+mysql> select count(*) from test01 where ts1='afafaffafafadfafafaf';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.45 sec)  这个也长
+
+mysql> select count(*) from test01 where ts1='yixOBqadqubYLLxdXJkj';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.45 sec)  这个也长
+
+mysql> select count(*) from test01 where uid >6000;
++----------+
+| count(*) |
++----------+
+|   701138 |
++----------+
+1 row in set (0.35 sec)  这个稍快
+
+
+mysql> select count(*) from test01 where uid <3500;
++----------+
+| count(*) |
++----------+
+|    49919 |
++----------+
+1 row in set (0.02 sec)  这个也快
+
+mysql> select count(*) from test01 where uid >10000;
++----------+
+| count(*) |
++----------+
+|   299962 |
++----------+
+1 row in set (0.10 sec)
+
+mysql> select count(*) from test01 where uid =12345;
++----------+
+| count(*) |
++----------+
+|       80 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from test01 where tid>999990 order by tid asc;
+10 rows in set (0.00 sec)   primary key的就是快
+
+mysql> select count(uid) from test01 where uid >12500 order by uid asc;
++------------+
+| count(uid) |
++------------+
+|      49871 |
++------------+
+1 row in set (0.03 sec)
+
+mysql> select count(*) from test01 where uid between 5000 and 10000;
++----------+
+| count(*) |
++----------+
+|   500775 |
++----------+
+1 row in set (0.23 sec)    比不加索引块
+
+
+加索引之前65511047168空间，加之后65502875648，该uid索引占用了7.79296875 M
+
+=====================================================================================
+mysql> create index ts1_index on test01 (ts1)   #给ts1列增加索引，明显比数字的耗时
+    -> ;
+Query OK, 1000000 rows affected (20.21 sec)
+Records: 1000000  Duplicates: 0  Warnings: 0
+
+mysql> select count(*) from test01 where ts1='aaaaaaaaaaaaaaaaaaaa';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec) 比不见索引时快
+
+mysql> select count(*) from test01 where ts1='afafaffafafadfafafaf';
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)  比不见索引快
+
+
+mysql> select count(*) from test01 where ts1='yixOBqadqubYLLxdXJkj';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)    比不见索引更快
+
+mysql> alter table test01 drop index ts1_index;
+Query OK, 1000000 rows affected (7.84 sec)    删除索引用时
+Records: 1000000  Duplicates: 0  Warnings: 0
+
+
+加索引ts1_index之后剩余空间65484140544，删除索引ts1_index后剩余空间65511047168,可见索引耗费空间
+25.66015625 M
+
+mysql> select TABLE_NAME,TABLE_TYPE, TABLE_ROWS,AVG_ROW_LENGTH,DATA_LENGTH from tables where table_name='test01';
++------------+------------+------------+----------------+-------------+
+| TABLE_NAME | TABLE_TYPE | TABLE_ROWS | AVG_ROW_LENGTH | DATA_LENGTH |
++------------+------------+------------+----------------+-------------+
+| test01     | BASE TABLE |    1000000 |            427 |   427000000 |
++------------+------------+------------+----------------+-------------+
+
+该表占用了407.2189M
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
