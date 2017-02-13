@@ -573,8 +573,6 @@ echo $t2->inside->a;  //引用属性指向同一个内存地址，输出1
 
 
 
-
-
 #正则表达式
 
 `preg_quote("*\()[]")` 将字符串转换为正则表达式(将特殊字符转义)（不包括定界符//）
@@ -2018,7 +2016,6 @@ closedir($dir_res);
 		$filename='test1';
 		var_dump(is_readable($filename));//该目录存在且可读
 
---------------------------------20170210
 
 51. is_uploaded_file
 
@@ -2030,7 +2027,7 @@ closedir($dir_res);
 
 52. is_writable
 
-		52. is_writable — 判断给定的文件名是否可写,只接受一个文件名或目录名参数，如果文件或目录存在并且可写，则返回true,否则返回false
+		is_writable — 判断给定的文件名是否可写,只接受一个文件名或目录名参数，如果文件或目录存在并且可写，则返回true,否则返回false
 		判断文件
 		$filename='pdf.pdf';
 		var_dump(is_writable($filename));
@@ -2051,7 +2048,7 @@ closedir($dir_res);
 
 ?????????55. lchown — Changes user ownership of symlink,修改符号链接的所有者，接受两个参数，第一个为要修改的符号链接文件名，第二个为要更改所有者
 
-?????????????56. link — 建立一个硬连接，接受两个参数，第一个为要连接的目标，第二个为该链接的名称，成功返回true,否则返回false
+?????????????56. link — 建立一个硬连接，接受两个参数，第一个为要链接的目标，第二个为该链接的名称，成功返回true,否则返回false
 
 57. linkinfo — 获取一个连接的信息
 
@@ -2059,7 +2056,8 @@ closedir($dir_res);
 
 59. mkdir
 
-		mkdir — 新建目录,接受4个参数，第一个为必选参数，为创建的目录名，第二个为可选参数，设定对该新目录的访问权（默认为0777,即最大权利访问权）,第三个也是可选参数指定是否允许递归创建目录（默认为false,即不允许递归创建），第四个为可选参数，指定上下文context
+		mkdir — 新建目录,接受4个参数，第一个为必选参数，为创建的目录名，第二个为可选参数，设定对该新目录的访问权（默认为0777,即最大权利访问权）,
+		第三个也是可选参数指定是否允许递归创建目录（默认为false,即不允许递归创建），第四个为可选参数，指定上下文context
 		可以在已存在目录的基础上创建，并不会覆盖原目录文件
 		成功返回true，失败返回false
 		if(mkdir("test/a/",0777,true)){
@@ -2067,12 +2065,14 @@ closedir($dir_res);
 		}else{
 		    echo "创建失败";//
 		}
+		
 		如果目录已经存在，则返回false
 		if(mkdir("test1/a/",0777,true)){
 		    echo "创建成功";
 		}else{
 		    echo "创建失败";
 		}
+		
 		可以在已存在目录的基础上创建，并不会覆盖原目录文件
 		if(mkdir("test1/a/b/c/e/f",0777,false)){//不允许递归创建
 		    echo "创建成功";
@@ -2081,15 +2081,16 @@ closedir($dir_res);
 		}
 
 
-
-		打开一个不存在的文件也可以同时新建文件 
+		打开一个不存在的文件也可以同时新建文件,即使不写如任何内容也会在文件不存在时创建 
 		$file=fopen("helloword","wb");
 		fwrite($file,"");
 		fclose($file);
 
+
 60. move_uploaded_file
 
-		60. move_uploaded_file — 将上传的文件移动到新位置,只接受两个参数，第一个参数指定上传的文件名，第二个参数指定移动的目标位置（包括新的文件名），该方法只能移动通过HTTP上传的文件，成功返回true,失败返回false
+		move_uploaded_file — 将上传的文件移动到新位置,只接受两个参数，第一个参数指定上传的文件名，
+		第二个参数指定移动的目标位置（包括新的文件名），该方法只能移动通过HTTP上传的文件，成功返回true,失败返回false
 		注意：该方法会覆盖上传的文件
 		if(!empty($_FILES)){
 		    if(is_uploaded_file($_FILES["pic"]["tmp_name"])){
@@ -2099,9 +2100,11 @@ closedir($dir_res);
 		    }
 		}
 
+
 61. parse_ini_file
 
-		parse_ini_file — 解析一个配置文件,该函数接受三个参数，第一个为必选参数，指定载入的文件名，第二个为可选布尔类型参数，指定是否显示详细信息（默认为false），第三个为可选参数指定输出的模式；
+		parse_ini_file — 解析一个配置文件,该函数接受三个参数，第一个为必选参数，指定载入的文件名，第二个为可选布尔类型参数，
+		指定是否显示详细信息（默认为false），第三个为可选参数指定输出的模式；
 		第三个参数可能值：INI_SCANNER_NORMAL INI_SCANNER_RAW
 		载入成功是以关联数组返回该文件的配置信息，否则返回false
 		echo "<pre>";
@@ -2114,13 +2117,18 @@ closedir($dir_res);
 		$arr=@parse_ini_file("test.ini",true，INI_SCANNER_NORMAL);
 		print_r($arr);
 
+		只有正确的配置文件才能被正确的解析，其他的随意文件会导致解析失败。
+
+
 62. parse_ini_string
 
-		parse_ini_string — Parse a configuration string,解析一个配置字符串，参数parse_ini_file相同，只是第一个参数为一个配置的字符串格式，以关联数组的形式返回配置信息，失败返回false
+		parse_ini_string — Parse a configuration string,解析一个配置字符串，参数parse_ini_file相同，只是第一个参数为一个配置
+		的字符串格式，以关联数组的形式返回配置信息，失败返回false
 		$ini=file_get_contents("test.ini",false,null,0,filesize("test.ini"));
 		echo $ini;
 		$arr=@parse_ini_string($ini,true,INI_SCANNER_NORMAL);
 		print_r($arr);
+
 
 63. pathinfo
 
@@ -2157,22 +2165,27 @@ closedir($dir_res);
 
 66. readfile
 
-		66. readfile — 输出一个文件,接收三个参数，第一个为必选参数，指定文件名，第二个布尔类型参数指定是否使用include_path，第三个参数指定上下文context
-		该函数读取文件并写入到输出缓冲
+		readfile — 输出一个文件,接收三个参数，第一个为必选参数，指定文件名或者网址，第二个布尔类型参数指定是否使用include_path，
+		第三个参数指定上下文context
+		该函数读取文件并写入到输出缓冲，成功返回读入数据的字节长度
 		该函数返回从文件中读入的数据，出错返回false并有错误信息
 		$filename="test.txt";
 		readfile($filename);//自动将内容输出出来
 
+
+
 ??????67. readlink — 返回符号连接指向的目标
 
-68. realpath_cache_get
+68. realpath_cache_get:为了避免每次require_once等时到include_path中查找相应的文件而缓存这些要加载文件的绝对路径，提高性能
 
 		realpath_cache_get — Get realpath cache entries,返回缓存的绝对路径信息数组，不接收任何参数
 		var_dump(realpath_cache_get());
 
+
 69. realpath_cache_size
 
 		realpath_cache_size — Get realpath cache size,返回缓存的绝对路路径信息所用的内存大小(字节数),不接受任何参数
+
 
 70. realpath
 
@@ -2181,9 +2194,11 @@ closedir($dir_res);
 		$filename="test.txt";
 		echo realpath($filename);// D:\wamp\www\PHPstudy\test.txt
 
+
 71. rename
 
-		71. rename — 重命名一个文件或目录,接受两个必选参数，第一个参数指定原文件名或目录名，第二个文件指定新的文件名后目录名，第三个可选参数为上下文context
+		rename — 重命名一个**文件或目录**,接受两个必选参数，第一个参数指定原文件名或目录名，第二个文件指定新的文件名后目录名，第三个可选参数
+		为上下文context
 		成功返回true否则返回false
 		$filename="test.txt";
 		if(rename($filename,"./test/a/".$filename)){
@@ -2202,6 +2217,12 @@ closedir($dir_res);
 		    echo "重命名失败";
 		}
 		原目录被删除
+
+		该方法也可以操作目录，操作后原目录被删除：
+		<?php
+		//操作目录
+		rename('e:/tt','e:/cc/tt');
+
 
 72. rewind
 
