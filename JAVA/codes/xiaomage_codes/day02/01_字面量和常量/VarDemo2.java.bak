@@ -1,0 +1,14 @@
+class VarDemo2 
+{
+	public static void main(String[] args) 
+	{
+		/**
+			变量的分类：
+				变量根据定义的位置不同，分成两大类：
+					1、成员变量/字段(field)，直接定义在类中
+					且在方法之外
+					2、局部变量：定义在方法中
+
+		*/
+	}
+}
