@@ -2230,18 +2230,18 @@ closedir($dir_res);
 		注意：如果将文件以附加（"a" 或者 "a+"）模式打开，写入文件的任何数据总是会被附加在原内容的后面，不管文件指针的位置。
 		rewind($file);//参数是一个文件资源句柄
 
+
 73. rmdir
 
 		rmdir — 删除目录，接受两个参数，第一个为必选参数，指定要删除的目录，第二个参数为可选参数指定上下文context
 		注意：要删除的目录，该目录必须是空的，而且有相应的权限，
-		成功返回true,失败时返回false和提醒
+		成功返回true,失败时返回false和错误信息
 		if(is_dir("test2")){
 		    if(rmdir("test2")){//要保证目录是空的
 		        echo "删除目录成功";
 		    }else{
 		        echo "删除目录失败";
 		    }
-		
 		}
 
 ???????74. set_file_buffer — stream_set_write_buffer 的别名
@@ -2271,20 +2271,31 @@ closedir($dir_res);
 		也可以操作目录
 		print_r(stat("test1"));
 
+		<?php
+		$filePath = 'E:\deleting\enhancingProgram\README.md';
+		var_dump(stat($filePath));
+
+
 ??????76. symlink — 建立符号连接
+
 
 77. tempnam
 
-		tempnam — 建立一个具有唯一文件名的文件,只接受两个参数，第一个参数指定；临时文件创建的目录，第二个参数指定创建文件时的前缀（只取前三个字符）
-		如果该目录不存在， tempnam()  会在系统临时目录中生成一个文件，并返回其文件名。
+		tempnam — 建立一个具有唯一文件名的文件,只接受两个参数，第一个参数指定临时文件创建的目录，第二个参数指定创建文件时的前缀
+		（只取前三个字符）
+		如果该目录不存在， tempnam()  会在**系统临时目录**中生成一个文件，并返回其文件绝对路径。
 		返回新的临时文件名，失败返回false
 		echo tempnam("test1","haha");//D:\wamp\www\PHPstudy\test1\hah258A.tmp
-		新建了的文件类型为tmp
+		新建了的文件扩展名为tmp
+
 
 78. tmpfile 
 
-		tmpfile — 建立一个临时文件,该函数不接受任何参数，以w+的方式建立一个具有唯一名的临时文件，返回文件句柄，文件会在关闭后（fclose()）或者脚本运行结束时自动被删除;
+		tmpfile — 建立一个临时文件,该函数不接受任何参数，以w+的方式建立一个具有唯一名的临时文件，返回文件句柄，文件会在关闭后
+		（fclose()）或者脚本运行结束时自动被删除;
 		成功返回文件句柄，失败返回false
+
+
 
 ####`sys_get_temp_dir()`
 
@@ -2293,6 +2304,10 @@ closedir($dir_res);
 		输出： 
 		C:\WINDOWS\TEMP
 
+		<?php
+		var_dump(sys_get_temp_dir());  //输出 string(34) "C:\Users\daiyan\AppData\Local\Temp"
+
+
 79. touch 
 
 		touch — 设定文件的访问和修改时间,只接受三个参数，第一个参数给出文件名，第二个可选参数给出要设定的修改时间，没有提供则为当前时间，第三个可选参数给出要设定的访问时间，没有提供则为当前时间
@@ -2300,11 +2315,12 @@ closedir($dir_res);
 		注意：访问时间总是会被修改
 		touch("text.txt",time()-312*600,time()-3600);
 
+
 80. umask — 改变当前的 umask，改变文件默认的权限
 
 81. unlink
 
-		unlink — 删除文件,只接受两个参数，第一个参数指定文件名，第二个参数为可选参数，指上下文context
+		unlink — 删除文件,只接受两个参数，第一个参数指定文件名，第二个参数为可选参数，指定上下文context
 		成功返回true,失败返回false和提醒
 		unlink("a.txt");
 		if(unlink("tt.txt")){
@@ -2312,6 +2328,7 @@ closedir($dir_res);
 		}else{
 		    echo "文件删除失败";
 		}
+
 
 **`parse_url()`**
 
@@ -2351,6 +2368,9 @@ closedir($dir_res);
 表单中设置：enctype="multipart/form-data"才能上传文件，即：
 
     <form action="test.php" method="post" enctype="multipart/form-data"></form>
+
+-------------------------------------------------20170213
+
 
 ###$_FILES
 
