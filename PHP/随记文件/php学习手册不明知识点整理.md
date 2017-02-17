@@ -2244,6 +2244,7 @@ closedir($dir_res);
 		    }
 		}
 
+
 ???????74. set_file_buffer — stream_set_write_buffer 的别名
 
 75. stat---给出文件的信息，见fstat
@@ -2369,8 +2370,6 @@ closedir($dir_res);
 
     <form action="test.php" method="post" enctype="multipart/form-data"></form>
 
--------------------------------------------------20170213
-
 
 ###$_FILES
 
@@ -2398,15 +2397,20 @@ closedir($dir_res);
 	error：上传产生的差错代码（0 1 2 3 4 6 7）
 	size:已上传文件的大小，字节
 
+
 `is_uploaded_file()`
 
 	判断文件是否是通过HTTP POST上传的
 	返回布尔类型
 	在上传后接受上传之前通过这个函数判断再操作较安全
+	<?php
+	$filePath='E:/txt.config';
+	var_dump(is_uploaded_file($filePath));
+
 
 `move_uploaded_file()`
 
-	检查上传文件是否合法（即是否是POST上传的），并将上传的临时文件移到指定目录并重命名，该函数仅作用域上传文件，会覆盖同名文件
+	检查上传文件是否合法（即是否是POST上传的），并将上传的临时文件移到指定目录并重命名，该函数仅作用于上传文件，会覆盖同名文件
 	语法:bool move_uploaded_file  ( string $filename  , string $destination  );
 	eg.
 	Array
@@ -2446,7 +2450,8 @@ closedir($dir_res);
 	        )
 	
 	)
-	可见当一次上传多个同名（表单中使用userfile[]）文件时，将上传文件的每一部分分别组成一个数组
+	可见当一次上传多个同名（表单中name使用userfile[]）文件时，将上传文件的每一部分分别组成一个数组
+
 
 **rename()**
 
