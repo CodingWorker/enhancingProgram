@@ -2230,19 +2230,20 @@ closedir($dir_res);
 		注意：如果将文件以附加（"a" 或者 "a+"）模式打开，写入文件的任何数据总是会被附加在原内容的后面，不管文件指针的位置。
 		rewind($file);//参数是一个文件资源句柄
 
+
 73. rmdir
 
 		rmdir — 删除目录，接受两个参数，第一个为必选参数，指定要删除的目录，第二个参数为可选参数指定上下文context
 		注意：要删除的目录，该目录必须是空的，而且有相应的权限，
-		成功返回true,失败时返回false和提醒
+		成功返回true,失败时返回false和错误信息
 		if(is_dir("test2")){
 		    if(rmdir("test2")){//要保证目录是空的
 		        echo "删除目录成功";
 		    }else{
 		        echo "删除目录失败";
 		    }
-		
 		}
+
 
 ???????74. set_file_buffer — stream_set_write_buffer 的别名
 
@@ -2271,20 +2272,31 @@ closedir($dir_res);
 		也可以操作目录
 		print_r(stat("test1"));
 
+		<?php
+		$filePath = 'E:\deleting\enhancingProgram\README.md';
+		var_dump(stat($filePath));
+
+
 ??????76. symlink — 建立符号连接
+
 
 77. tempnam
 
-		tempnam — 建立一个具有唯一文件名的文件,只接受两个参数，第一个参数指定；临时文件创建的目录，第二个参数指定创建文件时的前缀（只取前三个字符）
-		如果该目录不存在， tempnam()  会在系统临时目录中生成一个文件，并返回其文件名。
+		tempnam — 建立一个具有唯一文件名的文件,只接受两个参数，第一个参数指定临时文件创建的目录，第二个参数指定创建文件时的前缀
+		（只取前三个字符）
+		如果该目录不存在， tempnam()  会在**系统临时目录**中生成一个文件，并返回其文件绝对路径。
 		返回新的临时文件名，失败返回false
 		echo tempnam("test1","haha");//D:\wamp\www\PHPstudy\test1\hah258A.tmp
-		新建了的文件类型为tmp
+		新建了的文件扩展名为tmp
+
 
 78. tmpfile 
 
-		tmpfile — 建立一个临时文件,该函数不接受任何参数，以w+的方式建立一个具有唯一名的临时文件，返回文件句柄，文件会在关闭后（fclose()）或者脚本运行结束时自动被删除;
+		tmpfile — 建立一个临时文件,该函数不接受任何参数，以w+的方式建立一个具有唯一名的临时文件，返回文件句柄，文件会在关闭后
+		（fclose()）或者脚本运行结束时自动被删除;
 		成功返回文件句柄，失败返回false
+
+
 
 ####`sys_get_temp_dir()`
 
@@ -2293,6 +2305,10 @@ closedir($dir_res);
 		输出： 
 		C:\WINDOWS\TEMP
 
+		<?php
+		var_dump(sys_get_temp_dir());  //输出 string(34) "C:\Users\daiyan\AppData\Local\Temp"
+
+
 79. touch 
 
 		touch — 设定文件的访问和修改时间,只接受三个参数，第一个参数给出文件名，第二个可选参数给出要设定的修改时间，没有提供则为当前时间，第三个可选参数给出要设定的访问时间，没有提供则为当前时间
@@ -2300,11 +2316,13 @@ closedir($dir_res);
 		注意：访问时间总是会被修改
 		touch("text.txt",time()-312*600,time()-3600);
 
+
 80. umask — 改变当前的 umask，改变文件默认的权限
+
 
 81. unlink
 
-		unlink — 删除文件,只接受两个参数，第一个参数指定文件名，第二个参数为可选参数，指上下文context
+		unlink — 删除文件,只接受两个参数，第一个参数指定文件名，第二个参数为可选参数，指定上下文context
 		成功返回true,失败返回false和提醒
 		unlink("a.txt");
 		if(unlink("tt.txt")){
@@ -2312,6 +2330,7 @@ closedir($dir_res);
 		}else{
 		    echo "文件删除失败";
 		}
+
 
 **`parse_url()`**
 
@@ -2352,6 +2371,7 @@ closedir($dir_res);
 
     <form action="test.php" method="post" enctype="multipart/form-data"></form>
 
+
 ###$_FILES
 
 	 <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -2378,15 +2398,20 @@ closedir($dir_res);
 	error：上传产生的差错代码（0 1 2 3 4 6 7）
 	size:已上传文件的大小，字节
 
+
 `is_uploaded_file()`
 
 	判断文件是否是通过HTTP POST上传的
 	返回布尔类型
 	在上传后接受上传之前通过这个函数判断再操作较安全
+	<?php
+	$filePath='E:/txt.config';
+	var_dump(is_uploaded_file($filePath));
+
 
 `move_uploaded_file()`
 
-	检查上传文件是否合法（即是否是POST上传的），并将上传的临时文件移到指定目录并重命名，该函数仅作用域上传文件，会覆盖同名文件
+	检查上传文件是否合法（即是否是POST上传的），并将上传的临时文件移到指定目录并重命名，该函数仅作用于上传文件，会覆盖同名文件
 	语法:bool move_uploaded_file  ( string $filename  , string $destination  );
 	eg.
 	Array
@@ -2426,7 +2451,8 @@ closedir($dir_res);
 	        )
 	
 	)
-	可见当一次上传多个同名（表单中使用userfile[]）文件时，将上传文件的每一部分分别组成一个数组
+	可见当一次上传多个同名（表单中name使用userfile[]）文件时，将上传文件的每一部分分别组成一个数组
+
 
 **rename()**
 
@@ -2494,20 +2520,28 @@ closedir($dir_res);
 **`set_time_limit(0)`;/设置程序运行时间**
 
 
+
+---------------------------------20170217
+
+
 #PHP的 mysqli    
 
 API
 
 	应用程序接口 Application Programming Interface，定义了类，方法，函数，变量等等一切你的应用程序中为了完成特定任务而需要调用的内容。
 
+
 驱动：
 
 	设计用来执行某种服务的软件代码，这些软件代码库实现用于和mysql数据库服务交互的底层协议
 
+
 扩展
 
 	类似于API,扩展一个典型的作用就是暴露一个API给PHP程序员,术语API和扩展描述的不是同一类事物，因为扩展可能并不需要暴露一个API接口给程序员。 
+	扩展暴露API以便程序员操作相关的资源等，但也可能不会暴露API。
 
+	
 PHP中提供的mysql的API:
 
 	1、PHP的Mysql扩展
