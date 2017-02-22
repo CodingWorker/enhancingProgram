@@ -1,0 +1,43 @@
+create table group01(
+id int(10) primary key auto_increment not null,name varchar(20),price int(10)
+)engine myisam charset utf8;
+
+
+insert into group01（name,price) values(
+	'三星',13
+);
+insert into group01(name,price) values(
+	'三星',12
+);
+insert into group01(name,price) values(
+	'三星',10
+);
+insert into group01(name,price) values(
+	'三星',21
+);
+insert into group01(name,price) values(
+	'三星',32
+);
+
+
+insert into gruop01 values(
+	诺基亚,10
+);
+insert into gruop01 values(
+	诺基亚,11
+);
+insert into gruop01 values(
+	诺基亚,21
+);
+insert into gruop01 values(
+	诺基亚,22
+);
+insert into gruop01 values(
+	诺基亚,13
+);
+
+
+
+
+
+

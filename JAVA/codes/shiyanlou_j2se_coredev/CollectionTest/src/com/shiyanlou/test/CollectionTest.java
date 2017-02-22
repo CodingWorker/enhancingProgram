@@ -9,10 +9,11 @@ import java.util.Map;
  */
 public class CollectionTest {
     public static void main(String[] args){
-        ArrayList<Integer> al=new ArrayList<Integer>();
-        al.add(1);
-        al.add(2);
+        ArrayList<Integer> al=new ArrayList<>();
+             al.add(1);
+          al.add(2);
         al.add(3);
         System.out.println(al.lastIndexOf(3));
+
     }
 }
