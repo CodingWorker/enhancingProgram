@@ -2519,7 +2519,7 @@ closedir($dir_res);
 
 **`set_time_limit(0)`;/设置程序运行时间**
 
-//---------------------------------
+//---------------------------------20170227
 
 #PHP的 mysqli    
 
@@ -3003,6 +3003,8 @@ set_time_limit(30);表示脚本最长执行30秒
 
 		语法：array array_change_key_case  ( array $input  [, int $case  = CASE_LOWER  ] )
 		第二参数默认为CASE_LOWER即小写，参数有两种选择：CASE_UPPER或者CASE_LOWER
+		不加第二个参数的话则默认转换为小写
+		
 		//更换键名大写
 		echo "<pre>";
 		$arr2=array('key1'=>'后盾网','key2'=>'php视频','key3'=>'div视频');
@@ -3023,6 +3025,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [key2] => php视频
 		    [key3] => div视频
 		)
+
+
 
 2. array_chunk — 将一个数组分割成包含指定元素个数的小的数组
 
@@ -3056,6 +3060,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 		print_r(array_chunk($arr3,3));//3指拆分后数组中的元素个数,键名没有被保存，要保存键名需要添加第三个参数True
 		print_r(array_chunk($arr3,2,True));//保留了键名
+
+
 
 3. array_column — 返回数组中指定的一列
 
@@ -3104,6 +3110,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [5623] => Doe
 		)
 
+
+
 4. array_combine — 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
 
 		$arrkey=array('key1','key2','key3','key4');//定义数组键名
@@ -3117,6 +3125,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [key3] => div视频
 		    [key4] => css课程
 		)
+
+
 
 5. array_count_values — 统计数组中所有的值出现的次数
 
@@ -3132,6 +3142,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [YAHOO] => 1
 		)
 
+
+
 **求差集：三类,都不区分顺序**
 
 1、仅比较键 key       <br/>
@@ -3140,7 +3152,9 @@ set_time_limit(30);表示脚本最长执行30秒
 
 6. array_diff_assoc — 带索引检查计算数组的差集，arr_diff_assoc()同时比较键名和键值,查看array_diff_key 
 
+
 7. array_diff_key — 使用键名比较计算数组的差集,以第一个数组键名为全集，寻找后面数组键名的补集，返回不同的键名在第一个数组中的键名和键值
+	以第一个数组为准，只要是第二个数组中不包含第一个数组的键就将第一个数组的该键和值输出
 
 		//比较两个数组键名的不同，以第一个数组为准，返回第一个数组中不同的键名和对应的键值,不区分数组元素中的顺序
 		$arr5a=array('url'=>'bbs.houdunwang.com','name'=>'后盾网论坛');
@@ -3148,13 +3162,16 @@ set_time_limit(30);表示脚本最长执行30秒
 		$arr5c=array('url'=>'bbs.houdunwang.com');
 		print_r(array_diff_key($arr5a,$arr5b,$arr5c));//返回数组 'name'=>'后盾网论坛'
 
+
 8. array_diff_uassoc — 用用户提供的回调函数做索引检查来计算数组的差集
 
 		array_diff_uassoc()通过回掉函数的形式返回一个数组在其他数组中不存在键名的值和键值，键名和键值同时比较
 
-9. array_diff_ukey — 用回调函数对键名比较计算数组的差集
+
+9. array_diff_ukey — 用回调函数对键名比较计算数组的差集,回调函数中传入的是两个数组的元素
 
 		array_diff_ukey()通过回掉函数的形式返回一个数组在其他数组中不存在键名的值
+
 
 10. array_diff — 计算索引\关联数组的差集,以第一个数组为全集，找其他所有数组的补集
 
@@ -3163,6 +3180,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$arr4b=array('sina.com.cn','bbs.houdunwang.com','web.houdunwang.com');
 		$arr4c=array('houdunwang.com');
 		print_r(array_diff($arr4a,$arr4b,$arr4c));//相当于以第一个数组为全集取后面的数组的补集
+
 
 11. array_fill_keys — 使用指定的键和值填充数组
 
@@ -3204,9 +3222,11 @@ set_time_limit(30);表示脚本最长执行30秒
 		     )
 		 )
 
+
+
 12. array_fill — 用给定的值生成填充数组
 
-		array_fill(开始索引下标，元素个数，元素内容)通过指定的索引顺序及个数和值生成数组
+		array_fill(开始索引下标，元素个数，元素内容)通过指定的索引顺序及个数和值生成数组,第三个参数指定重复的值(类型为mixed)
 		$arr0=array_fill(30,2,'后盾网');
 		print_r($arr0);//生成两个元素值都为后盾网
 		输出： 
@@ -3216,10 +3236,19 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [31] => 后盾网
 		)
 
+
+		当传入的值为对象时，实际引用的是一个对象
+		$v=new \stdClass();
+		$obj=array_fill(12,3,$v);
+		$obj[12]->total=1;
+
+		var_dump($obj);
+
+
 13. array_filter — 用回调函数过滤数组中的单元
 
 		array_filter()数组值过滤函数，通过回调函数的方式返回新数组，如果回掉函数返回True(如果不是布尔值会转换为布尔值,所以该回调函数最好以true或false作为返回值，他只看是否为true),数组元素返回到新数组中
-		该回调函数仅接受一个参数，作为数组传递的键值
+		该回调函数仅接受一个参数(这个参数代表的是数组的元素的值），作为数组传递的键值
 		$arr1=array('class1'=>'PHP课程','class2'=>'mysql课程','webname'=>'后盾网','weburl'=>'houdunwang.com');
 		$arr0=array_filter($arr1,'a');//函数名用引号括起来
 		function a($v){
@@ -3229,6 +3258,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		      return false;
 		    }
 		}
+
 		print_r($arr0);
 		输出： 
 		Array
@@ -3236,6 +3266,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [class1] => PHP课程
 		    [class2] => mysql课程
 		)
+		
 		可以用来筛选数据:
 		//判断非法信息
 		echo "<pre>";
@@ -3251,8 +3282,10 @@ set_time_limit(30);表示脚本最长执行30秒
 		  }
 		}
 
+
 14. array_flip — 交换数组中的键和值
 
+		该函数只能够交换字符串或者数字的值，其他类型的会报warging
 		//array_flip()把数组中的键值和键名进行交换,原键值相同的项转换完后最后一个有效
 		$user1=array('class1'=>'PHP课程','class2'=>'mysql课程','webname'=>'mysql课程','weburl'=>'houdunwang.com');
 		$arr0=array_flip($user1);
@@ -3264,6 +3297,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [mysql课程] => webname
 		    [houdunwang.com] => weburl
 		)
+
 
 15. array_intersect_assoc — 带索引检查计算数组的交集
 
@@ -3280,6 +3314,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [name] => 后盾网
 		)
 
+
 16. array_intersect_key — 使用键名比较计算数组的交集
 
 		array_intersect_key()数组差集，在一个或多个数组中，返回各个数组都存在的数组元素(返回的是第一个数组相应元素),仅比较键名
@@ -3295,11 +3330,14 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [name] => 后盾网
 		)
 
+
 17. array_intersect_uassoc() — 数组差集，带索引检查计算数组的交集，用回调函数比较索引
+
 
 18. array_intersect_ukey — 数组差集，用回调函数比较键名来计算数组的交集
 
 		通过回掉函数的方式寻找，在一个或多个数组中，返回各个数组都存在的数组元素(以第一个数组为准),仅比较键名
+
 
 19. array_intersect — 计算索引\关联数组的交集
 
@@ -3315,7 +3353,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [name] => 后盾网
 		)
 
+
 20. array_key_exists — 检查给定的键名或索引是否存在于数组中
+		使用isset['key']更快
 
 		//array_key_exists()判断内容是否是数组的键名
 		$arr2=array('class1'=>'php','class2'=>'php1','class3'=>'mysql');
@@ -3324,6 +3364,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		}else{
 		  echo "不存在";
 		}
+
 
 21. array_keys — 返回数组中所有的键名或指定键值的键名
 
@@ -3352,10 +3393,12 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [1] => class2
 		)
 
+
 22. array_map — 将回调函数作用到给定数组的单元上，键值不变，仅能作用于一维数组
 
 		//array_map()数组地图,对一个或多个数组每一个元素的键值都应用回调函数，返回新的数组，注意回调函数的参数与传递的数组个数相同
-		该回调函数仅接受一个参数，即为数组的键值，array_filter的回调函数只看是否返回true或者false,不看具体的返回值，而array_map不是,它将函数的返回值作为新索引数组的键值。没有return的函数其实返回的是null
+		传递的是数组值的 toString值，新数组的键值和原数组相同
+		该回调函数仅接受一个参数，即为数组的键值，array_filter的回调函数只看是否返回true或者false,不看具体的返回值，而array_map不是,它将函数的返回值作为新**索引**数组的键值。没有return的函数其实返回的是null
 		$houdunwang=array(12,33,43,1,23,5,27);
 		function func_map($v){
 		  echo $v."<br/>";
@@ -3389,6 +3432,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		  6 => null
 		
 		在单纯的输出上null和''看起来一样，因此要用var_dump()
+
+
 
 23. array_merge_recursive — 递归地合并一个或多个数组
 
@@ -3426,7 +3471,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		var_dump(array_merge_recursive($arr11,$arr12));
 
 24. array_merge — 合并一个或多个数组
-
+		1) 该函数主要针对关联数组起作用
+		2) 该函数只操作关联数组，对索引数组只是单单的将索引值增加而不会判断是否重复
 		后面的同名值会覆盖前面的值(与+正好相反)，不像array_merge_recursive()生成二维数组
 		//array_merge()数组的合并
 		$arr1=array('webname'=>'后盾网','weburl'=>'bbs.houdunwang.com');
@@ -3437,6 +3483,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		$arr12=array('webname'=>'后盾网论坛','weburl'=>'bbs.houdunwang.com');
 		print_r(array_merge($arr11,$arr12));//键名相同时后边的会覆盖前面的
 
+		var_dump(array_merge([1,2,3],[2,1,3]));     //该函数只操作关联数组，对索引数组只是单单的将索引值增加而不会判断是否重复
+
+
 25. array_multisort — 对多个数组或多维数组进行排序
 
 		array_multisort()可以对多个数组进行排序，数组后的参数指明是升序还是降序
@@ -3446,6 +3495,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r($arr3);
 		array_multisort($arr1,SORT_DESC,$arr3,SORT_ASC);//SORT_ASC指在第一个数组存在相同的元素时，对第二个数组相应索引对应的值进行升序排列
 		print_r($arr3);
+
 
 26. array_pad — 用值将数组填补到指定长度并返回新数组
 
@@ -3477,18 +3527,23 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [6] => 3
 		)
 
+
 27. array_pop — 将数组最后一个单元弹出（出栈），查看array_shift()
 
 		array_pop()出栈，返回删除的数组末端元素，对原数组改变
 
+
 28. array_product — 计算数组中所有值的乘积
 
+		非数字类型或字符串数字元素不计算直接返回0
 		$arr5=array(2,3,5);
 		echo array_product($arr5);
+
 
 29. array_push — 将一个或多个单元压入数组的末尾（入栈）
 
 		array_push()数组的入栈,改变原数组,在数组末端添加，返回新数组的元素个数
+
 
 30. array_rand — 从数组中随机取出一个或多个单元,第二个可选参数指定取出多少个元,返回随机抽取的元素的索引或者键名组成的数组（1个时为字符串）
 
@@ -3501,6 +3556,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [1] => 4
 		)
 		可以做随机出题
+
+//----------------------------------------------------------------------20170227
 
 31. array_reduce — 用回调函数迭代地将数组简化为单一的值
 
