@@ -1,3 +1,10 @@
+import java.sql.Time;
+import java.text.DateFormat;
+import java.util.*;
+import java.util.function.IntConsumer;
+import java.util.spi.CalendarDataProvider;
+
+
 public class Main {
     public String getName() {
         this.main(null);
@@ -15,6 +22,12 @@ public class Main {
         return null;
     }
 
+    /**
+     * java main method
+     *
+     * @param  args The system console, if any, otherwise <tt>null</tt>.
+     * <strong>none</strong>
+     */
     public static void main(String[] args) {
         Main main=new Main();
         Sub ss=main.new Sub();
@@ -23,7 +36,47 @@ public class Main {
         System.out.println(arr[0]);
 
         A subA=main.test();
+        int a=1;
+        int b=2;
+        {
 
+            int c=3;
+        }
+        System.out.println(a);
+        ArrayList<StringIndexOutOfBoundsException> e=new ArrayList<>();
+        HashMap<String,IntConsumer> w=new HashMap<>();
+        System.out.print(Runtime.getRuntime().totalMemory());
+        System.out.println("//====================");
+        System.out.println(3^3);
+        System.out.println(2^3^3);
+        StringBuilder sb=new StringBuilder();
+        long t1=Calendar.getInstance().getTimeInMillis();
+        int j=0;
+        outer:for(int i=0;i<10000000;){
+            inner:while(j<1000){
+                sb.append(i);
+                if(i==100)
+                    break outer;
+                i++;
+            }
+
+        }
+
+        System.out.println("outer");
+        switch(""){
+            case "a":
+                break;
+            case "b":
+                break;
+            default:
+
+        }
+
+        ArrayList<String> li=new ArrayList<>(2);
+        li.add("a");
+        li.add("b");
+        String[] arrStr=li.toArray(new String[2]);
+        System.out.println(arrStr.length);
 
     }
 
