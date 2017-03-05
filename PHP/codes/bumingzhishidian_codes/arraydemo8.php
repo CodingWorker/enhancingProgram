@@ -8,8 +8,8 @@ var_dump(array_udiff_assoc($arr1,$arr2,function($a,$b){
 ksort();
 echo "\n//====================================\n";
 var_dump(array_udiff_uassoc($arr1,$arr2,function($a,$b){
-    var_dump($a);
     var_dump($b);
+        var_dump($a);
     
 },function($c,$d){
     var_dump($c);

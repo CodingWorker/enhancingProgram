@@ -4311,7 +4311,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [6] => 8
 		)
 
-//-----------------------------------20170303
+
+
 
 ##字符串函数整理
 
@@ -4955,14 +4956,24 @@ stristr   strrchr
 	本函数返回一个字符串数组，每个单元为 string  经区分大小写的正则表达式 pattern  作为边界分割出的子串。如果设定了 limit ，则返回的数组最多包含 limit  个单元，而其中最后一个单元包含了 string  中剩余的所有部分。如果出错，则 split()  返回 FALSE 。 
 
 
+------------------------20170305
 
 ## URL函数    
+base64_encode
+
+ Base64编码，是我们程序开发中经常使用到的编码方法。它是一种基于用64个可打印字符来表示
+ 二进制数据的表示方法。它通常用作存储、传输一些二进制数据编码方法！也是MIME（多用途互联网邮件
+ 扩展，主要用作电子邮件标准）中一种可打印字符表示二进制数据的常见编码方法！它其实只是定义用可打
+ 印字符传输内容一种方法，并不会产生新的字符集！有时候，我们学习转换的思路后，我们其实也可以结合
+ 自己的实际需要，构造一些自己接口定义编码方式。
+ 就是通过一种算法将二进制数据都转换为可打印字符表示
 
 1. base64_decode — 对使用 MIME base64 编码的数据进行解码
 2. base64_encode — 使用 MIME base64 对数据进行编码
 3. get_headers — 取得服务器响应一个 HTTP 请求所发送的所有标头
 
 	array get_headers  ( string $url  [, int $format  = 0  ] )
+	
 	get_headers()  返回一个数组，包含有服务器响应一个 HTTP 请求所发送的标头。 
 	返回包含有服务器响应一个 HTTP 请求所发送标头的索引或关联数组，如果失败则返回 FALSE 
 	$url="http://www.baidu.com";
@@ -4987,6 +4998,7 @@ stristr   strrchr
 	    [14] => Cache-control: no-cache
 	    [15] => Accept-Ranges: bytes
 	)
+	
 	这个与响应头的信息一致
 	给出第二个参数，则输出的是关联数组
 	 print_r ( get_headers ( $url,1 ));
@@ -5015,6 +5027,7 @@ stristr   strrchr
 	    [Accept-Ranges] => bytes
 	)
 
+
 4. `get_meta_tags` — 从一个文件中提取所有的 meta 标签 content 属性，返回一个数组
 
 		语法：array get_meta_tags  ( string $filename  [, bool $use_include_path  = false  ] )
@@ -5036,6 +5049,7 @@ stristr   strrchr
 		    [geo_position] => 49.33;-86.59
 		)
 
+
 5. http_build_query — 生成 URL-encode 之后的请求字符串-----parse_str
 
 		语法：string http_build_query  ( mixed  $query_data  [, string $numeric_prefix  [, string $arg_separator  [, int $enc_type  = PHP_QUERY_RFC1738    ]]] )
@@ -5051,6 +5065,14 @@ stristr   strrchr
 		分别输出：
 		foo=bar&baz=boom&cow=milk&php=hypertext+processor
 		foo=bar&amp;baz=boom&amp;cow=milk&amp;php=hypertext+processor
+
+        var_dump(http_build_query([
+            1,
+            'AB',
+            "a"=>1,
+            "b"=>'bb'
+        ],'num','#',PHP_URL_QUERY));
+        
 
 		6. parse_url — 解析 URL，返回其组成部分
 		
@@ -5072,6 +5094,10 @@ stristr   strrchr
 
 7. rawurldecode — 对已编码的 URL 字符串进行解码
 8. rawurlencode — 按照 RFC 1738 对 URL 进行编码
+
+urlencode和rawurlencode两个方法在处理字母数字，特殊符号，中文的时候结果都是一样的，唯一的
+不同是对空格的处理，urlencode处理成“+”，rawurlencode处理成“%20”。
+
 9. urldecode — 解码已编码的 URL 字符串
 
 		$str="后盾网视频教程php&div+css";
