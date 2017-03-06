@@ -1,3 +1,5 @@
+import com.sun.xml.internal.org.jvnet.fastinfoset.sax.PrimitiveTypeContentHandler;
+
 import java.sql.Time;
 import java.text.DateFormat;
 import java.util.*;
@@ -78,6 +80,18 @@ public class Main {
         String[] arrStr=li.toArray(new String[2]);
         System.out.println(arrStr.length);
 
+        new A().tt(this);
+    }
+
+    public void tt(){
+        super.finalize();
+    }
+
+
+
+
+    public static void prtChar(char c){
+        System.out.println(c);
     }
 
     public SubA test(){
@@ -89,8 +103,17 @@ public class Main {
         public A(int a){
             this.a=a;
         }
+        public A(){
+
+        }
+
+        public A(String s){
+            this(1);
+            //this("a");
+        }
 
         public void print(){
+
             System.out.println(this.a);
         }
 
