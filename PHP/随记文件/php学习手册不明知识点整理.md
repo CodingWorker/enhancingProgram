@@ -769,7 +769,8 @@ var_dump($matches);
 	搜索 subject 与 pattern 给定的正则表达式的一个匹配，返回0或1，该函数匹配到一次就不会继续匹配了
 
 
-**`preg_quote()` 正则表达式字符**,在字符串中含有特殊字符时非常有用，就是将特殊字符加上反斜杠转义。
+**`preg_quote()` 正则表达式字符**,在字符串中含有特殊字符时非常有用，就是将特殊字符加上
+反斜杠转义。
 
 	string preg_quote  ( string $str  [, string $delimiter  = NULL    ] )
 	echo preg_quote("()sdd[]");
@@ -789,24 +790,24 @@ var_dump($matches);
 	array preg_split  ( string $pattern  , string $subject  [, int $limit  = -1  [, int $flags  = 0  ]] )
 	返回分隔后组成的数组
 
------------------------------------------------------------------------20170305
-
 #cookie 
 
 ##cookie和会话
 
 浏览器会将对应的cookie编码进header和请求头一起发送到服务器，寻找cookie是靠域名或url来寻找的
 
-cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,当用户再次访问站点时，会自带cookie，服务器将此数据解码存储在全局变量`$_COOKIE`中
+cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,当用户再次访问站点时，会自带cookie，服务器将此数据解码
+存储在全局变量`$_COOKIE`中
 
-**cookie不能够设置成其他网站的域名**，只能设置成自己的域名，如果设置成其网站的域名则设置不成功
+**cookie不能够设置成其他网站的域名**，只能设置成自己的域名，如果设置成其他网站的域名则设置不成功
 	
 	setcookie("a",'aa',time()+3600,'/','localhost');//成功
 	setcookie("a",'aa',time()+3600,'/','baidu.com');//失败，根本就不能成功
 
 
-**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间设置成0或者
-不设置此值（不设置此值时默认在浏览器关闭时失效）
+**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间
+设置成0或者不设置此值（不设置此值时默认在浏览器关闭时失效）
+
 
 **注意事项：**
 
@@ -826,7 +827,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	 cookie的生命周期
 	 cookie适用的路径，即在这些路径都可以访问
 	 cookie适用的域名空间,只能是本域名，不能是其他网站的域名，**否则设置不成功**
-	 返回布尔值，如果在之前有html输出，则设置失败返回false,否则返回true，即使客户端浏览器禁用了cookie也会返回true
+	 返回布尔值，如果在之前有html输出，则设置失败返回false,否则返回true，**即使客户端浏览器禁用了cookie也会返回true**
 
 	eg.
 	<?php
@@ -854,10 +855,9 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	
 	很明显两者在请求头中不一样
 
+//----------------------------------------------20170308
 
-
-
-#   SESSION               
+#   SESSION 
 
 
 **sesson数据除了存储在文件中，也可以存储在数据库中，甚至当前会话的session可以存储在内存**

@@ -80,11 +80,9 @@ public class Main {
         String[] arrStr=li.toArray(new String[2]);
         System.out.println(arrStr.length);
 
-        new A().tt(this);
     }
 
     public void tt(){
-        super.finalize();
     }
 
 
