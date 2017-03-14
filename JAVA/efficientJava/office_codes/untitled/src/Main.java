@@ -1,17 +1,41 @@
 import com.sun.xml.internal.org.jvnet.fastinfoset.sax.PrimitiveTypeContentHandler;
 
+import java.io.Console;
 import java.sql.Time;
 import java.text.DateFormat;
 import java.util.*;
 import java.util.function.IntConsumer;
 import java.util.spi.CalendarDataProvider;
 
+interface a{
+
+}
+
+interface b{
+
+}
+
+abstract class c{
+
+}
+
+class abc extends c
+        implements a,b
+
+{
+
+}
 
 public class Main {
     public String getName() {
         this.main(null);
         return name;
     }
+
+    public static void aa(String... arr){
+        System.out.println(arr.length);
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -31,6 +55,30 @@ public class Main {
      * <strong>none</strong>
      */
     public static void main(String[] args) {
+        //多态
+
+
+
+        //可变参数是语法糖，实际参数是数组
+        aa("c","a","b");
+        System.exit(0);
+        //foreach是for的语法糖
+        int[] arrNum={1,2,3};
+        for(int i:arrNum){
+            i+=i;
+        }
+
+        for(int i :arrNum){
+            System.out.println(i);
+        }
+
+        System.exit(0);
+
+
+        //数组操作
+        A[] numArr=new A[2];
+        numArr=new A[3];
+        System.out.println(null==numArr);
         Main main=new Main();
         Sub ss=main.new Sub();
         new Main().Main();

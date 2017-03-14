@@ -855,7 +855,6 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	
 	很明显两者在请求头中不一样
 
-//----------------------------------------------20170308
 
 #   SESSION 
 
@@ -910,7 +909,8 @@ $_SESSION全局数组
 
     Sessions follow a simple workflow. When a session is started, PHP will either retrieve an existing session using the ID passed (usually from a session cookie) or if no session is passed it will create a new session. 
 
-session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时(即使用了session_start)，服务器会使用传递的载有sessionid的
+session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时
+(即使用了session_start)，服务器会使用传递的载有sessionid的
 cookie来调用session文件或者创建一个新的session(当没有传递此cookie时)
 If the session.auto_start directive is set to 1 , a session will automatically start on request startup. 
 自动开启session，即在脚本自动调用session_start，不用明确写出该语句了
