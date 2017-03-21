@@ -122,7 +122,7 @@ import java.util.Locale;
 public final
 class Character implements java.io.Serializable, Comparable<Character> {
     /**
-     * The minimum radix available for conversion to and from strings.
+     * The minimum radix（根，基数）available for conversion to and from strings.
      * The constant value of this field is the smallest value permitted
      * for the radix argument in radix-conversion methods such as the
      * {@code digit} method, the {@code forDigit} method, and the
@@ -132,6 +132,7 @@ class Character implements java.io.Serializable, Comparable<Character> {
      * @see     Character#forDigit(int, int)
      * @see     Integer#toString(int, int)
      * @see     Integer#valueOf(String)
+     * 之所以最小的基数是2是为了兼容多字节字符
      */
     public static final int MIN_RADIX = 2;
 
@@ -154,6 +155,7 @@ class Character implements java.io.Serializable, Comparable<Character> {
      * {@code char}, {@code '\u005Cu0000'}.
      *
      * @since   1.0.2
+     * 可以转换的最小的字符编码，此值为0
      */
     public static final char MIN_VALUE = '\u0000';
 
@@ -162,6 +164,8 @@ class Character implements java.io.Serializable, Comparable<Character> {
      * {@code char}, {@code '\u005CuFFFF'}.
      *
      * @since   1.0.2
+     * 可以转换的最大的字符编码，此值为65535
+     * (char)65535可以将编码值转变为字符
      */
     public static final char MAX_VALUE = '\uFFFF';
 
@@ -170,16 +174,19 @@ class Character implements java.io.Serializable, Comparable<Character> {
      * {@code char}.
      *
      * @since   1.1
+     * 代表基本类型的实例
      */
     @SuppressWarnings("unchecked")
     public static final Class<Character> TYPE = (Class<Character>) Class.getPrimitiveClass("char");
 
     /*
      * Normative general types
+     * 标准的通用类型
      */
 
     /*
      * General character types
+     * 一般的character的类型
      */
 
     /**
