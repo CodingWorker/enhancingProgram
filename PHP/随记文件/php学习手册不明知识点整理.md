@@ -4332,27 +4332,40 @@ set_time_limit(30);表示脚本最长执行30秒
 
 12. crypt — 单向字符串散列，可用于加密字符串
 
-
-
 13. echo — 输出一个或多个字符串
 
 14. explode — 使用一个字符串分割另一个字符串为一个数组,去掉分割字符,按字符操作
 
+		与方法implode互逆操作
 		$s="'PHP课程','HTML课程','JSP课程'";
 		var_dump(explode(",",$s));//输出数组，并去掉字符串中的,
 		var_dump(explode("课",$s));
 		第一参数为待分隔字符串中的字符
 
+		<?php
+		$str="attachment_name your_attachment_new_name";
+		var_dump($str,explode('_',$str));
+
+		$newArr=explode('_',$str);
+
+		var_dump(implode(',',$newArr));
+
+
 
 15. fprintf — 将格式化后的字符串写入到流
-
+		
+		就像c语言中的fpintf函数
 		写入一个根据 format  格式化后的字符串到 由 handle  句柄打开的流中
-		if (!( $fp  =  fopen ( 'date.txt' ,  'w' ))) {
-		    return;
+		$year=2017;
+		$month=3;
+		$day=21;
+
+		if (!( $fp  =  fopen ( 'E:\date.txt' ,  'w' ))) {
+			return;
 		}
-		 fprintf ( $fp ,  "%04d-%02d-%02d" ,  $year ,  $month ,  $day );
-		 $fp为fopen打开的句柄，后面的为格式化字符串
-		 %04d为格式占位符，使用后面的变量依次替代
+		fprintf ( $fp ,  "%04d-%02d-%02d" ,  $year ,  $month ,  $day );     //文件获得结果：2017-03-21
+		$fp为fopen打开的句柄，后面的为格式化字符串
+		%04d为格式占位符，使用后面的变量依次替代
 
 
 16. get_html_translation_table — 返回使用 htmlspecialchars 和 htmlentities 规则转换表
