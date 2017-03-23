@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/IOTest/IOTest.iml" filepath="$PROJECT_DIR$/IOTest/IOTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Math/Math.iml" filepath="$PROJECT_DIR$/Math/Math.iml" />
       <module fileurl="file://$PROJECT_DIR$/MultiProcessors/MultiProcessors.iml" filepath="$PROJECT_DIR$/MultiProcessors/MultiProcessors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleTest/SimpleTest.iml" filepath="$PROJECT_DIR$/SimpleTest/SimpleTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/StringUtil/StringUtil.iml" filepath="$PROJECT_DIR$/StringUtil/StringUtil.iml" />
       <module fileurl="file://$PROJECT_DIR$/TEKVTest/TEKVTest.iml" filepath="$PROJECT_DIR$/TEKVTest/TEKVTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/TryCatchTest/TryCatchTest.iml" filepath="$PROJECT_DIR$/TryCatchTest/TryCatchTest.iml" />

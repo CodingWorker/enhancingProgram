@@ -575,7 +575,7 @@ echo $t2->inside->a;  //引用属性指向同一个内存地址，输出1
 
 #正则表达式
 
-`preg_quote("*\()[]")` 将字符串转换为正则表达式(将特殊字符转义)（不包括定界符//）
+`preg_quote("*\()[]")` 将字符串转换为正则表达式(将特殊字符转义)（不包括定界符 => //）
 
 	\h 任意水平空白字符(since PHP 5.2.4) 
 	\H 任意非水平空白字符(since PHP 5.2.4) 
@@ -769,7 +769,8 @@ var_dump($matches);
 	搜索 subject 与 pattern 给定的正则表达式的一个匹配，返回0或1，该函数匹配到一次就不会继续匹配了
 
 
-**`preg_quote()` 正则表达式字符**,在字符串中含有特殊字符时非常有用，就是将特殊字符加上反斜杠转义。
+**`preg_quote()` 正则表达式字符**,在字符串中含有特殊字符时非常有用，就是将特殊字符加上
+反斜杠转义。
 
 	string preg_quote  ( string $str  [, string $delimiter  = NULL    ] )
 	echo preg_quote("()sdd[]");
@@ -789,24 +790,24 @@ var_dump($matches);
 	array preg_split  ( string $pattern  , string $subject  [, int $limit  = -1  [, int $flags  = 0  ]] )
 	返回分隔后组成的数组
 
-
-
 #cookie 
 
 ##cookie和会话
 
 浏览器会将对应的cookie编码进header和请求头一起发送到服务器，寻找cookie是靠域名或url来寻找的
 
-cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,当用户再次访问站点时，会自带cookie，服务器将此数据解码存储在全局变量`$_COOKIE`中
+cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,当用户再次访问站点时，会自带cookie，服务器将此数据解码
+存储在全局变量`$_COOKIE`中
 
-**cookie不能够设置成其他网站的域名**，只能设置成自己的域名，如果设置成其网站的域名则设置不成功
+**cookie不能够设置成其他网站的域名**，只能设置成自己的域名，如果设置成其他网站的域名则设置不成功
 	
 	setcookie("a",'aa',time()+3600,'/','localhost');//成功
 	setcookie("a",'aa',time()+3600,'/','baidu.com');//失败，根本就不能成功
 
 
-**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间设置成0或者
-不设置此值（不设置此值时默认在浏览器关闭时失效）
+**注意：**当一个cookie被删除时，它的值在当前页仍然有效，如果把cookie设置成浏览器关闭后就失效，那么可以直接把时间
+设置成0或者不设置此值（不设置此值时默认在浏览器关闭时失效）
+
 
 **注意事项：**
 
@@ -826,7 +827,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	 cookie的生命周期
 	 cookie适用的路径，即在这些路径都可以访问
 	 cookie适用的域名空间,只能是本域名，不能是其他网站的域名，**否则设置不成功**
-	 返回布尔值，如果在之前有html输出，则设置失败返回false,否则返回true，即使客户端浏览器禁用了cookie也会返回true
+	 返回布尔值，如果在之前有html输出，则设置失败返回false,否则返回true，**即使客户端浏览器禁用了cookie也会返回true**
 
 	eg.
 	<?php
@@ -855,9 +856,7 @@ cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,�
 	很明显两者在请求头中不一样
 
 
-
-
-#   SESSION               
+#   SESSION 
 
 
 **sesson数据除了存储在文件中，也可以存储在数据库中，甚至当前会话的session可以存储在内存**
@@ -910,7 +909,8 @@ $_SESSION全局数组
 
     Sessions follow a simple workflow. When a session is started, PHP will either retrieve an existing session using the ID passed (usually from a session cookie) or if no session is passed it will create a new session. 
 
-session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时(即使用了session_start)，服务器会使用传递的载有sessionid的
+session遵循一个简单的工作流(其实也是session_start的工作流程)：当一个session被开启时
+(即使用了session_start)，服务器会使用传递的载有sessionid的
 cookie来调用session文件或者创建一个新的session(当没有传递此cookie时)
 If the session.auto_start directive is set to 1 , a session will automatically start on request startup. 
 自动开启session，即在脚本自动调用session_start，不用明确写出该语句了
@@ -3557,12 +3557,14 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 		可以做随机出题
 
-//----------------------------------------------------------------------20170227
+
 
 31. array_reduce — 用回调函数迭代地将数组简化为单一的值
 
 		array_reduce()通过回调函数的方式将数组转换成单一的值，并返回
-		回调函数有两个参数，第一个为最终的返回结果（也可以在函数内部参与运算），第二个参数代表数组的每一个单元
+		回调函数返回的结果就为该函数返回的结果，如果没有就默认返回null。
+		回调函数有两个参数，第一个为最终的返回结果（也可以在函数内部参与运算），第二个参数代表数组的每一个单元(值)
+		
 		$arr1=array(1,2,3,4,5);
 		array_reduce($arr1,'func');//每次传入一个值连续调用遍历完数组
 		function func($c,$i){//$c为最终结果，$i为每次传入的数组单元，最后返回$c或其他(数值或字符串，不能是数组)，因此最终结果为一个单一值
@@ -3577,11 +3579,40 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		15
 
+
+		<?php
+		$arr=[1,2,3,'a'=>'aa','b'=>'bc'];
+
+		$newArr=array_reduce($arr,function($ret,$v){   //第一个参数ret基本没有什么用，相当于是占位符
+		var_dump($v);
+		//    var_dump($ret);
+		});
+		var_dump($newArr);
+
+
+
 32. array_replace_recursive — 使用传递的数组递归替换第一个数组的元素
 
-		array_replace_recursive()  使用后面数组元素的值替换第一个数组 array  的值。 如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换。 如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。 如果一个键仅存在于第一个数组，它将保持不变。 如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值。 
+		array_replace_recursive()  使用后面数组元素的值替换第一个数组 array  的值。 
+		如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换。
+		如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。
+		如果一个键仅存在于第一个数组，它将保持不变。 
+		如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值。
+
 		array_replace_recursive()  是递归的：它将遍历数组并将相同的处理应用到数组的内部值，对应多维数组
 		其他同array_replace
+		<?php
+		$arr=[1,2,3,4,[5,'c'],'a','c'];
+		$arr2=[2,3,4,'c',['d','c'],'3'];
+		var_dump(array_replace_recursive($arr,$arr2));
+
+		array_replace只做一层替换，内部数组不会递归处理
+		<?php
+		$arr=[1,2,3,4,[5,'c','12',3],'a','c'];
+		$arr2=[2,3,4,'c',['d','c','a'],'3'];
+		var_dump(array_replace_recursive($arr,$arr2));
+		var_dump(array_replace($arr,$arr2));
+
 
 33. array_replace — 使用传递的数组替换第一个数组的元素
 
@@ -3604,6 +3635,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [4] => cherry//新创建的
 		)
 
+
+
 34. array_reverse — 返回一个单元顺序相反的数组,原数组不变
 
 		//array_reverse()反转数组,第二个参数为true时则原索引号不变，否则改变;当原数组是关联数组时则无影响
@@ -3615,6 +3648,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r($arr);//关联数组
 		print_r(array_reverse($arr));//关联数组不受影响
 
+
 35. array_search — 在数组中搜索给定的值，如果成功则返回相应的键名(索引数组为索引)，失败返回false
 
 		//array_search()检索函数,返回匹配元素的索引值或键名(关联数组时),当数组中没有时返回布尔类型false
@@ -3622,6 +3656,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$k=array_search('后盾网',$arr2);
 		echo $k;//输出：0
 		echo array_search("厚度",$arr2);//输出：false
+
 
 36. array_shift — 将数组开头的单元移出数组
 
@@ -3663,6 +3698,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [3] => 苹果
 		)
 
+
 37. array_slice — 从数组中取出一段
 
 		array_slice(被截取的数组,开始位置,截取长度)截取数组元素,若第四个参数为true则保留索引(关联数组不受影响) 不改变原数组
@@ -3693,9 +3729,16 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 		print_r(array_slice($arr,-3,2,true));
 
+
+		var_dump(array_slice($arr,1,-2));//如果第三个参数为负数则从offset开始向从后倒数第三个参数绝对值处，
+		如果到了offset的左边则返回空数组；左开右闭
+
+
+
 38. array_splice — 把数组中的一部分去掉并用其它值取代，改变了原数组
 
-		//array_splice(传入数组,开始位置，截取长度，在原数组中插入新的元素并去掉原数组元素(相当于替换))截取数组，改变原数组；返回截取的数组元素
+		//array_splice(传入数组,开始位置，截取长度，在原数组中插入新的元素并去掉原数组元素(相当于替换))截取数组，改变原数组；
+		**返回截取的数组元素**
 		$arr1=array(1,2,3,4,5);
 		print_r(array_splice($arr1,2,2,"houdunwang.com"));//返回原数组中该位置的元素,这一步返回值类似于array_slice
 		输出： 
@@ -3714,19 +3757,48 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [3] => 5
 		)
 
+
 39. array_sum — 计算数组中所有值的和
+	该方法只计算数组元素是数字或者数字字符串,即is_numeric()为true的
+	$arr=[1,2,3,4,'a','b','c',12,'3'];
+	var_dump(array_sum($arr));
+	
+
 
 40. array_udiff_assoc — 带索引检查计算数组的差集，用回调函数比较数据
 
-	array_udiff_assoc($array1,$array2,$data_compare_func)通过一个回调函数比较两个或多个数组的相异键名或键值,以第一个为准(作为全集)，返回不同的元素，同时比较键名和键值
+	array_udiff_assoc($array1,$array2,$data_compare_func)通过一个回调函数比较两个或多个数组的相异键名或键值,以第一个为准(作为全集)，
+	返回不同的元素，同时比较键名和键值
+
+
 
 41. array_udiff_uassoc — 带索引检查计算数组的差集，用回调函数比较数据和索引
 
-	array_udiff_uassoc($array1,$array2,$data_compare_func)通过两个回调函数比较两个或多个数组的相异键名和键值,以第一个为准(作为全集)，返回不同的元素，同时比较键名和键值
+	array_udiff_uassoc($array1,$array2,$data_compare_func,$key_compare_func)通过两个回调函数比较两个或多个数组的相异键名和键值,
+	以第一个为准(作为全集)，返回不同的元素，同时比较键名和键值
+	<?php
+	$arr1=[1,2,3];
+	$arr2=[1,'a','c',3];
+	var_dump(array_udiff_assoc($arr1,$arr2,function($a,$b){
+		var_dump($a);
+		var_dump($b);
+	}));
+	echo "\n//====================================\n";
+	var_dump(array_udiff_uassoc($arr1,$arr2,function($a,$b){
+		var_dump($a);
+		var_dump($b);
+		
+	},function($c,$d){
+		var_dump($c);
+		var_dump($d);
+	}));
+
+
 
 42. array_udiff — 用回调函数比较数据来计算数组的差集
 
-		array_udiff($array1,$array2,$data_compare_func)通过回调函数比较两个或多个数组的相异键值,以第一个为准(作为全集)，返回不同的元素，仅比较键值
+		array_udiff($array1,$array2,$data_compare_func)通过回调函数比较两个或多个数组的相异键值,以第一个为准(作为全集)，
+		返回不同的元素，仅比较键值
 		$arr1=array('a'=>'a','b'=>'b','c'=>'c');
 		$arr2=array('a'=>'a','b2'=>'c','c'=>'1b','d'=>'d');
 		$arr3=array('a'=>'a','d'=>'d');
@@ -3748,17 +3820,21 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r(array_uintersect_assoc($arr1,$arr2,$arr3,'func'));//同时比较键名和键值,键名默认比较方法为内部函数
 		print_r(array_uintersect_uassoc($arr1,$arr2,$arr3,'func','func'));
 
+
 43. array_uintersect_assoc — 带索引检查计算数组的交集，用回调函数比较数据
 
 		array_uintersect_assoc()通过一个回调函数求两个或多个数组的交集，返回交集（以第一个数组为准),同时比较键值和键名
+
 
 44. array_uintersect_uassoc — 带索引检查计算数组的交集，用回调函数比较数据和索引
 
 		array_uintersect_uassoc()通过两个回调函数求两个或多个数组的交集，返回交集（以第一个数组为准),同时比较键值和键名
 
+
 45. array_uintersect — 计算数组的交集，用回调函数比较数据
 
 		array_uintersect()通过回调函数求两个或多个数组的交集，返回交集（以第一个数组为准),仅比较键值
+
 
 46. array_unique — 移除数组中重复的值
 
@@ -3773,14 +3849,17 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [2] => 桃
 		)
 
+
 47. array_unshift — 在数组开头插入一个或多个单元
 
 		$arr1[]='';
 		array_unshift($arr1,'菠萝');在数组第一位添加元素,返回添加后数组的元素个数，改变了原数组
 
+
 48. array_values — 返回数组中所有的值，array_keys()
 
 		以原键值在数组中的顺序返回一个新的索引数组，相当于将原数组键名换为索引值生成了一个新的数组
+
 
 49. array_walk_recursive — 对数组中的每个成员递归地应用用户函数，操作二维数组
 
@@ -3830,6 +3909,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		
 		)
 
+
+
 50. array_walk — 对数组中的每个成员应用用户函数,操作一维数组，改变了原数组
 
 		语法：bool array_walk  ( array &$array  , callable  $funcname  [, mixed  $userdata  = NULL    ] )
@@ -3857,7 +3938,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [money4] => 1023
 		)
 
+
 51. array — 新建一个数组
+
 
 52. arsort — 对数组进行逆向排序并保持索引关系
 
@@ -3873,6 +3956,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [bbs_url] => bbs.houdunwang.com
 		)
 
+
 53. asort — 对数组进行排序并保持索引关系
 
 		$arr=array('bbs_url'=>'bbs.houdunwang.com','web_url'=>'www.houdunwang.com','bbs_name'=>'后盾网论坛','web_name'=>'后盾网免费视频教程');
@@ -3887,7 +3971,12 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [bbs_name] => 后盾网论坛
 		)
 
+
 54. compact — 建立一个数组，包括变量名和它们的值,参数可以是数组或字符串组合
+		该函数功能上与list方法相反
+		list($a,$b)=[1,2];
+		var_dump($a);
+		var_dump($b);
 
 		$webname='后盾网';
 		$weburl='houdunwang.com';
@@ -3898,12 +3987,15 @@ set_time_limit(30);表示脚本最长执行30秒
 		$hdw=compact($hdw_var);//函数寻找数组中的变量名的值并将两者结合成数组
 		print_r($hdw);
 
+
+
 55. count — 计算数组中的单元数目或对象中的属性个数，sizeof 别名
 
 	 $arr=array("houdunwang.com","后盾网php视频",array("php课程","CSS课程","THINKPAD课程"));
 	 echo count($arr);//输出3
 	 echo "<br/>---------------------------<br/>";
 	 echo count($arr,1);//输出6，第二个参数为1使得递归计算元素个数，可以计算多维数组，默认为0
+
 
 56. current — 返回数组中的当前指针指向的单元，指针指向超过数组就返回false
 
@@ -3917,6 +4009,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r(each($arr3));
 		print_r(each($arr3));
 		var_dump(current($arr3));//输出：false,到了最后超过数组大小，就返回false
+
 
 57. each — 返回数组中当前指针所在位的键／值对并将数组指针向前移动一步
 
@@ -3933,6 +4026,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [key] => class1
 		)
 
+
 58. end — 将数组的内部指针指向最后一个单元,并返回最后一个元素
 
 		$arr3=array("houdunwang.com",0,array("php课程","CSS课程","THINKPAD课程"));
@@ -3947,6 +4041,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$arr_new=each($arr1);
 		var_dump(($arr_new));//返回false,因为指针上一步已经已到了最后
 
+
 59. extract — 将关联数组变为变量，通过第二个参数也可以是的索引数组分解为变量，返回值为转换成功的个数,不改变原数组----compact
 
 		extract()将数组转换为变量，键名为变量名，键值为变量值，需要根据参数做更多的转换功能
@@ -3958,6 +4053,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $h_0."<br/>";//输出：后盾网论坛
 		echo $h_webname;//输出：后盾网
 
+
 60. in_array — 检查数组中是否存在某个值,一般用索引数组
 
 	$arr3=array('1','2','3');
@@ -3966,7 +4062,9 @@ set_time_limit(30);表示脚本最长执行30秒
 	var_dump(in_array("PHP",$arr));//输出true
 	var_dump(in_array("PHP",$arr,true));//输出true，如果制定了第三个参数为true则为严格匹配，包括类型和值
 
+
 61. key_exists — 别名 array_key_exists
+
 
 62. key — 从关联数组中取得键名,返回当前指针位置的键名
 
@@ -3974,6 +4072,7 @@ set_time_limit(30);表示脚本最长执行30秒
 	echo key($arr5)."<br/>";//输出：weburl
 	next($arr5);
 	echo key($arr5)."<br/>";//输出：cname
+
 
 63. krsort — 对数组按照键名逆向排序
 
@@ -3989,6 +4088,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [bbs_name] => 后盾网论坛
 		)
 
+
 64. ksort — 对数组按照键名排序
 
 		$arr2=array('bbs_url'=>'bbs.houdunwang.com','web_url'=>'www.houdunwang.com','bbs_name'=>'后盾网论坛','web_name'=>'后盾网免费视频教程');
@@ -4003,6 +4103,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [web_url] => www.houdunwang.com
 		)
 
+
 65. list — 把数组中的值赋给一些变量
 
 		list()将数组的值赋给变量，只能操作索引数组，指针操作，如果指针结束返回bool值false
@@ -4015,7 +4116,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		   echo $k."&nbsp;&nbsp;".$v."<br/>";
 		}
 
+
 66. natcasesort — 用“自然排序”算法对数组进行不区分大小写字母的排序
+
 
 67. natsort — 用“自然排序”算法对数组排序
 
@@ -4033,6 +4136,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [4] => class21
 		)
 
+
 68. next — 将数组中的内部指针向前移动一位并返回这时指向的值
 
 		 // next 把数组内部指针移动到下一个数组元素，并返回该指针，如果到结尾返回false
@@ -4042,7 +4146,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		 next($arr5);//指针向下移动一步并返回这时指向的值
 		 echo key($arr5)."<br/>";
 
+
 69. pos — current 的别名
+
 
 70. prev — 将数组的内部指针倒回一位,并返回这一位的值
 
@@ -4050,6 +4156,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$arr3=array("houdunwang.com",0,array("php课程","CSS课程","THINKPAD课程"));
 		print_r(each($arr3));
 		echo prev($arr3)."----prev<br/>";//输出：houdunwang,com
+
 
 71. range — 建立一个包含指定范围单元的数组
 
@@ -4092,6 +4199,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		}
 		echo "</table>";
 
+
 72. reset — 将数组的内部指针指向第一个单元,并返回第一个元素（以第一个元素的原有形式返回，字符串或数组）
 
 		each的结果为数组，既包括素引又包括键名即关联数组
@@ -4106,7 +4214,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		 reset($arr2);//重置指针的顺序，使得指针指向数组的头部
 		 echo reset($arr2);
 
+
 73. rsort — 对数组逆向排序（最高到最低）
+
 
 74. shuffle — 将数组打乱,**改变了原数组**
 
@@ -4125,7 +4235,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [4] => class12
 		)
 
+
 75. sizeof — count 的别名
+
 
 76. sort — 对数组排序
 
@@ -4152,6 +4264,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [12] => 34512
 		)
 
+
 77. uasort — 使用用户自定义的比较函数对数组中的值进行排序并保持索引关联
 
 		排序方法同usort,只是会保留是索引
@@ -4162,12 +4275,14 @@ set_time_limit(30);表示脚本最长执行30秒
 		uasort($arr1,'func');//保留原数组索引
 		print_r($arr1);
 
+
 78. uksort — 使用用户自定义的比较函数对数组中的键名进行排序
 
 		uksort()按数组的键名来进行排序，保留键值,方法同usort
 		$arr2=array('6'=>5,'1'=>4,'2'=>2,'4'=>1);
 		uksort($arr2,'func');
 		print_r($arr2);
+
 
 79. usort — 使用用户自定义的比较函数对数组中的值进行排序
 
@@ -4197,7 +4312,11 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 
 
+<<<<<<< HEAD
 //=====================20170320
+=======
+
+>>>>>>> e184ab52ac585117ebf1b1ccbaa3b133169c33b5
 
 ##字符串函数整理
 
@@ -4929,14 +5048,24 @@ stristr   strrchr
 	本函数返回一个字符串数组，每个单元为 string  经区分大小写的正则表达式 pattern  作为边界分割出的子串。如果设定了 limit ，则返回的数组最多包含 limit  个单元，而其中最后一个单元包含了 string  中剩余的所有部分。如果出错，则 split()  返回 FALSE 。 
 
 
+------------------------20170305
 
 ## URL函数    
+base64_encode
+
+ Base64编码，是我们程序开发中经常使用到的编码方法。它是一种基于用64个可打印字符来表示
+ 二进制数据的表示方法。它通常用作存储、传输一些二进制数据编码方法！也是MIME（多用途互联网邮件
+ 扩展，主要用作电子邮件标准）中一种可打印字符表示二进制数据的常见编码方法！它其实只是定义用可打
+ 印字符传输内容一种方法，并不会产生新的字符集！有时候，我们学习转换的思路后，我们其实也可以结合
+ 自己的实际需要，构造一些自己接口定义编码方式。
+ 就是通过一种算法将二进制数据都转换为可打印字符表示
 
 1. base64_decode — 对使用 MIME base64 编码的数据进行解码
 2. base64_encode — 使用 MIME base64 对数据进行编码
 3. get_headers — 取得服务器响应一个 HTTP 请求所发送的所有标头
 
 	array get_headers  ( string $url  [, int $format  = 0  ] )
+	
 	get_headers()  返回一个数组，包含有服务器响应一个 HTTP 请求所发送的标头。 
 	返回包含有服务器响应一个 HTTP 请求所发送标头的索引或关联数组，如果失败则返回 FALSE 
 	$url="http://www.baidu.com";
@@ -4961,6 +5090,7 @@ stristr   strrchr
 	    [14] => Cache-control: no-cache
 	    [15] => Accept-Ranges: bytes
 	)
+	
 	这个与响应头的信息一致
 	给出第二个参数，则输出的是关联数组
 	 print_r ( get_headers ( $url,1 ));
@@ -4989,6 +5119,7 @@ stristr   strrchr
 	    [Accept-Ranges] => bytes
 	)
 
+
 4. `get_meta_tags` — 从一个文件中提取所有的 meta 标签 content 属性，返回一个数组
 
 		语法：array get_meta_tags  ( string $filename  [, bool $use_include_path  = false  ] )
@@ -5010,6 +5141,7 @@ stristr   strrchr
 		    [geo_position] => 49.33;-86.59
 		)
 
+
 5. http_build_query — 生成 URL-encode 之后的请求字符串-----parse_str
 
 		语法：string http_build_query  ( mixed  $query_data  [, string $numeric_prefix  [, string $arg_separator  [, int $enc_type  = PHP_QUERY_RFC1738    ]]] )
@@ -5025,6 +5157,14 @@ stristr   strrchr
 		分别输出：
 		foo=bar&baz=boom&cow=milk&php=hypertext+processor
 		foo=bar&amp;baz=boom&amp;cow=milk&amp;php=hypertext+processor
+
+        var_dump(http_build_query([
+            1,
+            'AB',
+            "a"=>1,
+            "b"=>'bb'
+        ],'num','#',PHP_URL_QUERY));
+        
 
 		6. parse_url — 解析 URL，返回其组成部分
 		
@@ -5046,6 +5186,10 @@ stristr   strrchr
 
 7. rawurldecode — 对已编码的 URL 字符串进行解码
 8. rawurlencode — 按照 RFC 1738 对 URL 进行编码
+
+urlencode和rawurlencode两个方法在处理字母数字，特殊符号，中文的时候结果都是一样的，唯一的
+不同是对空格的处理，urlencode处理成“+”，rawurlencode处理成“%20”。
+
 9. urldecode — 解码已编码的 URL 字符串
 
 		$str="后盾网视频教程php&div+css";

@@ -3,6 +3,7 @@ package org.effectivejava.examples.chapter02.item01;
 
 public class Test {
 	public static void main(String[] args) {
+		String str=new String("fadfaf");
 		// Providers would execute these lines
 		Services.registerDefaultProvider(DEFAULT_PROVIDER);
 		Services.registerProvider("comp", COMP_PROVIDER);
