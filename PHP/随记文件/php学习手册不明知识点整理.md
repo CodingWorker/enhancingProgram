@@ -4492,7 +4492,7 @@ set_time_limit(30);表示脚本最长执行30秒
 
 16. get_html_translation_table — 返回使用 htmlspecialchars 和 htmlentities 规则转换表
 
-		即返回在适应函数htmlspecialchars和htmlentities时相关字符是怎么转化的，以数组的形式返回
+		即返回在适应函数htmlspecialchars()和htmlentities()时相关字符是怎么转化的(即将特殊字符转换的结果)，以数组的形式返回
 		如：
 		array(1510) {
 		  ["
@@ -4503,6 +4503,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		  ["""]=>
 		  string(6) "&quot;"
 		...}//可能很多
+		
+		var_dump(get_html_translation_table(HTML_SPECIALCHARS));    /参数默认为HTML_SPECIALCHARS
 
 
 17. hebrev — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew)
@@ -4510,6 +4512,11 @@ set_time_limit(30);表示脚本最长执行30秒
 18. hebrevc — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew），并且转换换行符
 
 19. hex2bin — 转换十六进制字符串为二进制字符串
+	根据此函数和bin2hex函数可见，ascii码中的与普通字符之间是二进制和十六进制之间的转换关系
+
+	var_dump(hex2bin('616666'));    //aff
+	
+
 
 20. html_entity_decode — Convert all HTML entities to their applicable characters，作用与htmlentities作用相反
 
@@ -4520,12 +4527,14 @@ set_time_limit(30);表示脚本最长执行30秒
 
 
 21. htmlentities — Convert all applicable characters to HTML entities
+	与htmlspecialchars的作用不同，此函数转换的是html的特殊字符，而htmlentities转换的是html的标签实体
 
 		$url="http://blog.csdn.net/beliefer/article/details/51473807";
 		echo htmlentities("<h1>$url</h1>");
 		echo "&lt;strong&gt;加粗&lt;/strong&gt;";
 		输出： 
 		<strong>加粗</strong>
+
 
 22. htmlspecialchars_decode — 将特殊的 HTML 实体转换回普通字符，做用与htmlspecialchars相反
 
@@ -4540,6 +4549,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		 $a  =  htmlspecialchars( $orig );
 		 echo $a;
 
+
 24. implode — 将一个一维数组的值转化为字符串
 
 		$arr=array('PHP课程','HTML课程','JSP课程');
@@ -4549,6 +4559,8 @@ set_time_limit(30);表示脚本最长执行30秒
 25. join — 别名 implode
 
 		查看implode
+		var_dump(implode($arr,','));
+		var_dump(join($arr,';'));
 
 
 26. lcfirst — 使一个字符串的第一个字符小写
@@ -4584,7 +4596,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 
 
+
 29. ltrim — 删除字符串开头的空白字符（或其他字符）
+	删除字符串左侧的指定的字符，与rtrim函数相对，rtrim函数和chop函数的作用相同
 
 
 30. md5_file — 计算指定文件的 MD5 散列值
@@ -4597,10 +4611,14 @@ set_time_limit(30);表示脚本最长执行30秒
 		32b8e069f4b1aa4957c832c21ef03087 
 
 
+
 31. md5 — 计算字符串的 MD5 散列值
 
 
 32. metaphone — Calculate the metaphone key of a string
+	该函数返回字符串的metaphone值，相同读音的字符具有相同的metaphone值
+	var_dump(metaphone('shit'));   //XT
+	var_dump(metaphone('sheet'));  //XT
 
 
 33. money_format — Formats a number as a currency string
@@ -4625,6 +4643,17 @@ set_time_limit(30);表示脚本最长执行30秒
 		我们可以使用下面的代码测试一下：
 		eof;
 		echo htmlspecialchars(nl2br($str));//存入数据库，读取出来时转换html实体，这样就能上的文件从数据库读取出来显示到屏幕上正常显示，而不是一大段
+
+		$str=<<<EOF
+		$newArr
+		adfa知fadf识fad点sfadfa
+		DD
+
+
+
+		EOF;
+		var_dump(nl2br($str));     //将换行符转换为<br/>
+
 
 
 36. number_format — 以千位分隔符方式格式化一个数字

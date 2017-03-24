@@ -19,3 +19,37 @@ $cnStr="不明知识点";
 var_dump(chop($cnStr,'adfa知fadf识fad点sfadfa'));  //不明
 
 var_dump(bin2hex('faf'));
+
+var_dump(get_html_translation_table(HTML_SPECIALCHARS));
+
+var_dump(hex2bin('616666'));    //aff
+
+var_dump(get_html_translation_table());
+
+$arr=['a','b','c'];
+var_dump($arr);
+var_dump(implode($arr,','));
+var_dump(join($arr,';'));
+
+var_dump(metaphone('shit'));   //XT
+var_dump(metaphone('sheet'));  //XT
+
+$str=<<<EOF
+$newArr
+adfa知fadf识fad点sfadfa
+DD
+
+
+
+EOF;
+var_dump(nl2br($str));
+
+$url="http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy";;
+$query=parse_url($url)['query'];
+var_dump($query);
+
+parse_str($query,$arr);
+
+var_dump($arr);
+
+
