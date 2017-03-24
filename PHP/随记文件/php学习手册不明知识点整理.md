@@ -4681,6 +4681,17 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $sex."<br/>";
 		如果设置了第二个变量arr，所有变量将会以数组元素的形式存入到这个数组 
 
+		$url="http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy";;
+		$query=parse_url($url)['query'];
+		var_dump($query);
+
+		parse_str($query,$arr);
+
+		var_dump($arr);
+
+		parse_str($query);
+		var_dump($uname);
+		var_dump($age);
 
 
 39. print — 输出字符串
@@ -4693,7 +4704,11 @@ set_time_limit(30);表示脚本最长执行30秒
 
 		quoted-printable一种编码方式，可见这个函数是两种编码之间的转换
 
-42. quoted_printable_encode — Convert a 8 bit string to a quoted-printable string
+42. quoted_printable_encode — Convert a 8 bit string to a quoted-printable string	
+		$encodedStr=quoted_printable_encode('adfa知fadf识fad点sfadfa');
+
+		var_dump(quoted_printable_decode($encodedStr));
+
 
 43. quotemeta — Quote meta characters
 
@@ -4705,6 +4720,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		Hello world\. \(can you hear me\?\)
 
+
 44. rtrim — 删除字符串末端的空白字符（或者其他字符）---chop
 
 45. setlocale — Set locale information
@@ -4713,13 +4729,16 @@ set_time_limit(30);表示脚本最长执行30秒
 		 setlocale ( LC_ALL ,  'nl_NL' );
 		 echo  strftime ( "%A %e %B %Y" ,  mktime ( 0 ,  0 ,  0 ,  12 ,  22 ,  1978 ));
 
+
 46. sha1_file — 计算文件的 sha1 散列值
 
 		echo sha1_file("test.txt");
 
+
 47. sha1 — 计算字符串的 sha1 散列值
 
 		echo sha1("admin");
+
 
 48. similar_text — 计算两个字符串的相似度，比较时是每个字母的匹配，而不是看做整个字符串
 
@@ -4728,9 +4747,13 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo $v;//输出相似度的百分比,当求百分比时选择较长的字符串个数为除数，
 
+
 49. soundex — Calculate the soundex key of a string
+
 50. sprintf — Return a formatted string
+
 51. sscanf — 根据指定格式解析输入的字符
+
 
 52. str_getcsv — 解析 CSV 字符串为一个数组
 
@@ -4751,7 +4774,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [5] => ss
 		)
 
+
 53. str_ireplace — str_replace 的忽略大小写版本
+
 
 54. str_pad
 
@@ -4770,6 +4795,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		aabcaabcc,d,ss,ee,ff,ssaabcaab
 
+
 55. str_repeat — 重复一个字符串
 
 		语法：string str_repeat  ( string $input  , int $multiplier  )
@@ -4780,6 +4806,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r($arr);
 		输出： 
 		cdcdcdcdcd
+
 
 56. str_replace — 子字符串替换，substr_replace  strtr
 
@@ -4801,7 +4828,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo $k;
 
+
 57. str_rot13 — 对字符串执行 ROT13 转换
+
 
 58. str_shuffle — 随机打乱一个字符串--array_shuffle，
 
@@ -4815,6 +4844,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出：nem:rtt=efuls;nettyactpho8-e/xhtCtt
 		echo $str;
 		输出：Content-type:text/html;charset=utf8
+
 
 59. str_split — 将字符串转换为数组
 
@@ -4845,9 +4875,20 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [4] => e
 		)
 
+
 60. str_word_count — 返回字符串中单词的使用情况--count_chars
+	它是根据某些预先定义好的或者指定的字符来作为单词的分隔来计算的
+
+	$str=<<<EOF
+	Metaphone matching is an algorithmicmethod for generating keys based on the phonetic pronunciation of words.
+	EOF;
+
+	var_dump(str_word_count($str));	
+
+
 
 61. strcasecmp — 二进制安全比较字符串（不区分大小写）,查看strcmp
+
 
 62. strchr — 别名 strstr
 
@@ -4862,8 +4903,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		var_dump(stristr($abc,'F'));//不区分大小写
 		var_dump(strrchr($abc,'f'));//从后面查找字符串
 
-63. strcmp — 二进制安全字符串比较，返回-1、0或1
 
+63. strcmp — 二进制安全字符串比较，返回-1、0或1
+		所谓的二进制安全就是一个一个字符的比较，比较字符的二进制
 		echo strcmp("houdunwang","Houdunwang");//比较字符串，区分大小写,返回 1，表示前边的大于后面的
 		echo "<br/>-----------------------------<br/>";
 		echo strcasecmp("houdunwang","HouDunwang");//比较字符串，不区分大小写，返回0
@@ -4876,25 +4918,35 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo strncmp("11112","111",3);//比较字符串，仅比较前3个字符，返回 0
 
+
 64. strcoll — 基于区域设置的字符串比较
 65. strcspn — 获取不匹配遮罩的起始子字符串的长度
 
-66. strip_tags — 返回给定的字符串str去除空字符、HTML 和 PHP 标记后的结果
 
-		$str="<div style='background-color:blue;width:200px;height:50px'><span style='color:yellow'>后盾网</span>视频教程</div>";
+66. strip_tags — 返回给定的字符串str去除空字符、HTML 和 PHP 标记后的结果
+		该函数会将被处理字符串中的标签中的数据删除，就相当于是替换字符串，而不管标签是否为html的合法标签,只要是<x></x>格式即可
+		第二个参数指定哪些标签保留，为完整的开始标签格式
+
+		$str="<div style='background-color:blue;width:200px;height:50px'><span style='color:yellow'>后<c>盾</c>网</span>视频教程</div>";
 		echo $str;//带样式输出
 		echo strip_tags($str)."<br/>";//去除所有标签
 		//第二个参数指定要保留的标记
 		echo strip_tags($str,'<span><a>');//保留span标签（进而保留了格式）
+
+
 
 67. stripcslashes — 反引用一个使用 addcslashes 转义的字符串
 
 		//相当于addslashses的反函数，将转义时增加的反斜线去掉
 		echo stripslashes(addslashes("afafdfd'as'\'a\'/aaf.\asdf'af"));//输出 afafdfd'as'\'a\'/aaf.\asdf'af
 
+
 68. stripos — 查找字符串首次出现的位置（不区分大小写）,查看strpos
-69. stripslashes — 反引用一个引用字符串
+
+69. stripslashes — 反转义一个转义字符串
+
 70. stristr — strstr 函数的忽略大小写版本,查看strchr,没有strichr
+
 71. strlen — 获取字符串长度,返回字节数
 
 72. strnatcasecmp — 使用“自然顺序”算法比较字符串（不区分大小写）,查看strcmp
@@ -4903,6 +4955,7 @@ set_time_limit(30);表示脚本最长执行30秒
 
 74. strncasecmp — 二进制安全比较字符串开头的若干个字符（不区分大小写）,查看strcmp
 75. strncmp — 二进制安全比较字符串开头的若干个字符,查看strcmp
+
 
 
 76. strpbrk — 在字符串中查找一组字符的任何一个字符
@@ -4922,6 +4975,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		eof;
 		echo strpbrk($str,"is");//按照字节操作，如果是中文可能会得到不能预期的结果
 
+
+
 77. strpos — 查找字符串首次出现的位置,按字节计算的位置(汉子占大于1个字节)
 
 		$abc="adffadadfa";
@@ -4933,6 +4988,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$str="ye后llow>盾网<视频教程";
 		var_dump(strpos($str,"w"));
 		打印出：int 8
+
 
 78. strrchr — 区分大小写从最后向前查找最后一次出现的位置,查看strchr,没有strrstr
 
@@ -4952,11 +5008,15 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $var;
 		不好理解
 
+//===========================20170324
+
 83. strstr — 查找字符串的首次出现，查看strchr----fpassthru， ftruncate
 
 		语法：string strstr  ( string $haystack  , mixed  $needle  [, bool $before_needle  = false  ] )
 		返回 haystack  字符串从 needle  第一次出现的位置开始到 haystack  结尾的字符串(包括查找的字符)。 
 		第三个参数：若为 TRUE ， strstr()  将返回 needle  在 haystack  中的位置之前的部分(不包括查找的字符)。 
+
+
 
 84. strtok — 标记分割字符串
 

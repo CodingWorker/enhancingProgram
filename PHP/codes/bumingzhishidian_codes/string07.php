@@ -52,4 +52,27 @@ parse_str($query,$arr);
 
 var_dump($arr);
 
+parse_str($query);
+var_dump($uname);
+var_dump($age);
+
+$encodedStr=quoted_printable_encode('adfa知fadf识fad点sfadfa');
+
+var_dump(quoted_printable_decode($encodedStr));
+
+var_dump(str_word_count("http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy"));
+
+$str=<<<EOF
+Metaphone matching is an algorithmicmethod for generating keys based on the phonetic pronunciation of words.
+EOF;
+
+var_dump(str_word_count($str));
+var_dump('-------------');
+$str="<div style='background-color:blue;width:200px;height:50px'><span style='color:yellow'>后盾网</span>视频教<span>程</span></div>";
+
+var_dump(strip_tags($str));
+
+$str='查找字符串首次出现的位置,按字节计';
+var_dump(strrev($str));
+
 
