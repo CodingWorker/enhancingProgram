@@ -4312,42 +4312,83 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 
 
+<<<<<<< HEAD
+//=====================20170320
+=======
 
+>>>>>>> e184ab52ac585117ebf1b1ccbaa3b133169c33b5
 
 ##字符串函数整理
 
-**因为函数是老外编的，不特别说明都是按照字节为来计算的，输出中文可能乱码，查找时汉子大于1个字节**
+**因为函数是老外编的，不特别说明都是按照字节为来计算的，输出中文可能乱码，查找时汉字大于1个字节**
 
 
 1. addcslashes — 以 C 语言风格使用反斜线转义字符串中的字符
 
+	$str="abc*?\d'\\e']f[g\h.i";
+	var_dump(addcslashes($str,"'[]\\"));    //第二个参数指定哪些字符需要转义，在前面加反斜线;字符串中的\\算作已经转义就不会在前面增加反斜线了
+
+
 2. addslashes — 使用反斜线引用字符串
 
-		 在预定义字符串前添加反斜杠(转义),包括单引号\'，双引号\",反斜线\\,与null字符
+		 在预定义字符串前添加反斜杠(转义),包括单引号\'，双引号\",反斜线\\,与null字符,此函数与上面的函数完成的应该是一样的功能，只是这里第二个参数可能是预先定义的或者是在配置项中指定的
 		echo addslashes("ffaf“’adfa''adfa''\'nuklfd");
 		一般在使用前要先判别php是否已开启了自动转义，使用函数get_magic_quotes_gpc()
 		var_dump(get_magic_quotes_gpc());//返回false,说明没有开启
 
-3. bin2hex — 将二进制数据转换成十六进制表示
 
+3. bin2hex — 将二进制数据转换成十六进制表示
 		string bin2hex  ( string $str  )
 		返回 ASCII 字符串，为参数 str  的十六进制表示。转换使用字节方式，高四位字节优先。 
+		
 		与二进制数转换为十六进制数可能不同
+        var_dump(bin2hex($str));
+        var_dump(bin2hex('www'));//w是77
 
-4. chop — rtrim 的别名
+		本方法不是将二进制数转换为十六进制数，而是将二进制字符串中的字符各自转换为十六进制数表示。
+		$str="abc";
+		var_dump(bin2hex($str));
+
+
+4. chop — rtrim 的别名,第二个参数可以指定需要去掉的字符列表，支持中文
+    去掉字符换末尾的指定字符：
+    $str=" 将phpstorm改为在控制台运行的方法";
+    var_dump(chop($str,'方法'));//将phpstorm改为在控制台运行的
+
+	$str='abc';
+	var_dump(rtrim($str,'bc'));
+	$cnStr="不明知识点";
+	var_dump(chop($cnStr,'adfa知fadf识fad点sfadfa'));  //不明,此函数会删除指定字符串中包含第二个参数的所有字符
+
 
 5. chr — 返回指定的字符
+        bin2hex是将一个字符串转换为十六进制，将十六进制转换为十进制就可以得到ord操作的结果了，也可以使用ord来循环得到同样的结果，循环的是字符串的索引
+		该方法是将参数中的字符一个一个的转换为十六进制
 
 		返回相对应于 ascii  所指定的单个字符。与ord作用相反
 		echo chr(89);
 
+		var_dump(bin2hex($c));  //61，十六进制结果，十进制值为97
+		var_dump(bin2hex('A')); //41，十六进制结果，十进制值为65
+		var_dump(chr(97));    //a
+		var_dump(ord('a'));  //97
+		var_dump(bin2hex('faf'));
+
+
+
 6. chunk_split — 将字符串分割成指定个数字符组成的小块----array_chunk
 
 		$url="http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy";
-		echo chunk_split($url,3);//每3个字符为一组默认以空字符串分开（最后一组可能不足3个），因此输出：htt p:/ /ww w.h oud unw ang .co m?u nam e=z han gsa n&a ge= 33& sex =bo y 
+		echo chunk_split($url,3);//每3个字符为一组默认以空字符串分开（最后一组可能不足3个），
+		因此输出：htt p:/ /ww w.h oud unw ang .co m?u nam e=z han gsa n&a ge= 33& sex =bo y
 		echo chunk_split($url,3,"分开");//第三个参数指定连接的字符串，此时以"分开"连接而不是空字符串，输出：htt分开p:/分开/ww分开w.h分开oud分开unw分开ang分开.co分开m?u分开nam分开e=z分开han分开gsa分开n&a分开ge=分开33&分开sex分开=bo分开y分开
+		
+		$url="http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy";
+		var_dump(chunk_split($url,2,' '));    //第三个参数指定分隔字符，默认为\r\n
+
 
 7. convert_cyr_string — 将字符由一种 Cyrillic 字符转换成另一种
+
 
 8. convert_uudecode — 解码一个 uuencode 编码的字符串
 
@@ -4355,18 +4396,29 @@ set_time_limit(30);表示脚本最长执行30秒
 		$str=" CURRENT output";
 		echo convert_uudecode(convert_uuencode($str));
 
+
+		$str="设计模式（九）外观模式Facade（结构型）";
+		$uuencode=convert_uuencode($str);
+		var_dump($uuencode);
+
+		var_dump(convert_uudecode($uuencode));
+
+
+
 9. convert_uuencode — 使用 uuencode 编码一个字符串
 
-		uuencode 算法会将所有（含二进制）字符串转化为可输出的字符， 并且可以被安全的应用于网络传输。使用 uuencode 编码后的数据 将会比源数据大35%左右 
+		uuencode 算法会将所有（含二进制）字符串转化为可输出的字符， 并且可以被安全的应用于网络传输。使用 uuencode 编码
+		后的数据 将会比源数据大35%左右
 		$str=" CURRENT output";
 		echo convert_uuencode($str);
 		输出： 
 		/($-54E)%3E0@;W5T<'5T
-`
+
 
 10. count_chars — 返回字符串所用字符的信息(个数),返回每种字符ascii的个数组成的数组(类似数组中的array_count_values)
 
-		统计 string  中每个字节值（0-255）出现的次数，使用多种模式返回结果。 第二个参数指定输出的模式,一定要指定第二个参数，否则会将0-255都输出出来再匹配字符个数
+		统计 string  中每个字节值（0-255）出现的次数，使用多种模式返回结果。 第二个参数指定输出的模式,一定要指定第二个参数;对中文的支持性不好，因为中文的编码不在ASCII中，所以对中文统计无结果
+		否则会将0-255都输出出来再匹配字符个数
 		$str="echo convert_uudecode";
 		print_r(count_chars($str,1));
 		输出：
@@ -4393,6 +4445,11 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [255] =>
 		)
 
+		$str="0 0 a7a6a5a4a3a2 0 0 a1a0b7b6b5b4 0 0 b3b2b1b0c7c6 0 0 c5c4c3c2c1c0";
+		var_dump(count_chars($str));
+
+
+
 11. crc32 — 计算一个字符串的 crc32 多项式，可以用作加密函数,返回十进制
 
 12. crypt — 单向字符串散列，可用于加密字符串
@@ -4401,24 +4458,41 @@ set_time_limit(30);表示脚本最长执行30秒
 
 14. explode — 使用一个字符串分割另一个字符串为一个数组,去掉分割字符,按字符操作
 
+		与方法implode互逆操作
 		$s="'PHP课程','HTML课程','JSP课程'";
 		var_dump(explode(",",$s));//输出数组，并去掉字符串中的,
 		var_dump(explode("课",$s));
 		第一参数为待分隔字符串中的字符
 
-15. fprintf — 将格式化后的字符串写入到流
+		<?php
+		$str="attachment_name your_attachment_new_name";
+		var_dump($str,explode('_',$str));
 
+		$newArr=explode('_',$str);
+
+		var_dump(implode(',',$newArr));
+
+
+
+15. fprintf — 将格式化后的字符串写入到流
+		
+		就像c语言中的fpintf函数
 		写入一个根据 format  格式化后的字符串到 由 handle  句柄打开的流中
-		if (!( $fp  =  fopen ( 'date.txt' ,  'w' ))) {
-		    return;
+		$year=2017;
+		$month=3;
+		$day=21;
+
+		if (!( $fp  =  fopen ( 'E:\date.txt' ,  'w' ))) {
+			return;
 		}
-		 fprintf ( $fp ,  "%04d-%02d-%02d" ,  $year ,  $month ,  $day );
-		 $fp为fopen打开的句柄，后面的为格式化字符串
-		 %04d为格式占位符，使用后面的变量依次替代
+		fprintf ( $fp ,  "%04d-%02d-%02d" ,  $year ,  $month ,  $day );     //文件获得结果：2017-03-21
+		$fp为fopen打开的句柄，后面的为格式化字符串
+		%04d为格式占位符，使用后面的变量依次替代
+
 
 16. get_html_translation_table — 返回使用 htmlspecialchars 和 htmlentities 规则转换表
 
-		即返回在适应函数htmlspecialchars和htmlentities时相关字符是怎么转化的，以数组的形式返回
+		即返回在适应函数htmlspecialchars()和htmlentities()时相关字符是怎么转化的(即将特殊字符转换的结果)，以数组的形式返回
 		如：
 		array(1510) {
 		  ["
@@ -4429,12 +4503,20 @@ set_time_limit(30);表示脚本最长执行30秒
 		  ["""]=>
 		  string(6) "&quot;"
 		...}//可能很多
+		
+		var_dump(get_html_translation_table(HTML_SPECIALCHARS));    /参数默认为HTML_SPECIALCHARS
+
 
 17. hebrev — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew)
 
 18. hebrevc — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew），并且转换换行符
 
 19. hex2bin — 转换十六进制字符串为二进制字符串
+	根据此函数和bin2hex函数可见，ascii码中的与普通字符之间是二进制和十六进制之间的转换关系
+
+	var_dump(hex2bin('616666'));    //aff
+	
+
 
 20. html_entity_decode — Convert all HTML entities to their applicable characters，作用与htmlentities作用相反
 
@@ -4443,7 +4525,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		 $a  =  htmlentities ( $orig );
 		 echo html_entity_decode($a);
 
+
 21. htmlentities — Convert all applicable characters to HTML entities
+	与htmlspecialchars的作用不同，此函数转换的是html的特殊字符，而htmlentities转换的是html的标签实体
 
 		$url="http://blog.csdn.net/beliefer/article/details/51473807";
 		echo htmlentities("<h1>$url</h1>");
@@ -4451,11 +4535,13 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		<strong>加粗</strong>
 
+
 22. htmlspecialchars_decode — 将特殊的 HTML 实体转换回普通字符，做用与htmlspecialchars相反
 
 		$orig  =  "I'll \"walk\" the <b>dog</b> now" ;
 		 $a  =  htmlentities ( $orig );
 		 echo htmlspecialchars_decode($a);
+
 
 23. htmlspecialchars — Convert special characters to HTML entities
 
@@ -4463,14 +4549,19 @@ set_time_limit(30);表示脚本最长执行30秒
 		 $a  =  htmlspecialchars( $orig );
 		 echo $a;
 
+
 24. implode — 将一个一维数组的值转化为字符串
 
 		$arr=array('PHP课程','HTML课程','JSP课程');
 		echo implode(':',$arr);// 输出：PHP课程:HTML课程:JSP课程
 
+
 25. join — 别名 implode
 
 		查看implode
+		var_dump(implode($arr,','));
+		var_dump(join($arr,';'));
+
 
 26. lcfirst — 使一个字符串的第一个字符小写
 		
@@ -4479,9 +4570,11 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		i'll  walk  The Dog now
 
+
 27. levenshtein — 计算两个字符串之间的编辑距离
 
 		编辑距离，是指两个字串之间，通过替换、插入、删除等操作将字符串 str1 转换成 str2 所需要操作的最少字符数量。
+
 
 28. localeconv — Get numeric formatting information
 
@@ -4502,7 +4595,11 @@ set_time_limit(30);表示脚本最长执行30秒
 		    ...
 		)
 
+
+
 29. ltrim — 删除字符串开头的空白字符（或其他字符）
+	删除字符串左侧的指定的字符，与rtrim函数相对，rtrim函数和chop函数的作用相同
+
 
 30. md5_file — 计算指定文件的 MD5 散列值
 
@@ -4513,18 +4610,27 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		32b8e069f4b1aa4957c832c21ef03087 
 
+
+
 31. md5 — 计算字符串的 MD5 散列值
 
+
 32. metaphone — Calculate the metaphone key of a string
+	该函数返回字符串的metaphone值，相同读音的字符具有相同的metaphone值
+	var_dump(metaphone('shit'));   //XT
+	var_dump(metaphone('sheet'));  //XT
+
 
 33. money_format — Formats a number as a currency string
 
 		string money_format  ( string $format  , float $number  ),将数字转换为表示金钱格式的字符串
 		window上不可用
 
+
 34. nl_langinfo — Query language and locale information
 
 		在windows平台上不能实现
+
 
 35. nl2br — 在字符串所有新行之前插入 HTML 换行标记"<br/>"
 
@@ -4538,17 +4644,31 @@ set_time_limit(30);表示脚本最长执行30秒
 		eof;
 		echo htmlspecialchars(nl2br($str));//存入数据库，读取出来时转换html实体，这样就能上的文件从数据库读取出来显示到屏幕上正常显示，而不是一大段
 
+		$str=<<<EOF
+		$newArr
+		adfa知fadf识fad点sfadfa
+		DD
+
+
+
+		EOF;
+		var_dump(nl2br($str));     //将换行符转换为<br/>
+
+
+
 36. number_format — 以千位分隔符方式格式化一个数字
 
 		echo  number_format(13413413413);
 		输出： 
 		13,413,413,413
 
+
 37. ord — 返回字符串第一个字符的 ASCII 码值
 
 		语法：int ord  ( string $string  )
 		与chr函数功能相反
 		echo  ord("document");
+
 
 38. parse_str — 将字符串(类似url的get传递)解析成多个变量 $_SERVER["QUERY_STRING"]
 
@@ -4561,15 +4681,34 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $sex."<br/>";
 		如果设置了第二个变量arr，所有变量将会以数组元素的形式存入到这个数组 
 
+		$url="http://www.houdunwang.com?uname=zhangsan&age=33&sex=boy";;
+		$query=parse_url($url)['query'];
+		var_dump($query);
+
+		parse_str($query,$arr);
+
+		var_dump($arr);
+
+		parse_str($query);
+		var_dump($uname);
+		var_dump($age);
+
+
 39. print — 输出字符串
 
+
 40. printf — 输出格式化字符串
+
 
 41. quoted_printable_decode — Convert a quoted-printable string to an 8 bit string
 
 		quoted-printable一种编码方式，可见这个函数是两种编码之间的转换
 
-42. quoted_printable_encode — Convert a 8 bit string to a quoted-printable string
+42. quoted_printable_encode — Convert a 8 bit string to a quoted-printable string	
+		$encodedStr=quoted_printable_encode('adfa知fadf识fad点sfadfa');
+
+		var_dump(quoted_printable_decode($encodedStr));
+
 
 43. quotemeta — Quote meta characters
 
@@ -4581,6 +4720,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		Hello world\. \(can you hear me\?\)
 
+
 44. rtrim — 删除字符串末端的空白字符（或者其他字符）---chop
 
 45. setlocale — Set locale information
@@ -4589,13 +4729,16 @@ set_time_limit(30);表示脚本最长执行30秒
 		 setlocale ( LC_ALL ,  'nl_NL' );
 		 echo  strftime ( "%A %e %B %Y" ,  mktime ( 0 ,  0 ,  0 ,  12 ,  22 ,  1978 ));
 
+
 46. sha1_file — 计算文件的 sha1 散列值
 
 		echo sha1_file("test.txt");
 
+
 47. sha1 — 计算字符串的 sha1 散列值
 
 		echo sha1("admin");
+
 
 48. similar_text — 计算两个字符串的相似度，比较时是每个字母的匹配，而不是看做整个字符串
 
@@ -4604,9 +4747,13 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo $v;//输出相似度的百分比,当求百分比时选择较长的字符串个数为除数，
 
+
 49. soundex — Calculate the soundex key of a string
+
 50. sprintf — Return a formatted string
+
 51. sscanf — 根据指定格式解析输入的字符
+
 
 52. str_getcsv — 解析 CSV 字符串为一个数组
 
@@ -4627,7 +4774,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [5] => ss
 		)
 
+
 53. str_ireplace — str_replace 的忽略大小写版本
+
 
 54. str_pad
 
@@ -4646,6 +4795,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出： 
 		aabcaabcc,d,ss,ee,ff,ssaabcaab
 
+
 55. str_repeat — 重复一个字符串
 
 		语法：string str_repeat  ( string $input  , int $multiplier  )
@@ -4656,6 +4806,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r($arr);
 		输出： 
 		cdcdcdcdcd
+
 
 56. str_replace — 子字符串替换，substr_replace  strtr
 
@@ -4677,7 +4828,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo $k;
 
+
 57. str_rot13 — 对字符串执行 ROT13 转换
+
 
 58. str_shuffle — 随机打乱一个字符串--array_shuffle，
 
@@ -4691,6 +4844,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出：nem:rtt=efuls;nettyactpho8-e/xhtCtt
 		echo $str;
 		输出：Content-type:text/html;charset=utf8
+
 
 59. str_split — 将字符串转换为数组
 
@@ -4721,9 +4875,20 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [4] => e
 		)
 
+
 60. str_word_count — 返回字符串中单词的使用情况--count_chars
+	它是根据某些预先定义好的或者指定的字符来作为单词的分隔来计算的
+
+	$str=<<<EOF
+	Metaphone matching is an algorithmicmethod for generating keys based on the phonetic pronunciation of words.
+	EOF;
+
+	var_dump(str_word_count($str));	
+
+
 
 61. strcasecmp — 二进制安全比较字符串（不区分大小写）,查看strcmp
+
 
 62. strchr — 别名 strstr
 
@@ -4738,8 +4903,9 @@ set_time_limit(30);表示脚本最长执行30秒
 		var_dump(stristr($abc,'F'));//不区分大小写
 		var_dump(strrchr($abc,'f'));//从后面查找字符串
 
-63. strcmp — 二进制安全字符串比较，返回-1、0或1
 
+63. strcmp — 二进制安全字符串比较，返回-1、0或1
+		所谓的二进制安全就是一个一个字符的比较，比较字符的二进制
 		echo strcmp("houdunwang","Houdunwang");//比较字符串，区分大小写,返回 1，表示前边的大于后面的
 		echo "<br/>-----------------------------<br/>";
 		echo strcasecmp("houdunwang","HouDunwang");//比较字符串，不区分大小写，返回0
@@ -4752,25 +4918,35 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<br/>-----------------------------<br/>";
 		echo strncmp("11112","111",3);//比较字符串，仅比较前3个字符，返回 0
 
+
 64. strcoll — 基于区域设置的字符串比较
 65. strcspn — 获取不匹配遮罩的起始子字符串的长度
 
-66. strip_tags — 返回给定的字符串str去除空字符、HTML 和 PHP 标记后的结果
 
-		$str="<div style='background-color:blue;width:200px;height:50px'><span style='color:yellow'>后盾网</span>视频教程</div>";
+66. strip_tags — 返回给定的字符串str去除空字符、HTML 和 PHP 标记后的结果
+		该函数会将被处理字符串中的标签中的数据删除，就相当于是替换字符串，而不管标签是否为html的合法标签,只要是<x></x>格式即可
+		第二个参数指定哪些标签保留，为完整的开始标签格式
+
+		$str="<div style='background-color:blue;width:200px;height:50px'><span style='color:yellow'>后<c>盾</c>网</span>视频教程</div>";
 		echo $str;//带样式输出
 		echo strip_tags($str)."<br/>";//去除所有标签
 		//第二个参数指定要保留的标记
 		echo strip_tags($str,'<span><a>');//保留span标签（进而保留了格式）
+
+
 
 67. stripcslashes — 反引用一个使用 addcslashes 转义的字符串
 
 		//相当于addslashses的反函数，将转义时增加的反斜线去掉
 		echo stripslashes(addslashes("afafdfd'as'\'a\'/aaf.\asdf'af"));//输出 afafdfd'as'\'a\'/aaf.\asdf'af
 
+
 68. stripos — 查找字符串首次出现的位置（不区分大小写）,查看strpos
-69. stripslashes — 反引用一个引用字符串
+
+69. stripslashes — 反转义一个转义字符串
+
 70. stristr — strstr 函数的忽略大小写版本,查看strchr,没有strichr
+
 71. strlen — 获取字符串长度,返回字节数
 
 72. strnatcasecmp — 使用“自然顺序”算法比较字符串（不区分大小写）,查看strcmp
@@ -4779,6 +4955,7 @@ set_time_limit(30);表示脚本最长执行30秒
 
 74. strncasecmp — 二进制安全比较字符串开头的若干个字符（不区分大小写）,查看strcmp
 75. strncmp — 二进制安全比较字符串开头的若干个字符,查看strcmp
+
 
 
 76. strpbrk — 在字符串中查找一组字符的任何一个字符
@@ -4798,6 +4975,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		eof;
 		echo strpbrk($str,"is");//按照字节操作，如果是中文可能会得到不能预期的结果
 
+
+
 77. strpos — 查找字符串首次出现的位置,按字节计算的位置(汉子占大于1个字节)
 
 		$abc="adffadadfa";
@@ -4809,6 +4988,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		$str="ye后llow>盾网<视频教程";
 		var_dump(strpos($str,"w"));
 		打印出：int 8
+
 
 78. strrchr — 区分大小写从最后向前查找最后一次出现的位置,查看strchr,没有strrstr
 
@@ -4828,11 +5008,15 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $var;
 		不好理解
 
+//===========================20170324
+
 83. strstr — 查找字符串的首次出现，查看strchr----fpassthru， ftruncate
 
 		语法：string strstr  ( string $haystack  , mixed  $needle  [, bool $before_needle  = false  ] )
 		返回 haystack  字符串从 needle  第一次出现的位置开始到 haystack  结尾的字符串(包括查找的字符)。 
 		第三个参数：若为 TRUE ， strstr()  将返回 needle  在 haystack  中的位置之前的部分(不包括查找的字符)。 
+
+
 
 84. strtok — 标记分割字符串
 
