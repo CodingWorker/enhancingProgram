@@ -4358,11 +4358,12 @@ set_time_limit(30);表示脚本最长执行30秒
 	$str='abc';
 	var_dump(rtrim($str,'bc'));
 	$cnStr="不明知识点";
-	var_dump(chop($cnStr,'知识点'));  //不明
+	var_dump(chop($cnStr,'adfa知fadf识fad点sfadfa'));  //不明,此函数会删除指定字符串中包含第二个参数的所有字符
 
 
 5. chr — 返回指定的字符
         bin2hex是将一个字符串转换为十六进制，将十六进制转换为十进制就可以得到ord操作的结果了，也可以使用ord来循环得到同样的结果，循环的是字符串的索引
+		该方法是将参数中的字符一个一个的转换为十六进制
 
 		返回相对应于 ascii  所指定的单个字符。与ord作用相反
 		echo chr(89);
@@ -4371,6 +4372,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		var_dump(bin2hex('A')); //41，十六进制结果，十进制值为65
 		var_dump(chr(97));    //a
 		var_dump(ord('a'));  //97
+		var_dump(bin2hex('faf'));
+
 
 
 6. chunk_split — 将字符串分割成指定个数字符组成的小块----array_chunk
