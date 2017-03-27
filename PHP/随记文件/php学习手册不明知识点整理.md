@@ -1093,8 +1093,9 @@ open-read-write-close[-destroy-gc]
 **`session_save_handler()`**
 
 	用户自定义session的操作方式
-	语法： session_set_save_handler  ( callable  $open  , callable  $close  , callable  $read  , callable  $write  , callable  $destroy  , callable  $gc  )
-===================
+	语法： session_set_save_handler  ( callable  $open  , callable  $close  , callable  $read  ,
+	 callable  $write  , callable  $destroy  , callable  $gc  )
+
 	<?php
 	 class  FileSessionHandler
 	 {
@@ -4956,8 +4957,6 @@ set_time_limit(30);表示脚本最长执行30秒
 74. strncasecmp — 二进制安全比较字符串开头的若干个字符（不区分大小写）,查看strcmp
 75. strncmp — 二进制安全比较字符串开头的若干个字符,查看strcmp
 
-
-
 76. strpbrk — 在字符串中查找一组字符的任何一个字符
 
 		语法：string strpbrk  ( string $haystack  , string $char_list  )
@@ -5017,7 +5016,6 @@ set_time_limit(30);表示脚本最长执行30秒
 		第三个参数：若为 TRUE ， strstr()  将返回 needle  在 haystack  中的位置之前的部分(不包括查找的字符)。 
 
 
-
 84. strtok — 标记分割字符串
 
 		语法：string strtok  ( string $str  , string $token  )
@@ -5027,10 +5025,12 @@ set_time_limit(30);表示脚本最长执行30秒
 		
 		$str="php课程,mysql课程,divcss课程,dreamweaver课程";
 		echo $str;
-		$s=strtok($str,',');//查找第一个, 将该“,”之前的部分字符串返回，查找不到则返回整个字符串
+		$s=strtok($str,',');//查找第一个, 将该“,”之前的部分字符串返回，
+		查找不到则返回整个字符串
 		echo $s;//输出：php课程
 		ehco "<br/>";
-		echo strtok('课')."<br/>";//在之前的基础上继续查找，返回剩余字符串的相应部分，因此返回 mysql
+		echo strtok('课')."<br/>";//在之前的基础上继续查找，返回剩余字符串的相应部分，
+		因此返回 mysql
 		echo strtok(',')."<br/>";//返回divcss课程
 		echo strtok(',')."<br/>";//返回dreamweaver课程
 		var_dump(strtok(','));//到字符串最后继续查找不到时返回false
@@ -5045,16 +5045,20 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo "<hr/>";
 		echo strtr('houdunwang.com',array("h"=>"H","a"=>"A","m"=>"M"));
 
+
 88. substr_compare — 二进制安全比较字符串（从偏移位置比较指定长度）
 
 89. substr_count — 计算字串出现的次数
 
 		echo substr_count('houdunwang.com 后盾网视频 houdunwang.com','houdunwang',20,20);//输出1，第一个20指从开头第20个字符（不是字节）开始找，第二个指从开始位找20个字符就停止查找
 
+
 90. substr_replace — 替换字符串的子串,基于位置的替换
 	
 		echo substr_replace("Hello worldasdfa","earth",6);//输出 hello earth
-		echo substr_replace("Hello worldasdfa","earth",6,3);//最后一个参数指定替换掉原字符串的几个，不指定则替换到最后
+		echo substr_replace("Hello worldasdfa","earth",6,3);//最后一个参数指定替换掉原字符串的几个，
+		不指定则替换到最后
+
 
 91. substr(字符串,数字,数字) — 返回字符串的子串
 
@@ -5066,6 +5070,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo substr($houdunwang,4)."<br/>";//不指定第二参数默认到字符串结束
 		echo substr($houdunwang,-5,2)."<br/>";//负数为从后向前数个数，第二个字符串是正数则向后截取第二个参数个，若是负数则截取到该负数指定位置
 		echo substr($houdunwang,-5,-2);//负数为从后向前数个数，第二个字符串是正数则向后截取第二个参数个，若是负数则截取到该负数指定位置
+
 
 92. trim — 去除字符串首尾处的空白字符（或者其他字符）
 
@@ -5088,10 +5093,12 @@ set_time_limit(30);表示脚本最长执行30秒
 		作用与 printf()  函数类似，但是接收一个数组参数，而不是一系列可变数量的参数
 		vprintf ( "%04d:%02d:%02d" ,  explode ( '-' ,  '1988-8-1' ));  // 1988-08-01
 
+
 97. vsprintf — 返回格式化字符串
 
 		string vsprintf  ( string $format  , array $args  )
 		作用与 sprintf()  函数类似，但是接收一个数组参数，而不是一系列可变数量的参数。 
+
 
 98. wordwrap — 打断字符串为指定数量的字串
 
@@ -5104,6 +5111,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		The quick brown fox      //长度小于20，加上jumped后大于20，所以就不加入
 		jumped over the lazy
 		dog.
+
 
 **mb_substr()获取字符串的部分**
 
@@ -5139,8 +5147,7 @@ stristr   strrchr
 	array split  ( string $pattern  , string $string  [, int $limit  ] )
 	本函数返回一个字符串数组，每个单元为 string  经区分大小写的正则表达式 pattern  作为边界分割出的子串。如果设定了 limit ，则返回的数组最多包含 limit  个单元，而其中最后一个单元包含了 string  中剩余的所有部分。如果出错，则 split()  返回 FALSE 。 
 
-
-------------------------20170305
+//=================20170328
 
 ## URL函数    
 base64_encode
