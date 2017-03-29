@@ -1,7 +1,7 @@
 /**
  * Created by DaiYan on 2017/3/27.
  */
-public class Main {
+public class Main{
     public static int a=12;
     public static void main(String[] args){
         int c=12;
@@ -14,7 +14,7 @@ public class Main {
         System.out.println(m.a);
         class LocalInner{
             int cc=c;
-            c=2;
+
         }
 
     }
