@@ -5147,7 +5147,7 @@ stristr   strrchr
 	array split  ( string $pattern  , string $string  [, int $limit  ] )
 	本函数返回一个字符串数组，每个单元为 string  经区分大小写的正则表达式 pattern  作为边界分割出的子串。如果设定了 limit ，则返回的数组最多包含 limit  个单元，而其中最后一个单元包含了 string  中剩余的所有部分。如果出错，则 split()  返回 FALSE 。 
 
-//=================20170328
+
 
 ## URL函数    
 base64_encode
@@ -5164,7 +5164,7 @@ base64_encode
 3. get_headers — 取得服务器响应一个 HTTP 请求所发送的所有标头
 
 	array get_headers  ( string $url  [, int $format  = 0  ] )
-	
+	该函数会首先请求url
 	get_headers()  返回一个数组，包含有服务器响应一个 HTTP 请求所发送的标头。 
 	返回包含有服务器响应一个 HTTP 请求所发送标头的索引或关联数组，如果失败则返回 FALSE 
 	$url="http://www.baidu.com";
