@@ -30,8 +30,8 @@
         <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="279">
-                <caret line="5149" column="27" lean-forward="false" selection-start-line="5149" selection-start-column="27" selection-end-line="5149" selection-end-column="27" />
+              <first_editor relative-caret-position="-351">
+                <caret line="5247" column="8" lean-forward="true" selection-start-line="5247" selection-start-column="8" selection-end-line="5247" selection-end-column="8" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -84,8 +84,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -128,6 +126,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,11 +229,12 @@
       <workItem from="1489408203964" duration="36000" />
       <workItem from="1489412982107" duration="2761000" />
       <workItem from="1490655073072" duration="893000" />
+      <workItem from="1490804465997" duration="4289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8175000" />
+    <option name="totallyTimeSpent" value="12464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,7 +249,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18835099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -281,6 +282,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -385,8 +397,8 @@
     <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="279">
-            <caret line="5149" column="27" lean-forward="false" selection-start-line="5149" selection-start-column="27" selection-end-line="5149" selection-end-column="27" />
+          <first_editor relative-caret-position="-351">
+            <caret line="5247" column="8" lean-forward="true" selection-start-line="5247" selection-start-column="8" selection-end-line="5247" selection-end-column="8" />
             <folding />
           </first_editor>
           <second_editor />
