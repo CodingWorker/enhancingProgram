@@ -1,0 +1,16 @@
+
+OBJS=AboutDialog.class    HelpDialog.class            Method.class \
+	AcmeFmt.class        Invocation.class            MethodComparator.class \
+	ESortHow.class       InvocationComparator.class  Profile.class \
+	ESortWho.class       InvocationLine.class        ProfileViewer.class \
+	ExcludeDialog.class  LicenseDialog.class         SortDialog.class \
+	MethodSignature.class   ClassicJavaProfileParser.class \
+	GNUGprofProfileParser.class    ParseException.class   ProfileParser.class \
+	ProfileParserFactory.class   AbstractGprofProfileParser.class \
+	BrowserLauncher.class    FindAccessory.class   MethodNamesDecodeable.class \
+	SolarisGprofProfileParser.class      OSXGprofProfileParser.class
+
+all: $(OBJS)
+
+%.class: %.java
+	javac $*.java

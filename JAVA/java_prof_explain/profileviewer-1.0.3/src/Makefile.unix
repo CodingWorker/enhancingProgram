@@ -1,0 +1,49 @@
+# The compiling tools
+JAVAC=javac
+JAR=jar
+
+# The names of the jar files
+PROFILEVIEWERJAR=../profileviewer-1.0.3.jar
+
+# The name of (some of) the classes files
+# the names like Xxxx$Yyyy do not appear here
+OBJS=AboutDialog.class                \
+     HelpDialog.class                 \
+     Method.class                     \
+     AcmeFmt.class                    \
+     Invocation.class                 \
+     MethodComparator.class           \
+     ESortHow.class                   \
+     InvocationComparator.class       \
+     Profile.class                    \
+     ESortWho.class                   \
+     InvocationLine.class             \
+     ProfileViewer.class              \
+     ExcludeDialog.class              \
+     LicenseDialog.class              \
+     SortDialog.class                 \
+     MethodSignature.class            \
+     ClassicJavaProfileParser.class   \
+     AbstractGprofProfileParser.class \
+     GNUGprofProfileParser.class      \
+     SolarisGprofProfileParser.class  \
+     OSXGprofProfileParser.class      \
+     ParseException.class             \
+     ProfileParser.class              \
+     ProfileParserFactory.class
+
+all: $(PROFILEVIEWERJAR)
+
+%.class: %.java
+	CLASSPATH=\${CLASSPATH} \
+	$(JAVAC) $*.java
+
+# We use *.class instead of $(OBJS) because
+# there are file names like Xxx$Yyy.class
+$(PROFILEVIEWERJAR): $(OBJS)
+	$(JAR) cvf $@ *.class
+
+# We use *.class instead of $(OBJS) because
+# there are file names like Xxx$Yyy.class
+clean:
+	-rm *.class $(PROFILEVIEWERJAR)

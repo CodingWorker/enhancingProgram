@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+
+<!--
+   Ant buildfile for ProfileViewer
+  -->
+
+<project name="ProfileViewer" default="all" basedir=".">
+	<description>
+		Builds the ProvileViewer application for viewing of Java profiling data.
+	</description>
+
+  <!-- =================================================================== -->
+  <!-- properties                   -->
+  <!-- =================================================================== -->
+
+  <property name="name"  value="ProfileViewer" />
+  <property name="version"  value="1.0.3" />
+  <property name="pvJar"      value="${name}-${version}.jar" />
+  <property name="distZip"    value="${name}-${version}.zip" />
+  <property name="srcDir"     value="src" />
+  <property name="classDir"   value="${srcDir}/classes" />
+
+
+  <!-- =================================================================== -->
+  <!-- Define the basic classpath                                          -->
+  <!-- =================================================================== -->
+  <path id="basic.class.path">
+	<!--
+    <pathelement path="${classDir}" />
+	-->
+  </path>
+
+
+  <!-- =================================================================== -->
+  <!-- Undo the actions of compile, dist, and run targets                  -->
+  <!-- =================================================================== -->
+  <target name="clean"
+          description="remove class files, backups, and distribution zip">
+    <delete dir="${srcDir}/classes" />
+    <delete verbose="true">
+      <fileset dir="." includes="**/*~" defaultexcludes="no"/>
+    </delete>
+    <delete>
+      <fileset dir="${srcDir}" includes="**/*.class" defaultexcludes="no"/>
+    </delete>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Convert carriage-returns/line-feeds for current OS type             -->
+  <!-- =================================================================== -->
+  <target name="fixcrlf" description="fix carriage returns for OS type">
+    <fixcrlf srcdir="${srcDir}" includes="${srcDir}/*.*,*.sh,*.bat,*.spec,*.xml,*.properties" />
+  </target>
+
+
+
+  <!-- =================================================================== -->
+  <!-- Compile the framework, extras, examples, and tests                  -->
+  <!-- =================================================================== -->
+  <target name="compile">
+    <mkdir dir="${srcDir}/classes" />
+    <javac srcdir="${srcDir}"
+			includes="**/*.java"
+			compiler="modern"
+			nowarn="true"
+			destdir="${srcDir}/classes"
+			source="1.5"
+			target="1.5"
+			debug="on">
+      <classpath refid="basic.class.path" />
+    </javac>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Jar the framework, extras, examples, tests                          -->
+  <!-- =================================================================== -->
+  <target name="all" description="generate all jar files.">
+    <antcall target="jar" />
+  </target>
+
+  <target name="jarNoDepend"
+          description="generate the basic jar file w/o recompiling">
+    <jar jarfile="${pvJar}"
+		basedir="${srcDir}/classes">
+		<manifest>
+			<attribute name="Main-Class" value="ProfileViewer"/>
+		</manifest>
+	</jar>
+  </target>
+
+
+  <target name="jar" depends="compile"
+          description="generate the basic jar file.">
+    <jar jarfile="${pvJar}"
+		basedir="${srcDir}/classes">
+		<manifest>
+			<attribute name="Main-Class" value="ProfileViewer"/>
+		</manifest>
+	</jar>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Zip up a distribution file                                          -->
+  <!-- =================================================================== -->
+  <target name="dist" depends="clean, all"
+          description="Create a distribution zip file">
+    <property name="distDir" value="profileviewer-${version}" />
+    <antcall target="clean" /> <!-- clean up after the jars are created -->
+    <delete dir="${distDir}" />
+    <mkdir dir="${distDir}" />
+    <copy todir="${distDir}" includeEmptyDirs="no">
+      <fileset dir="."
+	  	includes="${pvJar}, build.xml, ${srcDir}/**, *.html, COPYING, profileviewer.sh, profileviewer.spec, runit.bat, ProfileViewer.properties" />
+    </copy>
+    <zip zipfile="${distZip}" basedir="." includes="${distDir}/**"/>
+    <delete dir="${distDir}" />
+  </target>
+
+</project>
+
