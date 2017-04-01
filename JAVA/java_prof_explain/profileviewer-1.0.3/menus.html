@@ -1,0 +1,145 @@
+<html>
+<head><title>ProfileViewer Instructions</title></head>
+<body bgcolor=white>
+<div align=center>
+<H1>ProfileViewer Menus</H1>
+</div>
+
+<h2>Table of Contents</h2>
+
+<ul>
+<li><a HREF="#ref profile">Profile Menu</a></li>
+<li><a HREF="#ref method">Method Menu</a></li>
+<li><a HREF="#ref options">Options Menu</a></li>
+</ul>
+<a HREF="index.html">Back to Main Page</a>
+<hr>
+
+<h2><a name="ref profile">Profile Menu</a></h2>
+
+<h3>New Window</h3>
+Opens another independent ProfileViewer window.
+
+<h3>Load...</h3>
+Opens the FileDialog to let you choose a profile file to load. Note that if
+you change directories with this dialog and you have not modified the
+<a href="#classpath">classpath</a> environment variable, the java interpreter
+will start generating exceptions.
+
+<h3>Close Window</h3>
+Closes the current window. If the last open window is closed, the VM is quit.
+
+<h3>About...</h3>
+Displays a dialog box with contact information for Greg and myself.
+Greg no longer works on PV, so while you can certainly send thanks to him,
+any questions about the latest versions should be sent to me.
+
+<h3>Help...</h3>
+Displays this file in a separate window.
+
+<h3>License...</h3>
+Displays the GNU General Public License under which ProfileViewer is released.
+
+<h3>Exit</h3>
+Closes the application
+
+<hr>
+<h2><a name="ref method">Method Menu</a></h2>
+<h3>Sort...</h3>
+Brings up the sort dialog to let you sort the methods.
+<h3>Find...</h3>
+Brings up the find dialog.
+<h3>Find next</h3>
+Repeats the last find.
+
+<h3>Go To Callee</h3>
+"Goes to" the currently selected callee. Makes the currently selected callee
+the currently selected method so that you can see its callees and callers.
+<h3>Sort Callee...</h3>
+Brings up the sort dialog to let you sort the callees.
+
+<h3>Go To Caller</h3>
+"Goes to" the currently selected caller. Makes the currently selected caller
+the currently selected method so that you can see its callees and callers.
+<h3>Sort Caller...</h3>
+Brings up the sort dialog to let you sort the callers.
+
+<hr>
+<h2><a name="ref options">Options Menu</a></h2>
+<h3>Exclude Methods</h3>
+Brings up a dialog that lets you exclude methods from being displayed in
+the list. This can be useful for large profile files, which can contain
+lots of method calls in which the user is not interested.<BR>
+Clicking on the "Add" Button adds a new entry to the exclusion list.
+Enter a string, which will be matched against the beginning of the
+method call; if there is a match, the method will not be displayed.
+Note that package names are displayed as, e.g., "java/lang", not 
+"java.lang". Entering "javax/swing" will prevent all Swing methods from
+being displayed, entering "java" will suppress all java.* and javax.*
+methods. Individual methods ("java/lang/StringBuffer/append") can be
+entered as well. This only affects the display, not the calculations.<BR>
+Note that now the percentages won't add up to 100% any more. If you want
+only the displayed method to figure into the percentage calculation,
+check the "Percentages add up to 100%" check box.<BR>
+If you check the "is Regexp" check box next to the match string,
+regular expression matching will be used instead of plain string 
+comparison. Note that this matches anywhere, not just at the beginning
+of a method name, as the normal string search does.<BR>
+Clicking "Delete" removes the currenty selected entry from the list.
+<BR>Can also be set at startup via the <code>ProfileViewer.methodsToExclude</code>
+and the <code>ProfileViewer.percentagesAddTo100</code> properties.
+
+<h3>Show Numbers as Percent</h3>
+Toggles between the display of absolute numbers and percentages as described
+in the section about <a href="#windows">the screen</a>.
+If you exclude methods, percentages will add up to 100% only if you check
+the respective check box in the Exclude dialog.<BR>
+This used to be called "Toggle Numbers"; by default it still displays percentages.
+<BR>Can also be set at startup via the <code>ProfileViewer.showNumbersPercent</code> property.
+
+<h3>Include Callee Times</h3>
+The time spent in a method that are reported in the profiling output include the
+time spent in all subroutines called from that method. Sometimes it's more 
+interesting to know the time spent exclusively in a method, w/o the subroutines.
+In that case, uncheck this option and reload the profile. This option is
+set by default (which corresponds to the way ProfileViewer used to work).
+<BR>Can also be set at startup via the <code>ProfileViewer.includeCalleeTimes</code> property.
+
+<h3>Decode Method Names</h3>
+Displays the method names the way they are defined, with the parameters and
+return types in clear text, e.g. <code>java/lang/Double.doubleToLongBits(double): long</code>
+instead of <code>java/lang/Double.doubleToLongBits(D)J</code>.
+This option is set by default.
+<BR>Can also be set at startup via the <code>ProfileViewer.decodeMethodNames</code> property.
+
+<h3>Add Method to Callees</h3>
+Adds the selected method to the list of its callees. That way one can see
+(in percent mode) how much time is spent in the method itself, compared to the callees.
+This option is not set by default.
+<BR>Can also be set at startup via the <code>ProfileViewer.addSelfToCallees</code> property.
+
+<h3>Use AWT File Dialog</h3>
+If this menu item is checked, ProfileViewer will use an AWT FileDialog 
+instead of a Swing JFileChooser for the "Load..." dialog. I've come to find
+the Swing dialog annoying, mostly because it's slow and sorts the files
+in a case-sensitive way, but that's a personal preference.
+This option is not set by default.
+<BR>Can also be set at startup via the <code>ProfileViewer.useAWTFileDialog</code> property.
+
+<h3>Use Browser for Help</h3>
+This option is applicable to Mac users only, who are running at least MRJ version 2.2.
+If set, the user's preferred browser is used to display the documentation 
+under the "Profile/Help..." menu, instead of the much slower Swing HTML viewer.
+This option is set by default.
+<BR>Can also be set at startup via the <code>ProfileViewer.useBrowserForHelp</code> property.
+
+<h3>Exclude Recursive Calls</h3>
+When set, recursive method calls (i.e., a method calling itself) are ignored.
+Profiling data is sometimes flaky for recursive calls. The switch only works
+for direct recursion, not for indirect recursion.
+This option is not set by default; in contrast to all other options, it does
+not affect loaded profiles, only ones loaded after the option has been changed.
+<BR>Can also be set at startup via the <code>ProfileViewer.excludeRecursiveCalls</code> property.
+
+</body>
+</html>
