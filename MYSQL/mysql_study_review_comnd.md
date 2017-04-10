@@ -225,206 +225,363 @@ e,add_time,is_best,is_new,is_hot from gyshop.goods;
 
 -select goods_name,cat_id from goods where cat_id in(4,11);
 
--等价于:select goods_name,cat_id from goods where cat_id=4 or cat_id=11;
+-等价于:select goods_name,cat_id from goods where cat_id=4 
+or cat_id=11;
+
 -select goods_name,cat_id from goods where cat_id between 4 and 11;
+
 - select goods_name,market_price from goods where market_price>=100 and market_price<=500;
 - between ... and...包含边界值
+
 -select goods_name,cat_id from goods where cat_id!=4 and cat_id!=11;
+
 -select goods_name,cat_id from goods where cat_id not in(4,11);
+
 -select goods_name,cat_id,shop_price from goods where (shop_price>=100 and shop_price<=300) or (shop_price>=2000 and shop_price<=500
 0);
+
 -select goods_name,cat_id,shop_price from goods where shop_price>=100 and shop_price<=300 or shop_price>=2000 and shop_price<=5000;
+
 -select goods_name,cat_id,shop_price,click_count from goods where cat_id=3 and shop_price>1000 and shop_price< 3000 and click_count>5;
+
 -select goods_name,cat_id,shop_price,click_count from goods where cat_id=3 and click_count>5 and (shop_price< 1000 or shop_price>3000);
+
 -select goods_name,cat_id from goods where cat_id=1;
+
+//如果索引存在的话可以使用索引，如果匹配头包含%则不能使用索引
 -select goods_name,shop_price from goods where goods_name like "诺基亚%";
+
 - select goods_name,shop_price from goods where goods_name like "诺基亚E66%";
--%也能够匹配空值
+-#%也能够匹配空值
+
+//_匹配一个字符
 - select goods_name,shop_price from goods where goods_name like "诺基亚___";
+
 -select * from goods where 1<2;
+
 -select * from goods where 1>2;
--select goods_id,goods_name,market_price-shop_price as descount from goods;
+
+//对查找表达式重命名
+-select 
+goods_id,
+goods_name,
+market_price-shop_price as descount 
+from goods;
+
 -select goods_id,goods_name,(market_price-shop_price) as descount from goods where (market_price-shop_price)>200;
+
+//having可以使用临时字段，而where必须使用表中的字段
 -select goods_id,goods_name,(market_price-shop_price) as descount from goods having descount>200;
+
 -create table mian(
     -> num tinyint
     -> );
+
 -insert into mian values
     -> (3),(12),(15),(15),(23),(29),(34),(37),(32),(45),(48),(52);
-- update mian set
+
+update mian set
     -> num=20 where num>=20 and num<=29;
--update mian set
+
+update mian set
     -> num=30 where num>=30 and num<=39;
--update mian set
+
+update mian set
     -> num=num-num%10 where num>=20 and num<=39;
--update mian set num=floor(num/10)*10 where num<=39 and num>=20;
--select goods_name,shop_price from goods order by shop_price desc limit 1;
--select max(shop_price) from goods ;
--select min(shop_price) from goods ;
+
+//使用mysql内置函数
+update mian set num=floor(num/10)*10 where num<=39 and num>=20;
+
+select goods_name,shop_price from goods order by shop_price desc limit 1;
+
+select max(shop_price) from goods;
+
+select min(shop_price) from goods;
+
 -select min(goods_id) from goods;
+
 -select count(*) from goods;
+
 -select sum(goods_number) from goods;
+
 -select avg(shop_price) from goods;
+
 -select count(1) from goods;
+
 -select count(goods_name) from goods;
+
 -select count(*) from 表名, 查询的就是绝对的行数,哪怕某一行所有字段全为NULL,也计算在内.
 而select count(列名) from 表名,
 查询的是该列不为null的所有行的行数.
--select sum(goods_number) from goods where cat_id=3;
--select cat_id,sum(goods_number)as sum from goods group by cat_id;
-- select goods_id,(market_price-shop_price) as discount from goods having discount>200;
--select goods_name,(goods_number*shop_price) as sum_money from  goods;
--select sum(shop_price*goods_number) from goods;
-- select cat_id,sum(goods_number*shop_price) as sum_money from goods group by cat_id;
--select cat_id,sum(goods_number*shop_price) as sum_money from goods group by cat_id having sum_money>20000;
--select goods_name,(market_price-shop_price) as discount from goods having discount>200;
--select goods_name,(market_price-shop_price) as discount from goods where (market_price-shop_price)>200;
--  name char(20) not null default "",
-    -> subject char(20) not null default "",
-    -> score tinyint unsigned not null default 0
-    -> )engine myisam charset utf8;
+
+select sum(goods_number) from goods where cat_id=3;
+
+select cat_id,sum(goods_number)as sum from goods group by cat_id;
+
+select goods_id,(market_price-shop_price) as discount from goods having discount>200;
+
+select goods_name,(goods_number*shop_price) as sum_money from  goods;
+
+select sum(shop_price*goods_number) from goods;
+
+select cat_id,sum(goods_number*shop_price) as sum_money from goods group by cat_id;
+
+select cat_id,sum(goods_number*shop_price) as sum_money from goods group by cat_id having sum_money>20000;
+
+select goods_name,(market_price-shop_price) as discount from goods having discount>200;
+
+select goods_name,(market_price-shop_price) as discount from goods where (market_price-shop_price)>200;
+
 -insert into result
     -> values
-    -> ("张三","数学",90),("张三","语文",80),("张三","地理",40),("李四","语文",55),("李四",
-"政治",45),("王五","政治",30);
--select name,avg(score) from result group by name;
--select name,subject,score < 60 from result;
--select name,avg(score),sum(score<60) as cont from result group by name having cont>=2;
--select name,score,count(1) from result where score<60;
-- select name,score,count(1) from result where score< 60 group by name;
+    -> ("张三","数学",90),
+    ("张三","语文",80),
+    ("张三","地理",40),
+    ("李四","语文",55),
+    ("李四","政治",45),
+    ("王五","政治",30);
+
+select name,avg(score) from result group by name;
+
+select name,subject,score < 60 from result;
+
+select name,avg(score),sum(score<60) as cont from result group by name having cont>=2;
+
+select name,score,count(1) from result where score<60;
+
+select name,score,count(1) from result where score< 60 group by name;
+
 select name,score,count(1) as g from result where score< 60 group by name having g>=2;
--select name,count(1) as g from result where score< 60 group by name having g>=2) as tmp;
--select goods_id,goods_name,add_time from goods order by add_time asc;
--select goods_name,add_time from goods order by add_time asc;
--select goods_id,goods_name,add_time,shop_price from goods order by add_time asc,shop_price desc;
-- select goods_id,goods_name,cat_id,shop_price from goods where cat_id=4;
--select goods_id,goods_name,cat_id,shop_price from goods where cat_id=4 order by add_time asc;
--select goods_id,goods_name,cat_id from goods order by cat_id asc;
--select goods_id,goods_name,cat_id from goods order by cat_id asc,shop_price desc;
--select goods_id,goods_name,cat_id,shop_price from goods order by cat_id asc,shop_price desc limit 2,3;
--select max(goods_id),cat_id from goods group by cat_id;
--select goods_id,goods_name from goods where goods_id=(select max(goods_
+
+select name,count(1) as g from result where score< 60 group by name having g>=2;
+
+select goods_id,goods_name,add_time from goods order by add_time asc;
+
+select goods_name,add_time from goods order by add_time asc;
+
+select 
+goods_id,
+goods_name,
+add_time,
+shop_price 
+from goods 
+order by 
+add_time asc,shop_price desc;
+
+select goods_id,goods_name,cat_id,shop_price from goods where cat_id=4;
+
+select goods_id,goods_name,cat_id,shop_price from goods where cat_id=4 order by add_time asc;
+
+select goods_id,goods_name,cat_id from goods order by cat_id asc;
+
+select goods_id,goods_name,cat_id from goods order by cat_id asc,shop_price desc;
+
+select goods_id,goods_name,cat_id,shop_price from goods order by cat_id asc,shop_price desc limit 2,3;
+
+select max(goods_id),cat_id from goods group by cat_id;
+
+select goods_id,goods_name from goods where goods_id=(select max(goods_
 id) from goods);
--select goods_id,goods_name,cat_id from goods where goods_id in(select m
-ax(goods_id) from goods group by cat_id) order by cat_id;
--select goods_id ,goods_name ,cat_id from (select goods_id,goods_name,ca
+
+select goods_id,goods_name,cat_id from goods where goods_id in
+(select max(goods_id) from goods group by cat_id) 
+order by cat_id;
+
+select goods_id ,goods_name ,cat_id from (select goods_id,goods_name,ca
 t_id from goods order by cat_id asc,goods_id desc) as tmp group by cat_id;
--cat_id int auto_increment primary key,
+
+cat_id int auto_increment primary key,
     -> cat_name varchar(20) not null default ""
     -> )engine myisam charset utf8;
--insert into test.category
+
+insert into test.category
     -> select cat_id,cat_name from gyshop.category;
--select cat_id from category where exists (select * from goods where goo
+
+//存在条件
+select cat_id from category where exists (select * from goods where goo
 ds.cat_id=category.cat_id);
-- select goods_name,goods_number,shop_price from goods;
-- select goods.goods_name,category.cat_name,goods.goods_number,goods.shop_price from goods,category where goods.cat_id=category.cat_id;
--select g.goods_id,g.goods_name,g.cat_id,c.cat_name from  goods as g left join category as c on g.cat_id=c.cat_id;
-- select g.goods_id,g.goods_name,g.cat_id,c.cat_name from  goods as g left join category as c on g.cat_id=c.cat_id where g.cat_id=4;
--select g.goods_id,g.goods_name,g.cat_id,c.cat_name from category as c right join goods as g on g.cat_id=c.cat_id where g.cat_id=4;
--select g.goods_id,g.goods_name,g.cat_id,c.cat_name from category as c inner join goods as g on g.cat_id=c.cat_id;
--create table m(
+
+//同时查询两个表
+select goods.goods_name,category.cat_name,goods.goods_number,goods.shop_price from goods,category where goods.cat_id=category.cat_id;
+
+//左连接
+select g.goods_id,g.goods_name,g.cat_id,c.cat_name from goods as g left join category as c on g.cat_id=c.cat_id;
+
+select g.goods_id,g.goods_name,g.cat_id,c.cat_name from goods as g left join category as c on g.cat_id=c.cat_id where g.cat_id=4;
+
+//右连接
+select g.goods_id,g.goods_name,g.cat_id,c.cat_name from category as c right join goods as g on g.cat_id=c.cat_id where g.cat_id=4;
+
+//内连接
+select g.goods_id,g.goods_name,g.cat_id,c.cat_name from category as c inner join goods as g on g.cat_id=c.cat_id;
+
+create table m(
     -> mid int,
     -> hid int,
     -> gid int,
     -> mres varchar(20),
     -> mtime date
     -> )engine myisam charset utf8;
--create table t(
+
+create table t(
     -> tid int,
     -> tname varchar(20)
-    -> )engine myisam charset utf8;
--insert into m
+    -> )engine=myisam charset=utf8;
+
+insert into m
     -> values
-    -> (1,1,2,"2:0","2006-05-21"),(2,2,3,"1:2","2006-06-21"),(3,3,1,"2:5
-","2006-06-25"),(4,2,1,"3:2","2006-07-21");
--insert into t
+    -> (1,1,2,"2:0","2006-05-21"),
+    (2,2,3,"1:2","2006-06-21"),
+    (3,3,1,"2:5","2006-06-25"),
+    (4,2,1,"3:2","2006-07-21");
+
+insert into t
     -> values
-    -> (1,"国安"),(2,"申花"),(3,"公益联队");
--select concat(hid," ",mres," ",gid," ",mtime) from m where mtime
+    -> (1,"国安"),
+    (2,"申花"),
+    (3,"公益联队");
+
+select concat(hid," ",mres," ",gid," ",mtime) from m where mtime
 between "2006-06-01" and "2006-07-1";
--select hid,mres,gid,mtime,tname from m left join t on hid=tid;
-- select hid,mres,gid,mtime,tname from m left join t on gid=tid;
-- select hid,mres,gid,mtime,t1.tname,t2.tname from m left join t as
+
+select hid,mres,gid,mtime,tname from m left join t on hid=tid;
+
+select hid,mres,gid,mtime,tname from m left join t on gid=tid;
+
+select hid,mres,gid,mtime,t1.tname,t2.tname from m left join t as
  t1 on hid=t1.tid left join t as t2 on gid=t2.tid;
+
 -select concat(t1.tname,"       ",t2.tname," ",mres," ",gid," ",mt
 ime," ") from m left join t as t1 on hid=t1.tid left join t as t2 on gid
 =t2.tid;
+
+//字段连接concat
 -select concat(t1.tname,"       ",t2.tname," ",mres," ",gid," ",mt
 ime," ") from m left join t as t1 on hid=t1.tid left join t as t2 on gid
 =t2.tid where mtime between "2006-06-01" and "2006-07-01";
--select goods_name,cat_id from goods where cat_id=3
+
+select goods_name,cat_id from goods where cat_id=3
     -> union
     -> select goods_name,cat_id from goods where cat_id in (4,5);
--select goods_id,goods_name,cat_id,shop_price from goods where sho
-p_price< 1000
+
+//查询结果合并，union，字段个数必须匹配
+select goods_id,goods_name,cat_id,shop_price from goods where shop_price< 1000
     -> union
-    -> select goods_id,goods_name,cat_id,shop_price from goods where sho
-p_price>4000;
-- select goods_id,goods_name,cat_id,shop_price from goods where shop_price< 1000
+    -> select goods_id,goods_name,cat_id,shop_price from goods where shop_price>4000;
+
+select goods_id,goods_name,cat_id,shop_price from goods where shop_price< 1000
     -> union
     -> select goods_name,cat_id,goods_id,shop_price from goods where shop_price<1000;
--select goods_name,cat_id,goods_id,shop_price from goods where shop_price< 1000 union select goods_name,cat_id,goods_id,shop_price from goods where shop_price >3000 order by shop_price;
--select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 union select goods_id,goods_name,cat_id,shop_price from goods where cat_id=5 order by shop_price;
--(select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 order by shop_price desc limit 3) union (select oods_id,goods_name,cat_id,shop_price from goods where cat_id=5 order by shop_price asc limit 2);
--(select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 order by shop_price desc limit 3) union (select oods_id,goods_name,cat_id,shop_price from goods where cat_id=5 order by shop_price asc limit 2) order by shop_price asc;
--select goods_name from goods
-    -> union
-    -> select goods_name from goods;
--select goods_name from goods
-    -> union all
-    -> select goods_name from goods;
--select floor(rand()*10+5);
-- select ceiling(3.23);
--select concat(goods_id," ",goods_name)from goods;
--select ascii("A");
--select goods_name,if(shop_price>3000,"贵","便宜") from goods;
--create view goods4
+
+select goods_name,cat_id,goods_id,shop_price from goods where shop_price< 1000 union 
+
+select goods_name,cat_id,goods_id,shop_price from goods where shop_price >3000 order by shop_price;
+
+//联合查询后排序则分别查询时的排序语句不起作用
+select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 
+union 
+select goods_id,goods_name,cat_id,shop_price from goods where cat_id=5 
+order by shop_price;
+
+(select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 order by shop_price desc limit 3) 
+union 
+(select oods_id,goods_name,cat_id,shop_price from goods where cat_id=5 order by shop_price asc limit 2);
+
+//内部的排序会消耗性能，但是最终还是按照shop_price来升序排序
+(select goods_id,goods_name,cat_id,shop_price from goods where cat_id=3 order by shop_price desc limit 3) 
+union (select oods_id,goods_name,cat_id,shop_price from goods where cat_id=5 order by shop_price asc limit 2) 
+order by shop_price asc;
+
+select goods_name from goods
+union
+select goods_name from goods;
+
+//默认联合查询会合并相同的记录，当使用union all时则不会合并相同的记录
+select goods_name from goods
+union all
+select goods_name from goods;
+
+select floor(rand()*10+5);
+
+select ceiling(3.23);
+
+select concat(goods_id," ",goods_name)from goods;
+
+select ascii("A");
+
+//根据查询结果情况自定义结果字段
+select goods_name,if(shop_price>3000,"贵","便宜") from goods;
+
+//创建视图
+create view goods4
     -> as
     -> select * from goods where cat_id=4;
-- delete from goods4 where goods_id=1;
--select * from goods4;
--select * from goods where cat_id=4;
--create table goods_num(
+
+delete from goods4 where goods_id=1;
+
+select * from goods4;
+
+select * from goods where cat_id=4;
+
+create table goods_num(
     -> gid int,
     -> name varchar(20),
     -> num smallint
     -> );
--create table ord(
+
+create table ord(
     -> oid int,
     -> gid int,
     -> much smallint
     -> );
--insert into goods_num values
-    -> (1,"cat",34),(2,"dog",65),(3,"pig",21);
--delimiter $//换结束符;为$
-- insert into ord values(123,1,2)$
--select * from goods_num$
--show triggers \G$
+
+insert into goods_num values
+    -> (1,"cat",34),
+    (2,"dog",65),
+    (3,"pig",21);
+
+delimiter $//换结束符;为$
+
+insert into ord values(123,1,2)$
+
+select * from goods_num$
+
+//查看当前数据库的所有触发器
+show triggers \G$
+
 -create trigger t1
-after insert on ord
+after 
+insert on ord
 for each row
 begin
 update goods_num set num=num-new.much where gid=new.gid;
 end$
--insert into ord values (111,2,3)$
--select * from goods_num$
--create trigger t2
+
+insert into ord values (111,2,3)$
+
+select * from goods_num$
+
+create trigger t2
 after delete on ord
 for each row
 begin
 update goods_num set num=num+old.much where gid=old.gid;
 end$
--delete from ord where oid=111$
--
--create trigger t3
+
+delete from ord where oid=111$
+
+create trigger t3
 before update on ord
 for each row
 begin
 update goods_num set num=num+old.much-new.much where gid=old.gid;
 end$
--update ord set much=2 where oid=110$
-- select * from goods_num$
--create trigger t1
+
+update ord set much=2 where oid=110$
+
+select * from goods_num$
+
+create trigger t1
 before insert on ord
 for each row
 begin
@@ -436,37 +593,50 @@ if new.much>rnum then
 end if;
 update goods_num set num=num-new.much where gid=new.gid;
 end$
--insert into ord values (111,3,25)$
--
--create procedure p1()
+
+
+insert into ord values (111,3,25)$
+
+//创建存储过程
+create procedure p1()
 begin
 select 2+3;
 end$
--
--Create procedure name()
+
+//存储过程格式
+Create procedure name()
 Begin
 //sql代码
 End
 
+//查看所有的存储过程的状态
 -Show procedure status$
--call p1()$
--show procedure status\G$
--create procedure p2()
+
+//执行某个存储过程
+call p1()$
+
+show procedure status\G$
+
+create procedure p2()
 begin
 declare age tinyint default 18;
 declare height tinyint default 180;
 select concat("年龄是：",age,"身高是：",height);
 end$
--call p2()$
--create procedure p3()
+
+call p2()$
+
+create procedure p3()
 begin
 declare age tinyint default 18;
 declare height tinyint default 180;
 set age:=age+20;
 select concat("年龄是：",age,"身高是：",height);
 end$
--show procedure status\G$
--create procedure p5(width int,height int)
+
+show procedure status\G$
+
+create procedure p5(width int,height int)
 begin
 if width>height then
     select "较宽";
@@ -476,8 +646,9 @@ else
     select "较方";
 end if;
 end$
--
--create procedure p6(width int,height int)
+
+
+create procedure p6(width int,height int)
 begin
 if width>height then
     select "较宽";
@@ -488,8 +659,8 @@ else
 end if;
 select concat("你的面积是",width*height);
 end$
--
--create procedure p7()
+
+create procedure p7()
 begin
     declare sum int default 0;
     declare num int default 0;
@@ -499,8 +670,9 @@ begin
     end while;
     select sum;
 end$
--
--create procedure p8(in n int)
+
+
+create procedure p8(in n int)
 begin
     declare sum int default 0;
     declare num int default 0;
@@ -510,8 +682,9 @@ begin
     end while;
     select sum;
 end$
--
--create procedure p9(in n int,out sum int)
+
+
+create procedure p9(in n int,out sum int)
 begin
     declare num int default 0;
     set sum:=0;
@@ -541,142 +714,5 @@ end$
 -grant all on *.* to zhangsan@"localhost" identified by "111";
 -mysql -hlocalhost -uzhangsan -p111
 -select * from user where user="zhangsan" \G
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
 -
 -
