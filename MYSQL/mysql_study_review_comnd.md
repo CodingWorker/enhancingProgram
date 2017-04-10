@@ -1,18 +1,41 @@
--create database gy1 charset utf8
+//创建数据库并制定字符集
+create database gy1 charset utf8;
+
+//删除数据库
 drop database gy1;
--show databases;
+
+//查看所有数据库
+show databases;
+
+//切换数据库
 -use gy1;
--show tables;
--create table stu(
+
+//查看当前数据库下的所有表
+show tables;
+
+//创建表，制定引擎和字符集
+create table stu(
 snum int,
 sname varchar(10)
 )engine myisam charset utf8;
--drop table stu;
--rename table stu to newstu;
--insert stu values (1,"zhangsan"),(1,"lisi"),(3,"wangwu");
--truncate stu;
--delete from stu;
--#这是注释
+
+//删除表
+drop table stu;
+
+//重命名表
+rename table stu to newstu;
+
+//向表中插入数据
+insert stu values (1,"zhangsan"),(1,"lisi"),(3,"wangwu");
+
+//清空表数据，速度快于delete *,底层实现为删除并建立此空表
+truncate stu;
+
+//删除表记录
+delete from stu where 条件;
+
+
+#这是注释
 - create table class(
     -> id int primary key auto_increment,
     -> sname varchar(10) not null default "",
@@ -20,62 +43,119 @@ sname varchar(10)
     -> company varchar(20) not null default "",
     -> salary decimal(6,2) not null default 0.00,
     -> fanbu smallint not null default 0
-    -> )engine myisam charset utf8;
+    -> )engine=myisam charset=utf8;
+
+//查看表结构
 -desc class;
--insert into class (id,sname,gender,company,salary,fanbu)  values (1,"张三","男","百度",18888.67,234);
--update class set salary=8888.67 where id=1;
--insert into class (sname,gender,salary) values ("刀锋","男",8765.43)
-- insert into class values (
+
+
+-insert into class 
+(id,sname,gender,company,salary,fanbu) 
+values 
+(1,"张三","男","百度",18888.67,234);
+
+//更新表数据
+-update class 
+set salary=8888.67 
+where id=1;
+
+
+-insert into class 
+(sname,gender,salary) 
+values 
+("刀锋","男",8765.43);
+
+- insert into class 
+values 
+(
     -> 3,"李四","女","新浪",5676.99,123);
+
+//插入多提条数据
 -insert into class 
 (sname,company,salary) 
 values
 ("刘备","皇室成员",16.35),
 ("孙策","江东集团",56.15),
 ("曹操","魏国集团","88.56");
+
+
 -update class
 set 
 gender="女",
 salary=66.33
 where sname="李四";
+
+
 -delete from class where salary>3000;
+
 -delete from class where salary< 1000 and gender="女";
+
 -select sname,salary from class;
+
 -select sname,gender,company,salary from class where gender="女";
+
 -select sname,salary from class where gender="男" and salary>2000;
+
 -create table salary(
     -> sname varchar(20) not null default "",
     -> gongzi float(6,2)
     -> )engine myisam charset utf8;
+
 -insert into salary values ("张三",-9999.99),("李四",9999.99);
+
+//修改表结构，增加列
 -alter table salary add bonus float(3,2) default 0.00;
+
+
 -create table test (
     -> ca char(6) not null default "",
     -> vca varchar(6) not null default ""
-    -> );
--insert into test values ("aa ","aa ");
+    -> ) engine=innodb charset=utf8;
+
+-insert into test 
+values 
+("aa ","aa ");
+
+
 -select concat(ca,"!"),concat(vca,"!") from test;
+
+
 -create table test3 (
     -> star varchar(20) not null default "",
     -> birth date not null default "0000-00-00"
     -> )engine myisam charset utf8;
--insert into test3 values ("张国荣","1961-03-12");
+
+
+-insert into test3 
+values 
+("张国荣","1961-03-12");
+
+//修改表结构，增加列
 -alter table test3 add sign time not null default 00:00:00;
+
 -insert into test3
     -> (star,sign)
     -> values
     -> ("dd","19:10:45");
+
+
 - desc test3;
+
 - create table test4 (
     -> sname varchar(20) not null default "",
     -> logintime datetime not null default "0000-00-00 00:00:00"
     -> )engine myisam charset utf8;
+
 -create table test5(
     -> ts timestamp default CURRENT_TIMESTAMP,
     -> id int
     -> )engine myisam charset utf8;
+
 -insert into test5(id) values (1),(2),(3);
+
 -select * from  test5;
+
+//创建表
 - create table member(
 id int(10) unsigned primary key not null auto_increment,
 username varchar(20) not null default "",
@@ -85,19 +165,32 @@ birth date not null default "0000-00-00",
 salary decimal(8,2) unsigned not null default 0.00,
 lastlogintime datetime not null default "0000-00-00 00:00:00",
 instro varchar(300) default ""
-)engine myisam charset utf8;
+)engine=myisam charset=utf8;
+
 -create table m1(
     -> id int unsigned auto_increment primary key
     -> )engine myisam charset utf8;
+
 -insert into m1 values (1);
+
 -select * from m1;
+
 -alter table m1 add username char(20) not null default "";
+
 -alter table m1 add birth date not null default "0000-00-00";
+
 -alter table m1 add gender tinyint unsigned not null default 0 after username;
+
 -alter table m1 add pid int unsigned not null default 0 first;
+
+//删除列
 -alter table m1 drop pid;
+
 -alter table m1 modify birth timestamp not null default 0;
+
 -alter table m1 change birth birthday timestamp not null default 0;
+
+//创建表-反引号
 - CREATE TABLE `goods` (
     ->   `goods_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
     ->   `cat_id` smallint(5) unsigned NOT NULL DEFAULT '0',
@@ -113,16 +206,25 @@ instro varchar(300) default ""
     ->   `is_hot` tinyint(1) unsigned NOT NULL DEFAULT '0',
     ->   PRIMARY KEY (`goods_id`)
     -> ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
 -insert into test.goods
     -> select goods_id,cat_id,goods_sn,goods_name,click_count,goods_number,market_price,shop_pric
 e,add_time,is_best,is_new,is_hot from gyshop.goods;
+
 -select * from goods where goods_id=32;
+
 -select goods_name from goods where cat_id!=3;
+
 -select goods_name,cat_id from goods where cat_id!=3;
+
 -select goods_name,cat_id from goods where cat_id<>3;
+
 -select goods_name,shop_price from goods where shop_price>3000;
+
 - select goods_name,shop_price from goods where shop_price<=100;
+
 -select goods_name,cat_id from goods where cat_id in(4,11);
+
 -等价于:select goods_name,cat_id from goods where cat_id=4 or cat_id=11;
 -select goods_name,cat_id from goods where cat_id between 4 and 11;
 - select goods_name,market_price from goods where market_price>=100 and market_price<=500;
