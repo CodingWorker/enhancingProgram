@@ -1,27 +1,87 @@
 ##3.教程
--select version(),currend_date;
--select sin(pi()/4),(4*5)%3;
--select version();select now();select 4*6;
+函数:
+verison()：返回当前使用的mysql服务器版本
+current_date():返回当前日期-年-月-日
+current_date:同current_date()
+current_time():返回当前时间-hh:mm:ss
+current_time:同current_time()
+pi():返回圆周率
+sin():正弦函数
+now():当前时间-yyyy-MM-dd HH:mm:ss
+user():当前用户
+
+-select version();current_date;
++-----------------+
+| version()       |
++-----------------+
+| 10.1.10-MariaDB |
++-----------------+
+1 row in set (0.07 sec)
+
+MariaDB [(none)]> select current_time();
++----------------+
+| current_time() |
++----------------+
+| 18:45:17       |
++----------------+
+1 row in set (0.00 sec)
+
+MariaDB [(none)]> select sin(pi()/2);
++-------------+
+| sin(pi()/2) |
++-------------+
+|           1 |
++-------------+
+
+MariaDB [(none)]> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2017-04-11 18:48:24 |
++---------------------+
+1 row in set (0.00 sec)
+
+MariaDB [(none)]> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.01 sec)
+
+MariaDB [(none)]> select current_time;
++--------------+
+| current_time |
++--------------+
+| 18:50:44     |
++--------------+
+1 row in set (0.00 sec)
+
 -select
     -> user(),
     -> current_date;
--select * fr \c
+-select * fr \c    #取消之前的输入
+
 -select 'user
     '> \c
     '> '\c
+
 -show databases;
 -use test;
 -show tables;
--create database menagerie;
+-create database menagerie charset utf8;
+
 -use menagerie;
 -show tables;
 -create table pet (name varchar(20),owner varchar(20),species varchar(20),sex
  char(1),birth date,death date);
 -show tables;
--describe pet;
+-describe pet;  #同desc pet
+
 -pet.txt文件中：Whistler    Gwen    bird    \N  1997-12-09  \N 
   命令行：load data local infile 'E:\mysql学习\pet.txt' into table pet;
 -insert pet values('Puffball','Diane','hamster','f','1999-03-30',null);
+
 - select * from pet;
 -update pet set birth='1989-08-31' where name="Bowser";
 -select * from pet where name="Bowser";
