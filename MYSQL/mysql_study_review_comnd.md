@@ -714,5 +714,3 @@ end$
 -grant all on *.* to zhangsan@"localhost" identified by "111";
 -mysql -hlocalhost -uzhangsan -p111
 -select * from user where user="zhangsan" \G
--
--
