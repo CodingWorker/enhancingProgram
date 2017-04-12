@@ -81,7 +81,7 @@ MariaDB [(none)]> select current_time;
 -pet.txt文件中：Whistler    Gwen    bird    \N  1997-12-09  \N 
   命令行：load data local infile 'E:\mysql学习\pet.txt' into table pet;
 -insert pet values('Puffball','Diane','hamster','f','1999-03-30',null);
-
+//==============20170412
 - select * from pet;
 -update pet set birth='1989-08-31' where name="Bowser";
 -select * from pet where name="Bowser";

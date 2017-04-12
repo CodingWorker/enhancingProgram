@@ -13,19 +13,23 @@ mysql -u -p -h
 
 2:库级知识
 2.1 显示数据库: show databases;
-2.2 选择数据库: use dbname;
-2.3 创建数据库: create database dbname charset utf8;
-2.3 删除数据库: drop database dbname;
+2.2 选择数据库: use {dbname};
+2.3 创建数据库: create database {dbname} charset {utf8};
+2.3 删除数据库: drop database {dbname};
 
 3: 表级操作:
 3.1 显示库下面的表
 show tables;
 
 3.2 查看表的结构: 
-desc tableName;
+desc {tableName};
 
 3.3 查看表的创建过程: 
-show create table  tableName;
+show create table  {tableName};
+
+3.3.1 表创建过程的两种查看方法
+show create table {tablename}\G;
+show create table {tablename};
 
 3.4 创建表:
 　create table tbName (
@@ -45,19 +49,20 @@ create table user (
    )engine=innodb charset=utf8;
 注:innodb是表引擎,也可以是myisam或其他,但最常用的是myisam和innodb,
 charset 常用的有utf8,gbk;
+  指定表引擎和字符集时可以使用等号也可以不使用等号
 
 
 3.5 修改表
 3.5.1	修改表之增加列:
 alter table tbName 
-add 列名称１　列类型　[列参数]　[not null default ]　#(add之后的旧列名之后的语法和创建表时的列声明一样)
+add 列名称１　列类型　[列参数]　[not null default ]　#(add之后的语法和创建表时的列声明一样)
 
 3.5.2	修改表之修改列
 alter table tbName
 change 旧列名  新列名  列类型　[列参数]　[not null default ]
-(注:旧列名之后的语法和创建表时的列声明一样)
+(注:新列名之后的语法和创建表时的列声明一样)
 
-3.5.3	修改表之减少列:
+3.5.3	修改表之删除列:
 alter table tbName 
 drop 列名称;
 
@@ -67,11 +72,13 @@ alter table tbName add primary key(主键所在列名);
 例:alter table goods add primary key(id)
 该例是把主键建立在id列上
 
+
 3.5.5	修改表之删除主键
 alter table tbName　drop primary key;
 
 3.5.6	修改表之增加索引
 alter table tbName add [unique|fulltext] index 索引名(列名);
+
 
 3.5.7	修改表之删除索引
 alter table tbName drop index 索引名;
@@ -79,6 +86,8 @@ alter table tbName drop index 索引名;
 3.5.8	清空表的数据
 truncate tableName;
 
+
+//==========20170412
 4:列类型讲解
 列类型:
         整型:tinyint (0~255/-128~127) smallint (0~65535/-32768~32767) mediumint int bigint (参考手册11.2)
