@@ -22,6 +22,40 @@ from
 pet as pet1,pet as pet2
 where pet1.species=pet2.species and pet1.sex='f'and pet2.sex='f';
 
+#使用\G关键字，分别列出各个记录的字段和值
+MariaDB [test]> select  * from meta_data\G
+*************************** 1. row ***************************
+          Id: 1
+        Name: aa
+         Url: aa
+ TimeCreated: 2017-04-11 15:40:20
+TimeModified: 2017-04-11 15:40:20
+*************************** 2. row ***************************
+          Id: 2
+        Name: b
+         Url: bb
+ TimeCreated: 2017-04-12 11:46:53
+TimeModified: 2017-04-12 11:46:53
+*************************** 3. row ***************************
+          Id: 3
+        Name: c
+         Url: cc
+ TimeCreated: 2017-04-12 12:39:18
+TimeModified: 2017-04-12 12:39:18
+*************************** 4. row ***************************
+          Id: 4
+        Name: c
+         Url: cc
+ TimeCreated: 2017-04-12 12:39:43
+TimeModified: 2017-04-12 12:39:43
+*************************** 5. row ***************************
+          Id: 5
+        Name: d
+         Url: dd
+ TimeCreated: 2017-04-12 12:43:03
+TimeModified: 2017-04-12 12:43:03
+5 rows in set (0.23 sec)
+
 -create table shop(
     -> article int(4) unsigned zerofill default '0000' not null,
     -> dealer char(20) default '' not null,
