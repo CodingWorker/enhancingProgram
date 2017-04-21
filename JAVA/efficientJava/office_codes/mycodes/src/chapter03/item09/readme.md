@@ -1,0 +1,1 @@
+覆盖equals方法时总要覆盖hashCode方法
