@@ -1,6 +1,5 @@
 package chapter03.item12;
 
-import javax.swing.plaf.synth.SynthUI;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.Set;
