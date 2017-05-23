@@ -515,3 +515,97 @@ FROM Products
 -SELECT ROUND(column_name,decimals) FROM table_name
 -SELECT ProductName, UnitPrice, FORMAT(FORMAT(),'YYYY-MM-DD') as PerDate
 FROM Products
+
+
+使用explain和query profiler提高mysql查询效率
+
+MySQL 5.0.37版本加入了MySQL Query Profiler工具。
+http://dev.mysql.com/tech-resources/articles/using-new-query-profiler.html
+
+简单的实例
+mysql> set profiling=1;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show profiles;
+Empty set (0.00 sec)
+
+
+mysql> SELECT COUNT(nickname), gender FROM users GROUP BY gender;
++-----------------+--------+
+| COUNT(nickname) | gender |
++-----------------+--------+
+|       106773 |    0 |
+|       106462 |    1 |
++-----------------+--------+
+2 rows in set (0.88 sec)
+
+
+mysql> show profiles;
++----------+------------+-----------------------------------------------------------+
+| Query_ID | Duration | Query                                                     |
++----------+------------+-----------------------------------------------------------+
+|        1 | 0.88324700 | SELECT COUNT(nickname), gender FROM users GROUP BY gender |
++----------+------------+-----------------------------------------------------------+
+1 row in set (0.03 sec)
+
+
+mysql> show profile for query 1;
++----------------------+-----------+
+| Status             | Duration   |
++----------------------+-----------+
+| (initialization)     | 0.0000699 |
+| Opening tables    | 0.000039   |
+| System lock       | 0.000008   |
+| Table lock           | 0.000014   |
+| init                 | 0.000043   |
+| optimizing           | 0.000396   |
+| statistics           | 0.000024   |
+| preparing          | 0.000079   |
+| Creating tmp table | 0.000118   |
+| executing          | 0.000008   |
+| Copying to tmp table | 0.871251   |
+| Sorting result    | 0.000063   |
+| Sending data       | 0.009601   |
+| end                | 0.000017   |
+| removing tmp table | 0.000028   |
+| end                | 0.000009   |
+| query end          | 0.000006   |
+| freeing items        | 0.000015   |
+| closing tables    | 0.001449   |
+| logging slow query | 0.000009   |
++----------------------+-----------+
+20 rows in set (0.02 sec)
+
+mysql>show profile cpu for query 1;
++----------------------+-----------+-----------+------------+
+| Status             | Duration   | CPU_user   | CPU_system |
++----------------------+-----------+-----------+------------+
+| (initialization)     | 0.0000699 | 0       | 0       |
+| Opening tables    | 0.000039   | 0       | 0       |
+| System lock       | 0.000008   | 0       | 0       |
+| Table lock           | 0.000014   | 0       | 0       |
+| init                 | 0.000043   | 0       | 0.001    |
+| optimizing           | 0.000396   | 0       | 0       |
+| statistics           | 0.000024   | 0       | 0       |
+| preparing          | 0.000079   | 0       | 0       |
+| Creating tmp table | 0.000118   | 0       | 0       |
+| executing          | 0.000008   | 0       | 0       |
+| Copying to tmp table | 0.871251   | 0.59391 | 0.253961 |
+| Sorting result    | 0.000063   | 0       | 0       |
+| Sending data       | 0.009601   | 0.001     | 0.003    |
+| end                | 0.000017   | 0       | 0       |
+| removing tmp table | 0.000028   | 0       | 0       |
+| end                | 0.000009   | 0       | 0       |
+| query end          | 0.000006   | 0       | 0       |
+| freeing items        | 0.000015   | 0       | 0       |
+| closing tables    | 0.001449   | 0.0009990 | 0.001    |
+| logging slow query | 0.000009   | 0       | 0       |
++----------------------+-----------+-----------+------------+
+20 rows in set (0.00 sec)
+
+mysql> set profiling=0;
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+
