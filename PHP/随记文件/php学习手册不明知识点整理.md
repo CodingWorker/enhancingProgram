@@ -46,6 +46,20 @@
 	var_dump(settype($a,"array"));//true
 	var_dump($a);//array
 
+##类的常量不能用对象来访问，但是方法可以
+
+	class test{
+	const a=1;
+	}
+	$test=new test;
+	echo $test->a;//会报错
+
+	class test{
+	const a=1;
+	}
+	$test=new test;
+	echo test::a;//此时就没有错误了
+
 
 ##setcookie设置cookie时将值尽量序列化
 setcookie($name, serialize($value), expire, path, domain);
