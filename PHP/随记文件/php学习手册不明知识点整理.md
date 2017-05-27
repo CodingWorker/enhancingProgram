@@ -46,6 +46,36 @@
 	var_dump(settype($a,"array"));//true
 	var_dump($a);//array
 
+
+##PHP文档编写要注意的事项
+
+1. 使用if(false == $p) 代替if($p ==false)
+		因为当比较符号正确书写时，都能正确解析；当比较符号写成赋值符号时，第一种写法会提示一个错误而第二种写法不会提示任何的错误，这时排除错误可能会非常的费时。
+
+2. 对于纯PHP文件，尽量不要有结束标识符?>,因为这可能导致在另一个文件将此文件include时，再使用header、session等函数时前面有空行导致出错。
+
+3. PHP中的可变变量名
+
+		$a = 'hello';
+		$$a = 'world';
+		echo $hello;//输出world
+		$a = 'haha';
+		echo $haha;//输出world
+
+4. PHP的register_globals，单就前台传入的表单和url传参来讲
+
+	当register_globals=Off，url或者表单传入的数据，需要使用$_GET或者$_POST来使用
+	当register_globals=On时，那么表单和URL传入的数据就可以直接作为全局变量来使用了
+
+	示例：当register_globals=On时，前台表单：
+	<form name="frmTest" id="frmTest" action="URL">
+	<input type="text" name="user_name" id="user_name">
+	<input type="password" name="user_pass" id="user_pass">
+	<input type="submit" value="login">
+	</form>
+	
+	那么在后台就可以直接使用$user_name和$user_pass,这将带来很大的安全隐患。如果将session写入url等，如_SESSION['useaname']='john',这就可能导致john的数据泄露
+
 ##类的常量不能用对象来访问，但是方法可以
 
 	class test{
