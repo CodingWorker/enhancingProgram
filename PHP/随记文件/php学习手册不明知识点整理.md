@@ -47,6 +47,10 @@
 	var_dump($a);//array
 
 
+#reids操作：
+
+取得sorted set里元素的个数使用zcard(key)方法，或者使用zcount(key,'-inf', 'inf')方法都可以
+
 ##PHP文档编写要注意的事项
 
 1. 使用if(false == $p) 代替if($p ==false)
