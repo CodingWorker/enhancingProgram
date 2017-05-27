@@ -47,6 +47,142 @@
 	var_dump($a);//array
 
 
+#PHP单例模式
+
+通过将类的构造函数声明为私有的，外部就不能用new关键词来实例化类了，否则会产生（Fatal error: Call to private Test::__construct()）不能访问私有方法的指明错误。这时这个类只能被自己实例化。
+php的单例模式只能有懒汉模式，因为PHP不允许定义类的属性为对象
+
+
+#类的静态属性访问
+
+类的静态属性不可以使用对象的方法在外部访问，只能使用类名::$的变量名来访问静态属性
+
+而类的静态方法则可以使用外部对象访问
+
+上代码：
+
+	class Test{
+	public static $aa=1;
+	public static function bb(){
+		echo '访问类' . __CLASS__ . '的' . __FUNCTION__ . '方法';
+	}
+	}
+	
+	$test = new Test;
+	echo $test->aa;//访问不到属性，也没有定义该属性
+	// echo $test::aa;//这样也不对，没有定义aa的常量
+	echo Test::$aa;//输出 1
+	$test->bb();//输出 
+	die;
+
+在不同的操作系统上换行符的表示方法不同：
+
+- 在unix系列用\n
+- 在windows系列用\r\n
+- 在mac系列用\r
+
+如下代码：
+	
+	  echo PHP_EOL;
+       //windows平台相当于    echo "\r\n";
+       //unix\linux平台相当于    echo "\n";
+       //mac平台相当于    echo "\r";
+
+PHP中的常量可以使用函数get_defined_constants()来获取
+
+	var_dump(get_defined_constants());
+
+	输出：
+	array (size=1571)
+	'E_ERROR' => int 1
+	'E_RECOVERABLE_ERROR' => int 4096
+	'E_WARNING' => int 2
+	'E_PARSE' => int 4
+	'E_NOTICE' => int 8
+	'E_STRICT' => int 2048
+	'E_DEPRECATED' => int 8192
+	'E_CORE_ERROR' => int 16
+	'E_CORE_WARNING' => int 32
+	'E_COMPILE_ERROR' => int 64
+	'E_COMPILE_WARNING' => int 128
+	'E_USER_ERROR' => int 256
+	'E_USER_WARNING' => int 512
+	'E_USER_NOTICE' => int 1024
+	'E_USER_DEPRECATED' => int 16384
+	'E_ALL' => int 32767
+	'DEBUG_BACKTRACE_PROVIDE_OBJECT' => int 1
+	'DEBUG_BACKTRACE_IGNORE_ARGS' => int 2
+	'TRUE' => boolean true
+	'FALSE' => boolean false
+	'ZEND_THREAD_SAFE' => boolean true
+	'ZEND_DEBUG_BUILD' => boolean false
+	'NULL' => null
+	'PHP_VERSION' => string '5.6.19' (length=6)
+	'PHP_MAJOR_VERSION' => int 5
+	'PHP_MINOR_VERSION' => int 6
+	'PHP_RELEASE_VERSION' => int 19
+	'PHP_EXTRA_VERSION' => string '' (length=0)
+	'PHP_VERSION_ID' => int 50619
+	'PHP_ZTS' => int 1
+	'PHP_DEBUG' => int 0
+	'PHP_OS' => string 'WINNT' (length=5)
+	...
+	
+
+
+PHP中的die方法和exists方法完全一样，只是别名的关系
+
+
+#PHP 程序员最常犯的11个MySQL错误
+
+1. 使用MyISAM而不是InnoDB
+
+>Mysql默认使用的是MyISAM，但是多数情况下这是一个糟糕的选择，除非创建的是一个非常简单或是实验性的数据库
+>MyISAM不支持外键约束和事务处理，而且当一条数组正在插入或更新时，整个数据表都被锁定。
+
+使用InnoDB能解决这些问题
+
+2. 还在使用PHP的mysql函数
+>强烈推荐使用Mysqli扩展，主要基于以下优点：
+
+	可选的面向对象
+	prepared表达式，有利于组织SQL注入的攻击，还能提高性能
+	支持更多的表达式和事务处理
+
+另外，使用PDO可以支持多中数据库系统
+
+3. 没有处理用户输入
+>永远不要相信用户的输入，用服务器端的PHP验证每个字符串，不要寄希望与js
+
+4. 没有使用UTF-8
+>将MySQL字符集设置为UTF-8
+
+5. 相对于SQL,偏爱PHP
+>mysql的自有函数要看情况使用
+>执行一个查询比在结果集中迭代更有效率
+>在分析数据的时候尽量利用一些数据库系统的知识
+
+6. 没有优化SQL语句查询
+>99%的PHP性能问题都是由数据库引起的
+>多使用mysql的explain、 query profiler函数检验查询语句的效率
+
+7. 不能使用正确的数据类型
+
+8. 在查询中使用*
+>永远不要使用*来返回一个数据表的所有列
+
+9. 不要使用索引或者过度使用索引
+>不要为每个列都设置索引，因为执行了插入和更新操作后所有的索引都要重新生成，这将非常的影响性能
+>一般性的原则是:select语句中的任何一个where子句表示的字段都应该使用索引
+
+10. 忘记备份
+>虽然比较少见，但是数据库还是有可能遭遇崩溃的危险的，如硬盘损坏、服务器崩溃
+
+11. 不考虑使用其他的数据库
+>其他数据库：PostgreSQL和Firebird，这两者也都是开源的
+>微软提供了sql server Express，甲骨文提供了10g Express，这两者都是企业级数据库的免费版本。
+>对于一个较小的web应用或者嵌入式应用，SQLite也不失为一个可行的替代方案。
+
 #reids操作：
 
 取得sorted set里元素的个数使用zcard(key)方法，或者使用zcount(key,'-inf', 'inf')方法都可以
