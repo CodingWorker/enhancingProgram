@@ -47,6 +47,37 @@
 	var_dump($a);//array
 
 
+##setcookie设置cookie时将值尽量序列化
+setcookie($name, serialize($value), expire, path, domain);
+
+###`call_user_func_array` - 调用一个函数，传递数组参数
+	mixed  call_user_func_array  ( callable  $callback  , array $param_arr  )
+	Calls the callback  given by the first parameter with the parameters in param_arr . 
+	返回值为回调函数的返回值，如果出错返回false
+
+	function get_args($arg1, $arg2) {
+	echo 'got args: ',$arg1 . ' ',$arg2;
+	}
+	call_user_func_array('get_args', array('a', 'b'));
+	输出：got args: a b
+
+###PHP生成静态文件原理：就是读取数据代替文件中的变量，生成HTML静态页；主要采用的就是fread和fwrite方法，将页面或者缓存中的数据读入指定的html页面
+
+
+###ob_start()
+
+	<?php  
+	ob_start(); //打开缓冲区  
+	echo 'fafa'; //使用phpinfo函数  
+	$info=ob_get_contents(); //得到缓冲区的内容并且赋值给$info  
+	$file=fopen('info.txt','w'); //打开文件info.txt  
+	fwrite($file,$info); //写入信息到info.txt  
+	fclose($file); //关闭文件info.txt
+	sleep(20);  
+	?> 
+
+开启缓冲后，先生成文件，浏览器要等到20秒之后才输出内容
+
 
 1. usleep() 
 
