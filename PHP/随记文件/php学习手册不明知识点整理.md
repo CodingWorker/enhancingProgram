@@ -48,6 +48,41 @@
 
 
 
+1. usleep() 
+
+		函数延迟代码执行若干微秒
+
+2. SETEX key seconds value
+
+		phpredis里使用的将key设置value值并设定过期时间
+
+3. stdClass
+
+		PHP的基类，可以将一个变量转换为对象，从而该变量可以有属性，但是该对象不可以有方法
+		$user = new stdClass;
+		$user->name='zhangsan';
+		var_dump($user);
+		echo $user->name;
+
+4. redis学习
+
+		http://doc.redisfans.com/
+
+5. 类中常量的定义是为了更好地维护，也是为了后面引用的方便
+
+		const a=123333;
+
+6. array_rand随机返回数组元素的一个或多个键
+
+		mixed  array_rand  ( array $input  [, int $num_req  = 1  ] )
+		默认为1个，可以指定
+
+>类中的常量设置的考虑：
+
+- 为了以后设置为其他值时的灵活性
+- 为了类后面独处引用
+
+
 **为什么使用 `$_GET`？**
 
 注释：在使用 `$_GET `变量时，所有的变量名和值都会显示在 `URL` 中。所以在发送密码或其他敏感信息时，不应该使用这个方法。不过，正因为变量显示在 URL 中，因此可以在收藏夹中**收藏**该页面。在某些情况下，这是很有用的。
