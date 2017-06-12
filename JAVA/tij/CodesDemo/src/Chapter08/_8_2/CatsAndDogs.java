@@ -44,7 +44,7 @@ public class CatsAndDogs {
         for(int i=0;i<cats.size();i++){
             ((Cat)cats.get(i)).print();
         }
-        new Hashtable<>()
+
         Vector<Cat> catVector=new Vector<>();
         catVector.addElement(new Cat(1));
         //catVector.addElement(Dog(2));  //类型不匹配
