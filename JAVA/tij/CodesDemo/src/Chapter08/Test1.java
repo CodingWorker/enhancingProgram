@@ -21,10 +21,13 @@ public class Test1 {
         i.add(12);
 
         test(cat.elementAt(0));
+        new Test1().outputThis();
     }
 
     public static void test(Object demo){}
 
-
+    public void outputThis(){
+        System.out.println(this);//Chapter08.Test1@1b6d3586
+    }
 
 }
