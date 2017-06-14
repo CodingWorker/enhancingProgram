@@ -10,7 +10,7 @@ public class Test1 {
         }catch(Exception e){
             e.printStackTrace();
         }catch(Throwable th){
-            
+
         }
     }
 
