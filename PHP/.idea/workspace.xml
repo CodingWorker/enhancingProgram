@@ -28,31 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mb_string_study.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/随记文件/mb_string_study.md">
+      <file leaf-file-name="php学习手册不明知识点整理.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1209">
-              <caret line="290" column="29" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+            <state relative-caret-position="-240">
+              <caret line="1241" column="8" selection-start-line="1241" selection-start-column="8" selection-end-line="1241" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linux_mianshi.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/随记文件/linux_mianshi.md">
+      <file leaf-file-name="_val.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/_val.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="php_mianshi_1.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/随记文件/questions_in_interviews/php_mianshi_1.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3983">
-              <caret line="556" column="4" selection-start-line="556" selection-start-column="4" selection-end-line="556" selection-end-column="4" />
+            <state relative-caret-position="450">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +63,6 @@
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/urldemo01.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/parseurl.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/parse_.php" />
-        <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/_val.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/settype.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/singleton.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/call_user_func_array.php" />
@@ -96,6 +85,7 @@
         <option value="$PROJECT_DIR$/随记文件/php_json.md" />
         <option value="$PROJECT_DIR$/随记文件/nandianzhengli.md" />
         <option value="$PROJECT_DIR$/随记文件/questions_in_interviews/php_mianshi_1.md" />
+        <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/_val.php" />
       </list>
     </option>
   </component>
@@ -200,6 +190,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="codes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bumingzhishidian_codes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -286,12 +294,12 @@
       <workItem from="1491435938194" duration="12000" />
       <workItem from="1491524242893" duration="74000" />
       <workItem from="1497844964207" duration="11721000" />
-      <workItem from="1497860099453" duration="7347000" />
+      <workItem from="1497860099453" duration="8229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32165000" />
+    <option name="totallyTimeSpent" value="33047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,14 +347,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/file01.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -372,13 +372,6 @@
     <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/arraydemo8.php" />
     <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/urldemo01.php" />
     <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/parseurl.php" />
-    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/_val.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/singleton.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -521,14 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="6423" column="14" selection-start-line="6423" selection-start-column="14" selection-end-line="6423" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/php-quiz.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -585,14 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/随记文件/mb_string_study.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1209">
-          <caret line="290" column="29" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/PHP知识结构图.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -606,10 +583,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/随记文件/questions_in_interviews/phpmianshiti_huizong.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/questions_in_interviews/php_mianshi_1.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3983">
+        <state relative-caret-position="-3969">
           <caret line="556" column="4" selection-start-line="556" selection-start-column="4" selection-end-line="556" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/随记文件/mb_string_study.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1209">
+          <caret line="290" column="29" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="1241" column="8" selection-start-line="1241" selection-start-column="8" selection-end-line="1241" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/_val.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
