@@ -419,6 +419,7 @@ Truncate和delete是有区别的,
 清空表数据: truncate 表名
 
 如何破解数据库的密码:
+    关闭数据库服务器，以跳过验证参数-skip-gtrant-tables启动；然后使用客户端免密码登录；修改mysql库的user表的root@%的密码即可，然后关闭数据库服务器重新启动重新登录。
 
 mysql三大列类型：数值型 字符串型 日期时间类型
 
@@ -471,6 +472,7 @@ lter table 表名 add 列名称 列类型 列参数 first [把新列加在最前
 
 Alter table 表名  drop 列名
 
+change可以改变旧的列名而modify则不能修改。
 Alter table 表名 modify 列名 新类型  新参数
 
 Alter table 表名 change 旧列名 新列名 新类型 新参数
@@ -487,7 +489,7 @@ select count(*) from 表名, 查询的就是绝对的行数,哪怕某一行所�
 而select count(列名) from 表名,
 查询的是该列不为null的所有行的行数.
 
-Having既可以操作原表数据，又可以操作选择出的结果集列别名
+Having既可以操作原表数据，又可以操作选择出的结果集列别名,及having可以替代where
 
 排序只是对结果进一步的整理，因此要放在结果集出现之后
 排序的语法:
@@ -495,7 +497,7 @@ Order by 结果集中的列名 desc/asc
 
 书写顺序：Where group having order limit
 
-子查询：where型（=和in两种） from型 exists型
+子查询：where型（=和in和like三种） from型 exists型
 
 A left join B on 条件 left C on 条件…可多重左连接
 

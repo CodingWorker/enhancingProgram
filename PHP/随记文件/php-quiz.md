@@ -13,6 +13,9 @@ print_r可以打印复杂的变量，如数组和对象;打印对象时仅能打
     使用主辅数据库，把数据库的读写分开
     使用负载均衡器和多台服务器
 
+    缓存-> 数据库读写分离->生成静态页面->负载均衡->消息队列等等措施
+
+
 3、用PHP写出显示客户端IP和服务器IP
 客户端IP：$_SERVER["REMOTE_ADDR"]
 服务器IP：$_SERVER["SERVER_ADDR"]
@@ -34,12 +37,13 @@ include 和require都是语言结构，不是函数，但有返回值
 7、 检测变量是否存在或是否有值的函数：
 是否存在：isset()存在返回真
 是否为空:empty() 为空返回真
-如果var是非空或非零的值，则empty()返回 FALSE 。换句话说，""、0、"0"、 NULL 、 FALSE 、array(); 以及没有任何属性的对象都将被认为是空的，如果 var  为空，则返回 TRUE 。
+如果var是非空或非零的值，则empty()返回 FALSE 。换句话说，""、0、"0"、 NULL 、 FALSE 、array(); 以及没有任何属性的对象都将被认为是空的，
+如果 var  为空，则返回 TRUE 。
 
 8、public protected private的区别
 public:公有，外部对象可以访问，可以继承
 protected：受保护的，外部不可以访问，可以被继承
-private：私有，只能被自身类访问
+private：私有，只能在自身类的内部被访问
 
 9、js表单弹出对话框函数，获得输入焦点函数
 alert() prompt() conform()
@@ -104,7 +108,7 @@ cookie存储在客户端，session存储在服务器端，一般session要借助
 以上数据改用什么方法过滤安全？数据入库之前需要做什么处理？
 对于          处理             描述
 $_GET["int"]  使用intval函数   将对应项转换为整数
-$_GET["float"] 使用float强制转换 (float)$_GET["float"] 转换为浮点型
+$_GET["float"] 使用float强制转换 (float)$_GET["float"] 转换为浮点型，或者使用floatval函数
 $_GET["text"]  先使用htmlspecialchars()将html标签转换为实体，再addslashes()函数转义特殊字符，然后入库
 $_GET["content"]  先使用htmlspecialchars()将html标签转换为实体，再addslashes()函数转义特殊字符，然后入库
                   出库时，使用stripslashes()函数去掉转义符号即可，还原原始数据样貌，这时的html实体也可以在网站上正常显示hmtl标签字符串
@@ -116,9 +120,9 @@ $_GET["content"]  先使用htmlspecialchars()将html标签转换为实体，再a
 ?:子组缓存中不包含该子组
 
 22、面向对象中，self与$this的区别是什么？
-this是指向当前对象的指针，self是指向当前类的指针，parent是指向但前类的父类的指针
+this是指向当前对象的指针，self是指向当前类的指针，parent是指向当前类的父类的指针
 
-23、写出多进程并发同时，读写同意文件时能保证文件内容完整的代码
+23、写出多进程并发同时，读写同一文件时能保证文件内容完整的代码
 文件独占   文件加锁
 ```if(flock($file,LOCK_EX)){
     fwrite($file,"write more words");
@@ -257,11 +261,6 @@ total_Sum(1);
 事务则提交，其修改将作用于所有其他数据库进程。如果一个操作失败，则事务将回滚，该事务所有操作的影响都将取消。
 ```
 
-```ehco() print print_r的区别
-echo 使用语句，而print和print_r是函数，语句没有返回值，而函数有返回值
-echo 和 print仅打印简单数据
-print_r可以打印复杂数据如数组和对象
-```
 
 ```foo()和@foo()之间有什么区别
 @foo()抑制错误输出
@@ -273,16 +272,12 @@ print_r可以打印复杂数据如数组和对象
 2、可以一个个的截取到数组，数组翻转输出字符串
 3、直接一个个的输出组成字符串
 
-字符串和数组怎么取长度?
-```字符串长度：strlen
-数组长度：count
-```
 
 使用五种以上方式获取一个文件的扩展名
 1\截取字符串 substr strpos  basename
 2\strrchr($str,".")
 3\explode($file) 取最后一个 $arr(count($arr)-1);
-4\strrchr($str,".")
+4\strrchr(basename($str),".")
 5\pathnfo($filename)["extension"]
 6\end(explode($filename,"."))
 
@@ -311,7 +306,7 @@ echo date("Y-n-d",strtotime("-1 days"));
 echo date("Y-m-d",time()-3600*24);
 ```
 
-isset检测：只要不是空的和为初始化(赋非空值)的就为真
+isset检测：只要不是空的和未初始化(未赋值)的就为真
 
 $a="hello";
 $b=&$a;
@@ -324,45 +319,4 @@ $a = &$b;
 而是a,b共同指向一个地址.
 ```所以,a,b一改则全改.
 但unset某一个变量,并不影响对方.
-```
-
-```
-填空题:
-1.在PHP中，当前脚本的名称(不包括路径和查询字符串)记录在预定义变量__$_SERVER['PHP_SELF']__中;而链接到当前页面的URL记录在预定义变量__$_SERVER['HTTP_REFERER']__
-
-中
-
-2.执行程序段<?php echo 8%(-2) ?>将输出__0__。
-
-3.在HTTP 1.0中，状态码 401 的含义是____;如果返回“找不到文件”的提示404，则可用 header 函数，其语句为____。
-
-4.数组函数 arsort 的作用是__对数组进行逆向排序并保持索引关系__;语句 error_reporting(2047)的作用是__报告所有错误和警告__。
-
-5.PEAR中的数据库连接字符串格式是____。
-
-6.写出一个正则表达式，过虑网页上的所有JS/VBS脚本(即把scrīpt标记及其内容都去掉):preg_replace(”/<script[^>].*?>.*?</script>/si”, “newinfo”, $script);
-
-7.以Apache模块的方式安装PHP
-```
-$GLOBALS保存脚本的全局变量
-```
-$a=1;
-$v=2;
-$c=3;
-print_r($GLOBALS);
-```
-
-mb_strlen
-
-empty（）函数中哪些变量的值会被认为是空值？ 
-```
-""、0、"0"、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
-```
-在php里,如下认为是bool值false
-false,0,'0','',null,array(),没有任何属性及方法的对象,都认为是false.
-
-如何在一个php函数中使用具有全局属性的变量
-```
-global $a;
-$GLOBALS['a']
 ```

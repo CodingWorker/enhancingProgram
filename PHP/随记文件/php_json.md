@@ -8,9 +8,9 @@
 
 		mixed  json_decode  ( string $json  [, bool $assoc  = false  [, int $depth  = 512  [, int $options  = 0  ]]] )
 		接受一个 JSON 格式的字符串并且把它转换为 PHP 变量 
-		第二个参数如果为true则返回数组，否则是一个对象
+		第二个参数如果为true则返回数组，否则是一个对象（stdClass的对象）
 		第三个参数自定递归调用的深度
-		该函数返回json对象，或者false或者null
+		该函数返回数组或者为对象，或者false或者null
 
 		$json  =  '{"a":1,"b":2,"c":3,"d":4,"e":5}' ;
 		print_r(json_decode ( $json ));

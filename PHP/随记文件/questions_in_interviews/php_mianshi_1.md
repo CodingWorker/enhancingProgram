@@ -52,7 +52,7 @@ function str_rev($str){
 
 
 
-当 unset 一个引用，只是断开了变量名和变量内容之间的绑定。这并不意味着变量内容被销毁了。例如：
+当 unset 一个引用，只是断开了变量名和变量内容之间的绑定。这并不意味着变量内容被销毁了（没有被引用的对象不是立即被销毁）。例如：
 
 <?php
 	$a = 1;
@@ -80,9 +80,11 @@ echo $_SERVER["SCRIPT_URI"]; //得到http://temp.com/phpinfo.php
 echo $_SERVER["SCRIPT_FILENAME"]; //得到F:/www/Temp/phpinfo.php
 echo $_SERVER["REQUEST_URI"]; //得到/phpinfo.php?id=1
 echo $_SERVER["SCRIPT_NAME"]; //得到/phpinfo.php
+echo __FILE__;
+echo __LINE__;
 
 
-21、一个函数的参数不能是对变量的引用，除非在php.ini中把__设为on。
+21、一个函数的参数不能是对变量的引用，除非在php.ini中把__设为on(一般不将此项的值设置为on）。
 答：allow_call_time_pass_reference
 
 
@@ -230,7 +232,7 @@ id: 1000
 
 
 
-47、不用新变量直接交换现有两个变理的值。
+47、不用新变量直接交换现有两个变量的值。
 考算法的基本功。
 法一
 $a = 'welcome';
@@ -552,6 +554,7 @@ MySQL数据库，怎么优化？
 对经常查询的字段添加索引
 频繁更新的表/需要支持事务用innodb引擎，经常查询的表用myisam引擎
 sql语句的优化：比如limit分页时用新建索引表来加快查询
+分库分表
 
 
 
