@@ -1,19 +1,21 @@
 如果文件内容是纯 PHP 代码，最好在文件末尾删除 PHP 结束标记。
 这可以避免在 PHP 结束标记之后万一意外加入了空格或者换行符，会导致PHP开始输出这些空白，而脚本中此时并无输出的意图。
-这将如预期中的运行，因为当 PHP 解释器碰到 ?> 结束标记时就简单地将`其后内容原样输出`（除非马上紧接换行见指令分隔符）直到碰到下一个开始标记；这在将php文件包含如另一个文件时可能会出错误（如包含文件头部有header函数时，该函数必须
+这将如预期中的运行，因为当 PHP 解释器碰到 ?> 结束标记时就简单地将`其后内容原样输出`（除非马上紧接换行见指令分隔符）直到碰到下一个开始标记；
+这在将php文件包含如另一个文件时可能会出错误（如包含文件头部有header函数时，该函数必须
 写在文件的开头）。
 
 
 例外是处于条件语句中间时，此时PHP解释器会根据条件判断来决定哪些输出，哪些跳过。
 可以在PHP中使用不同的开始和结束标记。其中两种：<?php ?> 和 <script language="php"> </script> 总是可用的。
 
+**现在基本html和php的代码是分开的，所以一般纯的PHP代码文件都是去掉了最后的?>符号的。**
 
 另两种是短标记和 ASP 风格标记，可以在 php.ini 配置文件中打开或关闭。尽管有些人觉得短标记和ASP风格标记很方便，但移植性较差，通常不推荐使用。文件末尾的 PHP 代码段结束标记可以不要，有些情况下当使用 include 
 或者 require 时省略掉会更好些，这样不期望的空白符就不会出现在文件末尾，之后仍然可以输出响应标头(header函数控制语句)。在使用输出缓冲时也很便利，就不会看到由包含文件生成的不期望的空白符。
 
-`gettype()` 函数：得到变量的类型
+`gettype()` 函数：得到变量的类型(js中是typeof表达式，python中是type()函数)
 
-**gettype()返回参数的类型字符串**
+**gettype()返回参数的类型字符串**,返回的字符串为integer string object array resource
 
 	echo gettype("a");//string
 	
@@ -28,7 +30,6 @@
 	$a=122;
 	var_dump((string)$a);
 
-
 强制转换：`settype()` 函数或者在变量前强制声明变量的类型
 	settype改变原变量的类型；而在变量前加类型声明的方法不会改变原变量类型。
 	<?php
@@ -39,25 +40,33 @@
 	var_dump($num2);
 	var_dump($str);
 
-
-**settype语法：settype(var, type),返回布尔型**
+**settype语法：settype(var, type),返回布尔型**,转换成功返回true，否则返回false。
 
 	$a=122;
 	var_dump(settype($a,"array"));//true
 	var_dump($a);//array
 
+### val
+    strval
+    intval
+    floatval
+
 
 #PHP单例模式
 
-通过将类的构造函数声明为私有的，外部就不能用new关键词来实例化类了，否则会产生（Fatal error: Call to private Test::__construct()）不能访问私有方法的指明错误。这时这个类只能被自己实例化。
-php的单例模式只能有懒汉模式，因为PHP不允许定义类的属性为对象
+通过将类的构造函数声明为私有的，外部就不能用new关键词来实例化类了，否则会产生（Fatal error: Call to private Test::__construct()）
+不能访问私有方法的指明错误。这时这个类只能被自己实例化。
+所以，由于语法的限制，php的单例模式只能有懒汉模式，因为PHP不允许定义类的属性为对象
+class SingletonDemo{
+    private static $_instance;
+    private function __constructor
+}
 
 
 #类的静态属性访问
 
-类的静态属性不可以使用对象的方法在外部访问，只能使用类名::$的变量名来访问静态属性
-
-而类的静态方法则可以使用外部对象访问
+类的静态属性不可以使用对象的方法在外部访问，只能使用类名::$的变量名来访问静态属性;
+而类的静态方法在类的外部可以使用类访问，也可以使用类的对象访问。
 
 上代码：
 
@@ -75,7 +84,8 @@ php的单例模式只能有懒汉模式，因为PHP不允许定义类的属性�
 	$test->bb();//输出 
 	die;
 
-在不同的操作系统上换行符的表示方法不同：
+
+在不同的操作系统上换行符的表示方法不同，PHP内部函数有一个魔术常量自动适配为当前操作平台的换行符，即PHP_EOL：
 
 - 在unix系列用\n
 - 在windows系列用\r\n
@@ -87,6 +97,7 @@ php的单例模式只能有懒汉模式，因为PHP不允许定义类的属性�
        //windows平台相当于    echo "\r\n";
        //unix\linux平台相当于    echo "\n";
        //mac平台相当于    echo "\r";
+
 
 PHP中的常量可以使用函数get_defined_constants()来获取
 
@@ -127,18 +138,15 @@ PHP中的常量可以使用函数get_defined_constants()来获取
 	'PHP_DEBUG' => int 0
 	'PHP_OS' => string 'WINNT' (length=5)
 	...
-	
 
-
-PHP中的die方法和exists方法完全一样，只是别名的关系
+PHP中的die方法和exists方法完全一样，只是别名的关系,这样的别名还有很多
 
 
 #PHP 程序员最常犯的11个MySQL错误
 
-1. 使用MyISAM而不是InnoDB
+> Mysql默认使用的是MyISAM，但是多数情况下这是一个糟糕的选择，除非创建的是一个非常简单或是实验性的数据库，在少量数据操作时myisam更快
+> MyISAM不支持外键约束和事务处理，**而且当一条数组正在插入或更新时，整个数据表都被锁定**。
 
->Mysql默认使用的是MyISAM，但是多数情况下这是一个糟糕的选择，除非创建的是一个非常简单或是实验性的数据库
->MyISAM不支持外键约束和事务处理，而且当一条数组正在插入或更新时，整个数据表都被锁定。
 
 使用InnoDB能解决这些问题
 
@@ -152,45 +160,54 @@ PHP中的die方法和exists方法完全一样，只是别名的关系
 另外，使用PDO可以支持多中数据库系统
 
 3. 没有处理用户输入
->永远不要相信用户的输入，用服务器端的PHP验证每个字符串，不要寄希望与js
+> 永远不要相信用户的输入，用服务器端的PHP验证每个字符串，不要寄希望与js
 
 4. 没有使用UTF-8
->将MySQL字符集设置为UTF-8
+> 将MySQL字符集设置为UTF-8
 
 5. 相对于SQL,偏爱PHP
->mysql的自有函数要看情况使用
->执行一个查询比在结果集中迭代更有效率
->在分析数据的时候尽量利用一些数据库系统的知识
+> mysql的自有函数要看情况使用
+> 执行一个查询比在结果集中迭代更有效率
+> 在分析数据的时候尽量利用一些数据库系统的知识
 
 6. 没有优化SQL语句查询
->99%的PHP性能问题都是由数据库引起的
->多使用mysql的explain、 query profiler函数检验查询语句的效率
+> 99%的PHP性能问题都是由数据库引起的
+> 多使用mysql的explain、 query profiler函数检验查询语句的效率
 
 7. 不能使用正确的数据类型
 
 8. 在查询中使用*
->永远不要使用*来返回一个数据表的所有列
+> 永远不要使用*来返回一个数据表的所有列
 
 9. 不要使用索引或者过度使用索引
->不要为每个列都设置索引，因为执行了插入和更新操作后所有的索引都要重新生成，这将非常的影响性能
->一般性的原则是:select语句中的任何一个where子句表示的字段都应该使用索引
+> 不要为每个列都设置索引，因为执行了插入和更新操作后所有的索引都要重新生成，这将非常的影响性能
+> 一般性的原则是:select语句中的任何一个where子句表示的字段都应该使用索引
 
 10. 忘记备份
->虽然比较少见，但是数据库还是有可能遭遇崩溃的危险的，如硬盘损坏、服务器崩溃
+> 虽然比较少见，但是数据库还是有可能遭遇崩溃的危险的，如硬盘损坏、服务器崩溃
 
 11. 不考虑使用其他的数据库
->其他数据库：PostgreSQL和Firebird，这两者也都是开源的
->微软提供了sql server Express，甲骨文提供了10g Express，这两者都是企业级数据库的免费版本。
->对于一个较小的web应用或者嵌入式应用，SQLite也不失为一个可行的替代方案。
+> 其他数据库：PostgreSQL和Firebird，这两者也都是开源的
+> 微软提供了sql server Express，甲骨文提供了10g Express，这两者都是企业级数据库的免费版本。
+> 对于一个较小的web应用或者嵌入式应用，SQLite也不失为一个可行的替代方案。
 
-#reids操作：
-
+# reids操作：
 取得sorted set里元素的个数使用zcard(key)方法，或者使用zcount(key,'-inf', 'inf')方法都可以
+
+SETEX key seconds value
+
+		phpredis里使用的将key设置value值并设定过期时间
+
+3. redis学习
+
+		http://doc.redisfans.com/
+
 
 ##PHP文档编写要注意的事项
 
 1. 使用if(false == $p) 代替if($p ==false)
-		因为当比较符号正确书写时，都能正确解析；当比较符号写成赋值符号时，第一种写法会提示一个错误而第二种写法不会提示任何的错误，这时排除错误可能会非常的费时。
+		因为当比较符号正确书写时，都能正确解析；当比较符号写成赋值符号时，第一种写法会提示一个错误而第二种写法不会提示任何的错误，这时排除错误
+		可能会非常的费时。
 
 2. 对于纯PHP文件，尽量不要有结束标识符?>,因为这可能导致在另一个文件将此文件include时，再使用header、session等函数时前面有空行导致出错。
 
@@ -201,6 +218,7 @@ PHP中的die方法和exists方法完全一样，只是别名的关系
 		echo $hello;//输出world
 		$a = 'haha';
 		echo $haha;//输出world
+
 
 4. PHP的register_globals，单就前台传入的表单和url传参来讲
 
@@ -214,9 +232,10 @@ PHP中的die方法和exists方法完全一样，只是别名的关系
 	<input type="submit" value="login">
 	</form>
 	
-	那么在后台就可以直接使用$user_name和$user_pass,这将带来很大的安全隐患。如果将session写入url等，如_SESSION['useaname']='john',这就可能导致john的数据泄露
+	那么在后台就可以直接使用$user_name和$user_pass,这将带来很大的安全隐患。如果将session写入url等，如_SESSION['useaname']='john',这就可能导致john的
+	数据泄露
 
-##类的常量不能用对象来访问，但是方法可以
+##类的常量不能用对象来访问,必须使用类名在外部访问
 
 	class test{
 	const a=1;
@@ -234,7 +253,7 @@ PHP中的die方法和exists方法完全一样，只是别名的关系
 ##setcookie设置cookie时将值尽量序列化
 setcookie($name, serialize($value), expire, path, domain);
 
-###`call_user_func_array` - 调用一个函数，传递数组参数
+###`call_user_func_array` - 调用一个函数，传递数组参数，参数是按照顺序来匹配的参数而非名字
 	mixed  call_user_func_array  ( callable  $callback  , array $param_arr  )
 	Calls the callback  given by the first parameter with the parameters in param_arr . 
 	返回值为回调函数的返回值，如果出错返回false
@@ -245,8 +264,8 @@ setcookie($name, serialize($value), expire, path, domain);
 	call_user_func_array('get_args', array('a', 'b'));
 	输出：got args: a b
 
-###PHP生成静态文件原理：就是读取数据代替文件中的变量，生成HTML静态页；主要采用的就是fread和fwrite方法，将页面或者缓存中的数据读入指定的html页面
 
+###PHP生成静态文件原理：就是读取数据代替文件中的变量，生成HTML静态页；主要采用的就是fread和fwrite方法，将页面或者缓存中的数据读入指定的html页面
 
 ###ob_start()
 
@@ -267,35 +286,32 @@ setcookie($name, serialize($value), expire, path, domain);
 
 		函数延迟代码执行若干微秒
 
-2. SETEX key seconds value
+  sleep()
+        程序执行停止若干秒
 
-		phpredis里使用的将key设置value值并设定过期时间
 
-3. stdClass
+2. stdClass
 
-		PHP的基类，可以将一个变量转换为对象，从而该变量可以有属性，但是该对象不可以有方法
+		PHP的基类，可以将一个普通变量转换为对象，从而该变量可以有属性，但是该对象不可以有方法
 		$user = new stdClass;
 		$user->name='zhangsan';
 		var_dump($user);
 		echo $user->name;
 
-4. redis学习
-
-		http://doc.redisfans.com/
-
-5. 类中常量的定义是为了更好地维护，也是为了后面引用的方便
+3. 类中常量的定义是为了更好地维护，也是为了后面引用的方便
 
 		const a=123333;
-
-6. array_rand随机返回数组元素的一个或多个键
-
-		mixed  array_rand  ( array $input  [, int $num_req  = 1  ] )
-		默认为1个，可以指定
 
 >类中的常量设置的考虑：
 
 - 为了以后设置为其他值时的灵活性
 - 为了类后面独处引用
+
+
+4. array_rand随机返回数组元素的一个或多个键
+
+		mixed  array_rand  ( array $input  [, int $num_req  = 1  ] )
+		默认为1个，可以指定
 
 
 **为什么使用 `$_GET`？**
@@ -346,6 +362,8 @@ setcookie($name, serialize($value), expire, path, domain);
 - 要使用八进制表达，数字前必须加上 0（零）。
 - 要使用十六进制表达，数字前必须加上 0x。
 - 要使用二进制表达，数字前必须加上 0b。
+打印在输出设备上都是十进制数字
+
 
 <?php
 $n1=0b11;
@@ -356,10 +374,9 @@ var_dump($n2);
 var_dump($n3);
 
 
-
 #字符串String
 
-###表示方法：单引号、双引号、heredoc和nowdoc格式
+###表示方法：单引号、双引号、heredoc和nowdoc格式，python中是（""和""")
 单引号和双引号都会对变量进行解析，而且单引号不对特殊字符转义，会显示转义的反斜线
 
 echo "This is {$arr['key']}";在双引号字符串中使用数组键值时，要加上花括号
@@ -386,19 +403,20 @@ echo $str;
 
 **字符串下标查找**
 
-字符串也可以用下标(下标从0开始)查找：
+字符串也可以用下标(下标从0开始)查找(类似python和javascript)：
 	
 	$str="fantastic";
 	echo $str[2];也可以使用$str{2}
 	strlen($str)获取字符串的长度
-	$str[2]="z";修改了原字符串相应位置的值
+	$str[2]="z";修改了原字符串相应位置的值，而且无论赋值的字符串多长都只修改一个字符
 	(string)(123);将123转换为字符串 或使用字符串转换函数:strval()
 
 
 **serialize();  unserialize();**
 
-序列化只是将变量转换为一种特殊的存储格式，其实serialize()就是将PHP中的变量如对象(object),数组(array)等等的值序列化为字符串后存储起来.序列化的字符串我们可以存储在其他地方如数据库、Session、Cookie等,
-序列化的操作并不会丢失这些值的**类型和结构**。这样这些变量的数据就可以在PHP页面、甚至是不同PHP程序间传递了。序列化对象是**只保留类的变量不会保留非静态方法**。
+序列化只是将变量转换为一种特殊的存储格式，其实serialize()就是将PHP中的变量如对象(object),数组(array)等等的值序列化为字符串后存储起来.序列化的字符串我们可以存储在其他地方如文件系统、数据库、Session、Cookie等,
+序列化的操作并不会丢失这些值的**类型和结构**。这样这些变量的数据就可以在PHP页面、甚至是不同PHP程序间传递了。
+序列化对象是**只保留类的变量`不会保留非静态方法`,方法是属于类的结构，在反序列化的时候会自动加载**。
 
 
 **ord();chr()**
@@ -408,14 +426,14 @@ echo $str;
 #数组
 
 php5.4后可以使用[]代替array()定义数组，最后一个会覆盖前面的同名索引对应的值
-方括号[]和花括号{}可以互换使用
+方括号[]和花括号{}可以互换使用，一般使用[]，不要使用{}
 
 
-`unset()`
-销毁某键值对，也可以销毁整个数组,没有返回值,该函数删除变量会将变量消失
+`unset()`（类似js中的delete语句和python中的del语句）
+销毁变量或者数组的某键值对，没有返回值,该函数删除变量会将变量消失
 
 
-`array_values()`返回数组中所有的值，并建立数字索引数组
+`array_values()`返回数组中所有的值，并建立数字索引数组（其他语言中也都有取得hash的键或者值集合的方法）
 <?php
 $arr=['a'=>1,'b'=>1,'c'=>2];
 var_dump(array_values($arr));   //不会删除重复值
