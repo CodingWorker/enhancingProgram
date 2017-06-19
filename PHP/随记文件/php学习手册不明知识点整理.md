@@ -573,10 +573,13 @@ var_dump($tt->a);     //12
     __METHOD__
     __NAMESPACE__
 
+### clone 函数是一个浅复制，如果被clone的对象中含有其他的对象，则该内部对象与clone的新对象内部的对象指向同一个实例。
+
 
 #表达式
 ##运算符
-PHP在对象赋值时是引用赋值的（其实也不是，可以这么看，对象名只是标识符,表示符执行实际的内存空间），除非clone一个完全一样的对象，此时指向不同
+PHP在对象赋值时是引用赋值的（其实也不是，可以这么看，对象名只是标识符,标识符指向实际的内存空间），除非clone一个完全一样的对象，此时指向不同，
+但是默认的clone是浅复制，内部的对象指向的是同一个实例。
 
 
 **两个浮点数不应该被比较,会因为误差导致错误**
@@ -590,7 +593,6 @@ PHP在对象赋值时是引用赋值的（其实也不是，可以这么看，�
 **执行运算符**
 
 反引号``,效果与`shell_exec()`函数相同
-
 
 
 **递增递减运算符**
@@ -607,8 +609,7 @@ PHP在对象赋值时是引用赋值的（其实也不是，可以这么看，�
 
 **数组运算符**
 
-- +将两个数组连接成一个数组，保留左边的同名元素，右边的被覆盖
-     而array_merge()则是左边的被覆盖
+- +将两个数组连接成一个数组，保留左边的同名元素，右边的被覆盖;而array_merge()则是左边的被覆盖
 
 
 **==和===**
@@ -617,7 +618,7 @@ PHP在对象赋值时是引用赋值的（其实也不是，可以这么看，�
 - $a===$b 如果两个数组有相同的键值对，而且顺序和类型都相同，则返回true
 
 
-**instanceof**
+**instanceof**(js中有instanceof,python中有isinstance
 类型运算符`instanceof`，用于确定一个变量是否属于某一类class、接口等的实例
 
 	var_dump($a instanceof MyClass);
@@ -655,7 +656,7 @@ PHP提供了一些流程控制的替代语法，包括`if\while\for\foreach\和s
 	    foreach不支持@抑制错误信息
 
 
-`list()`将嵌套的数组解包,是一种语言结构，而不是函数
+`list()`将嵌套的数组解包,是一种语言结构，而不是函数,类似迭代
 
 	<?php 
 	$a=array(1,2,3);
@@ -680,6 +681,12 @@ PHP提供了一些流程控制的替代语法，包括`if\while\for\foreach\和s
 	var_dump(each($arr));
 	var_dump(each($arr));
 
+    $ar=[1,2,34,'a','b'];
+    //var_dump(each($ar));//each会将数组迭代的解包为索引和关联的键和值
+
+    while(list($k,$v)=each($ar)):
+        echo '$k=> '.$k.', $v=> '.$v.PHP_EOL;
+    endwhile;
 
 
 `break`可以接受一个可选的参数来决定跳出几重循环，默认为1
@@ -688,13 +695,13 @@ PHP提供了一些流程控制的替代语法，包括`if\while\for\foreach\和s
 `switch`做的是**松散的比较**,switch仅求值一次，而在elseif语句中每次比较都要重新求值
 
 
-declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存储过程中定义变量
+declare结构,暂时不需了解，这个是预编译命令（mysql中可以在存储过程中定义变量）
 
 
 不是所有的语句都可以计时，条件表达式和参数表达式都不可以计时，也就是说程序执行时间不统计这些过程
 
 
-**`goto`操作符**
+**`goto`操作符**，不推荐使用
 
 	goto a;
 	echo 'foo';
@@ -706,9 +713,10 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 
 - 函数名是大小写无关的，最好是区分大小写，linux区分大小写
 - php默认按值传递参数，操作对象默认为引用传递，默认参数allow_call_pass_time_reference，这一配置已经不被支持
+- 函数可以传递多余定义的变量，其他的变量会自动被忽略
 - 匿名函数
 - 函数也有命名空间
-- argc    命令行运行时传入参数的长度
+- argc    命令行运行时传入参数的长度(python中有同样的设置）
 - argv    命令行运行时传入的所有参数
 
 
@@ -716,7 +724,7 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 ##类与对象
 
 - 每个变量都持有对象的引用，变量就是标识符，而不是整个对象的拷贝
-- 对象名仅是一个标识符，通过克隆clone的方法可以给已经创建对象的实例建立一个新的实例
+- 对象名仅是一个标识符，通过克隆clone（浅复制）的方法可以给已经创建对象的实例建立一个新的实例
 - 子类继承父类，重写方法时要把保持参数一致，但构造函数除外
 
     `::class`
@@ -738,7 +746,7 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 
 范围解析操作符`::`,可以用来访问静态变量和类常量，在类外使用这些属性（静态属性外部对象不可访问）和方法时要带类名
 
-- `self\parent\static`是用于在类定义内部对其属性或方法进行访问的
+- `self\parent（python中也是parent)\static`是用于在类定义内部对其属性或方法进行访问的
 
 
 **static关键字**
@@ -755,7 +763,7 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 
 **接口**
 
-- 接口中定义的所有方法都必须是公有的
+- 接口中定义的所有方法都必须是公有的，而且默认是public的
 - 接口中的方法都是只声明不定义
 - 类继承接口要实现接口中所有声明方法的定义，形式参数也要一致
 - 类可以实现多个接口，用逗号分隔，但不可以继承多个类
@@ -777,7 +785,7 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 
 
 **重载：通过魔术方法实现**
-- `__set()    __get()      __isset()    __unset() `当对不可访问的属性操作时会调用相应的方法
+- `__set()    __get()      __isset()    __unset() `当对不可访问（不存在或者private的）的属性操作时会调用相应的方法，并传递对应的参数
 - `__call()    __callStatic() ` 当对不可访问的方法或静态方法操作时会调用相应的方法
 
 
@@ -791,23 +799,25 @@ declare结构,暂时不需了解，这个是预编译命令,mysql中可以在存
 	 __construct() __destruct() 
 	 __call()  __callStatic()  
 	 __get()   __set() __isset() __unset()  
-	 __sleep() __wakeup() 
+	 __sleep()   //序列化时执行
+	 __wakeup() //反序列化时执行
 	 __toString()
-     __ invoke() __set_state()  
+     __invoke() //当以函数调用对象时自动调用
+     __set_state()
 	 __clone()
 
 
 **final**
 
 **属性不能被定义为final**,常量声明使用const,只有类和方法才能被定义为fianl
-类定义声明为final则不能被继承，方法被声明为final则不能被重写。
+类定义声明为final则不能被继承，方法被声明为final则不能被重写(类似于java）。
 
 
 
 **对象复制**
 - 在内存空间生成一个新的实例，与原实例不同
 - 通过clone关键字，这将调用新生成的对象中的`__clone()`方法修改属性的值,
-- 对象中的`__clone()`方法不能被直接调用，**但所有的引用属性仍然会是指向原来的变量的引用**
+- 对象中的`__clone()`方法不能被直接调用，**clone做的是浅复制，所有的引用属性（php的数组不是引用类型）仍然会是指向原来的变量的引用**
 
 <?php
 namespace test;
@@ -847,11 +857,16 @@ echo $t2->inside->a;  //引用属性指向同一个内存地址，输出1
 **类型约束**
 类中方法的参数可以指定必须为某一类型;
 函数中也可以指定参数的类型
-可指定的类型必须为引用类型，基本数据类型中的值类型不能作为参数的类型约束
+可指定的类型必须为引用类型(也可以是数组array或者Array，但是clone时Array是深复制），基本数据类型中的值类型不能作为参数的类型约束
+//参数类型限制
+function test2(array $a){
+
+}
+test2(12);
 
 
 ****后期静态绑定****   self 和static
-
+在子类继承父类时，对于静态变量的访问self和static的实际效果可能不同，但是对以一个类里面的静态变量他们的效果是一样的。
 
 
 #正则表达式
@@ -1071,11 +1086,12 @@ var_dump($matches);
 	array preg_split  ( string $pattern  , string $subject  [, int $limit  = -1  [, int $flags  = 0  ]] )
 	返回分隔后组成的数组
 
+
 #cookie 
 
 ##cookie和会话
 
-浏览器会将对应的cookie编码进header和请求头一起发送到服务器，寻找cookie是靠域名或url来寻找的
+浏览器会将对应的cookie编码进header和请求头一起发送到服务器，寻找cookie是靠域名或url来寻找的(cookie是不能跨浏览器来传递的）
 
 cookie是http头的一部分，因此要在发送html之前调用`setcookie()`,当用户再次访问站点时，会自带cookie，服务器将此数据解码
 存储在全局变量`$_COOKIE`中
@@ -1611,13 +1627,13 @@ closedir($dir_res);
 
 6. opendir，打开目录句柄
 
-	6. opendir — 打开目录句柄,只接受两个参数，第一个参数为目录路径，第二个参数为可选，指定上下文context
+	opendir — 打开目录句柄,只接受两个参数，第一个参数为目录路径，第二个参数为可选，指定上下文context
 	成功返回目录句柄，失败(非法目录或没有权限)返回false和警告
 	opendir("test");
 
 7. readdir
 
-	7. readdir — 从目录句柄中读取条目,接受一个可选的参数，指定目录句柄
+	readdir — 从目录句柄中读取条目,接受一个可选的参数，指定目录句柄
 	返回目录中下一个文件的文件名。文件名以在文件系统中的排序返回，每次读取目录指针向下移动一步
 	成功返回文件名，失败返回false
 	$dir=opendir("test1");
@@ -1638,7 +1654,7 @@ closedir($dir_res);
 
 9. scandir
 
-	9. scandir — 列出指定路径中的文件和目录只接受三个参数，第一个为必选参数，指定目录名称，第二个为可选参数指定排序，第三个为可选参数为上下文context
+	scandir — 列出指定路径中的文件和目录只接受三个参数，第一个为必选参数，指定目录名称，第二个为可选参数指定排序，第三个为可选参数为上下文context
 	成功返回包含文件和目录的索引数组，失败返回false，如果指定的不是一个目录则产生false和错误
 	第二个参数默认安字母升序排列，如果指定为1，则按降序排列
 	print_r(scandir("test1"));
@@ -1693,7 +1709,7 @@ closedir($dir_res);
 
 7. unlink
 
-	7. unlink— 删除文件，成功返回true否则返回false
+	unlink— 删除文件，成功返回true否则返回false
 	$dest='./test1/testt.txt';//相对绝对路径均可，包含文件名
 	if(unlink($dest)){
 	    echo "删除成功";
@@ -1703,21 +1719,21 @@ closedir($dir_res);
 
 8. dirname
 
-	8. dirname — 返回路径中的目录部分
+	dirname — 返回路径中的目录部分
 	与basename操作正好相反，它截取之前的部分，注意不包含分开处的/符号，即两个函数都不包含这个/
 	$file='D:\wamp\www\PHPstudy\test1\t.txt';
 	echo dirname($file);// D:\wamp\www\PHPstudy\test1,使用单引号避免转义
 
 9. disk_free_space
 
-	9. disk_free_space — 返回目录中或目录所在磁盘的可用空间,字节数
+	disk_free_space — 返回目录中或目录所在磁盘的可用空间,字节数
 	注意：是目录，即可以有dirname返回的，1k=1024字节
 	$file='D:\wamp\www\PHPstudy\test1\t.txt';
 	echo disk_free_space(dirname($file))/1024/1024/1024; // 打印出G级容量
 
 10. disk_total_space
 
-	10. disk_total_space — 返回一个目录或目录所在磁盘的磁盘总大小
+	disk_total_space — 返回一个目录或目录所在磁盘的磁盘总大小
 	注意事项同上；
 	$file='D:\wamp\www\PHPstudy\test1\t.txt';
 	echo disk_total_space(dirname($file))/1024/1024/1024; 
@@ -1739,7 +1755,7 @@ closedir($dir_res);
 
 13. feof 
 
-	13. feof — 测试文件指针是否到了文件结束的位置,接受一个fopen和fsockopen打开的文件句柄
+	feof — 测试文件指针是否到了文件结束的位置,接受一个fopen和fsockopen打开的文件句柄
 	，在fclose()之前，到了返回true否则返回false
 	
 	$filename='D:\wamp\www\PHPstudy\test1\test.txt';
