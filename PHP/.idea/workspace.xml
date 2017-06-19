@@ -28,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="php学习手册不明知识点整理.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="php学习手册不明知识点整理.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="435" column="61" selection-start-line="435" selection-start-column="61" selection-end-line="435" selection-end-column="61" />
+            <state relative-caret-position="207">
+              <caret line="578" column="60" selection-start-line="578" selection-start-column="60" selection-end-line="578" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="string_chars.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/string_chars.php">
+      <file leaf-file-name="magic_const.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/magic_const.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+            <state relative-caret-position="390">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -70,7 +70,9 @@
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/singleton.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/call_user_func_array.php" />
         <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/string_chars.php" />
+        <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/func_array.php" />
         <option value="$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md" />
+        <option value="$PROJECT_DIR$/codes/bumingzhishidian_codes/magic_const.php" />
       </list>
     </option>
   </component>
@@ -260,12 +262,12 @@
       <workItem from="1491435665772" duration="221000" />
       <workItem from="1491435938194" duration="12000" />
       <workItem from="1491524242893" duration="74000" />
-      <workItem from="1497844964207" duration="3874000" />
+      <workItem from="1497844964207" duration="6338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16971000" />
+    <option name="totallyTimeSpent" value="19435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,8 +380,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/string_chars.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        <state relative-caret-position="436">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/array_map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/func_array.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
@@ -388,9 +408,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/随记文件/php学习手册不明知识点整理.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="435" column="61" selection-start-line="435" selection-start-column="61" selection-end-line="435" selection-end-column="61" />
+        <state relative-caret-position="207">
+          <caret line="578" column="60" selection-start-line="578" selection-start-column="60" selection-end-line="578" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codes/bumingzhishidian_codes/magic_const.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

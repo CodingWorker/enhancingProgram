@@ -440,14 +440,14 @@ var_dump(array_values($arr));   //不会删除重复值
 
 引用数组时，用不着给键名为常量和变量的加上引号，否则php不能解析，如$arr[$var]
 
-count($arr)计算数组的长度，count的别名为sizeof
+count($arr)计算数组的长度，count的别名为sizeof（其他面向对象语言中获取数组长度的方法或者函数为len或者length）
 
 
 **数组排序**
 排序都改变了原数组
 
 - `sort()`,返回布尔值，对原数组进行了修改，一般对索引数组排序
-- `asort()`保留索引
+- `asort()`保留索引，对关联数组进行排序
 以上两个都是按照键值排序
 
 - `ksort()`按照键名排序
@@ -461,14 +461,14 @@ var_dump($arr);
 
 
 
-`array_map(function($v),$arr)`对数组元素分别应用方法,返回作用之后的一个新生成数组
+`array_map(function($v),$arr1,$arr2,...)`迭代数组（类似其他面向对象语言中的Iterator）对数组各个元素分别按顺序作为数组的参数,返回作用之后的一个新生成数组，
+方法的返回值作为新数组的元素
 <?php
 $arr1=[1,2,3,23,'a','cc',12];
 $arr2=$arr1;
 $arr=array_map(function ($var1,$var2){
     if(!is_string($var1) && !is_string($var2)){
         return $var1+$var2;
-        
     }else{
         return $var1 . ' || ' . $var2; 
     }
@@ -479,7 +479,7 @@ var_dump($arr);
 ##NULL（包括尚未赋值的变量）
 一个变量被认为是null：不区分大小写
 
-- 被复值为null     $a=null;
+- 被赋值为null     $a=null;
 - 尚未被赋值即未初始化   $b;
 - 被unset()       unset($c)
 
@@ -488,6 +488,16 @@ var_dump($arr);
 is_null()   null==null//true
 
 isset(null) //false
+
+# is函数
+is_null
+is_bool
+is_resource
+is_array
+is_integer
+is_dir
+is_file
+...
 
 
 #变量
@@ -507,6 +517,9 @@ function changeVal(test $t){
 $tt=new test;
 changeVal($tt);
 var_dump($tt->a);     //12
+
+数组不会作为引用类型来看待，所以传递引用类型并在方法中改变数组的话并不影响外部实参。
+
 
 `allow_call_pass_reference`
 	该函数已经不被支持了，要在函数定义时决定是否引用传参
@@ -534,7 +547,7 @@ var_dump($tt->a);     //12
 	        static $a=0;
 	        echo $a;
 	        $a++;
-	    }//$a仅在第一次调用函数时初始化
+	    }//$a仅在第一次调用函数时初始化，之后静态变量不会被初始化，可以将方法中的静态变量理解为是属于函数或方法的，它与函数或者方法存储在方法区内。
 
 
 ###可变变量 
