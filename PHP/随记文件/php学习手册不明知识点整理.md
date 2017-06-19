@@ -1773,7 +1773,7 @@ closedir($dir_res);
 	 fflush — 将缓冲内容输出到文件，只接受一个文件资源参数，
 	 该函数会将所有的缓冲输出都写入该资源指向的文件中(未经fclose关闭)，成功返回true否则返回false
 	 一般仅对写入有效，因为在写入时，并不是每次调用fwrite就立即写入，而是将这些操作记录到缓冲区里等到特定时刻才写入，此时若文件出错就可能导致失败，因此利用fflush手动使得缓冲区中的内容立即写入到文件
-	参考：http://blog.csdn.net/daiyan_csdn/article/details/51620472
+	参考：http://blog.csdn.net/xxx/article/details/51620472
 	$str="php中如果出现大量写入操作，或者操作的文件较大时，写入函数并不是每次调用都会立即进行磁盘操作而是把这些操作记录到缓冲里面，如果出现异常或者需要优先写入，这时就可以用fflush。在读文件时，没有必要进行手动操作。因此也没有必要进行fflush。对普通的小文件或少量写入操作无效";
 	
 	$file=fopen("test.txt","wb");
@@ -2063,6 +2063,15 @@ closedir($dir_res);
 		}
 		fclose($file);
 
+
+		打开url
+		$f=fopen("http://www.baidu.com",'rb');
+        while($line=fgets($f)):
+            var_dump($line);
+        endwhile;
+        fclose($f);
+
+
 35. fpassthru
 	
 		输出文件指针处及其后的所有剩余数据到输出缓冲区，只接受一个文件资源句柄参数，函数执行结果为输出该字符串并返回字节个数，失败返回false
@@ -2072,6 +2081,7 @@ closedir($dir_res);
 		flock($file,LOCK_EX);
 		fpassthru($file);//自动将文件内容输出到屏幕
 		fclose($file);
+
 
 36. fputcsv — 将数组格式化为一行CSV格式 并写入文件指针所在处
 
@@ -2103,7 +2113,9 @@ closedir($dir_res);
 		echo $content;
 		fclose($file);
 
+
 **fscanf — 从文件中格式化输入**
+
 
 40. fseek — 在文件指针中定位,设定文件指针的位置
 
@@ -2139,6 +2151,7 @@ closedir($dir_res);
 		fpassthru($file);
 		flock($file,LOCK_UN);
 		fclose($file);
+
 
 41. fstat — 通过已打开的文件指针取得文件信息
 
@@ -2213,6 +2226,7 @@ closedir($dir_res);
 		  'blksize' => int -1
 		  'blocks' => int -1
 
+
 42. ftell
 		
 		42. ftell — 返回文件指针读/写的位置,只接受一个文件资源句柄参数，返回数字型，如果出错返回false
@@ -2223,6 +2237,7 @@ closedir($dir_res);
 		echo ftell($file);//10
 		flock($file,LOCK_UN);
 		fclose($file);
+
 
 43. ftruncate
 
@@ -2236,6 +2251,7 @@ closedir($dir_res);
 		ftruncate($file,10);//截取10个字节，其余删除
 		flock($file,LOCK_UN);
 		fclose($file);
+
 
 44. fwrite
 
@@ -2255,6 +2271,7 @@ closedir($dir_res);
 		}
 		fclose($file);
 
+
 45. glob — 寻找与模式匹配的文件路径
 
 		语法：array glob  ( string $pattern  [, int $flags  = 0  ] )
@@ -2273,6 +2290,7 @@ closedir($dir_res);
 		  3 => string 'test.txt' (length=8)
 		  4 => string 'test01.txt' (length=10)
 
+
 46. is_dir---判断是否为目录 
 
 		 判断给定文件名是否是一个目录,只接受一个参数，为文件名称，如果文件存在并且是目录则返回true否则返回false
@@ -2282,11 +2300,13 @@ closedir($dir_res);
 		$filename='D:\wamp\www\PHPstudy\test1\test.txt';
 		var_dump(is_dir($filename));// false
 
+
 47. is_executable---判断给定文件是否可执行
 
 		只接受一个文件名参数，如果文件存在并且可以执行则返回true，否则返回false
 		$filename='D:\wamp\www\PHPstudy\test1\text.txt';
 		var_dump(is_executable($filename));//false
+
 
 48. is_file
 
@@ -2299,11 +2319,13 @@ closedir($dir_res);
 
 		file_exists可以同时操作目录和文件
 
+
 49. is_link
 
 		???????? — 判断给定文件名是否为一个符号连接,只接受一个文件名参数，如果文件存在并且是一个符号链接则返回true，否则返回false
 		$filename='test1/test.txt';
 		var_dump(is_link($filename));
+
 
 50. is_readable---判断给定文件是否可读
 
@@ -2323,6 +2345,7 @@ closedir($dir_res);
 		
 		var_dump(is_uploaded_file($_FILES["pic"]["tmp_name"]));//判断上传的临时文件，此时为true
 
+
 52. is_writable
 
 		is_writable — 判断给定的文件名是否可写,只接受一个文件名或目录名参数，如果文件或目录存在并且可写，则返回true,否则返回false
@@ -2338,6 +2361,7 @@ closedir($dir_res);
 		$filename='./test1';
 		var_dump(is_writable($filename));
 
+
 53. is_writeable
 
 		is_writeable — is_writable 的别名
@@ -2351,6 +2375,7 @@ closedir($dir_res);
 57. linkinfo — 获取一个连接的信息
 
 58. lstat — 给出一个文件或符号连接的信息
+
 
 59. mkdir
 
@@ -2604,7 +2629,7 @@ closedir($dir_res);
 		C:\WINDOWS\TEMP
 
 		<?php
-		var_dump(sys_get_temp_dir());  //输出 string(34) "C:\Users\daiyan\AppData\Local\Temp"
+		var_dump(sys_get_temp_dir());  //输出 string(34) "C:\Users\xxx\AppData\Local\Temp"
 
 
 79. touch 
@@ -2649,6 +2674,7 @@ closedir($dir_res);
 		    [path] => /u/1838861583/home
 		    [query] => topnav=1&wvr=6
 		)
+
 
 
 #文件上传    
@@ -2817,9 +2843,7 @@ closedir($dir_res);
 
 **`set_time_limit(0)`;/设置程序运行时间**
 
-//---------------------------------20170227
-
-#PHP的 mysqli    
+#PHP的 mysqli
 
 API
 
@@ -3297,7 +3321,7 @@ set_time_limit(30);表示脚本最长执行30秒
 **不特别说明，这些函数并不会对原数组进行更改**
 
 
-1. array_change_key_case — 返回字符串,键名全为小写或大写的数组
+1. array_change_key_case — 返回新的数组,键名全为小写或大写的数组
 
 		语法：array array_change_key_case  ( array $input  [, int $case  = CASE_LOWER  ] )
 		第二参数默认为CASE_LOWER即小写，参数有两种选择：CASE_UPPER或者CASE_LOWER
@@ -3575,7 +3599,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		  echo '消息合法';
 		}
 		function a($v){
-		  if (strpos($v,'枪支')){
+		  if (strpos($v,'枪支')!==false){
 		    return true;
 		  }
 		}
@@ -3584,7 +3608,7 @@ set_time_limit(30);表示脚本最长执行30秒
 14. array_flip — 交换数组中的键和值
 
 		该函数只能够交换字符串或者数字的值，其他类型的会报warging
-		//array_flip()把数组中的键值和键名进行交换,原键值相同的项转换完后最后一个有效
+		//array_flip()把数组中的键值和键名进行交换,原键值相同的项转换完后最后一个有效(类似数组的array_merge,数组+是之前的同名键的值有效)
 		$user1=array('class1'=>'PHP课程','class2'=>'mysql课程','webname'=>'mysql课程','weburl'=>'houdunwang.com');
 		$arr0=array_flip($user1);
 		print_r($arr0);
@@ -3914,7 +3938,11 @@ set_time_limit(30);表示脚本最长执行30秒
 
 33. array_replace — 使用传递的数组替换第一个数组的元素
 
-		array_replace()  函数使用后面数组元素的值替换第一个 array  数组的值。如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换。如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。如果一个键仅存在于第一个数组，它将保持不变。如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值。
+		array_replace()  函数使用后面数组元素的值替换第一个 array  数组的值。
+		如果一个键存在于第一个数组同时也存在于第二个数组，它的值将被第二个数组中的值替换。
+		如果一个键存在于第二个数组，但是不存在于第一个数组，则会在第一个数组中创建这个元素。
+		如果一个键仅存在于第一个数组，它将保持不变。
+		如果传递了多个替换数组，它们将被按顺序依次处理，后面的数组将覆盖之前的值。
 		相当于依次运用array_merge，只是这个不可以作用到多维数组中的值
 		
 		$base  = array( "orange" ,  "banana" ,  "apple" ,  "raspberry" );
@@ -3947,7 +3975,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		print_r(array_reverse($arr));//关联数组不受影响
 
 
-35. array_search — 在数组中搜索给定的值，如果成功则返回相应的键名(索引数组为索引)，失败返回false
+35. array_search — 在数组中搜索给定的值，如果成功则返回相应的第一个键名(索引数组为索引)，失败返回false
 
 		//array_search()检索函数,返回匹配元素的索引值或键名(关联数组时),当数组中没有时返回布尔类型false
 		$arr2=array('后盾网','php视频','div视频');
@@ -4018,7 +4046,8 @@ set_time_limit(30);表示脚本最长执行30秒
 		    [3] => 4
 		)
 		print_r($arr1);//原数组并未改变
-		print_r(array_slice($arr1,-3,-1,true));//负数时从后面开始数起，向后取指定个数(第三个参数为正数时)的元素，直到数组末尾或者向后取到位置数(第三个参数为负数时)但不包括末位置数
+		print_r(array_slice($arr1,-3,-1,true));//负数时从后面开始数起，向后取指定个数(第三个参数为正数时)的元素，直到数组末尾或者向后取到位置数
+		(第三个参数为负数时)但不包括末位置数
 		输出： 
 		Array
 		(
@@ -4056,7 +4085,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 
 
-39. array_sum — 计算数组中所有值的和
+39. array_sum — 计算数组中所有值的和（类比array_product)
 	该方法只计算数组元素是数字或者数字字符串,即is_numeric()为true的
 	$arr=[1,2,3,4,'a','b','c',12,'3'];
 	var_dump(array_sum($arr));
@@ -4134,7 +4163,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		array_uintersect()通过回调函数求两个或多个数组的交集，返回交集（以第一个数组为准),仅比较键值
 
 
-46. array_unique — 移除数组中重复的值
+46. array_unique — 移除数组中重复的值(mysql中合并多张表的查询结果union，当增加all参数时会保留重复的记录）
 
 		array_unique($array)删除数组中的重复项,保留第一次出现的索引
 		$arr1=array('苹果','梨','桃','苹果');
@@ -4340,7 +4369,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		var_dump(($arr_new));//返回false,因为指针上一步已经已到了最后
 
 
-59. extract — 将关联数组变为变量，通过第二个参数也可以是的索引数组分解为变量，返回值为转换成功的个数,不改变原数组----compact
+59. extract — 将关联数组变为变量，通过第二个参数也可以是索引数组分解为变量，返回值为转换成功的个数,不改变原数组----compact
 
 		extract()将数组转换为变量，键名为变量名，键值为变量值，需要根据参数做更多的转换功能
 		$hdw=array('weburl'=>'bbs.houdunwang.com','webname'=>'后盾网','hdcms'=>'cms.houdunwang.com','后盾网论坛');
@@ -4352,7 +4381,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $h_webname;//输出：后盾网
 
 
-60. in_array — 检查数组中是否存在某个值,一般用索引数组
+60. in_array — 检查数组中是否存在某个值,一般用索引数组(类比array_key_exists,array_search)
 
 	$arr3=array('1','2','3');
 	var_dump(in_array(11,$arr3));//打印出false
@@ -4456,7 +4485,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo prev($arr3)."----prev<br/>";//输出：houdunwang,com
 
 
-71. range — 建立一个包含指定范围单元的数组
+71. range — 建立一个包含指定范围单元的数组(python中有range和xrange)
 
 		range(1,10,2);//生成数组，1为第一个元素，每次递增2直到10
 		$tr=range(1,10);
@@ -4610,11 +4639,6 @@ set_time_limit(30);表示脚本最长执行30秒
 		)
 
 
-<<<<<<< HEAD
-//=====================20170320
-=======
-
->>>>>>> e184ab52ac585117ebf1b1ccbaa3b133169c33b5
 
 ##字符串函数整理
 
@@ -5144,7 +5168,7 @@ set_time_limit(30);表示脚本最长执行30秒
 		输出：Content-type:text/html;charset=utf8
 
 
-59. str_split — 将字符串转换为数组
+59. str_split — 将字符串转换为数组(不推荐使用，尽量使用explode)
 
 		接受两个参数，第一个为操作的字符串，第二个为转换后数组中单元的字符串长度(不指定时默认为1)
 		$str= "fav,orite,gre,enb,lue";
@@ -5188,7 +5212,7 @@ set_time_limit(30);表示脚本最长执行30秒
 61. strcasecmp — 二进制安全比较字符串（不区分大小写）,查看strcmp
 
 
-62. strchr — 别名 strstr
+62. strchr — 别名 strstr(类似其他语言中的截取字符串substring)
 
 		当查找到时，默认将被查找字符串及待查找字符串匹配位置后面的全部返回,当给出第三个参数时，也可以输出之前的部分
 		没查找到返回false
@@ -5304,7 +5328,6 @@ set_time_limit(30);表示脚本最长执行30秒
 		echo $var;
 		不好理解
 
-//===========================20170324
 
 83. strstr — 查找字符串的首次出现，查看strchr----fpassthru， ftruncate
 
@@ -5949,7 +5972,7 @@ private 私有的：只能本类执行，子类与外部对象都不可调用
 没有参数传入时，类实例化对象也可以不用加括号，即：
 $mysqli=new mysqli;
 
-常量的定义：difine(名字,值);
+常量的定义：define(名字,值);
 类中常量的定义：const 名字(不带$)
 
 static一直存在，在类中不能删除（unset)
@@ -6407,10 +6430,4 @@ try{
 }
 var_dump($file);
 echo "已经出了try-catch";
-
-
-//////////////////////////////////////
-PHP异常类
-//////////////////////////
-
 

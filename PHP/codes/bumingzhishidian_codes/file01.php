@@ -2,4 +2,9 @@
 $path='E:/SimulatedVideoEdit.aspx';
 var_dump(is_writable($path));
 var_dump(is_readable($path));
-var_dump(file("E:/temp.txt"));
+$filePath="E:/temp.txt";
+var_dump(file($filePath));
+var_dump(fileowner($filePath));
+var_dump(fileperms($filePath));
+var_dump(filesize($filePath));
+var_dump(filetype($filePath));//file
