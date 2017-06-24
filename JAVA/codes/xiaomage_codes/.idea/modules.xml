@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Day08/Day08.iml" filepath="$PROJECT_DIR$/Day08/Day08.iml" />
       <module fileurl="file://$PROJECT_DIR$/day03/day03.iml" filepath="$PROJECT_DIR$/day03/day03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04/day04.iml" filepath="$PROJECT_DIR$/day04/day04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day06/day06.iml" filepath="$PROJECT_DIR$/day06/day06.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/xiaomage_codes.iml" filepath="$PROJECT_DIR$/.idea/xiaomage_codes.iml" />
     </modules>
   </component>
