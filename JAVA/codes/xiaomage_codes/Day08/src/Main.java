@@ -3,8 +3,8 @@
  */
 public class Main {
     public static void main(String[] args){
-        Cat cat=new Cat();
-        cat.name=12;
-        System.out.println(cat.name);
+        Cat cat=new Cat("cat","animal");
+        System.out.println(cat.name);//cat
+        System.out.println(cat.getName());//animal
     }
 }
