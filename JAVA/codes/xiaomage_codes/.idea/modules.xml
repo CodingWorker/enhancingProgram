@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Day08/Day08.iml" filepath="$PROJECT_DIR$/Day08/Day08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03/day03.iml" filepath="$PROJECT_DIR$/day03/day03.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/xiaomage_codes.iml" filepath="$PROJECT_DIR$/.idea/xiaomage_codes.iml" />
     </modules>
   </component>
