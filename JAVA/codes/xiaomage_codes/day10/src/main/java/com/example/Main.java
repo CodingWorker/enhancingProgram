@@ -1,15 +1,12 @@
 package main.java.com.example;
 
-import java.io.OutputStream;
-import java.time.LocalDateTime;
-
 /**
  * Created by DaiYan on 2017/7/5.
  */
 public class Main {
     public static void main(String[] args){
         //实例内部类：只能拥有实例成员
-        InstanceInnerClass innerClass=new InstanceInnerClass("Daniel",12);
+        main_day11.java.com.example.InstanceInnerClass innerClass=new InstanceInnerClass("Daniel",12);
         InstanceInnerClass.InnerInstance innerInstance=innerClass.new InnerInstance();
         System.out.println(innerInstance.toString());
 
