@@ -1,0 +1,3 @@
+rootProject.name = 'JpaDemo'
+include 'Demo1'
+
