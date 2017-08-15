@@ -1,0 +1,14 @@
+{
+	"repositories":[
+		{
+			"type":"vcs",
+			"url":"git@github.com:CodingWorker/Hello-World.git"
+		},
+		{
+			"packagist":false
+		}
+	],
+	"requires":{
+		"hello/hello":"dev-master"
+	}
+}
