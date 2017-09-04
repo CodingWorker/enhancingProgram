@@ -9,9 +9,11 @@
 function test($arg1, $arg2, $arg3){
     var_dump('$arg1: '.$arg1 . ', $arg2: '.$arg2);
     foreach ($arg3 as $k => $v){
-        var_dump($v);
+        var_dump($k . '=>' . $v);
     }
+
+    return $arg3;
 }
 
-call_user_func_array('test',['a',12,['a'=>'aa','b'=>'bb']]);//函数是按照顺序来匹配的参数而非名字
+var_dump(call_user_func_array('test',['a',12,['a'=>'aa','b'=>'bb']]));//函数是按照顺序来匹配的参数而非名字
 
