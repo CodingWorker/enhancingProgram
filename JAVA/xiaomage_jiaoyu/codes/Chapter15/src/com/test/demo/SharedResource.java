@@ -6,7 +6,7 @@ package com.test.demo;
 public class SharedResource {
     private String name;
     private String gender;
-    private boolean notEmpty;
+    private boolean notEmpty=false;
 
     synchronized public void push(String name,String gender) {
         try {
@@ -16,7 +16,6 @@ public class SharedResource {
                 this.gender = gender;
                 this.notEmpty = true;
                 this.notify();
-            } else {
                 this.wait();
             }
         } catch (InterruptedException ex) {
@@ -31,7 +30,6 @@ public class SharedResource {
                 System.out.println(this.name + "-" + this.gender);
                 this.notEmpty = false;
                 this.notify();
-            } else {
                 this.wait();
             }
         } catch (InterruptedException ex) {
