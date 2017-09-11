@@ -116,7 +116,7 @@ public final class String
      * */
     private final char value[];
 
-    /** Cache the hash code for the string
+    /** Cache the hash c    ode for the string
      * 对string类来说重要的是valu和hash
      */
     private int hash; // Default to 0
@@ -248,6 +248,7 @@ public final class String
      * @since  1.5
      */
     public String(int[] codePoints, int offset, int count) {
+        //此处与字符数组初始化字符串对象那是一致的，属于重复代码
         if (offset < 0) {
             throw new StringIndexOutOfBoundsException(offset);
         }
