@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/my-study.iml" filepath="$PROJECT_DIR$/.idea/modules/my-study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/my-study_main.iml" filepath="$PROJECT_DIR$/.idea/modules/my-study_main.iml" group="my-study" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/my-study_test.iml" filepath="$PROJECT_DIR$/.idea/modules/my-study_test.iml" group="my-study" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sourcecodes.iml" filepath="$PROJECT_DIR$/.idea/modules/sourcecodes.iml" group="sourcecodes" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sourcecodes/sourcecodes_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sourcecodes/sourcecodes_main.iml" group="sourcecodes" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sourcecodes/sourcecodes_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sourcecodes/sourcecodes_test.iml" group="sourcecodes" />
+    </modules>
+  </component>
+</project>
