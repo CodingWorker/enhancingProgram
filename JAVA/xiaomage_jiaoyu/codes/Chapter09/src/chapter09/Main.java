@@ -1,3 +1,5 @@
+package chapter09;
+
 /**
  * Created by DaiYan on 2017/3/25.
  */
@@ -6,6 +8,5 @@ public class Main {
         Super clz=new Sub();
         clz.doWork();
         System.out.println(clz.name);
-
     }
 }
