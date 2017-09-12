@@ -1,7 +1,6 @@
 package test.java.lang;
 
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -9,7 +8,7 @@ import java.nio.charset.Charset;
 /**
  * Created by daiya on 2017/9/11.
  */
-public class String {
+public class StringTest {
     @Test
     public void run(){
         char[] data={'a','b'};
@@ -84,5 +83,75 @@ public class String {
         java.lang.String str1="CodePoints";
         java.lang.String str2="CodePointsfafadfa";
         System.out.println(str1.compareTo(str2));
+    }
+
+    @Test
+    public void run9(){
+        java.lang.String str="CodePoints()方法";
+        System.out.println(str.indexOf("p"));//-1
+        System.out.println(str.indexOf("o",5));//5
+        System.out.println(str.indexOf(12,0));//-1
+
+        System.out.println(str.lastIndexOf(12));//-1
+        System.out.println(str.lastIndexOf(12,3));//-1
+        int index=0;
+        label1:for(;;){
+            index++;
+            label2:for(;;){
+                index/=2;
+                if(index==10){
+                    break label1;
+                }
+            }
+        }
+
+        System.out.println(str.lastIndexOf("o",2));//1
+    }
+
+
+    @Test
+    public void run16(){
+        java.lang.String str="之线程安全队列Queue多数生产消费模";
+        System.out.println(str.substring(3));//安全队列Queue多数生产消费模
+        System.out.println(str.substring(3,8));//安全队列Q
+        System.out.println(str.subSequence(3,8));//安全队列Q
+
+        System.out.println(str.subSequence(3,8) instanceof java.lang.String);//true
+    }
+
+    @Test
+    public void run15(){
+        java.lang.String str1="之线程安全队列Queue";
+        java.lang.String str2="多数生产消费模";
+        System.out.println(str1.concat(str2));//之线程安全队列Queue多数生产消费模
+    }
+
+    @Test
+    public void run14(){
+        java.lang.String str="canonical_百度翻译";
+        System.out.println(str.split("z",100)[0]);//limit可以随意指定，仅仅是用来判断最后取得的个数
+    }
+
+    @Test
+    public void run13(){
+        System.out.println((int)' ');
+    }
+
+    @Test
+    public void run12(){
+        java.lang.String str="canonical_百度翻译";
+        System.out.println(str.trim());
+    }
+
+    @Test
+    public void run11(){
+        java.lang.String str="canonical_百度翻译";
+        System.out.println(str.toCharArray());
+    }
+
+    @Test
+    public void run10(){
+        java.lang.String str="canonical_百度翻译";
+        System.out.println(str.intern());
     }
 }
