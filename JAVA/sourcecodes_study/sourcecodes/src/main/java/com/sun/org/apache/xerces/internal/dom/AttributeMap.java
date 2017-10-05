@@ -317,7 +317,7 @@ public class AttributeMap extends NamedNodeMapImpl {
                     NodeImpl clone = (NodeImpl)d.cloneNode(true);
                     if (d.getLocalName() !=null){
                             // we must rely on the name to find a default attribute
-                            // ("test:attr"), but while copying it from the DOCTYPE
+                            // ("com.test:attr"), but while copying it from the DOCTYPE
                             // we should not loose namespace URI that was assigned
                             // to the attribute in the instance document.
                             ((AttrNSImpl)clone).namespaceURI = attr.getNamespaceURI();
@@ -427,7 +427,7 @@ public class AttributeMap extends NamedNodeMapImpl {
                     clone.ownerNode = ownerNode;
                     if (d.getLocalName() != null) {
                         // we must rely on the name to find a default attribute
-                        // ("test:attr"), but while copying it from the DOCTYPE
+                        // ("com.test:attr"), but while copying it from the DOCTYPE
                         // we should not loose namespace URI that was assigned
                         // to the attribute in the instance document.
                         ((AttrNSImpl)clone).namespaceURI = namespaceURI;

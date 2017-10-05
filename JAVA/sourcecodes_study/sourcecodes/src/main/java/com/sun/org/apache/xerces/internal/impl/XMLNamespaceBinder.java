@@ -771,7 +771,7 @@ public class XMLNamespaceBinder
                 // that is, the local part is not "xmlns". -SG
                 // Since this is an error condition in XML 1.0,
                 // and should be relatively uncommon in XML 1.1,
-                // making this test into a method call to reuse code
+                // making this com.test into a method call to reuse code
                 // should be acceptable.  - NG
                 if(prefixBoundToNullURI(uri, localpart)) {
                     fErrorReporter.reportError(XMLMessageFormatter.XMLNS_DOMAIN,

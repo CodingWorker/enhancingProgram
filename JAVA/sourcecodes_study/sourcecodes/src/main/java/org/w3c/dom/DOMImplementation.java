@@ -51,8 +51,8 @@ public interface DOMImplementation {
     /**
      * Test if the DOM implementation implements a specific feature and
      * version, as specified in <a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#DOMFeatures">DOM Features</a>.
-     * @param feature  The name of the feature to test.
-     * @param version  This is the version number of the feature to test.
+     * @param feature  The name of the feature to com.test.
+     * @param version  This is the version number of the feature to com.test.
      * @return <code>true</code> if the feature is implemented in the
      *   specified version, <code>false</code> otherwise.
      */
@@ -147,7 +147,7 @@ public interface DOMImplementation {
      * @param feature  The name of the feature requested. Note that any plus
      *   sign "+" prepended to the name of the feature will be ignored since
      *   it is not significant in the context of this method.
-     * @param version  This is the version number of the feature to test.
+     * @param version  This is the version number of the feature to com.test.
      * @return  Returns an object which implements the specialized APIs of
      *   the specified feature and version, if any, or <code>null</code> if
      *   there is no object which implements interfaces associated with that

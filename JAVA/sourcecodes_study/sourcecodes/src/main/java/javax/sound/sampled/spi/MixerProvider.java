@@ -87,7 +87,7 @@ public abstract class MixerProvider {
      * The full set of the mixer info objects that represent the mixers
      * supported by this {@code MixerProvider} may be obtained
      * through the {@code getMixerInfo} method.
-     * Use the {@code isMixerSupported} method to test whether
+     * Use the {@code isMixerSupported} method to com.test whether
      * this {@code MixerProvider} supports a particular mixer.
      *
      * @param info an info object that describes the desired mixer

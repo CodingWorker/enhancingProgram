@@ -424,7 +424,7 @@ public class FastStringBuffer
     // be at full size.
     boolean lastchunk = (m_lastChunk + 1 == m_array.length);
 
-    if (m_firstFree < m_chunkSize)  // Simplified test single-character-fits
+    if (m_firstFree < m_chunkSize)  // Simplified com.test single-character-fits
       chunk = m_array[m_lastChunk];
     else
     {

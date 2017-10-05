@@ -1570,7 +1570,7 @@ public class SimpleDateFormat extends DateFormat {
         // There may be multiple strings in the data[] array which begin with
         // the same prefix (e.g., Cerven and Cervenec (June and July) in Czech).
         // We keep track of the longest match, and return that.  Note that this
-        // unfortunately requires us to test all array elements.
+        // unfortunately requires us to com.test all array elements.
         int bestMatchLength = 0, bestMatch = -1;
         for (; i<count; ++i)
         {

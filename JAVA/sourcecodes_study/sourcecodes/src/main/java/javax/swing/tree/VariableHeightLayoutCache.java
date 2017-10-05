@@ -313,9 +313,9 @@ public class VariableHeightLayoutCache extends AbstractLayoutCache {
       * Returns the path to the node that is closest to x,y.  If
       * there is nothing currently visible this will return <code>null</code>,
       * otherwise it will always return a valid path.
-      * If you need to test if the
+      * If you need to com.test if the
       * returned object is exactly at x, y you should get the bounds for
-      * the returned path and test x, y against that.
+      * the returned path and com.test x, y against that.
       *
       * @param x  the x-coordinate
       * @param y  the y-coordinate

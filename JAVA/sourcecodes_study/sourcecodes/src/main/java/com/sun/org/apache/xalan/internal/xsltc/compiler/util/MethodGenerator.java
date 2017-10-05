@@ -123,9 +123,9 @@ public class MethodGenerator extends MethodGen
     private LocalVariableRegistry _localVariableRegistry;
         /**
                  * A mapping between patterns and instruction lists used by
-                 * test sequences to avoid compiling the same pattern multiple
+                 * com.test sequences to avoid compiling the same pattern multiple
                  * times. Note that patterns whose kernels are "*", "node()"
-                 * and "@*" can between shared by test sequences.
+                 * and "@*" can between shared by com.test sequences.
                  */
         private Map<Pattern, InstructionList> _preCompiled = new HashMap<>();
 
@@ -708,7 +708,7 @@ public class MethodGenerator extends MethodGen
 
     /**
      * Get the instruction list for a pre-compiled pattern. Used by
-     * test sequences to avoid compiling patterns more than once.
+     * com.test sequences to avoid compiling patterns more than once.
      */
     public InstructionList getInstructionList(Pattern pattern) {
         return _preCompiled.get(pattern);

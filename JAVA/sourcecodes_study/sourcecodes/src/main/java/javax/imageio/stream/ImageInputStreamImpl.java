@@ -763,7 +763,7 @@ public abstract class ImageInputStreamImpl implements ImageInputStream {
     public void seek(long pos) throws IOException {
         checkClosed();
 
-        // This test also covers pos < 0
+        // This com.test also covers pos < 0
         if (pos < flushedPos) {
             throw new IndexOutOfBoundsException("pos < flushedPos!");
         }

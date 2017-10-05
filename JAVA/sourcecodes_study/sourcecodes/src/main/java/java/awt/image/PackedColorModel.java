@@ -388,7 +388,7 @@ public abstract class PackedColorModel extends ColorModel {
      * Tests if the specified <code>Object</code> is an instance
      * of <code>PackedColorModel</code> and equals this
      * <code>PackedColorModel</code>.
-     * @param obj the <code>Object</code> to test for equality
+     * @param obj the <code>Object</code> to com.test for equality
      * @return <code>true</code> if the specified <code>Object</code>
      * is an instance of <code>PackedColorModel</code> and equals this
      * <code>PackedColorModel</code>; <code>false</code> otherwise.

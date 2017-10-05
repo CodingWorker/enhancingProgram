@@ -54,7 +54,7 @@ import java.io.IOException;
  * security manager is installed.
  *
  * <p> The {@link java.nio.file.FileStore#supportsFileAttributeView
- * supportsFileAttributeView} method may be used to test if a specific {@link
+ * supportsFileAttributeView} method may be used to com.test if a specific {@link
  * java.nio.file.FileStore FileStore} supports the storage of user-defined
  * attributes.
  *
@@ -178,7 +178,7 @@ public interface UserDefinedFileAttributeView
      *
      * <p> If an attribute of the given name already exists then its value is
      * replaced. If the attribute does not exist then it is created. If it
-     * implementation specific if a test to check for the existence of the
+     * implementation specific if a com.test to check for the existence of the
      * attribute and the creation of attribute are atomic with respect to other
      * file system activities.
      *

@@ -507,7 +507,7 @@ public class XSLTErrorResources_ja extends ListResourceBundle
      "{0}\u306F\u5C5E\u6027{1}\u304C\u5FC5\u8981\u3067\u3059"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0}\u306F''test''\u5C5E\u6027\u3092\u6301\u3064\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u3002"},
+      "{0}\u306F''com.test''\u5C5E\u6027\u3092\u6301\u3064\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u3002"},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "level\u5C5E\u6027\u306E\u5024\u304C\u4E0D\u6B63\u3067\u3059: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_ja extends ListResourceBundle
      "{0}\u306B\u306Fselect\u5C5E\u6027\u304C\u5FC5\u8981\u3067\u3059\u3002"},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when\u306B\u306F'test'\u5C5E\u6027\u304C\u5FC5\u8981\u3067\u3059\u3002"},
+      "xsl:when\u306B\u306F'com.test'\u5C5E\u6027\u304C\u5FC5\u8981\u3067\u3059\u3002"},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param\u306B\u306F'name'\u5C5E\u6027\u304C\u5FC5\u8981\u3067\u3059\u3002"},

@@ -1409,7 +1409,7 @@ public class GroupLayout implements LayoutManager2 {
         /**
          * Returns {@code true} if this spring will ALWAYS have a zero
          * size. This should NOT check the current size, rather it's
-         * meant to quickly test if this Spring will always have a
+         * meant to quickly com.test if this Spring will always have a
          * zero size.
          *
          * @param treatAutopaddingAsZeroSized if {@code true}, auto padding

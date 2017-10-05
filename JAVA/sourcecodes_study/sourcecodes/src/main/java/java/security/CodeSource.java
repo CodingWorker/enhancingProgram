@@ -129,7 +129,7 @@ public class CodeSource implements java.io.Serializable {
      * chains are of identical value. It is not required that
      * the certificate chains be in the same order.
      *
-     * @param obj the object to test for equality with this object.
+     * @param obj the object to com.test for equality with this object.
      *
      * @return true if the objects are considered equal, false otherwise.
      */

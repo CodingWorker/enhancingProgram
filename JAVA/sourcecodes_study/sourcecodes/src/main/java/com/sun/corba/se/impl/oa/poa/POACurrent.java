@@ -119,7 +119,7 @@ public class POACurrent extends org.omg.CORBA.portable.ObjectImpl
         return cookieHolder;
     }
 
-    // This is public so we can test the stack balance.
+    // This is public so we can com.test the stack balance.
     // It is not a security hole since this same info can be obtained from
     // PortableInterceptors.
     public String getOperation()

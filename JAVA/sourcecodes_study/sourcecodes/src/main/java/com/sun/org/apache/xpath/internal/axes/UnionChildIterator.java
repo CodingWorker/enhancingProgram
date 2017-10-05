@@ -37,7 +37,7 @@ public class UnionChildIterator extends ChildTestIterator
     static final long serialVersionUID = 3500298482193003495L;
   /**
    * Even though these may hold full LocPathIterators, this array does
-   * not have to be cloned, since only the node test and predicate
+   * not have to be cloned, since only the node com.test and predicate
    * portion are used, and these only need static information.  However,
    * also note that index predicates can not be used!
    */
@@ -52,11 +52,11 @@ public class UnionChildIterator extends ChildTestIterator
   }
 
   /**
-   * Add a node test to the union list.
+   * Add a node com.test to the union list.
    *
    * @param test reference to a NodeTest, which will be added
    * directly to the list of node tests (in other words, it will
-   * not be cloned).  The parent of this test will be set to
+   * not be cloned).  The parent of this com.test will be set to
    * this object.
    */
   public void addNodeTest(PredicatedNodeTest test)

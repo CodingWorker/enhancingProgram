@@ -486,10 +486,10 @@ public class BigDecimal extends Number implements Comparable<BigDecimal> {
                             ++scl;
                     } else if ((c == 'e') || (c == 'E')) {
                         exp = parseExp(in, offset, len);
-                        // Next test is required for backwards compatibility
+                        // Next com.test is required for backwards compatibility
                         if ((int) exp != exp) // overflow
                             throw new NumberFormatException();
-                        break; // [saves a test]
+                        break; // [saves a com.test]
                     } else {
                         throw new NumberFormatException();
                     }
@@ -549,10 +549,10 @@ public class BigDecimal extends Number implements Comparable<BigDecimal> {
                     if ((c != 'e') && (c != 'E'))
                         throw new NumberFormatException();
                     exp = parseExp(in, offset, len);
-                    // Next test is required for backwards compatibility
+                    // Next com.test is required for backwards compatibility
                     if ((int) exp != exp) // overflow
                         throw new NumberFormatException();
-                    break; // [saves a test]
+                    break; // [saves a com.test]
                 }
                 // here when no characters left
                 if (prec == 0) // no digits found
@@ -4416,7 +4416,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal> {
     private static long add(long xs, long ys){
         long sum = xs + ys;
         // See "Hacker's Delight" section 2-12 for explanation of
-        // the overflow test.
+        // the overflow com.test.
         if ( (((sum ^ xs) & (sum ^ ys))) >= 0L) { // not overflowed
             return sum;
         }
@@ -4441,7 +4441,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal> {
                 return add(scaledX, ys, scale2);
             } else {
                 BigInteger bigsum = bigMultiplyPowerTen(xs,raise).add(ys);
-                return ((xs^ys)>=0) ? // same sign test
+                return ((xs^ys)>=0) ? // same sign com.test
                     new BigDecimal(bigsum, INFLATED, scale2, 0)
                     : valueOf(bigsum, scale2, 0);
             }

@@ -1220,7 +1220,7 @@ public class DefaultMXBeanMappingFactory extends MXBeanMappingFactory {
             // CompositeData goes to parameter 2 of the constructor.  If an
             // element is -1, that item isn't given to the constructor.
             // Also remember the set of properties in that constructor
-            // so we can test unambiguity.
+            // so we can com.test unambiguity.
             Set<BitSet> getterIndexSets = newSet();
             for (Constructor<?> constr : annotatedConstrList) {
                 String[] propertyNames = AnnotationHelper.getPropertyNames(constr);

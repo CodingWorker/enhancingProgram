@@ -75,7 +75,7 @@ public class MethodHandleProxies {
      * The wrapper instance will implement the requested interface
      * and its super-types, but no other single-method interfaces.
      * This means that the instance will not unexpectedly
-     * pass an {@code instanceof} test for any unrequested type.
+     * pass an {@code instanceof} com.test for any unrequested type.
      * <p style="font-size:smaller;">
      * <em>Implementation Note:</em>
      * Therefore, each instance must implement a unique single-method interface.

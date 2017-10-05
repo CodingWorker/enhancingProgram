@@ -61,7 +61,7 @@ import static java.lang.invoke.MethodHandles.Lookup.IMPL_LOOKUP;
  * Here is a sample use of call sites and bootstrap methods which links every
  * dynamic call site to print its arguments:
 <blockquote><pre>{@code
-static void test() throws Throwable {
+static void com.test() throws Throwable {
     // THE FOLLOWING LINE IS PSEUDOCODE FOR A JVM INSTRUCTION
     InvokeDynamic[#bootstrapDynamic].baz("baz arg", 2, 3.14);
 }

@@ -24,14 +24,14 @@ package com.sun.org.apache.xpath.internal.patterns;
 
 /**
  * This interface should be implemented by Nodes and/or iterators,
- * when they need to know what the node test is before they do
+ * when they need to know what the node com.test is before they do
  * getNextChild, etc.
  */
 public interface NodeTestFilter
 {
 
   /**
-   * Set the node test for this filter.
+   * Set the node com.test for this filter.
    *
    *
    * @param nodeTest Reference to a NodeTest that may be used to predetermine

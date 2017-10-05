@@ -42,7 +42,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
 {
     static final long serialVersionUID = 9071668960168152644L;
 
-  /** The axis for this test. */
+  /** The axis for this com.test. */
   protected int m_axis;
 
   /**
@@ -52,7 +52,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
    * @param whatToShow Bit set defined mainly by {@link org.w3c.dom.traversal.NodeFilter}.
    * @param namespace The namespace to be tested.
    * @param name The local name to be tested.
-   * @param axis The Axis for this test, one of of Axes.ANCESTORORSELF, etc.
+   * @param axis The Axis for this com.test, one of of Axes.ANCESTORORSELF, etc.
    * @param axisForPredicate No longer used.
    */
   public StepPattern(int whatToShow, String namespace, String name, int axis,
@@ -65,11 +65,11 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
   }
 
   /**
-   * Construct a StepPattern that doesn't test for node names.
+   * Construct a StepPattern that doesn't com.test for node names.
    *
    *
    * @param whatToShow Bit set defined mainly by {@link org.w3c.dom.traversal.NodeFilter}.
-   * @param axis The Axis for this test, one of of Axes.ANCESTORORSELF, etc.
+   * @param axis The Axis for this com.test, one of of Axes.ANCESTORORSELF, etc.
    * @param axisForPredicate No longer used.
    */
   public StepPattern(int whatToShow, int axis, int axisForPredicate)
@@ -87,7 +87,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
   String m_targetString;  // only calculate on head
 
   /**
-   * Calculate the local name or psuedo name of the node that this pattern will test,
+   * Calculate the local name or psuedo name of the node that this pattern will com.test,
    * for hash table lookup optimization.
    *
    * @see com.sun.org.apache.xpath.internal.compiler.PsuedoNames
@@ -127,7 +127,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
   }
 
   /**
-   * Get the local name or psuedo name of the node that this pattern will test,
+   * Get the local name or psuedo name of the node that this pattern will com.test,
    * for hash table lookup optimization.
    *
    *
@@ -512,7 +512,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
 
   /**
    * Get the proximity position index of the current node based on this
-   * node test.
+   * node com.test.
    *
    *
    * @param xctxt XPath runtime context.
@@ -520,7 +520,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
    * @param findLast If true, don't terminate when the context node is found.
    *
    * @return the proximity position index of the current node based on the
-   *         node test.
+   *         node com.test.
    */
   private final int getProximityPosition(XPathContext xctxt, int predPos,
                     boolean findLast)
@@ -618,13 +618,13 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
 
   /**
    * Get the proximity position index of the current node based on this
-   * node test.
+   * node com.test.
    *
    *
    * @param xctxt XPath runtime context.
    *
    * @return the proximity position index of the current node based on the
-   *         node test.
+   *         node com.test.
    */
   public int getProximityPosition(XPathContext xctxt)
   {
@@ -632,15 +632,15 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
   }
 
   /**
-   * Get the count of the nodes that match the test, which is the proximity
-   * position of the last node that can pass this test in the sub context
+   * Get the count of the nodes that match the com.test, which is the proximity
+   * position of the last node that can pass this com.test in the sub context
    * selection.  In XSLT 1-based indexing, this count is the index of the last
    * node.
    *
    *
    * @param xctxt XPath runtime context.
    *
-   * @return the count of the nodes that match the test.
+   * @return the count of the nodes that match the com.test.
    */
   public int getLastPos(XPathContext xctxt)
   {
@@ -917,7 +917,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
    * Set the axis that this step should follow.
    *
    *
-   * @param axis The Axis for this test, one of of Axes.ANCESTORORSELF, etc.
+   * @param axis The Axis for this com.test, one of of Axes.ANCESTORORSELF, etc.
    */
   public void setAxis(int axis)
   {
@@ -928,7 +928,7 @@ public class StepPattern extends NodeTest implements SubContextList, ExpressionO
    * Get the axis that this step follows.
    *
    *
-   * @return The Axis for this test, one of of Axes.ANCESTORORSELF, etc.
+   * @return The Axis for this com.test, one of of Axes.ANCESTORORSELF, etc.
    */
   public int getAxis()
   {

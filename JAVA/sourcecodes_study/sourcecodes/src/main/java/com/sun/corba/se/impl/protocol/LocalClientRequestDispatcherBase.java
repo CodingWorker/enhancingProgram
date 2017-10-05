@@ -120,8 +120,8 @@ public abstract class LocalClientRequestDispatcherBase implements LocalClientReq
         if (so == null)
             return false ;
 
-        // Normally, this test will never fail.  However, if the servant
-        // and the stub were loaded in different class loaders, this test
+        // Normally, this com.test will never fail.  However, if the servant
+        // and the stub were loaded in different class loaders, this com.test
         // will fail.
         if (!expectedType.isInstance( so.servant )) {
             isNextCallValid.set( Boolean.FALSE ) ;

@@ -2885,7 +2885,7 @@ public class CSS implements Serializable {
                 string.equals("italic") || string.equals("lighter")) {
                 return true;
             }
-            // test for 100-900
+            // com.test for 100-900
             return (string.length() == 3 &&
                     string.charAt(0) >= '1' && string.charAt(0) <= '9' &&
                     string.charAt(1) == '0' && string.charAt(2) == '0');

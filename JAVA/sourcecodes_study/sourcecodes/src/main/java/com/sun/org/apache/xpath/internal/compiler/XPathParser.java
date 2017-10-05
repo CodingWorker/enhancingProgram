@@ -1715,7 +1715,7 @@ public class XPathParser
       m_ops.setOp(m_ops.getOp(OpMap.MAPINDEX_LENGTH) - 1, OpCodes.NODETYPE_NODE);
     }
 
-    // There is probably a better way to test for this
+    // There is probably a better way to com.test for this
     // transition... but it gets real hairy if you try
     // to do it in basis().
     else if (tokenIs('*') || tokenIs('@') || tokenIs('_')
@@ -1884,7 +1884,7 @@ public class XPathParser
           // to distinguish from other possible tokens
           if (!Character.isLetter(m_tokenChar) && !tokenIs('_'))
           {
-            // "Node test that matches either NCName:* or QName was expected."
+            // "Node com.test that matches either NCName:* or QName was expected."
             error(XPATHErrorResources.ER_EXPECTED_NODE_TEST, null);
           }
         }
@@ -1911,7 +1911,7 @@ public class XPathParser
         // to distinguish from other possible tokens
         if (!Character.isLetter(m_tokenChar) && !tokenIs('_'))
         {
-          // "Node test that matches either NCName:* or QName was expected."
+          // "Node com.test that matches either NCName:* or QName was expected."
           error(XPATHErrorResources.ER_EXPECTED_NODE_TEST, null);
         }
       }

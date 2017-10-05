@@ -25,7 +25,7 @@ package com.sun.org.apache.xml.internal.utils;
 import org.w3c.dom.Node;
 
 /**
- * The tree walker will test for this interface, and call
+ * The tree walker will com.test for this interface, and call
  * setOriginatingNode before calling the SAX event.  For creating
  * DOM backpointers for things that are normally created via
  * SAX events.

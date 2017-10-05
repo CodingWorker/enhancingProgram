@@ -266,7 +266,7 @@ public class ImageReadParam extends IIOParam {
      * band index has been specified, or if the number of source bands
      * and destination bands to be used differ.  The
      * <code>ImageReader.checkReadParamBandSettings</code> method may
-     * be used to automate this test.
+     * be used to automate this com.test.
      *
      * @param destinationBands an array of integer band indices to be
      * used.

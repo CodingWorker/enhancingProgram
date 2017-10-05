@@ -677,7 +677,7 @@ public abstract class Line2D implements Shape, Cloneable {
         // x2,y2 becomes relative vector from x1,y1 to end of segment
         x2 -= x1;
         y2 -= y1;
-        // px,py becomes relative vector from x1,y1 to test point
+        // px,py becomes relative vector from x1,y1 to com.test point
         px -= x1;
         py -= y1;
         double dotprod = px * x2 + py * y2;
@@ -859,7 +859,7 @@ public abstract class Line2D implements Shape, Cloneable {
         // x2,y2 becomes relative vector from x1,y1 to end of segment
         x2 -= x1;
         y2 -= y1;
-        // px,py becomes relative vector from x1,y1 to test point
+        // px,py becomes relative vector from x1,y1 to com.test point
         px -= x1;
         py -= y1;
         double dotprod = px * x2 + py * y2;

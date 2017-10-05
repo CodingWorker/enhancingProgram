@@ -144,7 +144,7 @@ public class ParserTable {
             { new TestAcceptor2(),
               new TestAcceptor1(),
               null }  ;
-        // REVISIT: The test data gets put into a Properties object where
+        // REVISIT: The com.test data gets put into a Properties object where
         // order is not guaranteed.  Thus the above array is in reverse.
         StringPair[] TestAcceptorData = {
             new StringPair( "foo.bar.blech.NonExistent", "dummy" ),
@@ -267,8 +267,8 @@ public class ParserTable {
                 new Integer( 0 ), "GROW" ),
 
             // Note that the same property is used to set two different
-            // fields here.  This requires that both entries use the same test
-            // data, or the test will fail.
+            // fields here.  This requires that both entries use the same com.test
+            // data, or the com.test will fail.
             ParserDataFactory.make( ORBConstants.GIOP_TARGET_ADDRESSING,
                 OperationFactory.compose( OperationFactory.integerRangeAction( 0, 3 ),
                     OperationFactory.convertIntegerToShort() ),

@@ -465,7 +465,7 @@ public class RuleBasedCollator extends Collator{
                     gets = false;
                 } else {
                     // Neither of the orders is ignorable, and we already know that the primary
-                    // orders are different because of the (pSOrder != pTOrder) test above.
+                    // orders are different because of the (pSOrder != pTOrder) com.test above.
                     // Record the difference and stop the comparison.
                     if (pSOrder < pTOrder) {
                         return Collator.LESS;  // (strength is PRIMARY)

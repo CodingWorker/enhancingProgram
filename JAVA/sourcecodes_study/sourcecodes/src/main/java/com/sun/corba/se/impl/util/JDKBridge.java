@@ -147,7 +147,7 @@ public class JDKBridge {
 
     /**
      * Set the codebase and useCodebaseOnly properties. This is public
-     * only for test code.
+     * only for com.test code.
      */
     public static synchronized void setCodebaseProperties () {
         String prop = (String)AccessController.doPrivileged(
@@ -167,7 +167,7 @@ public class JDKBridge {
 
     /**
      * Set the default code base. This method is here only
-     * for test code.
+     * for com.test code.
      */
     public static synchronized void setLocalCodebase(String codebase) {
         localCodebase = codebase;

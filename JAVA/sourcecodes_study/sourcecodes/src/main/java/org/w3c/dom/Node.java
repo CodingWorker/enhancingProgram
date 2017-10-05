@@ -498,8 +498,8 @@ public interface Node {
     /**
      *  Tests whether the DOM implementation implements a specific feature and
      * that feature is supported by this node, as specified in .
-     * @param feature  The name of the feature to test.
-     * @param version  This is the version number of the feature to test.
+     * @param feature  The name of the feature to com.test.
+     * @param version  This is the version number of the feature to com.test.
      * @return Returns <code>true</code> if the specified feature is
      *   supported on this node, <code>false</code> otherwise.
      *
@@ -779,7 +779,7 @@ public interface Node {
      * used completely interchangeably, such that all attributes have the
      * same values and calling the same DOM method on either reference
      * always has exactly the same effect.
-     * @param other The node to test against.
+     * @param other The node to com.test against.
      * @return Returns <code>true</code> if the nodes are the same,
      *   <code>false</code> otherwise.
      *
@@ -905,7 +905,7 @@ public interface Node {
      * @param feature  The name of the feature requested. Note that any plus
      *   sign "+" prepended to the name of the feature will be ignored since
      *   it is not significant in the context of this method.
-     * @param version  This is the version number of the feature to test.
+     * @param version  This is the version number of the feature to com.test.
      * @return  Returns an object which implements the specialized APIs of
      *   the specified feature and version, if any, or <code>null</code> if
      *   there is no object which implements interfaces associated with that

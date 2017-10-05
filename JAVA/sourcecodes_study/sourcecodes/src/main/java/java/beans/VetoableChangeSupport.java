@@ -152,7 +152,7 @@ public class VetoableChangeSupport implements Serializable {
      * the returned array will be a mixture of VetoableChangeListeners
      * and <code>VetoableChangeListenerProxy</code>s. If the calling
      * method is interested in distinguishing the listeners then it must
-     * test each element to see if it's a
+     * com.test each element to see if it's a
      * <code>VetoableChangeListenerProxy</code>, perform the cast, and examine
      * the parameter.
      *

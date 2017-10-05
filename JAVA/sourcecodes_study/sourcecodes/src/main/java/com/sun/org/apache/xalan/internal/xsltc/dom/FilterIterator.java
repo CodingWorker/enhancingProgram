@@ -33,7 +33,7 @@ import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase;
  * Similar to a CurrentNodeListIterator except that the filter has a
  * simpler interface (only needs the node, no position, last, etc.)
  * It takes a source iterator and a Filter object and returns nodes
- * from the source after filtering them by calling filter.test(node).
+ * from the source after filtering them by calling filter.com.test(node).
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
  */

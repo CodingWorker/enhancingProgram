@@ -1460,7 +1460,7 @@ public class GTKLookAndFeel extends SynthLookAndFeel {
          * If is a Sun CJK locale or remote display, indicate by the condition
          * variable that in this case the L&F recommends ignoring desktop
          * settings. On other Unixes (eg Linux) this doesn't apply.
-         * REMIND 1: The isSunCJK test is really just a place holder
+         * REMIND 1: The isSunCJK com.test is really just a place holder
          * until we can properly query fontconfig and use the properties
          * set for specific fonts.
          * REMIND 2: See comment on isLocalDisplay() definition regarding

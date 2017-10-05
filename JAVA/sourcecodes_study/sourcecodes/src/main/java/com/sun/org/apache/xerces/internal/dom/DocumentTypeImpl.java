@@ -277,7 +277,7 @@ public class DocumentTypeImpl
         }
         DocumentTypeImpl argDocType = (DocumentTypeImpl) arg;
 
-        //test if the following string attributes are equal: publicId,
+        //com.test if the following string attributes are equal: publicId,
         //systemId, internalSubset.
         if ((getPublicId() == null && argDocType.getPublicId() != null)
             || (getPublicId() != null && argDocType.getPublicId() == null)
@@ -308,7 +308,7 @@ public class DocumentTypeImpl
             }
         }
 
-        //test if NamedNodeMaps entities and notations are equal
+        //com.test if NamedNodeMaps entities and notations are equal
         NamedNodeMapImpl argEntities = argDocType.entities;
 
         if ((entities == null && argEntities != null)

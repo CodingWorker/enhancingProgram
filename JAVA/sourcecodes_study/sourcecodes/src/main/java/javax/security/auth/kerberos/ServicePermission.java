@@ -199,7 +199,7 @@ public final class ServicePermission extends Permission
     /**
      * Checks two ServicePermission objects for equality.
      * <P>
-     * @param obj the object to test for equality with this object.
+     * @param obj the object to com.test for equality with this object.
      *
      * @return true if <i>obj</i> is a ServicePermission, and has the
      *  same service principal, and actions as this

@@ -110,7 +110,7 @@ public class CDROutputObject extends CorbaOutputObject
 
     // NOTE:
     // Used in SharedCDR (i.e., must be grow).
-    // Used in msgtypes test.
+    // Used in msgtypes com.test.
     public CDROutputObject(ORB orb,
                            MessageMediator messageMediator,
                            Message header,

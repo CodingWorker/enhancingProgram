@@ -127,7 +127,7 @@ public abstract class X509CRL extends CRL implements X509Extension {
      * its encoded form is retrieved and compared with the
      * encoded form of this CRL.
      *
-     * @param other the object to test for equality with this CRL.
+     * @param other the object to com.test for equality with this CRL.
      *
      * @return true iff the encoded forms of the two CRLs
      * match, false otherwise.

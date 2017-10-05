@@ -710,7 +710,7 @@ public class TabularDataSupport
             return false;
         }
 
-        // Now, really test for equality between this TabularData implementation and the other:
+        // Now, really com.test for equality between this TabularData implementation and the other:
         //
 
         // their tabularType should be equal

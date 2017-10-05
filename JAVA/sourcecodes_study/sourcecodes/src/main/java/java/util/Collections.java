@@ -5283,12 +5283,12 @@ public class Collections {
      *
      * <p>Care must be exercised if this method is used on collections that
      * do not comply with the general contract for {@code Collection}.
-     * Implementations may elect to iterate over either collection and test
+     * Implementations may elect to iterate over either collection and com.test
      * for containment in the other collection (or to perform any equivalent
-     * computation).  If either collection uses a nonstandard equality test
+     * computation).  If either collection uses a nonstandard equality com.test
      * (as does a {@link SortedSet} whose ordering is not <em>compatible with
      * equals</em>, or the key set of an {@link IdentityHashMap}), both
-     * collections must use the same nonstandard equality test, or the
+     * collections must use the same nonstandard equality com.test, or the
      * result of this method is undefined.
      *
      * <p>Care must also be exercised when using collections that have

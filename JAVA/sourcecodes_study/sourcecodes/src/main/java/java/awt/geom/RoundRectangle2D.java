@@ -529,7 +529,7 @@ public abstract class RoundRectangle2D extends RectangularShape {
         double aw = Math.min(getWidth(), Math.abs(getArcWidth())) / 2.0;
         double ah = Math.min(getHeight(), Math.abs(getArcHeight())) / 2.0;
         // Check which corner point is in and do circular containment
-        // test - otherwise simple acceptance
+        // com.test - otherwise simple acceptance
         if (x >= (rrx0 += aw) && x < (rrx0 = rrx1 - aw)) {
             return true;
         }
@@ -591,7 +591,7 @@ public abstract class RoundRectangle2D extends RectangularShape {
         // must be in one of the rounded edges.  We detect this case if
         // a [xy]0class is 3 or a [xy]1class is 1.  One of those two cases
         // must be true for each direction.
-        // We now find a "nearest point" to test for being inside a rounded
+        // We now find a "nearest point" to com.test for being inside a rounded
         // corner.
         x = (x1class == 1) ? (x = x + w - (rrx0 + aw)) : (x = x - (rrx1 - aw));
         y = (y1class == 1) ? (y = y + h - (rry0 + ah)) : (y = y - (rry1 - ah));

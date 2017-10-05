@@ -157,7 +157,7 @@ public class FilterExprWalker extends AxesWalker
 
   /**
    * This method needs to override AxesWalker.acceptNode because FilterExprWalkers
-   * don't need to, and shouldn't, do a node test.
+   * don't need to, and shouldn't, do a node com.test.
    * @param n  The node to check to see if it passes the filter or not.
    * @return  a constant to determine whether the node is accepted,
    *   rejected, or skipped, as defined  above .

@@ -149,7 +149,7 @@ public class XMLDTDDescription extends XMLResourceIdentifierImpl
      *    - if both have roots, use them
      *    - else if one has a root, examine other's possible root's for a match;
      *    - else try all combinations
-     *  - test fExpandedSystemId and fPublicId as above
+     *  - com.test fExpandedSystemId and fPublicId as above
      *
      * @param desc The description of the grammar to be compared with
      * @return     True if they are equal, else false

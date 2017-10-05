@@ -791,7 +791,7 @@ public final class ClientRequestInfoImpl
                                      serviceContexts, id);
         } catch (NullPointerException e) {
             // REVISIT how this is programmed - not what it does.
-            // See purge calls test.  The waiter is woken up by the
+            // See purge calls com.test.  The waiter is woken up by the
             // call to purge calls - but there is no reply containing
             // service contexts.
             throw stdWrapper.invalidServiceContextId( e ) ;

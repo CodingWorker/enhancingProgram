@@ -713,7 +713,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
 
             BigInteger p = new BigInteger(temp, 1);
 
-            // Do cheap "pre-test" if applicable
+            // Do cheap "pre-com.test" if applicable
             if (bitLength > 6) {
                 long r = p.remainder(SMALL_PRIME_PRODUCT).longValue();
                 if ((r%3==0)  || (r%5==0)  || (r%7==0)  || (r%11==0) ||
@@ -726,7 +726,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
             if (bitLength < 4)
                 return p;
 
-            // Do expensive test if we survive pre-test (or it's inapplicable)
+            // Do expensive com.test if we survive pre-com.test (or it's inapplicable)
             if (p.primeToCertainty(certainty, rnd))
                 return p;
         }
@@ -739,7 +739,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
      * Find a random number of the specified bitLength that is probably prime.
      * This method is more appropriate for larger bitlengths since it uses
      * a sieve to eliminate most composites before using a more expensive
-     * test.
+     * com.test.
      */
     private static BigInteger largePrime(int bitLength, int certainty, Random rnd) {
         BigInteger p;
@@ -792,7 +792,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
                 result = result.add(ONE);
 
             while (true) {
-                // Do cheap "pre-test" if applicable
+                // Do cheap "pre-com.test" if applicable
                 if (result.bitLength() > 6) {
                     long r = result.remainder(SMALL_PRIME_PRODUCT).longValue();
                     if ((r%3==0)  || (r%5==0)  || (r%7==0)  || (r%11==0) ||
@@ -807,7 +807,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
                 if (result.bitLength() < 4)
                     return result;
 
-                // The expensive test
+                // The expensive com.test
                 if (result.primeToCertainty(DEFAULT_PRIME_CERTAINTY, null))
                     return result;
 
@@ -998,7 +998,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
 
     /**
      * Returns true iff this BigInteger passes the specified number of
-     * Miller-Rabin tests. This test is taken from the DSA spec (NIST FIPS
+     * Miller-Rabin tests. This com.test is taken from the DSA spec (NIST FIPS
      * 186-2).
      *
      * The following assumptions are made:
@@ -3149,7 +3149,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
      * Returns {@code true} if and only if the designated bit is set.
      * (Computes {@code ((this & (1<<n)) != 0)}.)
      *
-     * @param  n index of bit to test.
+     * @param  n index of bit to com.test.
      * @return {@code true} if and only if the designated bit is set.
      * @throws ArithmeticException {@code n} is negative.
      */
@@ -3458,7 +3458,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
      *         BigInteger whose value is numerically equal to this BigInteger.
      */
     public boolean equals(Object x) {
-        // This test is just an optimization, which may or may not help
+        // This com.test is just an optimization, which may or may not help
         if (x == this)
             return true;
 

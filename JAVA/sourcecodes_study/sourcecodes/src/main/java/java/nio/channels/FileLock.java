@@ -57,7 +57,7 @@ import java.io.IOException;
  * into a request for an exclusive lock.
  *
  * <p> The locks held on a particular file by a single Java virtual machine do
- * not overlap.  The {@link #overlaps overlaps} method may be used to test
+ * not overlap.  The {@link #overlaps overlaps} method may be used to com.test
  * whether a candidate lock range overlaps an existing lock.
  *
  * <p> A file-lock object records the file channel upon whose file the lock is

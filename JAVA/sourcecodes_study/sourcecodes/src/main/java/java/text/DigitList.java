@@ -697,7 +697,7 @@ final class DigitList implements Cloneable {
     }
 
     /**
-     * equality test between two digit lists.
+     * equality com.test between two digit lists.
      */
     public boolean equals(Object obj) {
         if (this == obj)                      // quick check

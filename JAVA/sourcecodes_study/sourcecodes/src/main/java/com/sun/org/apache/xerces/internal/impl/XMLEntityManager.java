@@ -1572,10 +1572,10 @@ public class XMLEntityManager implements XMLComponent, XMLEntityResolver {
             addInternalEntity("recursive-entity2", "<bar>&recursive-entity3;</bar>");
             addInternalEntity("recursive-entity3", "<baz>&recursive-entity;</baz>");
             try {
-                addExternalEntity("external-text", null, "external-text.ent", "test/external-text.xml");
-                addExternalEntity("external-balanced-element", null, "external-balanced-element.ent", "test/external-balanced-element.xml");
-                addExternalEntity("one", null, "ent/one.ent", "test/external-entity.xml");
-                addExternalEntity("two", null, "ent/two.ent", "test/ent/one.xml");
+                addExternalEntity("external-text", null, "external-text.ent", "com.test/external-text.xml");
+                addExternalEntity("external-balanced-element", null, "external-balanced-element.ent", "com.test/external-balanced-element.xml");
+                addExternalEntity("one", null, "ent/one.ent", "com.test/external-entity.xml");
+                addExternalEntity("two", null, "ent/two.ent", "com.test/ent/one.xml");
             }
             catch (IOException ex) {
                 // should never happen
@@ -3002,7 +3002,7 @@ public class XMLEntityManager implements XMLComponent, XMLEntityResolver {
 
         public void reset() {
             fOffset = fMark;
-            //test();
+            //com.test();
         }
 
         public boolean markSupported() {
@@ -3021,7 +3021,7 @@ public class XMLEntityManager implements XMLComponent, XMLEntityResolver {
         //System.out.println("TESTING: Added familytree to entityManager");
         //Usecase1
         fEntityStorage.addExternalEntity("entityUsecase1",null,
-                "/space/home/stax/sun/6thJan2004/zephyr/data/test.txt",
+                "/space/home/stax/sun/6thJan2004/zephyr/data/com.test.txt",
                 "/space/home/stax/sun/6thJan2004/zephyr/data/entity.xml");
 
         //Usecase2

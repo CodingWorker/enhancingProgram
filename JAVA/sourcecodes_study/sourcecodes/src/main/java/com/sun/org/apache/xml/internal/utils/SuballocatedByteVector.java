@@ -396,7 +396,7 @@ public class SuballocatedByteVector
   public byte elementAt(int i)
   {
     // %OPT% Does this really buy us anything? Test versus division for small,
-    // test _plus_ division for big docs.
+    // com.test _plus_ division for big docs.
     if(i<m_blocksize)
       return m_map0[i];
 

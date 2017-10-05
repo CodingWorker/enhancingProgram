@@ -611,7 +611,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      * if a particular object is implemented by a local servant and hence local
      * invocation APIs may be used.
      *
-     * @param stub the stub to test.
+     * @param stub the stub to com.test.
      *
      * @return The <tt>_is_local()</tt> method returns true if
      * the servant incarnating the object is located in the same process as
@@ -688,10 +688,10 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         throws RemoteException
     {
         if (obj == null)
-            // Bug fix for 5018613: JCK test expects copyObjects to throw
+            // Bug fix for 5018613: JCK com.test expects copyObjects to throw
             // NPE when obj==null.  This is actually not in the spec, since
             // obj is not really an RMI-IDL data type, but we follow our
-            // test here, and force this error to be thrown.
+            // com.test here, and force this error to be thrown.
             throw new NullPointerException() ;
 
         Class compType = obj.getClass().getComponentType() ;
@@ -727,7 +727,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
                     return lorb.peekInvocationInfo().getCopierFactory().make().copy( obj ) ;
                 } catch (java.util.EmptyStackException exc) {
                     // copyObject was invoked outside of an invocation, probably by
-                    // a test.  Get the default copier from the ORB.
+                    // a com.test.  Get the default copier from the ORB.
                     // XXX should we just make the default copier available directly
                     // and avoid constructing one on each call?
                     CopierManager cm = lorb.getCopierManager() ;

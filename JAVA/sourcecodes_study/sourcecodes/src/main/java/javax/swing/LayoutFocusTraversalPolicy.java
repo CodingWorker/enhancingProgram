@@ -50,7 +50,7 @@ import sun.awt.SunToolkit;
 public class LayoutFocusTraversalPolicy extends SortingFocusTraversalPolicy
     implements Serializable
 {
-    // Delegate most of our fitness test to Default so that we only have to
+    // Delegate most of our fitness com.test to Default so that we only have to
     // code the algorithm once.
     private static final SwingDefaultFocusTraversalPolicy fitnessTestPolicy =
         new SwingDefaultFocusTraversalPolicy();
@@ -244,7 +244,7 @@ public class LayoutFocusTraversalPolicy extends SortingFocusTraversalPolicy
             if (inputMap != null) {
                 return true;
             }
-            // Delegate to the fitnessTestPolicy, this will test for the
+            // Delegate to the fitnessTestPolicy, this will com.test for the
             // case where the developer has overriden isFocusTraversable to
             // return true.
         }

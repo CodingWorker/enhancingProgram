@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Vector;
 
 /**
- * A test sequence is a sequence of patterns that
+ * A com.test sequence is a sequence of patterns that
  *
  *  (1) occured in templates in the same mode
  *  (2) share the same kernel node type (e.g. A/B and C/C/B)
@@ -40,7 +40,7 @@ import java.util.Vector;
  *      (element sequence only) or matching "@*" (attribute
  *      sequence only).
  *
- * A test sequence may have a default template, which will be
+ * A com.test sequence may have a default template, which will be
  * instantiated if none of the other patterns match.
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
@@ -50,12 +50,12 @@ import java.util.Vector;
 final class TestSeq {
 
     /**
-     * Integer code for the kernel type of this test sequence
+     * Integer code for the kernel type of this com.test sequence
      */
     private int _kernelType;
 
     /**
-     * Vector of all patterns in the test sequence. May include
+     * Vector of all patterns in the com.test sequence. May include
      * patterns with "*", "@*" or "node()" kernel.
      */
     private Vector _patterns = null;
@@ -66,12 +66,12 @@ final class TestSeq {
     private Mode _mode = null;
 
     /**
-     * Default template for this test sequence
+     * Default template for this com.test sequence
      */
     private Template _default = null;
 
     /**
-     * Instruction list representing this test sequence.
+     * Instruction list representing this com.test sequence.
      */
     private InstructionList _instructionList;
 
@@ -81,7 +81,7 @@ final class TestSeq {
     private InstructionHandle _start = null;
 
     /**
-     * Creates a new test sequence given a set of patterns and a mode.
+     * Creates a new com.test sequence given a set of patterns and a mode.
      */
     public TestSeq(Vector patterns, Mode mode) {
         this(patterns, -2, mode);
@@ -94,8 +94,8 @@ final class TestSeq {
     }
 
     /**
-     * Returns a string representation of this test sequence. Notice
-     * that test sequences are mutable, so the value returned by this
+     * Returns a string representation of this com.test sequence. Notice
+     * that com.test sequences are mutable, so the value returned by this
      * method is different before and after calling reduce().
      */
     public String toString() {
@@ -118,14 +118,14 @@ final class TestSeq {
     }
 
     /**
-     * Returns the instruction list for this test sequence
+     * Returns the instruction list for this com.test sequence
      */
     public InstructionList getInstructionList() {
         return _instructionList;
     }
 
     /**
-     * Return the highest priority for a pattern in this test
+     * Return the highest priority for a pattern in this com.test
      * sequence. This is either the priority of the first or
      * of the default pattern.
      */
@@ -137,7 +137,7 @@ final class TestSeq {
 
     /**
      * Returns the position of the highest priority pattern in
-     * this test sequence.
+     * this com.test sequence.
      */
     public int getPosition() {
         final Template template = (_patterns.size() == 0) ? _default
@@ -146,7 +146,7 @@ final class TestSeq {
     }
 
     /**
-     * Reduce the patterns in this test sequence. Creates a new
+     * Reduce the patterns in this com.test sequence. Creates a new
      * vector of patterns and sets the default pattern if it
      * finds a patterns that is fully reduced.
      */
@@ -175,8 +175,8 @@ final class TestSeq {
 
     /**
      * Returns, by reference, the templates that are included in
-     * this test sequence. Note that a single template can occur
-     * in several test sequences if its pattern is a union.
+     * this com.test sequence. Note that a single template can occur
+     * in several com.test sequences if its pattern is a union.
      */
     public void findTemplates(Map<Template, Object> templates) {
         if (_default != null) {
@@ -191,7 +191,7 @@ final class TestSeq {
 
     /**
      * Get the instruction handle to a template's code. This is
-     * used when a single template occurs in several test
+     * used when a single template occurs in several com.test
      * sequences; that is, if its pattern is a union of patterns
      * (e.g. match="A/B | A/C").
      */
@@ -200,16 +200,16 @@ final class TestSeq {
     }
 
     /**
-     * Returns pattern n in this test sequence
+     * Returns pattern n in this com.test sequence
      */
     private LocationPathPattern getPattern(int n) {
         return (LocationPathPattern)_patterns.elementAt(n);
     }
 
     /**
-     * Compile the code for this test sequence. Compile patterns
+     * Compile the code for this com.test sequence. Compile patterns
      * from highest to lowest priority. Note that since patterns
-     * can be share by multiple test sequences, instruction lists
+     * can be share by multiple com.test sequences, instruction lists
      * must be copied before backpatching.
      */
     public InstructionHandle compile(ClassGenerator classGen,
@@ -240,7 +240,7 @@ final class TestSeq {
             // Patterns expect current node on top of stack
             il.append(methodGen.loadCurrentNode());
 
-            // Apply the test-code compiled for the pattern
+            // Apply the com.test-code compiled for the pattern
             InstructionList ilist = methodGen.getInstructionList(pattern);
             if (ilist == null) {
                 ilist = pattern.compile(classGen, methodGen);

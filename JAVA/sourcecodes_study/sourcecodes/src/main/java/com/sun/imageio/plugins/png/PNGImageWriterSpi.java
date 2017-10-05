@@ -99,7 +99,7 @@ public class PNGImageWriterSpi extends ImageWriterSpi {
         }
 
         boolean hasAlpha = colorModel.hasAlpha();
-        // Fix 4464413: PNGTransparency reg-test was failing
+        // Fix 4464413: PNGTransparency reg-com.test was failing
         // because for IndexColorModels that have alpha,
         // numBands == 1 && hasAlpha == true, thus causing
         // the check below to fail and return false.

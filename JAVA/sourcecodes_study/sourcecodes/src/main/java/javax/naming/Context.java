@@ -649,7 +649,7 @@ public interface Context {
      * using the naming convention of a particular naming system.
      * Within any single naming system, <tt>NameParser</tt> objects
      * returned by this method must be equal (using the <tt>equals()</tt>
-     * test).
+     * com.test).
      *
      * @param name
      *          the name of the context from which to get the parser

@@ -89,7 +89,7 @@ public class FunctionPattern extends StepPattern
 
 
   /**
-   * Test a node to see if it matches the given node test.
+   * Test a node to see if it matches the given node com.test.
    *
    * @param xctxt XPath runtime context.
    *
@@ -132,7 +132,7 @@ public class FunctionPattern extends StepPattern
   }
 
   /**
-   * Test a node to see if it matches the given node test.
+   * Test a node to see if it matches the given node com.test.
    *
    * @param xctxt XPath runtime context.
    *
@@ -175,7 +175,7 @@ public class FunctionPattern extends StepPattern
   }
 
   /**
-   * Test a node to see if it matches the given node test.
+   * Test a node to see if it matches the given node com.test.
    *
    * @param xctxt XPath runtime context.
    *

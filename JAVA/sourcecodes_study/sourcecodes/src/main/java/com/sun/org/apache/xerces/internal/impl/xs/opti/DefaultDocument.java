@@ -213,7 +213,7 @@ public class DefaultDocument extends NodeImpl
     /**
      * An attribute specifying whether errors checking is enforced or not.
      * When set to <code>false</code>, the implementation is free to not
-     * test every possible error case normally defined on DOM operations,
+     * com.test every possible error case normally defined on DOM operations,
      * and not raise any <code>DOMException</code>. In case of error, the
      * behavior is undefined. This attribute is <code>true</code> by
      * defaults.
@@ -225,7 +225,7 @@ public class DefaultDocument extends NodeImpl
     /**
      * An attribute specifying whether errors checking is enforced or not.
      * When set to <code>false</code>, the implementation is free to not
-     * test every possible error case normally defined on DOM operations,
+     * com.test every possible error case normally defined on DOM operations,
      * and not raise any <code>DOMException</code>. In case of error, the
      * behavior is undefined. This attribute is <code>true</code> by
      * defaults.

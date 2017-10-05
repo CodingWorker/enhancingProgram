@@ -114,7 +114,7 @@ import java.util.concurrent.TimeUnit;
  * the group are closed, all actively executing completion handlers have run to
  * completion, and resources used by the group are released. No attempt is made
  * to stop or interrupt threads that are executing completion handlers. The
- * {@link #isTerminated() isTerminated} method is used to test if the group has
+ * {@link #isTerminated() isTerminated} method is used to com.test if the group has
  * terminated, and the {@link #awaitTermination awaitTermination} method can be
  * used to block until the group has terminated.
  *

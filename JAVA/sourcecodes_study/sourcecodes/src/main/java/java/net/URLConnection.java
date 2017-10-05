@@ -1541,7 +1541,7 @@ public abstract class URLConnection {
 
             /* Above is signature of Microsoft Structured Storage.
              * Below this, could have tests for various SS entities.
-             * For now, just test for FlashPix.
+             * For now, just com.test for FlashPix.
              */
             if (checkfpx(is)) {
                 return "image/vnd.fpx";

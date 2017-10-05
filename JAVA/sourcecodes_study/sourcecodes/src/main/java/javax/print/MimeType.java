@@ -269,7 +269,7 @@ class MimeType implements Serializable, Cloneable {
      * the same media type (because the default character set for plain text is
      * US-ASCII).
      *
-     * @param  obj  Object to test.
+     * @param  obj  Object to com.test.
      *
      * @return  True if this MIME type object equals <CODE>obj</CODE>, false
      *          otherwise.

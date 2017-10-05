@@ -41,7 +41,7 @@ import sun.security.util.SecurityConstants;
 
 /**
  * This class is used to generate native system input events
- * for the purposes of test automation, self-running demos, and
+ * for the purposes of com.test automation, self-running demos, and
  * other applications where control of the mouse and keyboard
  * is needed. The primary purpose of Robot is to facilitate
  * automated testing of Java platform implementations.

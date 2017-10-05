@@ -774,7 +774,7 @@ public final class AlphaComposite implements Composite {
      * <code>AlphaComposite</code> object that has the same
      * compositing rule and alpha value as this object.
      *
-     * @param obj the <code>Object</code> to test for equality
+     * @param obj the <code>Object</code> to com.test for equality
      * @return <code>true</code> if <code>obj</code> equals this
      * <code>AlphaComposite</code>; <code>false</code> otherwise.
      */

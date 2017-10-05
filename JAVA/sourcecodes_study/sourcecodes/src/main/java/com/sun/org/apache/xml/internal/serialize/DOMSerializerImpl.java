@@ -487,7 +487,7 @@ public class DOMSerializerImpl implements LSSerializer, DOMConfiguration {
                 ver = (String)getVersion.invoke(doc, (Object[]) null);
             }
         } catch (Exception e) {
-            // no way to test the version...
+            // no way to com.test the version...
             // ignore the exception
         }
         if(ver != null && ver.equals("1.1")) {
@@ -701,7 +701,7 @@ public class DOMSerializerImpl implements LSSerializer, DOMConfiguration {
                 ver = (String) getVersion.invoke(fDocument, (Object[]) null);
             }
         } catch (Exception e) {
-            //no way to test the version...
+            //no way to com.test the version...
             //ignore the exception
         }
         //determine which serializer to use:
@@ -903,7 +903,7 @@ public class DOMSerializerImpl implements LSSerializer, DOMConfiguration {
                 ver = (String) getXmlVersion.invoke(fDocument, (Object[]) null);
             }
         } catch (Exception e) {
-            // no way to test the version...
+            // no way to com.test the version...
             // ignore the exception
         }
         if (ver != null && ver.equals("1.1")) {
@@ -1042,7 +1042,7 @@ public class DOMSerializerImpl implements LSSerializer, DOMConfiguration {
                     verifyNames = ((Boolean)versionChanged.invoke(document, (Object[]) null)).booleanValue();
                 }
             } catch (Exception e) {
-                //no way to test the version...
+                //no way to com.test the version...
                 //ignore the exception
             }
             if (node.getFirstChild() != null) {

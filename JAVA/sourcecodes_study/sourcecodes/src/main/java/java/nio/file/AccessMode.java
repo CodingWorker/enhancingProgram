@@ -26,7 +26,7 @@
 package java.nio.file;
 
 /**
- * Defines access modes used to test the accessibility of a file.
+ * Defines access modes used to com.test the accessibility of a file.
  *
  * @since 1.7
  */

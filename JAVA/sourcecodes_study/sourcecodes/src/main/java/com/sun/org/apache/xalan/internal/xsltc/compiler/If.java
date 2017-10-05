@@ -50,25 +50,25 @@ final class If extends Instruction {
         indent(indent);
         Util.println("If");
         indent(indent + IndentIncrement);
-        System.out.print("test ");
+        System.out.print("com.test ");
         Util.println(_test.toString());
         displayContents(indent + IndentIncrement);
     }
 
     /**
-     * Parse the "test" expression and contents of this element.
+     * Parse the "com.test" expression and contents of this element.
      */
     public void parseContents(Parser parser) {
-        // Parse the "test" expression
-        _test = parser.parseExpression(this, "test", null);
+        // Parse the "com.test" expression
+        _test = parser.parseExpression(this, "com.test", null);
 
         // Make sure required attribute(s) have been set
         if (_test.isDummy()) {
-            reportError(this, parser, ErrorMsg.REQUIRED_ATTR_ERR, "test");
+            reportError(this, parser, ErrorMsg.REQUIRED_ATTR_ERR, "com.test");
             return;
         }
 
-        // Ignore xsl:if when test is false (function-available() and
+        // Ignore xsl:if when com.test is false (function-available() and
         // element-available())
         Object result = _test.evaluateAtCompileTime();
         if (result != null && result instanceof Boolean) {
@@ -79,11 +79,11 @@ final class If extends Instruction {
     }
 
     /**
-     * Type-check the "test" expression and contents of this element.
-     * The contents will be ignored if we know the test will always fail.
+     * Type-check the "com.test" expression and contents of this element.
+     * The contents will be ignored if we know the com.test will always fail.
      */
     public Type typeCheck(SymbolTable stable) throws TypeCheckError {
-        // Type-check the "test" expression
+        // Type-check the "com.test" expression
         if (_test.typeCheck(stable) instanceof BooleanType == false) {
             _test = new CastExpr(_test, Type.Boolean);
         }
@@ -95,8 +95,8 @@ final class If extends Instruction {
     }
 
     /**
-     * Translate the "test" expression and contents of this element.
-     * The contents will be ignored if we know the test will always fail.
+     * Translate the "com.test" expression and contents of this element.
+     * The contents will be ignored if we know the com.test will always fail.
      */
     public void translate(ClassGenerator classGen, MethodGenerator methodGen) {
         final InstructionList il = methodGen.getInstructionList();

@@ -2073,7 +2073,7 @@ public abstract class Toolkit {
                 if (mask == 0) {
                     break;
                 }
-                if ((mask & 1L) != 0) {  // Always test bit 0.
+                if ((mask & 1L) != 0) {  // Always com.test bit 0.
                     calls[i]++;
                 }
                 mask >>>= 1;  // Right shift, fill with zeros on left.
@@ -2337,7 +2337,7 @@ public abstract class Toolkit {
                 if (mask == 0) {
                     break;
                 }
-                if ((mask & 1L) != 0) {  // Always test bit 0.
+                if ((mask & 1L) != 0) {  // Always com.test bit 0.
                     calls[i]++;
                 }
                 mask >>>= 1;  // Right shift, fill with zeros on left.

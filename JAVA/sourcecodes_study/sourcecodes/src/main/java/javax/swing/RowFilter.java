@@ -152,7 +152,7 @@ public abstract class RowFilter<M,I> {
      * </pre>
      * <p>
      * The returned filter uses {@link java.util.regex.Matcher#find}
-     * to test for inclusion.  To test for exact matches use the
+     * to com.test for inclusion.  To com.test for exact matches use the
      * characters '^' and '$' to match the beginning and end of the
      * string respectively.  For example, "^foo$" includes only rows whose
      * string is exactly "foo" and not, for example, "food".  See
@@ -241,7 +241,7 @@ public abstract class RowFilter<M,I> {
      *   RowFilter&lt;Object,Object&gt; fooBarFilter = RowFilter.orFilter(filters);
      * </pre>
      *
-     * @param filters the <code>RowFilter</code>s to test
+     * @param filters the <code>RowFilter</code>s to com.test
      * @throws IllegalArgumentException if any of the filters
      *         are <code>null</code>
      * @throws NullPointerException if <code>filters</code> is null
@@ -267,7 +267,7 @@ public abstract class RowFilter<M,I> {
      *   RowFilter&lt;Object,Object&gt; fooBarFilter = RowFilter.andFilter(filters);
      * </pre>
      *
-     * @param filters the <code>RowFilter</code>s to test
+     * @param filters the <code>RowFilter</code>s to com.test
      * @return a <code>RowFilter</code> implementing the specified criteria
      * @throws IllegalArgumentException if any of the filters
      *         are <code>null</code>

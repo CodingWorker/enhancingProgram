@@ -32,11 +32,11 @@ import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase;
 /**
  * Iterators of this kind use a CurrentNodeListFilter to filter a subset of
  * nodes from a source iterator. For each node from the source, the boolean
- * method CurrentNodeListFilter.test() is called.
+ * method CurrentNodeListFilter.com.test() is called.
  *
  * All nodes from the source are read into an array upon calling setStartNode()
  * (this is needed to determine the value of last, a parameter to
- * CurrentNodeListFilter.test()). The method getLast() returns the last element
+ * CurrentNodeListFilter.com.test()). The method getLast() returns the last element
  * after applying the filter.
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen

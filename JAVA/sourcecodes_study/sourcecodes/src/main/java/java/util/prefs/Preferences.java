@@ -945,7 +945,7 @@ public abstract class Preferences {
      * {@link #removeNode()} method, it <i>is</i> legal to invoke this method,
      * but only with the path name <tt>""</tt>; the invocation will return
      * <tt>false</tt>.  Thus, the idiom <tt>p.nodeExists("")</tt> may be
-     * used to test whether <tt>p</tt> has been removed.
+     * used to com.test whether <tt>p</tt> has been removed.
      *
      * @param pathName the path name of the node whose existence
      *        is to be checked.

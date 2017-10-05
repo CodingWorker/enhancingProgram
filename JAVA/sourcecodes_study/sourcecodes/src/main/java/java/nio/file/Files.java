@@ -1516,7 +1516,7 @@ public final class Files {
      * the file system to determine if the file is considered hidden.
      *
      * @param   path
-     *          the path to the file to test
+     *          the path to the file to com.test
      *
      * @return  {@code true} if the file is considered hidden
      *
@@ -2174,7 +2174,7 @@ public final class Files {
      * BasicFileAttributes#isDirectory} method.
      *
      * @param   path
-     *          the path to the file to test
+     *          the path to the file to com.test
      * @param   options
      *          options indicating how symbolic links are handled
      *
@@ -2365,7 +2365,7 @@ public final class Files {
      * method in security sensitive applications.
      *
      * @param   path
-     *          the path to the file to test
+     *          the path to the file to com.test
      * @param   options
      *          options indicating how symbolic links are handled
      * .
@@ -2416,7 +2416,7 @@ public final class Files {
      * when using this method in security sensitive applications.
      *
      * @param   path
-     *          the path to the file to test
+     *          the path to the file to com.test
      * @param   options
      *          options indicating how symbolic links are handled
      *
@@ -2448,7 +2448,7 @@ public final class Files {
     }
 
     /**
-     * Used by isReadbale, isWritable, isExecutable to test access to a file.
+     * Used by isReadbale, isWritable, isExecutable to com.test access to a file.
      */
     private static boolean isAccessible(Path path, AccessMode... modes) {
         try {
@@ -2606,7 +2606,7 @@ public final class Files {
      * directory. Cycle detection is done by recording the {@link
      * java.nio.file.attribute.BasicFileAttributes#fileKey file-key} of directories,
      * or if file keys are not available, by invoking the {@link #isSameFile
-     * isSameFile} method to test if a directory is the same file as an
+     * isSameFile} method to com.test if a directory is the same file as an
      * ancestor. When a cycle is detected it is treated as an I/O error, and the
      * {@link FileVisitor#visitFileFailed visitFileFailed} method is invoked with
      * an instance of {@link FileSystemLoopException}.
@@ -3521,7 +3521,7 @@ public final class Files {
      * directory. Cycle detection is done by recording the {@link
      * java.nio.file.attribute.BasicFileAttributes#fileKey file-key} of directories,
      * or if file keys are not available, by invoking the {@link #isSameFile
-     * isSameFile} method to test if a directory is the same file as an
+     * isSameFile} method to com.test if a directory is the same file as an
      * ancestor. When a cycle is detected it is treated as an I/O error with
      * an instance of {@link FileSystemLoopException}.
      *

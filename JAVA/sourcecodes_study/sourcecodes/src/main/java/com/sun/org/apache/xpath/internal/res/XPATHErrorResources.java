@@ -405,7 +405,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
      "unknown match operation!"},
 
   { ER_INCORRECT_ARG_LENGTH,
-      "Arg length of processing-instruction() node test is incorrect!"},
+      "Arg length of processing-instruction() node com.test is incorrect!"},
 
   { ER_CANT_CONVERT_TO_NUMBER,
       "Can not convert {0} to a number"},
@@ -660,12 +660,12 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_EXPECTED_LOC_STEP,
        "A location step was expected following the '/' or '//' token."},
 
-  // Note to translators:  A node test is part of an XPath expression that is
-  // used to test for particular kinds of nodes.  In this case, a node test that
+  // Note to translators:  A node com.test is part of an XPath expression that is
+  // used to com.test for particular kinds of nodes.  In this case, a node com.test that
   // consists of an NCName followed by a colon and an asterisk or that consists
   // of a QName was expected, but was not found.
   { ER_EXPECTED_NODE_TEST,
-       "A node test that matches either NCName:* or QName was expected."},
+       "A node com.test that matches either NCName:* or QName was expected."},
 
   // Note to translators:  A step pattern is part of an XPath expression.
   // The message indicates that syntactically such an expression was expected,

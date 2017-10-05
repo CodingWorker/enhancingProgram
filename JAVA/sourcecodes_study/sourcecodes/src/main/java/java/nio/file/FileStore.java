@@ -132,7 +132,7 @@ public abstract class FileStore {
      * Tells whether or not this file store supports the file attributes
      * identified by the given file attribute view.
      *
-     * <p> Invoking this method to test if the file store supports {@link
+     * <p> Invoking this method to com.test if the file store supports {@link
      * BasicFileAttributeView} will always return {@code true}. In the case of
      * the default provider, this method cannot guarantee to give the correct
      * result when the file store is not a local storage device. The reasons for
@@ -150,7 +150,7 @@ public abstract class FileStore {
      * Tells whether or not this file store supports the file attributes
      * identified by the given file attribute view.
      *
-     * <p> Invoking this method to test if the file store supports {@link
+     * <p> Invoking this method to com.test if the file store supports {@link
      * BasicFileAttributeView}, identified by the name "{@code basic}" will
      * always return {@code true}. In the case of the default provider, this
      * method cannot guarantee to give the correct result when the file store is

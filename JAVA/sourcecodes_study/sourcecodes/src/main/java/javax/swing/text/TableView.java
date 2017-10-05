@@ -720,7 +720,7 @@ public abstract class TableView extends BoxView {
                 int rowSpan = getRowsOccupied(cv);
                 if (rowSpan > 1) {
                     for (int j = 1; j < rowSpan; j++) {
-                        // test bounds of each row because it may not exist
+                        // com.test bounds of each row because it may not exist
                         // either because of error or because the table isn't
                         // fully loaded yet.
                         int row = getRow() + j;

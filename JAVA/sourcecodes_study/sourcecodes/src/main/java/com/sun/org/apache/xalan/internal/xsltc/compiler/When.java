@@ -45,7 +45,7 @@ final class When extends Instruction {
         indent(indent);
         Util.println("When");
         indent(indent + IndentIncrement);
-        System.out.print("test ");
+        System.out.print("com.test ");
         Util.println(_test.toString());
         displayContents(indent + IndentIncrement);
     }
@@ -59,9 +59,9 @@ final class When extends Instruction {
     }
 
     public void parseContents(Parser parser) {
-        _test = parser.parseExpression(this, "test", null);
+        _test = parser.parseExpression(this, "com.test", null);
 
-        // Ignore xsl:if when test is false (function-available() and
+        // Ignore xsl:if when com.test is false (function-available() and
         // element-available())
         Object result = _test.evaluateAtCompileTime();
         if (result != null && result instanceof Boolean) {
@@ -72,19 +72,19 @@ final class When extends Instruction {
 
         // Make sure required attribute(s) have been set
         if (_test.isDummy()) {
-            reportError(this, parser, ErrorMsg.REQUIRED_ATTR_ERR, "test");
+            reportError(this, parser, ErrorMsg.REQUIRED_ATTR_ERR, "com.test");
         }
     }
 
     /**
-     * Type-check this when element. The test should always be type checked,
-     * while we do not bother with the contents if we know the test fails.
-     * This is important in cases where the "test" expression tests for
+     * Type-check this when element. The com.test should always be type checked,
+     * while we do not bother with the contents if we know the com.test fails.
+     * This is important in cases where the "com.test" expression tests for
      * the support of a non-available element, and the <xsl:when> body contains
      * this non-available element.
      */
     public Type typeCheck(SymbolTable stable) throws TypeCheckError {
-        // Type-check the test expression
+        // Type-check the com.test expression
         if (_test.typeCheck(stable) instanceof BooleanType == false) {
             _test = new CastExpr(_test, Type.Boolean);
         }
@@ -98,7 +98,7 @@ final class When extends Instruction {
 
     /**
      * This method should never be called. An Otherwise object will explicitly
-     * translate the "test" expression and and contents of this element.
+     * translate the "com.test" expression and and contents of this element.
      */
     public void translate(ClassGenerator classGen, MethodGenerator methodGen) {
         final ErrorMsg msg = new ErrorMsg(ErrorMsg.STRAY_WHEN_ERR, this);

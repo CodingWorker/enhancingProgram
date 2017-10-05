@@ -764,8 +764,8 @@ abstract public class ToStream extends SerializerBase
 
         if (m_startNewLine)
             outputLineSep();
-        /* For m_indentAmount > 0 this extra test might be slower
-         * but Xalan's default value is 0, so this extra test
+        /* For m_indentAmount > 0 this extra com.test might be slower
+         * but Xalan's default value is 0, so this extra com.test
          * will run faster in that situation.
          */
         if (m_indentAmount > 0)
@@ -2176,7 +2176,7 @@ abstract public class ToStream extends SerializerBase
             else
             {
                 if (!EMPTYSTRING.equals(uri))
-                    // hack for XSLTC attribset16 test
+                    // hack for XSLTC attribset16 com.test
                 { // that maps ns1 prefix to "" URI
                     name = "xmlns:" + prefix;
 

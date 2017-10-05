@@ -1238,7 +1238,7 @@ public class RelationService extends NotificationBroadcasterSupport
 
         String roleName = newRole.getRoleName();
         List<ObjectName> newRoleValue = newRole.getRoleValue();
-        // Note: no need to test if oldValue not null before cloning,
+        // Note: no need to com.test if oldValue not null before cloning,
         //       tested above.
         List<ObjectName> oldRoleValue =
             new ArrayList<ObjectName>(oldValue);
@@ -1668,7 +1668,7 @@ public class RelationService extends NotificationBroadcasterSupport
 
                     if (roleName == null) {
                         // All roles to be considered
-                        // Note: no need to test if list not null before
+                        // Note: no need to com.test if list not null before
                         //       cloning, MUST be not null else bug :(
                         result.put(currRelId,
                                    new ArrayList<String>(currRoleNameList));
@@ -2880,7 +2880,7 @@ public class RelationService extends NotificationBroadcasterSupport
                         myUnregNtfFilter.disableObjectName(obsObjName);
                 }
 
-// Under test
+// Under com.test
                 if (newListenerFlag) {
                     try {
                         myMBeanServer.addNotificationListener(
@@ -2893,7 +2893,7 @@ public class RelationService extends NotificationBroadcasterSupport
                        RelationServiceNotRegisteredException(exc.getMessage());
                     }
                 }
-// End test
+// End com.test
 
 
 //              if (!newListenerFlag) {
@@ -3034,7 +3034,7 @@ public class RelationService extends NotificationBroadcasterSupport
         // the relation type
         // First retrieves a local list of the role infos of the relation type
         // to see which roles have not been initialized
-        // Note: no need to test if list not null before cloning, not allowed
+        // Note: no need to com.test if list not null before cloning, not allowed
         //       to have an empty relation type.
         List<RoleInfo> roleInfoList = new ArrayList<RoleInfo>(relType.getRoleInfos());
 

@@ -1334,7 +1334,7 @@ public class IndexColorModel extends ColorModel {
       * Returns <code>true</code> if <code>raster</code> is compatible
       * with this <code>ColorModel</code> or <code>false</code> if it
       * is not compatible with this <code>ColorModel</code>.
-      * @param raster the {@link Raster} object to test for compatibility
+      * @param raster the {@link Raster} object to com.test for compatibility
       * @return <code>true</code> if <code>raster</code> is compatible
       * with this <code>ColorModel</code>; <code>false</code> otherwise.
       *

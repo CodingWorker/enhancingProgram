@@ -167,7 +167,7 @@ public interface DTMFilter
    *
    * <p>%REVIEW% Under what circumstances will this be used? The cases
    * I've considered are just as easy and just about as efficient if
-   * the name test is performed in the DTMIterator... -- Joe</p>
+   * the name com.test is performed in the DTMIterator... -- Joe</p>
    *
    * <p>%REVIEW% Should that 0xFFFF have a mnemonic assigned to it?
    * Also: This representation is assuming the expanded name is indeed

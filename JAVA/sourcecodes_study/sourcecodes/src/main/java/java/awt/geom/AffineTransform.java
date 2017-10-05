@@ -3897,7 +3897,7 @@ public class AffineTransform implements Cloneable, java.io.Serializable {
      * Returns <code>true</code> if this <code>AffineTransform</code>
      * represents the same affine coordinate transform as the specified
      * argument.
-     * @param obj the <code>Object</code> to test for equality with this
+     * @param obj the <code>Object</code> to com.test for equality with this
      * <code>AffineTransform</code>
      * @return <code>true</code> if <code>obj</code> equals this
      * <code>AffineTransform</code> object; <code>false</code> otherwise.

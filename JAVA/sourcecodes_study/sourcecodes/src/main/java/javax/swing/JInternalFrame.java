@@ -1018,7 +1018,7 @@ public class JInternalFrame extends JComponent implements
         Boolean newValue = b ? Boolean.TRUE : Boolean.FALSE;
         fireVetoableChange(IS_MAXIMUM_PROPERTY, oldValue, newValue);
         /* setting isMaximum above the event firing means that
-           property listeners that, for some reason, test it will
+           property listeners that, for some reason, com.test it will
            get it wrong... See, for example, getNormalBounds() */
         isMaximum = b;
         firePropertyChange(IS_MAXIMUM_PROPERTY, oldValue, newValue);
@@ -1107,7 +1107,7 @@ public class JInternalFrame extends JComponent implements
            happening because the user clicked on a component that will
            want focus, then it will get transfered there later.
 
-           We test for parent.isShowing() above, because AWT throws a
+           We com.test for parent.isShowing() above, because AWT throws a
            NPE if you try to request focus on a lightweight before its
            parent has been made visible */
 
@@ -1359,7 +1359,7 @@ public class JInternalFrame extends JComponent implements
      */
     public Rectangle getNormalBounds() {
 
-      /* we used to test (!isMaximum) here, but since this
+      /* we used to com.test (!isMaximum) here, but since this
          method is used by the property listener for the
          IS_MAXIMUM_PROPERTY, it ended up getting the wrong
          answer... Since normalBounds get set to null when the

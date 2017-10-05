@@ -859,7 +859,7 @@ public class DefaultMBeanServerInterceptor implements MBeanServerInterceptor {
      * and by registerMBean() after all MBean compliance tests
      * have been performed.
      * <p>
-     * This method does not performed any kind of test compliance,
+     * This method does not performed any kind of com.test compliance,
      * and the caller should make sure that the given <code>object</code>
      * is MBean compliant.
      * <p>

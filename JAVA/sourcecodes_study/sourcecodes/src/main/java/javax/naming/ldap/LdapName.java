@@ -640,7 +640,7 @@ public class LdapName implements Name {
      * Two LDAP names are equal if each RDN in one is equal
      * to the corresponding RDN in the other. This implies
      * both have the same number of RDNs, and each RDN's
-     * equals() test against the corresponding RDN in the other
+     * equals() com.test against the corresponding RDN in the other
      * name returns true. See {@link Rdn#equals(Object obj)}
      * for a definition of RDN equality.
      *

@@ -333,7 +333,7 @@ public final class DOMImplementationRegistry {
     }
 
     /**
-     * A simple JRE (Java Runtime Environment) 1.1 test
+     * A simple JRE (Java Runtime Environment) 1.1 com.test
      *
      * @return <code>true</code> if JRE 1.1
      */

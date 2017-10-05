@@ -405,7 +405,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
      "op\u00E9ration de correspondance inconnue."},
 
   { ER_INCORRECT_ARG_LENGTH,
-      "La longueur d'argument du test du noeud processing-instruction() n'est pas correcte."},
+      "La longueur d'argument du com.test du noeud processing-instruction() n'est pas correcte."},
 
   { ER_CANT_CONVERT_TO_NUMBER,
       "Impossible de convertir {0} en nombre"},
@@ -660,12 +660,12 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_EXPECTED_LOC_STEP,
        "Une \u00E9tape d'emplacement \u00E9tait attendue apr\u00E8s le jeton '/' ou '//'."},
 
-  // Note to translators:  A node test is part of an XPath expression that is
-  // used to test for particular kinds of nodes.  In this case, a node test that
+  // Note to translators:  A node com.test is part of an XPath expression that is
+  // used to com.test for particular kinds of nodes.  In this case, a node com.test that
   // consists of an NCName followed by a colon and an asterisk or that consists
   // of a QName was expected, but was not found.
   { ER_EXPECTED_NODE_TEST,
-       "Un test de noeud correspondant \u00E0 NCName:* ou QName \u00E9tait attendu."},
+       "Un com.test de noeud correspondant \u00E0 NCName:* ou QName \u00E9tait attendu."},
 
   // Note to translators:  A step pattern is part of an XPath expression.
   // The message indicates that syntactically such an expression was expected,

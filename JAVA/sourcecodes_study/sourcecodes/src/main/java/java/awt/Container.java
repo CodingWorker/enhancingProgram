@@ -3264,7 +3264,7 @@ public class Container extends Component {
      * Check if this component is the child of this container or its children.
      * Note: this function acquires treeLock
      * Note: this function traverses children tree only in one Window.
-     * @param comp a component in test, must not be null
+     * @param comp a component in com.test, must not be null
      */
     private boolean isParentOf(Component comp) {
         synchronized(getTreeLock()) {

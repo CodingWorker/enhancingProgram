@@ -471,7 +471,7 @@ class InetAddress implements java.io.Serializable {
      * a TCP connection on port 7 (Echo) of the destination host.
      * <p>
      * The {@code network interface} and {@code ttl} parameters
-     * let the caller specify which network interface the test will go through
+     * let the caller specify which network interface the com.test will go through
      * and the maximum number of hops the packets should go through.
      * A negative value for the {@code ttl} will result in an
      * IllegalArgumentException being thrown.
@@ -482,7 +482,7 @@ class InetAddress implements java.io.Serializable {
      * in an IllegalArgumentException being thrown.
      *
      * @param   netif   the NetworkInterface through which the
-     *                    test will be done, or null for any interface
+     *                    com.test will be done, or null for any interface
      * @param   ttl     the maximum numbers of hops to try or 0 for the
      *                  default
      * @param   timeout the time, in milliseconds, before the call aborts

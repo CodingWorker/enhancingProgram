@@ -734,12 +734,12 @@ public class Compiler extends OpMap
 
   /**
    * Get a {@link org.w3c.dom.traversal.NodeFilter} bit set that tells what
-   * to show for a given node test.
+   * to show for a given node com.test.
    *
    * @param opPos the op map position for the location step.
    *
    * @return {@link org.w3c.dom.traversal.NodeFilter} bit set that tells what
-   *         to show for a given node test.
+   *         to show for a given node com.test.
    */
   public int getWhatToShow(int opPos)
   {

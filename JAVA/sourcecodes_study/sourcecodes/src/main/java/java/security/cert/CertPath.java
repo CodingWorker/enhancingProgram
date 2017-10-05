@@ -171,7 +171,7 @@ public abstract class CertPath implements Serializable {
      * This algorithm is implemented by this method. If it is overridden,
      * the behavior specified here must be maintained.
      *
-     * @param other the object to test for equality with this certification path
+     * @param other the object to com.test for equality with this certification path
      * @return true if the specified object is equal to this certification path,
      * false otherwise
      */

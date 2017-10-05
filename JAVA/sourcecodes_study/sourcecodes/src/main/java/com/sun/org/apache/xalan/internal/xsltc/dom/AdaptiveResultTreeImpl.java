@@ -46,7 +46,7 @@ import org.xml.sax.helpers.AttributesImpl;
  * the contents. Example:
  * <pre>
  *    &lt;xsl:variable name = "x"&gt;
- *      &lt;xsl:call-template name = "test"&gt;
+ *      &lt;xsl:call-template name = "com.test"&gt;
  *         &lt;xsl:with-param name="a" select="."/&gt;
  *      &lt;/xsl:call-template&gt;
  *    &lt;/xsl:variable>

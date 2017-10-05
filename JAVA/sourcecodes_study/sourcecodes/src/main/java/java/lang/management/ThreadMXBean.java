@@ -78,7 +78,7 @@ import java.util.Map;
  * A Java virtual machine may disable CPU time measurement
  * by default.
  * The {@link #isThreadCpuTimeEnabled} and {@link #setThreadCpuTimeEnabled}
- * methods can be used to test if CPU time measurement is enabled
+ * methods can be used to com.test if CPU time measurement is enabled
  * and to enable/disable this support respectively.
  * Enabling thread CPU measurement could be expensive in some
  * Java virtual machine implementations.

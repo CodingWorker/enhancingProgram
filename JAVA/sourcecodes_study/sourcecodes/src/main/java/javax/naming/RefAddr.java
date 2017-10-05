@@ -96,7 +96,7 @@ public abstract class RefAddr implements java.io.Serializable {
       *<li> instance of RefAddr
       *<li> obj has the same address type as this RefAddr (using String.compareTo())
       *<li> both obj and this RefAddr's contents are null or they are equal
-      *         (using the equals() test).
+      *         (using the equals() com.test).
       *</ul>
       * @param obj possibly null obj to check.
       * @return true if obj is equal to this refaddr; false otherwise.

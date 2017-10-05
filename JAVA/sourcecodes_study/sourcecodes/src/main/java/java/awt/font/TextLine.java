@@ -347,7 +347,7 @@ final class TextLine {
     public Rectangle getPixelBounds(FontRenderContext frc, float x, float y) {
         Rectangle result = null;
 
-        // if we have a matching frc, set it to null so we don't have to test it
+        // if we have a matching frc, set it to null so we don't have to com.test it
         // for each component
         if (frc != null && frc.equals(this.frc)) {
             frc = null;
@@ -384,7 +384,7 @@ final class TextLine {
             if (result == null) {
                 result = new Rectangle(0, 0, 0, 0);
             }
-        } else { // draw and test
+        } else { // draw and com.test
             final int MARGIN = 3;
             Rectangle2D r2d = getVisualBounds();
             if (lp != null) {

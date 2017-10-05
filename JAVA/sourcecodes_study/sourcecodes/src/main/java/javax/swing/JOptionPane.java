@@ -1700,7 +1700,7 @@ public class JOptionPane extends JComponent implements Accessible
     }
 
     /**
-     * Creates a <code>JOptionPane</code> with a test message.
+     * Creates a <code>JOptionPane</code> with a com.test message.
      */
     public JOptionPane() {
         this("JOptionPane message");

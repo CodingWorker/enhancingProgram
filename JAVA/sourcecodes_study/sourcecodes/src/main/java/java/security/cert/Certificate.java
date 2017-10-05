@@ -98,7 +98,7 @@ public abstract class Certificate implements java.io.Serializable {
      * its encoded form is retrieved and compared with the
      * encoded form of this certificate.
      *
-     * @param other the object to test for equality with this certificate.
+     * @param other the object to com.test for equality with this certificate.
      * @return true iff the encoded forms of the two certificates
      * match, false otherwise.
      */

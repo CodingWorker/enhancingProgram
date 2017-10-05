@@ -1444,7 +1444,7 @@ public abstract class ColorModel implements Transparency{
      * Tests if the specified <code>Object</code> is an instance of
      * <code>ColorModel</code> and if it equals this
      * <code>ColorModel</code>.
-     * @param obj the <code>Object</code> to test for equality
+     * @param obj the <code>Object</code> to com.test for equality
      * @return <code>true</code> if the specified <code>Object</code>
      * is an instance of <code>ColorModel</code> and equals this
      * <code>ColorModel</code>; <code>false</code> otherwise.
@@ -1551,7 +1551,7 @@ public abstract class ColorModel implements Transparency{
       * any instance is an instance of a subclass.  Subclasses must
       * override this method since the implementation in this abstract
       * class throws an <code>UnsupportedOperationException</code>.
-      * @param raster the {@link Raster} object to test for compatibility
+      * @param raster the {@link Raster} object to com.test for compatibility
       * @return <code>true</code> if <code>raster</code> is compatible
       * with this <code>ColorModel</code>.
       * @throws UnsupportedOperationException if this

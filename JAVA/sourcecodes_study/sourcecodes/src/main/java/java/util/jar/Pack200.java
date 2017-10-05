@@ -73,14 +73,14 @@ import java.beans.PropertyChangeListener;
  *    p.put(Packer.PASS_FILE_PFX+0, "mutants/Rogue.class");
  *    try {
  *        JarFile jarFile = new JarFile("/tmp/testref.jar");
- *        FileOutputStream fos = new FileOutputStream("/tmp/test.pack");
+ *        FileOutputStream fos = new FileOutputStream("/tmp/com.test.pack");
  *        // Call the packer
  *        packer.pack(jarFile, fos);
  *        jarFile.close();
  *        fos.close();
  *
- *        File f = new File("/tmp/test.pack");
- *        FileOutputStream fostream = new FileOutputStream("/tmp/test.jar");
+ *        File f = new File("/tmp/com.test.pack");
+ *        FileOutputStream fostream = new FileOutputStream("/tmp/com.test.jar");
  *        JarOutputStream jostream = new JarOutputStream(fostream);
  *        Unpacker unpacker = Pack200.newUnpacker();
  *        // Call the unpacker

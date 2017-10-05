@@ -304,7 +304,7 @@ final class StyledParagraph {
 
     /**
      * Return the Font or GraphicAttribute in effect at the given index.
-     * The client must test the type of the return value to determine what
+     * The client must com.test the type of the return value to determine what
      * it is.
      * @param index a valid index in the paragraph
      * @return the Font or GraphicAttribute at index.

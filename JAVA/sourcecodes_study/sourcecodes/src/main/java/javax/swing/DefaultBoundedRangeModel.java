@@ -275,7 +275,7 @@ public class DefaultBoundedRangeModel implements BoundedRangeModel, Serializable
 
         /* Convert the addends to long so that extent can be
          * Integer.MAX_VALUE without rolling over the sum.
-         * A JCK test covers this, see bug 4097718.
+         * A JCK com.test covers this, see bug 4097718.
          */
         if (((long)newExtent + (long)newValue) > newMax) {
             newExtent = newMax - newValue;

@@ -443,7 +443,7 @@ public class RelationSupport
      *
      * @exception IllegalArgumentException  if null role
      * @exception RoleNotFoundException  if there is no role with the supplied
-     * role's name or if the role is not writable (no test on the write access
+     * role's name or if the role is not writable (no com.test on the write access
      * mode performed when initializing the role)
      * @exception InvalidRoleValueException  if value provided for
      * role is not valid, i.e.:
@@ -852,7 +852,7 @@ public class RelationSupport
 
             if (!(multiRoleFlg)) {
                 // Single role retrieved: returns its value
-                // Note: no need to test if role value (list) not null before
+                // Note: no need to com.test if role value (list) not null before
                 //       cloning, null value not allowed, empty list if
                 //       nothing.
                 result = new ArrayList<ObjectName>(role.getRoleValue());
@@ -1711,7 +1711,7 @@ public class RelationSupport
         }
         List<ObjectName> currRoleValue = role.getRoleValue();
 
-        // Note: no need to test if list not null before cloning, null value
+        // Note: no need to com.test if list not null before cloning, null value
         //       not allowed for role value.
         List<ObjectName> newRoleValue = new ArrayList<ObjectName>(currRoleValue);
         newRoleValue.remove(objectName);

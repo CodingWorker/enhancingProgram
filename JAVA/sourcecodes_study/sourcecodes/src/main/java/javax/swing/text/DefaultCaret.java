@@ -1726,7 +1726,7 @@ public class DefaultCaret extends Rectangle implements Caret, FocusListener, Mou
                 else {
                     setDot(newMark, markBias);
                     if (getDot() == newMark) {
-                        // Due this test in case the filter vetoed the
+                        // Due this com.test in case the filter vetoed the
                         // change in which case this probably won't be
                         // valid either.
                         moveDot(newDot, dotBias);
@@ -1811,7 +1811,7 @@ public class DefaultCaret extends Rectangle implements Caret, FocusListener, Mou
                 }
                 setDot(newMark, markBias);
                 if (getDot() == newMark) {
-                    // Due this test in case the filter vetoed the change
+                    // Due this com.test in case the filter vetoed the change
                     // in which case this probably won't be valid either.
                     moveDot(newDot, dotBias);
                 }

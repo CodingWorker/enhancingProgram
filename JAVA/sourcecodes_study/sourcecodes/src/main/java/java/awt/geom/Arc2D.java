@@ -1140,7 +1140,7 @@ public abstract class Arc2D extends RectangularShape {
      * Determines whether or not the specified angle is within the
      * angular extents of the arc.
      *
-     * @param angle The angle to test.
+     * @param angle The angle to com.test.
      *
      * @return <CODE>true</CODE> if the arc contains the angle,
      * <CODE>false</CODE> if the arc doesn't contain the angle.
@@ -1171,8 +1171,8 @@ public abstract class Arc2D extends RectangularShape {
      * Determines whether or not the specified point is inside the boundary
      * of the arc.
      *
-     * @param x The X coordinate of the point to test.
-     * @param y The Y coordinate of the point to test.
+     * @param x The X coordinate of the point to com.test.
+     * @param y The Y coordinate of the point to com.test.
      *
      * @return <CODE>true</CODE> if the point lies within the bound of
      * the arc, <CODE>false</CODE> if the point lies outside of the
@@ -1356,7 +1356,7 @@ public abstract class Arc2D extends RectangularShape {
      * Determines whether or not the interior of the arc entirely contains
      * the specified rectangle.
      *
-     * @param r The <CODE>Rectangle2D</CODE> to test.
+     * @param r The <CODE>Rectangle2D</CODE> to com.test.
      *
      * @return <CODE>true</CODE> if the arc contains the rectangle,
      * <CODE>false</CODE> if the arc doesn't contain the rectangle.
@@ -1380,11 +1380,11 @@ public abstract class Arc2D extends RectangularShape {
         if (type != PIE || Math.abs(getAngleExtent()) <= 180.0) {
             return true;
         }
-        // For a PIE shape we have an additional test for the case where
+        // For a PIE shape we have an additional com.test for the case where
         // the angular extents are greater than 180 degrees and all four
         // rectangular corners are inside the shape but one of the
         // rectangle edges spans across the "missing wedge" of the arc.
-        // We can test for this case by checking if the rectangle intersects
+        // We can com.test for this case by checking if the rectangle intersects
         // either of the pie angle segments.
         if (origrect == null) {
             origrect = new Rectangle2D.Double(x, y, w, h);

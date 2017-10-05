@@ -81,7 +81,7 @@ import sun.reflect.Reflection;
  * effective log level of the logger.  If the request level is
  * lower than the log level, the logging call returns immediately.
  * <p>
- * After passing this initial (cheap) test, the Logger will allocate
+ * After passing this initial (cheap) com.test, the Logger will allocate
  * a LogRecord to describe the logging message.  It will then call a
  * Filter (if present) to do a more detailed check on whether the
  * record should be published.  If that passes it will then publish

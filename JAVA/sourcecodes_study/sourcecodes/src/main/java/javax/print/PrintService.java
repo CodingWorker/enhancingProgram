@@ -49,7 +49,7 @@ import javax.print.event.PrintServiceAttributeListener;
  *   if (pservices.length > 0) {
  *       DocPrintJob pj = pservices[0].createPrintJob();
  *       try {
- *           FileInputStream fis = new FileInputStream("test.ps");
+ *           FileInputStream fis = new FileInputStream("com.test.ps");
  *           Doc doc = new SimpleDoc(fis, flavor, null);
  *           pj.print(doc, aset);
  *        } catch (FileNotFoundException fe) {
@@ -213,7 +213,7 @@ public interface PrintService {
      * would be a member of the result of
      * <code>getSupportedAttributeCategories()</code>.
      *
-     * @param  category    Printing attribute category to test. It must be a
+     * @param  category    Printing attribute category to com.test. It must be a
      *                        <code>Class</code> that implements
      *                        interface
      *                {@link javax.print.attribute.Attribute Attribute}.
@@ -328,7 +328,7 @@ public interface PrintService {
      * </UL>
      * <P>
      *
-     * @param  category    Printing attribute category to test. It must be a
+     * @param  category    Printing attribute category to com.test. It must be a
      *                        {@link java.lang.Class Class} that implements
      *                        interface {@link
      *                        javax.print.attribute.Attribute Attribute}.
@@ -381,7 +381,7 @@ public interface PrintService {
      * would be a member of the result of
      * <code>getSupportedAttributeValues(...)</code>.
      *
-     * @param  attrval       Printing attribute value to test.
+     * @param  attrval       Printing attribute value to com.test.
      * @param  flavor      Doc flavor for a supposed job, or null.
      * @param  attributes  Set of printing attributes for a supposed job
      *                        (both job-level attributes and document-level
@@ -431,7 +431,7 @@ public interface PrintService {
      * Use <code>isDocFlavorSupported()</code> to verify that a DocFlavor
      * is supported before calling this method.
      *
-     * @param  flavor      Doc flavor to test, or null
+     * @param  flavor      Doc flavor to com.test, or null
      * @param  attributes  Set of printing attributes for a supposed job
      *                        (both job-level attributes and document-level
      *                        attributes), or null.

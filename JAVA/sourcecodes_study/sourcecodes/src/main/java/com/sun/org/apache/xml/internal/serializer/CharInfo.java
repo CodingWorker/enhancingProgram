@@ -601,7 +601,7 @@ final class CharInfo
 
         boolean in_the_set = false;
         int j = (i >> SHIFT_PER_WORD); // wordIndex(i)
-        // an optimization here, ... a quick test to see
+        // an optimization here, ... a quick com.test to see
         // if this integer is beyond any of the words in use
         if(j < firstWordNotUsed)
             in_the_set = (array_of_bits[j] &

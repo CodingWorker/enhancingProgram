@@ -606,7 +606,7 @@ public interface Document extends Node {
 
     /**
      * An attribute specifying whether error checking is enforced or not. When
-     * set to <code>false</code>, the implementation is free to not test
+     * set to <code>false</code>, the implementation is free to not com.test
      * every possible error case normally defined on DOM operations, and not
      * raise any <code>DOMException</code> on DOM operations or report
      * errors while using <code>Document.normalizeDocument()</code>. In case
@@ -617,7 +617,7 @@ public interface Document extends Node {
     public boolean getStrictErrorChecking();
     /**
      * An attribute specifying whether error checking is enforced or not. When
-     * set to <code>false</code>, the implementation is free to not test
+     * set to <code>false</code>, the implementation is free to not com.test
      * every possible error case normally defined on DOM operations, and not
      * raise any <code>DOMException</code> on DOM operations or report
      * errors while using <code>Document.normalizeDocument()</code>. In case

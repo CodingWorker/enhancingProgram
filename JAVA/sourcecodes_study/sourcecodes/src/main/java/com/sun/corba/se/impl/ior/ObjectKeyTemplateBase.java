@@ -171,7 +171,7 @@ public abstract class ObjectKeyTemplateBase implements ObjectKeyTemplate
     }
 
     // All subclasses should set the version in their constructors.
-    // Public so it can be used in a white-box test.
+    // Public so it can be used in a white-box com.test.
     public void setORBVersion( ORBVersion version )
     {
         this.version = version ;

@@ -566,7 +566,7 @@ class Parser implements DTDConstants {
         // ignoring tags.
         //
         // In certain cases it is better to ignore a tag than try to
-        // fix the situation.  So the first test is to see if this
+        // fix the situation.  So the first com.test is to see if this
         // is what we need to do.
         //
         String stackElemName = stack.elem.getName();

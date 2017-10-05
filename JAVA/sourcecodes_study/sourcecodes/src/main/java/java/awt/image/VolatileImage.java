@@ -261,7 +261,7 @@ public abstract class VolatileImage extends Image implements Transparency
      *
      * @param   gc   a <code>GraphicsConfiguration</code> object for this
      *          image to be validated against.  A null gc implies that the
-     *          validate method should skip the compatibility test.
+     *          validate method should skip the compatibility com.test.
      * @return  <code>IMAGE_OK</code> if the image did not need validation<BR>
      *          <code>IMAGE_RESTORED</code> if the image needed restoration.
      *          Restoration implies that the contents of the image may have

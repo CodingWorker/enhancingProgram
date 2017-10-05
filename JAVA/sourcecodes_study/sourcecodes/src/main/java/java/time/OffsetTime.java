@@ -218,8 +218,8 @@ public final class OffsetTime
      * <p>
      * This creates an offset time with the four specified fields.
      * <p>
-     * This method exists primarily for writing test cases.
-     * Non test-code will typically use other methods to create an offset time.
+     * This method exists primarily for writing com.test cases.
+     * Non com.test-code will typically use other methods to create an offset time.
      * {@code LocalTime} has two additional convenience variants of the
      * equivalent factory method taking fewer arguments.
      * They are not provided here to reduce the footprint of the API.

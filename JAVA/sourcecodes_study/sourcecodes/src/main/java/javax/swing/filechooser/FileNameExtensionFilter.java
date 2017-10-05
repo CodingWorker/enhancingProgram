@@ -95,7 +95,7 @@ public final class FileNameExtensionFilter extends FileFilter {
      * matches one of the file name extensions of this {@code
      * FileFilter}, or the file is a directory.
      *
-     * @param f the {@code File} to test
+     * @param f the {@code File} to com.test
      * @return true if the file is to be accepted, false otherwise
      */
     public boolean accept(File f) {

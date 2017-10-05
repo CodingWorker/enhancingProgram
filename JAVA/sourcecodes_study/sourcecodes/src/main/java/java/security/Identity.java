@@ -324,7 +324,7 @@ public abstract class Identity implements Principal, Serializable {
      * {@link #identityEquals(Identity) identityEquals}, which subclasses should
      * override.
      *
-     * @param identity the object to test for equality with this identity.
+     * @param identity the object to com.test for equality with this identity.
      *
      * @return true if the objects are considered equal, false otherwise.
      *
@@ -349,11 +349,11 @@ public abstract class Identity implements Principal, Serializable {
 
     /**
      * Tests for equality between the specified identity and this identity.
-     * This method should be overriden by subclasses to test for equality.
+     * This method should be overriden by subclasses to com.test for equality.
      * The default behavior is to return true if the names and public keys
      * are equal.
      *
-     * @param identity the identity to test for equality with this identity.
+     * @param identity the identity to com.test for equality with this identity.
      *
      * @return true if the identities are considered equal, false
      * otherwise.

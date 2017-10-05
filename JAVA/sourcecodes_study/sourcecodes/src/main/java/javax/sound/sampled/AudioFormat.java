@@ -442,7 +442,7 @@ public class AudioFormat {
      * The byte order (big-endian or little-endian) must be the same
      * if the sample size is greater than one byte.
      *
-     * @param format format to test for match
+     * @param format format to com.test for match
      * @return {@code true} if this format matches the one specified,
      *         {@code false} otherwise.
      */

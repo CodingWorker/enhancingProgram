@@ -44,7 +44,7 @@ public interface StreamFilter {
    * The method should not change the state of the reader when accepting
    * a state.
    *
-   * @param reader the event to test
+   * @param reader the event to com.test
    * @return true if this filter accepts this event, false otherwise
    */
   public boolean accept(XMLStreamReader reader);

@@ -3504,7 +3504,7 @@ public abstract class JTextComponent extends JComponent implements Scrollable, A
             // locate the Element at index
             Element indexElement;
             // locate the Element at our index/offset
-            int elementIndex = -1;        // test for initialization
+            int elementIndex = -1;        // com.test for initialization
             for (indexElement = model.getDefaultRootElement();
                  ! indexElement.isLeaf(); ) {
                 elementIndex = indexElement.getElementIndex(index);

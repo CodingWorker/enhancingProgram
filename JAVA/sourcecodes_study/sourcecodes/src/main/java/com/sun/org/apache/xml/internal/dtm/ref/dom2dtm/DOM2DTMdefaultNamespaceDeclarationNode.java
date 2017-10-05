@@ -170,7 +170,7 @@ public class DOM2DTMdefaultNamespaceDeclarationNode implements Attr,TypeInfo
      * specialized object may also be obtained by using binding-specific
      * casting methods but is not necessarily expected to, as discussed in Mixed DOM implementations.
      * @param feature The name of the feature requested (case-insensitive).
-     * @param version  This is the version number of the feature to test. If
+     * @param version  This is the version number of the feature to com.test. If
      *   the version is <code>null</code> or the empty string, supporting
      *   any version of the feature will cause the method to return an
      *   object that supports at least one version of the feature.
@@ -529,7 +529,7 @@ public class DOM2DTMdefaultNamespaceDeclarationNode implements Attr,TypeInfo
      * used completely interchangably, such that all attributes have the
      * same values and calling the same DOM method on either reference
      * always has exactly the same effect.
-     * @param other The node to test against.
+     * @param other The node to com.test against.
      * @return Returns <code>true</code> if the nodes are the same,
      *   <code>false</code> otherwise.
      * @since DOM Level 3

@@ -33,7 +33,7 @@ import javax.swing.text.AttributeSet;
 /**
  * Map is used to represent a map element that is part of an HTML document.
  * Once a Map has been created, and any number of areas have been added,
- * you can test if a point falls inside the map via the contains method.
+ * you can com.test if a point falls inside the map via the contains method.
  *
  * @author  Scott Violet
  */
@@ -138,7 +138,7 @@ class Map implements Serializable {
 
     /**
      * Creates and returns an instance of RegionContainment that can be
-     * used to test if a particular point lies inside a region.
+     * used to com.test if a particular point lies inside a region.
      */
     protected RegionContainment createRegionContainment
                                   (AttributeSet attributes) {
@@ -243,7 +243,7 @@ class Map implements Serializable {
 
 
     /**
-     * Used to test for containment in a rectangular region.
+     * Used to com.test for containment in a rectangular region.
      */
     static class RectangleRegionContainment implements RegionContainment {
         /** Will be non-null if one of the values is a percent, and any value
@@ -321,7 +321,7 @@ class Map implements Serializable {
 
 
     /**
-     * Used to test for containment in a polygon region.
+     * Used to com.test for containment in a polygon region.
      */
     static class PolygonRegionContainment extends Polygon implements
                  RegionContainment {
@@ -411,7 +411,7 @@ class Map implements Serializable {
 
 
     /**
-     * Used to test for containment in a circular region.
+     * Used to com.test for containment in a circular region.
      */
     static class CircleRegionContainment implements RegionContainment {
         /** X origin of the circle. */

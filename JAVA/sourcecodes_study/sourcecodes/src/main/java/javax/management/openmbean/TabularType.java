@@ -282,7 +282,7 @@ public class TabularType extends OpenType<TabularData> {
             return false;
         }
 
-        // Now, really test for equality between this TabularType instance and the other:
+        // Now, really com.test for equality between this TabularType instance and the other:
         //
 
         // their names should be equal

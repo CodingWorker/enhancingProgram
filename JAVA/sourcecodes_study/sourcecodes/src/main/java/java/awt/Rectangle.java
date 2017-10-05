@@ -43,7 +43,7 @@ import java.beans.Transient;
  * A {@code Rectangle} whose width or height is exactly zero has location
  * along those axes with zero dimension, but is otherwise considered empty.
  * The {@link #isEmpty} method will return true for such a {@code Rectangle}.
- * Methods which test if an empty {@code Rectangle} contains or intersects
+ * Methods which com.test if an empty {@code Rectangle} contains or intersects
  * a point or rectangle will always return false if either dimension is zero.
  * Methods which combine such a {@code Rectangle} with a point or rectangle
  * will include the location of the {@code Rectangle} on that axis in the
@@ -55,7 +55,7 @@ import java.beans.Transient;
  * location nor dimension along those axes with negative dimensions.
  * Such a {@code Rectangle} is treated as non-existant along those axes.
  * Such a {@code Rectangle} is also empty with respect to containment
- * calculations and methods which test if it contains or intersects a
+ * calculations and methods which com.test if it contains or intersects a
  * point or rectangle will always return false.
  * Methods which combine such a {@code Rectangle} with a point or rectangle
  * will ignore the {@code Rectangle} entirely in generating the result.
@@ -644,7 +644,7 @@ public class Rectangle extends Rectangle2D
     /**
      * Checks whether or not this <code>Rectangle</code> contains the
      * specified <code>Point</code>.
-     * @param p the <code>Point</code> to test
+     * @param p the <code>Point</code> to com.test
      * @return    <code>true</code> if the specified <code>Point</code>
      *            is inside this <code>Rectangle</code>;
      *            <code>false</code> otherwise.

@@ -391,7 +391,7 @@ public abstract class DatatypeFactory {
                 + " lexical representation of \"null\"");
         }
 
-        // test lexicalRepresentation against spec regex
+        // com.test lexicalRepresentation against spec regex
         Matcher matcher = XDTSCHEMA_DTD.matcher(lexicalRepresentation);
         if (!matcher.matches()) {
             throw new IllegalArgumentException(
@@ -570,7 +570,7 @@ public abstract class DatatypeFactory {
                     + " lexical representation of \"null\"");
         }
 
-        // test lexicalRepresentation against spec regex
+        // com.test lexicalRepresentation against spec regex
         Matcher matcher = XDTSCHEMA_YMD.matcher(lexicalRepresentation);
         if (!matcher.matches()) {
             throw new IllegalArgumentException(

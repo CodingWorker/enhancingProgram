@@ -849,7 +849,7 @@ class MethodType implements java.io.Serializable {
         }
         if ((oldForm.primitiveParameterCount() == 0 && oldForm.erasedType == this) ||
             (newForm.primitiveParameterCount() == 0 && newForm.erasedType == newType)) {
-            // Somewhat complicated test to avoid a loop of 2 or more trips.
+            // Somewhat complicated com.test to avoid a loop of 2 or more trips.
             // If either type has only Object parameters, we know we can convert.
             assert(canConvertParameters(srcTypes, dstTypes));
             return true;

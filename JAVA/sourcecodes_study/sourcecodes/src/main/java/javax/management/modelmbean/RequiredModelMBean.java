@@ -901,7 +901,7 @@ public class RequiredModelMBean
 
       We have to pay attention to class loading issues.  If the
       "class" field is present, the named class has to be resolved
-      relative to RequiredModelMBean's class loader to test the
+      relative to RequiredModelMBean's class loader to com.test the
       condition (b) above, and relative to the managed resource's
       class loader to ensure that the managed resource is in fact of
       the named class (or a subclass).  The class names in the sig

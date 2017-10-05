@@ -40,11 +40,11 @@ public class IgnoreAllErrorHandler implements ErrorHandler {
 
     /** Field throwExceptions */
     private static final boolean warnOnExceptions =
-        System.getProperty("com.sun.org.apache.xml.internal.security.test.warn.on.exceptions", "false").equals("true");
+        System.getProperty("com.sun.org.apache.xml.internal.security.com.test.warn.on.exceptions", "false").equals("true");
 
     /** Field throwExceptions           */
     private static final boolean throwExceptions =
-        System.getProperty("com.sun.org.apache.xml.internal.security.test.throw.exceptions", "false").equals("true");
+        System.getProperty("com.sun.org.apache.xml.internal.security.com.test.throw.exceptions", "false").equals("true");
 
 
     /** @inheritDoc */

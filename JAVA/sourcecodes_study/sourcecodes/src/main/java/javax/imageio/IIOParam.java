@@ -404,7 +404,7 @@ public abstract class IIOParam {
      * source band index has been specified or if the number of source
      * bands and destination bands to be used differ.  The
      * <code>ImageReader.checkReadParamBandSettings</code> method may
-     * be used to automate this test.
+     * be used to automate this com.test.
      *
      * <p> Semantically, a copy is made of the array; changes to the
      * array contents subsequent to this call have no effect on

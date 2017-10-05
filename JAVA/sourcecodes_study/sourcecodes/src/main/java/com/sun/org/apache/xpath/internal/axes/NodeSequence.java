@@ -736,7 +736,7 @@ public class NodeSequence extends XObject
       NodeVector vec = getVector();
 
       // This needs to do a binary search, but a binary search
-      // is somewhat tough because the sequence test involves
+      // is somewhat tough because the sequence com.test involves
       // two nodes.
       int size = vec.size(), i;
 

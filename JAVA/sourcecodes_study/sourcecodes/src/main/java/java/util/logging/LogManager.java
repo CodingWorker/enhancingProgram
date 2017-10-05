@@ -1102,18 +1102,18 @@ public class LogManager {
     //
     // On a WinXP VMware client, a MAX_ITERATIONS value of 400 gives
     // us about a 50/50 mix in increased weak ref counts versus
-    // decreased weak ref counts in the AnonLoggerWeakRefLeak test.
+    // decreased weak ref counts in the AnonLoggerWeakRefLeak com.test.
     // Here are stats for cleaning up sets of 400 anonymous Loggers:
-    //   - test duration 1 minute
+    //   - com.test duration 1 minute
     //   - sample size of 125 sets of 400
     //   - average: 1.99 ms
     //   - minimum: 0.57 ms
     //   - maximum: 25.3 ms
     //
     // The same config gives us a better decreased weak ref count
-    // than increased weak ref count in the LoggerWeakRefLeak test.
+    // than increased weak ref count in the LoggerWeakRefLeak com.test.
     // Here are stats for cleaning up sets of 400 named Loggers:
-    //   - test duration 2 minutes
+    //   - com.test duration 2 minutes
     //   - sample size of 506 sets of 400
     //   - average: 0.57 ms
     //   - minimum: 0.02 ms

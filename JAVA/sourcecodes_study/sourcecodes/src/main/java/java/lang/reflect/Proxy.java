@@ -780,9 +780,9 @@ public class Proxy implements java.io.Serializable {
      *
      * <p>The reliability of this method is important for the ability
      * to use it to make security decisions, so its implementation should
-     * not just test if the class in question extends {@code Proxy}.
+     * not just com.test if the class in question extends {@code Proxy}.
      *
-     * @param   cl the class to test
+     * @param   cl the class to com.test
      * @return  {@code true} if the class is a proxy class and
      *          {@code false} otherwise
      * @throws  NullPointerException if {@code cl} is {@code null}

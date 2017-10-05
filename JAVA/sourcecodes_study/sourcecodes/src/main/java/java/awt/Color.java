@@ -689,7 +689,7 @@ public class Color implements Paint, java.io.Serializable {
      * The result is <code>true</code> if and only if the argument is not
      * <code>null</code> and is a <code>Color</code> object that has the same
      * red, green, blue, and alpha values as this object.
-     * @param       obj   the object to test for equality with this
+     * @param       obj   the object to com.test for equality with this
      *                          <code>Color</code>
      * @return      <code>true</code> if the objects are the same;
      *                             <code>false</code> otherwise.

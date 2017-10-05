@@ -284,8 +284,8 @@ class DurationImpl
      * <p>Makes sure that the given number is non-negative. If it is not,
      * throw {@link IllegalArgumentException}.</p>
      *
-     * @param n Number to test.
-     * @param f Field to test.
+     * @param n Number to com.test.
+     * @param f Field to com.test.
      */
     protected static void testNonNegative(BigInteger n, DatatypeConstants.Field f) {
         if (n != null && n.signum() < 0) {
@@ -299,8 +299,8 @@ class DurationImpl
      * <p>Makes sure that the given number is non-negative. If it is not,
      * throw {@link IllegalArgumentException}.</p>
      *
-     * @param n Number to test.
-     * @param f Field to test.
+     * @param n Number to com.test.
+     * @param f Field to com.test.
      */
     protected static void testNonNegative(BigDecimal n, DatatypeConstants.Field f) {
         if (n != null && n.signum() < 0) {
@@ -538,7 +538,7 @@ class DurationImpl
     /**
      * TODO: Javadoc
      *
-     * @param ch char to test.
+     * @param ch char to com.test.
      *
      * @return true if ch is a digit, else false.
      */
@@ -549,7 +549,7 @@ class DurationImpl
     /**
      * TODO: Javadoc
      *
-     * @param ch to test.
+     * @param ch to com.test.
      *
      * @return true if ch is a digit or a period, else false.
      */
@@ -1073,7 +1073,7 @@ class DurationImpl
      * Checks if a field is set.
      *
      * A field of a duration object may or may not be present.
-     * This method can be used to test if a field is present.
+     * This method can be used to com.test if a field is present.
      *
      * @param field
      *      one of the six Field constants (YEARS,MONTHS,DAYS,HOURS,

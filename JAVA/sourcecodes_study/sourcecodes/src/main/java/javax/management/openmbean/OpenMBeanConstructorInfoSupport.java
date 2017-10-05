@@ -193,7 +193,7 @@ public class OpenMBeanConstructorInfoSupport
             return false;
         }
 
-        // Now, really test for equality between this
+        // Now, really com.test for equality between this
         // OpenMBeanConstructorInfo implementation and the other:
         //
 

@@ -350,7 +350,7 @@ final class Predicate extends Expression implements Closure {
     /**
      * Create a new "Filter" class implementing
      * <code>CurrentNodeListFilter</code>. Allocate registers for local
-     * variables and local parameters passed in the closure to test().
+     * variables and local parameters passed in the closure to com.test().
      * Notice that local variables need to be "unboxed".
      */
     private void compileFilter(ClassGenerator classGen,
@@ -401,7 +401,7 @@ final class Predicate extends Expression implements Closure {
                                         "translet",
                                         "iterator"
                                     },
-                                    "test", _className, il, cpg);
+                                    "com.test", _className, il, cpg);
 
         // Store the dom in a local variable
         local = testGen.addLocalVariable("document",
@@ -414,7 +414,7 @@ final class Predicate extends Expression implements Closure {
                                                DOM_FIELD, DOM_INTF_SIG)));
         local.setStart(il.append(new ASTORE(local.getIndex())));
 
-        // Store the dom index in the test generator
+        // Store the dom index in the com.test generator
         testGen.setDomIndex(local.getIndex());
 
         _exp.translate(filterGen, testGen);
@@ -427,7 +427,7 @@ final class Predicate extends Expression implements Closure {
     }
 
     /**
-     * Returns true if the predicate is a test for the existance of an
+     * Returns true if the predicate is a com.test for the existance of an
      * element or attribute. All we have to do is to get the first node
      * from the step, check if it is there, and then return true/false.
      */

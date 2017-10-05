@@ -2291,9 +2291,9 @@ public class JTree extends JComponent implements Scrollable, Accessible
     /**
      * Returns the path to the node that is closest to x,y.  If
      * no nodes are currently viewable, or there is no model, returns
-     * <code>null</code>, otherwise it always returns a valid path.  To test if
+     * <code>null</code>, otherwise it always returns a valid path.  To com.test if
      * the node is exactly at x, y, get the node's bounds and
-     * test x, y against that.
+     * com.test x, y against that.
      *
      * @param x an integer giving the number of pixels horizontally from
      *          the left edge of the display area, minus any left margin
@@ -2316,9 +2316,9 @@ public class JTree extends JComponent implements Scrollable, Accessible
     /**
      * Returns the row to the node that is closest to x,y.  If no nodes
      * are viewable or there is no model, returns -1. Otherwise,
-     * it always returns a valid row.  To test if the returned object is
+     * it always returns a valid row.  To com.test if the returned object is
      * exactly at x, y, get the bounds for the node at the returned
-     * row and test x, y against that.
+     * row and com.test x, y against that.
      *
      * @param x an integer giving the number of pixels horizontally from
      *          the left edge of the display area, minus any left margin
@@ -2992,7 +2992,7 @@ public class JTree extends JComponent implements Scrollable, Accessible
      * <code>TreePath</code> into a String, <code>convertValueToText</code>
      * is used.
      *
-     * @param prefix the string to test for a match
+     * @param prefix the string to com.test for a match
      * @param startingRow the row for starting the search
      * @param bias the search direction, either
      * Position.Bias.Forward or Position.Bias.Backward.
@@ -4757,7 +4757,7 @@ public class JTree extends JComponent implements Scrollable, Accessible
                 } else {
                     states = new AccessibleStateSet();
                 }
-                // need to test here, 'cause the underlying component
+                // need to com.test here, 'cause the underlying component
                 // is a cellRenderer, which is never showing...
                 if (isShowing()) {
                     states.add(AccessibleState.SHOWING);

@@ -873,7 +873,7 @@ public abstract class FileSystemProvider {
      * <p> This method is invoked by the {@link Files#isHidden isHidden} method.
      *
      * @param   path
-     *          the path to the file to test
+     *          the path to the file to com.test
      *
      * @return  {@code true} if the file is considered hidden
      *

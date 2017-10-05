@@ -206,7 +206,7 @@ public abstract class AbstractChronology implements Chronology {
      * to that thread and are ignored.
      * <p>
      * The initialization is done only once using the registration
-     * of the IsoChronology as the test and the final step.
+     * of the IsoChronology as the com.test and the final step.
      * Multiple threads may perform the initialization concurrently.
      * Only the first registration of each Chronology is retained by the
      * ConcurrentHashMap.

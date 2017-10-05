@@ -44,7 +44,7 @@ public abstract class ServerCommunicatorAdmin {
             Runnable timeoutTask = new Timeout();
             final Thread t = new Thread(timeoutTask);
             t.setName("JMX server connection timeout " + t.getId());
-            // If you change this name you will need to change a unit test
+            // If you change this name you will need to change a unit com.test
             // (NoServerTimeoutTest)
             t.setDaemon(true);
             t.start();

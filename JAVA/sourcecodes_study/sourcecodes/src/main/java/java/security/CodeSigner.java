@@ -120,7 +120,7 @@ public final class CodeSigner implements Serializable {
      * signer certificate paths are equal and if their timestamps are equal,
      * if present in both.
      *
-     * @param obj the object to test for equality with this object.
+     * @param obj the object to com.test for equality with this object.
      *
      * @return true if the objects are considered equal, false otherwise.
      */

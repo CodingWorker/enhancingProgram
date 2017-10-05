@@ -65,9 +65,9 @@ public abstract class TreeUI extends ComponentUI
     /**
       * Returns the path to the node that is closest to x,y.  If
       * there is nothing currently visible this will return null, otherwise
-      * it'll always return a valid path.  If you need to test if the
+      * it'll always return a valid path.  If you need to com.test if the
       * returned object is exactly at x, y you should get the bounds for
-      * the returned path and test x, y against that.
+      * the returned path and com.test x, y against that.
       */
     public abstract TreePath getClosestPathForLocation(JTree tree, int x,
                                                        int y);

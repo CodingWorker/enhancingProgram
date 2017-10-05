@@ -148,7 +148,7 @@ public class TreeSelectionEvent extends EventObject
      * with a path not included in {@code getPaths()} throws an
      * {@code IllegalArgumentException}.
      *
-     * @param path the path to test
+     * @param path the path to com.test
      * @return {@code true} if {@code path} was added to the selection,
      *         {@code false} otherwise
      * @throws IllegalArgumentException if {@code path} is not contained
@@ -168,7 +168,7 @@ public class TreeSelectionEvent extends EventObject
      * path was added to the selection. A return value of {@code false}
      * indicates the path is no longer selected.
      *
-     * @param index the index of the path to test
+     * @param index the index of the path to com.test
      * @return {@code true} if the path was added to the selection,
      *         {@code false} otherwise
      * @throws IllegalArgumentException if index is outside the range of

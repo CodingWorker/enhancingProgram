@@ -541,7 +541,7 @@ public class TransferHandler implements Serializable {
         /**
          * Returns whether or not the given data flavor is supported.
          *
-         * @param df the <code>DataFlavor</code> to test
+         * @param df the <code>DataFlavor</code> to com.test
          * @return whether or not the given flavor is supported.
          */
         public boolean isDataFlavorSupported(DataFlavor df) {

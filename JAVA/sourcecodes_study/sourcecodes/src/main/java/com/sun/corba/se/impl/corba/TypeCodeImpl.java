@@ -1616,7 +1616,7 @@ public final class TypeCodeImpl extends TypeCode
 
     public void write_value(OutputStream os) {
         // Wrap OutputStream into TypeCodeOutputStream.
-        // This test shouldn't be necessary according to the Java language spec.
+        // This com.test shouldn't be necessary according to the Java language spec.
         if (os instanceof TypeCodeOutputStream) {
             this.write_value((TypeCodeOutputStream)os);
         } else {

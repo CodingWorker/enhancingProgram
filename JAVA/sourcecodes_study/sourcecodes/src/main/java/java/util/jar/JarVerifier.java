@@ -676,7 +676,7 @@ class JarVerifier {
 
         /*
          * Grab a single copy of the CodeSigner arrays. Check
-         * to see if we can optimize CodeSigner equality test.
+         * to see if we can optimize CodeSigner equality com.test.
          */
         List<CodeSigner[]> req = new ArrayList<>(cs.length);
         for (int i = 0; i < cs.length; i++) {

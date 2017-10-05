@@ -50,7 +50,7 @@ public final class FilterGenerator extends ClassGenerator {
 
     /**
      * The index of the translet pointer within the execution of
-     * the test method.
+     * the com.test method.
      */
     public final Instruction loadTranslet() {
         return _aloadTranslet;

@@ -70,7 +70,7 @@ public interface ValueHandler {
     /**
      * Indicates whether the given class performs custom or
      * default marshaling.
-     * @param clz the class to test for custom marshaling.
+     * @param clz the class to com.test for custom marshaling.
      * @return <code>true</code> if the class performs custom marshaling, <code>false</code>
      * if it does not.
      **/

@@ -1014,7 +1014,7 @@ public class DOMHelper
 
           // Given how expensive the tree walk may be, we should first ask
           // whether this DOM can answer the question for us. The additional
-          // test does slow down Level 1 DOMs slightly. DOMHelper2, which
+          // com.test does slow down Level 1 DOMs slightly. DOMHelper2, which
           // is currently specialized for Xerces, assumes it can use the
           // Level 2 solution. We might want to have an intermediate stage,
           // which would assume DOM Level 2 but not assume Xerces.

@@ -507,7 +507,7 @@ public class XSLTErrorResources_de extends ListResourceBundle
      "{0} erfordert Attribut: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} muss \u00FCber ein \"test\"-Attribut verf\u00FCgen."},
+      "{0} muss \u00FCber ein \"com.test\"-Attribut verf\u00FCgen."},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "Ung\u00FCltiger Wert bei Ebenenattribut: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_de extends ListResourceBundle
      "{0} erfordert ein \"select\"-Attribut."},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when muss \u00FCber ein \"test\"-Attribut verf\u00FCgen."},
+      "xsl:when muss \u00FCber ein \"com.test\"-Attribut verf\u00FCgen."},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param muss \u00FCber ein \"name\"-Attribut verf\u00FCgen."},

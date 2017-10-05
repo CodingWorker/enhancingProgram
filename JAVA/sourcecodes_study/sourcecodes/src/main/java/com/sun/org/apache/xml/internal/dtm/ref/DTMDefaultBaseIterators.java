@@ -1852,11 +1852,11 @@ public abstract class DTMDefaultBaseIterators extends DTMDefaultBaseTraversers
      * Tell if this node identity is a descendant.  Assumes that
      * the node info for the element has already been obtained.
      *
-     * This one-sided test works only if the parent has been
+     * This one-sided com.test works only if the parent has been
      * previously tested and is known to be a descendent. It fails if
      * the parent is the _startNode's next sibling, or indeed any node
      * that follows _startNode in document order.  That may suffice
-     * for this iterator, but it's not really an isDescendent() test.
+     * for this iterator, but it's not really an isDescendent() com.test.
      * %REVIEW% rename?
      *
      * @param identity The index number of the node in question.

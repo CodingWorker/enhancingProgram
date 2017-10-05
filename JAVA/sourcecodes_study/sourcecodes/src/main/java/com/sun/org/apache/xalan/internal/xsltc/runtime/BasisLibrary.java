@@ -861,7 +861,7 @@ public final class BasisLibrary {
     }
 
     /**
-     * Utility function: used to test context node's language
+     * Utility function: used to com.test context node's language
      */
     public static boolean testLanguage(String testLang, DOM dom, int node) {
         // language for context node (if any)
@@ -871,7 +871,7 @@ public final class BasisLibrary {
         else
             nodeLang = nodeLang.toLowerCase();
 
-        // compare context node's language agains test language
+        // compare context node's language agains com.test language
         testLang = testLang.toLowerCase();
         if (testLang.length() == 2) {
             return(nodeLang.startsWith(testLang));

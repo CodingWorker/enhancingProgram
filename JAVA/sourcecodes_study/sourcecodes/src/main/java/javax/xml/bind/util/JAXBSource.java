@@ -64,7 +64,7 @@ import org.xml.sax.XMLFilter;
  *
  *       // set up XSLT transformation
  *       TransformerFactory tf = TransformerFactory.newInstance();
- *       Transformer t = tf.newTransformer(new StreamSource("test.xsl"));
+ *       Transformer t = tf.newTransformer(new StreamSource("com.test.xsl"));
  *
  *       // run transformation
  *       t.transform(source,new StreamResult(System.out));

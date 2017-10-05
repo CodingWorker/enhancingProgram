@@ -73,7 +73,7 @@ import java.util.Vector;
  * zero-length array.
  * <P>
  * Class SetOfIntegerSyntax has operations to return the set's members in
- * canonical array form, to test whether a given integer is a member of the
+ * canonical array form, to com.test whether a given integer is a member of the
  * set, and to iterate through the members of the set.
  * <P>
  *

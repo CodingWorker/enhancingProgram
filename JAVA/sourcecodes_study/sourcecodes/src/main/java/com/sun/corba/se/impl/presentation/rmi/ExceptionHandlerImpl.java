@@ -287,7 +287,7 @@ public class ExceptionHandlerImpl implements ExceptionHandler
         return rws[index].read( is ) ;
     }
 
-    // This is here just for the dynamicrmiiiop test
+    // This is here just for the dynamicrmiiiop com.test
     public ExceptionRW getRMIExceptionRW( Class cls )
     {
         return new ExceptionRWRMIImpl( cls ) ;

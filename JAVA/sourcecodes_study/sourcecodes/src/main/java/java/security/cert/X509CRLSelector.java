@@ -680,7 +680,7 @@ public class X509CRLSelector implements CRLSelector {
                 nowMinusSkew = new Date(dateAndTime.getTime() - skew);
             }
 
-            // Check that the test date is within the validity interval:
+            // Check that the com.test date is within the validity interval:
             //   [ thisUpdate - MAX_CLOCK_SKEW,
             //     nextUpdate + MAX_CLOCK_SKEW ]
             if (nowMinusSkew.after(nextUpdate)

@@ -79,7 +79,7 @@ public abstract class ResourceResolverSpi {
     public XMLSignatureInput engineResolveURI(ResourceResolverContext context)
         throws ResourceResolverException {
         // The default implementation, to preserve backwards compatibility in the
-        // test cases, calls the old resolver API.
+        // com.test cases, calls the old resolver API.
         return engineResolve(context.attr, context.baseUri);
     }
 

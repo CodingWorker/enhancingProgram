@@ -660,8 +660,8 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_EXPECTED_LOC_STEP,
        "'/'\u307E\u305F\u306F'//'\u30C8\u30FC\u30AF\u30F3\u306E\u5F8C\u306B\u30ED\u30B1\u30FC\u30B7\u30E7\u30F3\u30FB\u30B9\u30C6\u30C3\u30D7\u304C\u5FC5\u8981\u3067\u3059\u3002"},
 
-  // Note to translators:  A node test is part of an XPath expression that is
-  // used to test for particular kinds of nodes.  In this case, a node test that
+  // Note to translators:  A node com.test is part of an XPath expression that is
+  // used to com.test for particular kinds of nodes.  In this case, a node com.test that
   // consists of an NCName followed by a colon and an asterisk or that consists
   // of a QName was expected, but was not found.
   { ER_EXPECTED_NODE_TEST,

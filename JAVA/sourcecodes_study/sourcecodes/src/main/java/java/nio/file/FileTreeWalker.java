@@ -235,7 +235,7 @@ class FileTreeWalker implements Closeable {
      */
     private boolean wouldLoop(Path dir, Object key) {
         // if this directory and ancestor has a file key then we compare
-        // them; otherwise we use less efficient isSameFile test.
+        // them; otherwise we use less efficient isSameFile com.test.
         for (DirectoryNode ancestor: stack) {
             Object ancestorKey = ancestor.key();
             if (key != null && ancestorKey != null) {

@@ -183,7 +183,7 @@ public class UnionPathIterator extends LocPathIterator
   {
         // For the moment, I'm going to first create a full UnionPathIterator, and
         // then see if I can reduce it to a UnionChildIterator.  It would obviously
-        // be more effecient to just test for the conditions for a UnionChildIterator,
+        // be more effecient to just com.test for the conditions for a UnionChildIterator,
         // and then create that directly.
         UnionPathIterator upi = new UnionPathIterator(compiler, opPos);
         int nPaths = upi.m_exprs.length;
@@ -215,7 +215,7 @@ public class UnionPathIterator extends LocPathIterator
                 {
                         PredicatedNodeTest lpi = upi.m_exprs[i];
                         // I could strip the lpi down to a pure PredicatedNodeTest, but
-                        // I don't think it's worth it.  Note that the test can be used
+                        // I don't think it's worth it.  Note that the com.test can be used
                         // as a static object... so it doesn't have to be cloned.
                         uci.addNodeTest(lpi);
                 }

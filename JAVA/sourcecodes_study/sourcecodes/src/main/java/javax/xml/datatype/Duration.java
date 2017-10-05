@@ -426,7 +426,7 @@ public abstract class Duration {
      * Checks if a field is set.
      *
      * A field of a duration object may or may not be present.
-     * This method can be used to test if a field is present.
+     * This method can be used to com.test if a field is present.
      *
      * @param field
      *      one of the six Field constants (YEARS,MONTHS,DAYS,HOURS,
@@ -781,7 +781,7 @@ public abstract class Duration {
      * <p>For example, "P1D" (one day) > "PT12H" (12 hours) and
      * "P2Y" (two years) > "P23M" (23 months).</p>
      *
-     * @param duration <code>Duration</code> to test this <code>Duration</code> against.
+     * @param duration <code>Duration</code> to com.test this <code>Duration</code> against.
      *
      * @throws UnsupportedOperationException If the underlying implementation
      *   cannot reasonably process the request, e.g. W3C XML Schema allows for
@@ -804,7 +804,7 @@ public abstract class Duration {
      * <p>Checks if this duration object is strictly shorter than
      * another <code>Duration</code> object.</p>
      *
-     * @param duration <code>Duration</code> to test this <code>Duration</code> against.
+     * @param duration <code>Duration</code> to com.test this <code>Duration</code> against.
      *
      * @return <code>true</code> if <code>duration</code> parameter is shorter than this <code>Duration</code>,
      *   else <code>false</code>.
@@ -829,7 +829,7 @@ public abstract class Duration {
      * <p>For example, "P1D" (1 day) is equal to "PT24H" (24 hours).</p>
      *
      * <p>Duration X is equal to Y if and only if time instant
-     * t+X and t+Y are the same for all the test time instants
+     * t+X and t+Y are the same for all the com.test time instants
      * specified in the section 3.2.6.2 of the XML Schema 1.0
      * specification.</p>
      *

@@ -161,7 +161,7 @@ public class RenderingHints
         /**
          * Returns true if the specified object is a valid value
          * for this Key.
-         * @param val the <code>Object</code> to test for validity
+         * @param val the <code>Object</code> to com.test for validity
          * @return <code>true</code> if <code>val</code> is valid;
          *         <code>false</code> otherwise.
          */

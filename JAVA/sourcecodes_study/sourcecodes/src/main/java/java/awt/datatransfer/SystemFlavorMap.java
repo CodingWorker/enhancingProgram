@@ -1199,7 +1199,7 @@ public final class SystemFlavorMap implements FlavorMap, FlavorTable {
      * Returns whether the specified <code>String</code> is an encoded Java
      * MIME type.
      *
-     * @param str the <code>String</code> to test
+     * @param str the <code>String</code> to com.test
      * @return <code>true</code> if the <code>String</code> is encoded;
      *         <code>false</code> otherwise
      */

@@ -154,7 +154,7 @@ public class DropTargetDragEvent extends DropTargetEvent {
      * This method returns a <code>boolean</code> indicating
      * if the specified <code>DataFlavor</code> is supported.
      * <P>
-     * @param df the <code>DataFlavor</code> to test
+     * @param df the <code>DataFlavor</code> to com.test
      * <P>
      * @return if a particular DataFlavor is supported
      */

@@ -139,7 +139,7 @@ public abstract class State<T extends JComponent>{
      *
      * <pre><code> return c.isIndeterminate();</code></pre>
      *
-     * @param c the JComponent to test. This will never be null.
+     * @param c the JComponent to com.test. This will never be null.
      * @return true if <code>c</code> is in the custom state represented by
      *         this <code>State</code> instance
      */

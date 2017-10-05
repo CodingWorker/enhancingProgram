@@ -74,7 +74,7 @@ class LambdaFormEditor {
             COLLECT_ARGS, COLLECT_ARGS_TO_VOID, COLLECT_ARGS_TO_ARRAY,
             FOLD_ARGS, FOLD_ARGS_TO_VOID,
             PERMUTE_ARGS
-            //maybe add more for guard with test, catch exception, pointwise type conversions
+            //maybe add more for guard with com.test, catch exception, pointwise type conversions
         }
 
         private static final boolean STRESS_TEST = false; // turn on to disable most packing

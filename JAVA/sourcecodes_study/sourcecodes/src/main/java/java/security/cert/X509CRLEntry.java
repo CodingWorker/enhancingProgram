@@ -73,7 +73,7 @@ public abstract class X509CRLEntry implements X509Extension {
      * its encoded form (the inner SEQUENCE) is retrieved and compared
      * with the encoded form of this CRL entry.
      *
-     * @param other the object to test for equality with this CRL entry.
+     * @param other the object to com.test for equality with this CRL entry.
      * @return true iff the encoded forms of the two CRL entries
      * match, false otherwise.
      */

@@ -33,7 +33,7 @@ import com.sun.org.apache.xpath.internal.objects.XNumber;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 
 /**
- * This is the basic node test class for both match patterns and location path
+ * This is the basic node com.test class for both match patterns and location path
  * steps.
  * @xsl.usage advanced
  */
@@ -143,7 +143,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Statically calculated score for this test.  One of
+   * Statically calculated score for this com.test.  One of
    *  {@link #SCORE_NODETEST},
    *  {@link #SCORE_NONE},
    *  {@link #SCORE_NSWILD},
@@ -204,7 +204,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Construct an NodeTest that doesn't test for node names.
+   * Construct an NodeTest that doesn't com.test for node names.
    *
    *
    * @param whatToShow Bit set defined mainly by {@link org.w3c.dom.traversal.NodeFilter}.
@@ -259,8 +259,8 @@ public class NodeTest extends Expression
   public NodeTest(){}
 
   /**
-   * Initialize this node test by setting the whatToShow property, and
-   * calculating the score that this test will return if a test succeeds.
+   * Initialize this node com.test by setting the whatToShow property, and
+   * calculating the score that this com.test will return if a com.test succeeds.
    *
    *
    * @param whatToShow Bit set defined mainly by {@link org.w3c.dom.traversal.NodeFilter}.
@@ -274,9 +274,9 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Initialize this node test by setting the whatToShow property and the
+   * Initialize this node com.test by setting the whatToShow property and the
    * namespace and local name, and
-   * calculating the score that this test will return if a test succeeds.
+   * calculating the score that this com.test will return if a com.test succeeds.
    *
    *
    * @param whatToShow Bit set defined mainly by {@link org.w3c.dom.traversal.NodeFilter}.
@@ -294,13 +294,13 @@ public class NodeTest extends Expression
   }
 
   /**
-   * True if this test has a null namespace and a local name of {@link #WILD}.
+   * True if this com.test has a null namespace and a local name of {@link #WILD}.
    *  @serial
    */
   private boolean m_isTotallyWild;
 
   /**
-   * Get the static score for this node test.
+   * Get the static score for this node com.test.
    * @return Should be one of the SCORE_XXX constants.
    */
   public XNumber getStaticScore()
@@ -309,7 +309,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Set the static score for this node test.
+   * Set the static score for this node com.test.
    * @param score Should be one of the SCORE_XXX constants.
    */
   public void setStaticScore(XNumber score)
@@ -337,10 +337,10 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Get the score that this test will return if a test succeeds.
+   * Get the score that this com.test will return if a com.test succeeds.
    *
    *
-   * @return the score that this test will return if a test succeeds.
+   * @return the score that this com.test will return if a com.test succeeds.
    */
   public double getDefaultScore()
   {
@@ -348,7 +348,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Tell what node type to test, if not DTMFilter.SHOW_ALL.
+   * Tell what node type to com.test, if not DTMFilter.SHOW_ALL.
    *
    * @param whatToShow Bit set defined mainly by
    *        {@link com.sun.org.apache.xml.internal.dtm.DTMFilter}.
@@ -510,7 +510,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Tell what the test score is for the given node.
+   * Tell what the com.test score is for the given node.
    *
    *
    * @param xctxt XPath runtime context.
@@ -557,13 +557,13 @@ public class NodeTest extends Expression
     // From the draft: "Two expanded names are equal if they
     // have the same local part, and either both have no URI or
     // both have the same URI."
-    // "A node test * is true for any node of the principal node type.
+    // "A node com.test * is true for any node of the principal node type.
     // For example, child::* will select all element children of the
     // context node, and attribute::* will select all attributes of
     // the context node."
-    // "A node test can have the form NCName:*. In this case, the prefix
+    // "A node com.test can have the form NCName:*. In this case, the prefix
     // is expanded in the same way as with a QName using the context
-    // namespace declarations. The node test will be true for any node
+    // namespace declarations. The node com.test will be true for any node
     // of the principal type whose expanded name has the URI to which
     // the prefix expands, regardless of the local part of the name."
     case DTMFilter.SHOW_NAMESPACE :
@@ -584,7 +584,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Tell what the test score is for the given node.
+   * Tell what the com.test score is for the given node.
    *
    *
    * @param xctxt XPath runtime context.
@@ -630,13 +630,13 @@ public class NodeTest extends Expression
     // From the draft: "Two expanded names are equal if they
     // have the same local part, and either both have no URI or
     // both have the same URI."
-    // "A node test * is true for any node of the principal node type.
+    // "A node com.test * is true for any node of the principal node type.
     // For example, child::* will select all element children of the
     // context node, and attribute::* will select all attributes of
     // the context node."
-    // "A node test can have the form NCName:*. In this case, the prefix
+    // "A node com.test can have the form NCName:*. In this case, the prefix
     // is expanded in the same way as with a QName using the context
-    // namespace declarations. The node test will be true for any node
+    // namespace declarations. The node com.test will be true for any node
     // of the principal type whose expanded name has the URI to which
     // the prefix expands, regardless of the local part of the name."
     case DTMFilter.SHOW_NAMESPACE :
@@ -657,7 +657,7 @@ public class NodeTest extends Expression
   }
 
   /**
-   * Test the current node to see if it matches the given node test.
+   * Test the current node to see if it matches the given node com.test.
    *
    * @param xctxt XPath runtime context.
    *

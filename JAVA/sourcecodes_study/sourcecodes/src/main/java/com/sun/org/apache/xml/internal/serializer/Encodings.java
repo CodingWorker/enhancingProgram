@@ -516,7 +516,7 @@ public final class Encodings extends Object
      * Return true if the character is the high member of a surrogate pair.
      * <p>
      * This is not a public API.
-     * @param ch the character to test
+     * @param ch the character to com.test
      * @xsl.usage internal
      */
     static boolean isHighUTF16Surrogate(char ch) {
@@ -526,7 +526,7 @@ public final class Encodings extends Object
      * Return true if the character is the low member of a surrogate pair.
      * <p>
      * This is not a public API.
-     * @param ch the character to test
+     * @param ch the character to com.test
      * @xsl.usage internal
      */
     static boolean isLowUTF16Surrogate(char ch) {

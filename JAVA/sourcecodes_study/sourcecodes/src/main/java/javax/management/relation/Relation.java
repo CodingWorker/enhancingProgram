@@ -139,7 +139,7 @@ public interface Relation {
      *
      * @exception IllegalArgumentException  if null role
      * @exception RoleNotFoundException  if there is no role with the supplied
-     * role's name or if the role is not writable (no test on the write access
+     * role's name or if the role is not writable (no com.test on the write access
      * mode performed when initializing the role)
      * @exception InvalidRoleValueException  if value provided for
      * role is not valid, i.e.:

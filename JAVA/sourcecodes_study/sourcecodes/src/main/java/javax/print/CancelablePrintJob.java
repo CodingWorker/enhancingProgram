@@ -31,7 +31,7 @@ package javax.print;
  * <code>DocPrintJob</code> implementation returned from a print
  * service implements this interface if the print job can be
  * cancelled.  Before trying to cancel
- * a print job, the client needs to test if the
+ * a print job, the client needs to com.test if the
  * <code>DocPrintJob</code> object returned from the print service
  * actually implements this interface.  Clients should never assume
  * that a <code>DocPrintJob</code> implements this interface.  A

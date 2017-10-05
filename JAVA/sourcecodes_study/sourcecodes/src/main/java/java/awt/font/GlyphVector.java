@@ -602,7 +602,7 @@ public abstract class GlyphVector implements Cloneable {
     /**
      * Tests if the specified <code>GlyphVector</code> exactly
      * equals this <code>GlyphVector</code>.
-     * @param set the specified <code>GlyphVector</code> to test
+     * @param set the specified <code>GlyphVector</code> to com.test
      * @return <code>true</code> if the specified
      *   <code>GlyphVector</code> equals this <code>GlyphVector</code>;
      *   <code>false</code> otherwise.

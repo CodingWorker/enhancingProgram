@@ -171,7 +171,7 @@ public class StatisticsAccumulator {
     }
 
     /**
-     *  This is an internal API to test StatisticsAccumulator...
+     *  This is an internal API to com.test StatisticsAccumulator...
      */
     public void unitTestValidate( String expectedUnit, double expectedMin,
         double expectedMax, long expectedSampleCount, double expectedAverage,

@@ -141,7 +141,7 @@ final class RadialGradientPaintContext extends MultipleGradientPaintContext {
 
         double distSq = (dX * dX) + (dY * dY);
 
-        // test if distance from focus to center is greater than the radius
+        // com.test if distance from focus to center is greater than the radius
         if (distSq > radiusSq * SCALEBACK) {
             // clamp focus to radius
             float scalefactor = (float)Math.sqrt(radiusSq * SCALEBACK / distSq);
@@ -299,7 +299,7 @@ final class RadialGradientPaintContext extends MultipleGradientPaintContext {
         }
     }
 
-    // SQRT_LUT_SIZE must be a power of 2 for the test above to work.
+    // SQRT_LUT_SIZE must be a power of 2 for the com.test above to work.
     private static final int SQRT_LUT_SIZE = (1 << 11);
     private static float sqrtLut[] = new float[SQRT_LUT_SIZE+1];
     static {

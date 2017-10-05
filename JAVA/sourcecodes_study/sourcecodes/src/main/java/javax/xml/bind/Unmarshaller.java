@@ -975,7 +975,7 @@ public interface Unmarshaller {
      * This method provides replacement functionality for the deprecated
      * {@link #isValidating()} API as well as access to the Schema object.
      * To determine if the Unmarshaller has validation enabled, simply
-     * test the return type for null:
+     * com.test the return type for null:
      * <p>
      * <code>
      *   boolean isValidating = u.getSchema()!=null;

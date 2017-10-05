@@ -48,7 +48,7 @@ public final class NodeSortRecordGenerator extends ClassGenerator {
 
     /**
      * The index of the translet pointer within the execution of
-     * the test method.
+     * the com.test method.
      */
     public Instruction loadTranslet() {
         return _aloadTranslet;

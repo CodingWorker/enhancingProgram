@@ -260,7 +260,7 @@ Tie#deactivate}
      * particular object is implemented by a local servant and hence local
      * invocation APIs may be used.
      *
-     * @param stub the stub to test.
+     * @param stub the stub to com.test.
      *
      * @return The <tt>_is_local()</tt> method returns true if
      * the servant incarnating the object is located in the same process as

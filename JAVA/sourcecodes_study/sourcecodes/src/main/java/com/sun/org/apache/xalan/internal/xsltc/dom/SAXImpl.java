@@ -1249,7 +1249,7 @@ public final class SAXImpl extends SAX2DTM2
     }
 
     /**
-     * Iterator that handles node tests that test for a namespace, but have
+     * Iterator that handles node tests that com.test for a namespace, but have
      * a wild card for the local name of the node, i.e., node tests of the
      * form <axis>::<prefix>:*
      */

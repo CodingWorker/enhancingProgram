@@ -1479,7 +1479,7 @@ class Thread implements Runnable {
      *     assert Thread.holdsLock(obj);
      * </pre>
      *
-     * @param  obj the object on which to test lock ownership
+     * @param  obj the object on which to com.test lock ownership
      * @throws NullPointerException if obj is <tt>null</tt>
      * @return <tt>true</tt> if the current thread holds the monitor lock on
      *         the specified object.

@@ -42,7 +42,7 @@ import javax.swing.DefaultListSelectionModel;
  * whenever
  * the paths in the selection change, not the rows. In order
  * to be able to track row changes you may wish to become a listener
- * for expansion events on the tree and test for changes from there.
+ * for expansion events on the tree and com.test for changes from there.
  * <p>resetRowSelection is called from any of the methods that update
  * the selected paths. If you subclass any of these methods to
  * filter what is allowed to be selected, be sure and message
@@ -962,7 +962,7 @@ public class DefaultTreeSelectionModel implements Cloneable, Serializable, TreeS
     }
 
     /**
-     * Used to test if a particular set of <code>TreePath</code>s can
+     * Used to com.test if a particular set of <code>TreePath</code>s can
      * be added. This will return true if <code>paths</code> is null (or
      * empty), or this object has no RowMapper, or nothing is currently selected,
      * or the selection mode is <code>DISCONTIGUOUS_TREE_SELECTION</code>, or

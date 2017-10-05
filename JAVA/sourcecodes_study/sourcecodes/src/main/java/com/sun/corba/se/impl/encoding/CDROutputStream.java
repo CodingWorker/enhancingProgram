@@ -369,7 +369,7 @@ public abstract class CDROutputStream
     }
 
     // XREVISIT - return to final if possible
-    // REVISIT - was protected - need access from msgtypes test.
+    // REVISIT - was protected - need access from msgtypes com.test.
     public ByteBufferWithInfo getByteBufferWithInfo() {
         return impl.getByteBufferWithInfo();
     }

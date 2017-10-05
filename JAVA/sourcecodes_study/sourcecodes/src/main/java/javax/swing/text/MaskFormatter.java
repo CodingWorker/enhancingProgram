@@ -700,7 +700,7 @@ public class MaskFormatter extends DefaultFormatter {
      * <li>Else if the position identifies a literal character, add it. This
      *     allows for the user to paste in text that may/may not contain
      *     the literals.  For example, in pasing in 5551212 into ###-####
-     *     when the 1 is evaluated it is illegal (by the first test), but there
+     *     when the 1 is evaluated it is illegal (by the first com.test), but there
      *     is a literal at this position (-), so it is used.  NOTE: This has
      *     a problem that you can't tell (without looking ahead) if you should
      *     eat literals in the text. For example, if you paste '555' into

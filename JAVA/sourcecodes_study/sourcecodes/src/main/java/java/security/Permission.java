@@ -46,8 +46,8 @@ package java.security;
  * the {@code implies} method to compare Permissions. Basically,
  * "permission p1 implies permission p2" means that
  * if one is granted permission p1, one is naturally granted permission p2.
- * Thus, this is not an equality test, but rather more of a
- * subset test.
+ * Thus, this is not an equality com.test, but rather more of a
+ * subset com.test.
  *
  * <P> Permission objects are similar to String objects in that they
  * are immutable once they have been created. Subclasses should not

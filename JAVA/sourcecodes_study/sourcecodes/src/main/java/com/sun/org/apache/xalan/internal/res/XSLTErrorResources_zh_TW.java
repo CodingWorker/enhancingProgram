@@ -507,7 +507,7 @@ public class XSLTErrorResources_zh_TW extends ListResourceBundle
      "{0} \u9700\u8981\u5C6C\u6027: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} \u5FC5\u9808\u6709 ''test'' \u5C6C\u6027\u3002"},
+      "{0} \u5FC5\u9808\u6709 ''com.test'' \u5C6C\u6027\u3002"},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "\u932F\u8AA4\u7684\u503C\u4F4D\u65BC\u5C64\u6B21\u5C6C\u6027: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_zh_TW extends ListResourceBundle
      "{0} \u9700\u8981\u9078\u53D6\u5C6C\u6027\u3002"},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when \u5FC5\u9808\u5177\u6709 'test' \u5C6C\u6027\u3002"},
+      "xsl:when \u5FC5\u9808\u5177\u6709 'com.test' \u5C6C\u6027\u3002"},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param \u5FC5\u9808\u5177\u6709 'name' \u5C6C\u6027\u3002"},

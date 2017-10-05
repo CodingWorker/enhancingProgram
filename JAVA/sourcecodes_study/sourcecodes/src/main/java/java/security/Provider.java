@@ -1690,7 +1690,7 @@ public abstract class Provider extends Properties {
         /**
          * Test whether this Service can use the specified parameter.
          * Returns false if this service cannot use the parameter. Returns
-         * true if this service can use the parameter, if a fast test is
+         * true if this service can use the parameter, if a fast com.test is
          * infeasible, or if the status is unknown.
          *
          * <p>The security provider framework uses this method with
@@ -1703,9 +1703,9 @@ public abstract class Provider extends Properties {
          * <a href="../../../technotes/guides/security/crypto/CryptoSpec.html">
          * Java Cryptography Architecture API Specification &amp;
          * Reference</a>.
-         * Security providers can override it to implement their own test.
+         * Security providers can override it to implement their own com.test.
          *
-         * @param parameter the parameter to test
+         * @param parameter the parameter to com.test
          *
          * @return false if this this service cannot use the specified
          * parameter; true if it can possibly use the parameter

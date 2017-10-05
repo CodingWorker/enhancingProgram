@@ -189,7 +189,7 @@ public class DropTargetDropEvent extends DropTargetEvent {
      * specified <code>DataFlavor</code> is available
      * from the source.
      * <P>
-     * @param df the <code>DataFlavor</code> to test
+     * @param df the <code>DataFlavor</code> to com.test
      * <P>
      * @return if the DataFlavor specified is available from the source
      */

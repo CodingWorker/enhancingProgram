@@ -2083,7 +2083,7 @@ public abstract class Path2D implements Shape, Cloneable {
             return ((cross & mask) != 0);
         } else {
             /* Either x or y was infinite or NaN.
-             * A NaN always produces a negative response to any test
+             * A NaN always produces a negative response to any com.test
              * and Infinity values cannot be "inside" any path so
              * they should return false as well.
              */
@@ -2125,7 +2125,7 @@ public abstract class Path2D implements Shape, Cloneable {
             return ((pointCrossings(x, y) & mask) != 0);
         } else {
             /* Either x or y was infinite or NaN.
-             * A NaN always produces a negative response to any test
+             * A NaN always produces a negative response to any com.test
              * and Infinity values cannot be "inside" any path so
              * they should return false as well.
              */

@@ -284,7 +284,7 @@ import java.util.Vector;
  *      of acdacaa where \1 is "a".  This is not the case in this RE package,
  *      and actually Perl doesn't go to this extent either!  Until someone
  *      actually complains about this, I'm not sure it's worth "fixing".
- *      If it ever is fixed, test #137 in RETest.txt should be updated.</li>
+ *      If it ever is fixed, com.test #137 in RETest.txt should be updated.</li>
  * </ul>
  *
  * </font>

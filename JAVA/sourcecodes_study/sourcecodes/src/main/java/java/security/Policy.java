@@ -694,7 +694,7 @@ public abstract class Policy {
      * the ProtectionDomain and tests whether the permission is
      * granted.
      *
-     * @param domain the ProtectionDomain to test
+     * @param domain the ProtectionDomain to com.test
      * @param permission the Permission object to be tested for implication.
      *
      * @return true if "permission" is a proper subset of a permission

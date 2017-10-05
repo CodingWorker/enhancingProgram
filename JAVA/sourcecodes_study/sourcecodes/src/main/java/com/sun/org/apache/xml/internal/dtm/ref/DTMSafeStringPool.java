@@ -29,7 +29,7 @@ package com.sun.org.apache.xml.internal.dtm.ref;
  * this addresses. Of course performance is inferior to that of the
  * bare-bones version.</p>
  *
- * <p>Status: Passed basic test in main().</p>
+ * <p>Status: Passed basic com.test in main().</p>
  * */
 public class DTMSafeStringPool
 extends DTMStringPool
@@ -55,7 +55,7 @@ extends DTMStringPool
       return super.stringToIndex(s);
     }
 
-  /** Command-line unit test driver. This test relies on the fact that
+  /** Command-line unit com.test driver. This com.test relies on the fact that
    * this version of the pool assigns indices consecutively, starting
    * from zero, as new unique strings are encountered.
    */
@@ -74,7 +74,7 @@ extends DTMStringPool
 
     DTMStringPool pool=new DTMSafeStringPool();
 
-    System.out.println("If no complaints are printed below, we passed initial test.");
+    System.out.println("If no complaints are printed below, we passed initial com.test.");
 
     for(int pass=0;pass<=1;++pass)
       {

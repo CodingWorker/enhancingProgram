@@ -542,8 +542,8 @@ public abstract class LocPathIterator extends PredicatedNodeTest
     }
 
     // We want to clip off the last predicate, but only if we are a sub
-    // context node list, NOT if we are a context list.  See pos68 test,
-    // also test against bug4638.
+    // context node list, NOT if we are a context list.  See pos68 com.test,
+    // also com.test against bug4638.
     if (predCount > 0 && isPredicateTest)
     {
       // Don't call setPredicateCount, because it clones and is slower.

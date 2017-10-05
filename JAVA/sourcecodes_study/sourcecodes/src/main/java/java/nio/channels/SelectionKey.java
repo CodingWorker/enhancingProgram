@@ -77,7 +77,7 @@ import java.io.IOException;
  * Each subclass of {@link SelectableChannel} defines an {@link
  * SelectableChannel#validOps() validOps()} method which returns a set
  * identifying just those operations that are supported by the channel.  An
- * attempt to set or test an operation-set bit that is not supported by a key's
+ * attempt to set or com.test an operation-set bit that is not supported by a key's
  * channel will result in an appropriate run-time exception.
  *
  * <p> It is often necessary to associate some application-specific data with a

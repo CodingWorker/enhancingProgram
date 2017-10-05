@@ -42,10 +42,10 @@ public class EncodingInfo {
     String javaName;
     int lastPrintable;
 
-    // The CharsetEncoder with which we test unusual characters.
+    // The CharsetEncoder with which we com.test unusual characters.
     Object fCharsetEncoder = null;
 
-    // The CharToByteConverter with which we test unusual characters.
+    // The CharToByteConverter with which we com.test unusual characters.
     Object fCharToByteConverter = null;
 
     // Is the converter null because it can't be instantiated

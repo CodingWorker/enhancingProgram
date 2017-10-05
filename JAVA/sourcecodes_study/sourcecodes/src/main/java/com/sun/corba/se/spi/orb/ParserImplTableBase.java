@@ -101,7 +101,7 @@ public abstract class ParserImplTableBase extends ParserImplBase {
         }
     }
 
-    // Construct a map that maps field names to test or default values,
+    // Construct a map that maps field names to com.test or default values,
     // then use setFields from the parent class.  A map is constructed
     // by implementing AbstractMap, which requires implementing the
     // entrySet() method, which requires implementing a set of

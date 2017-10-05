@@ -72,7 +72,7 @@ final class Step extends RelativeLocationPath {
     private boolean _hadPredicates = false;
 
     /**
-     * Type of the node test.
+     * Type of the node com.test.
      */
     private int _nodeType;
 
@@ -383,21 +383,21 @@ final class Step extends RelativeLocationPath {
             // instead of an auxiliary class. Certain path/predicates pairs
             // are translated into a base path, on top of which we place a
             // node value iterator that tests for the desired value:
-            //   foo[@attr = 'str']  ->  foo/@attr + test(value='str')
-            //   foo[bar = 'str']    ->  foo/bar + test(value='str')
-            //   foo/bar[. = 'str']  ->  foo/bar + test(value='str')
+            //   foo[@attr = 'str']  ->  foo/@attr + com.test(value='str')
+            //   foo[bar = 'str']    ->  foo/bar + com.test(value='str')
+            //   foo/bar[. = 'str']  ->  foo/bar + com.test(value='str')
             if (predicate.isNodeValueTest()) {
                 Step step = predicate.getStep();
 
                 il.append(methodGen.loadDOM());
                 // If the predicate's Step is simply '.' we translate this Step
-                // and place the node test on top of the resulting iterator
+                // and place the node com.test on top of the resulting iterator
                 if (step.isAbbreviatedDot()) {
                     translateStep(classGen, methodGen, predicateIndex);
                     il.append(new ICONST(DOM.RETURN_CURRENT));
                 }
                 // Otherwise we create a parent location path with this Step and
-                // the predicates Step, and place the node test on top of that
+                // the predicates Step, and place the node com.test on top of that
                 else {
                     ParentLocationPath path = new ParentLocationPath(this, step);
                     _parent = step._parent = path;      // Force re-parenting

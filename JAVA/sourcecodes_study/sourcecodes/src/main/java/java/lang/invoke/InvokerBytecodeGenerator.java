@@ -1015,7 +1015,7 @@ class InvokerBytecodeGenerator {
      * The pattern looks like (Cf. MethodHandleImpl.makeGuardWithTest):
      * <blockquote><pre>{@code
      *   Lambda(a0:L,a1:I)=>{
-     *     t2:I=foo.test(a1:I);
+     *     t2:I=foo.com.test(a1:I);
      *     t3:L=MethodHandleImpl.selectAlternative(t2:I,(MethodHandle(int)int),(MethodHandle(int)int));
      *     t4:I=MethodHandle.invokeBasic(t3:L,a1:I);t4:I}
      * }</pre></blockquote>
@@ -1028,7 +1028,7 @@ class InvokerBytecodeGenerator {
         Label L_fallback = new Label();
         Label L_done     = new Label();
 
-        // load test result
+        // load com.test result
         emitPushArgument(selectAlternativeName, 0);
 
         // if_icmpne L_fallback

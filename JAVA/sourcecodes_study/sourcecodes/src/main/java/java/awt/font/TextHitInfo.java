@@ -140,7 +140,7 @@ public final class TextHitInfo {
     /**
      * Returns <code>true</code> if the specified <code>Object</code> is a
      * <code>TextHitInfo</code> and equals this <code>TextHitInfo</code>.
-     * @param obj the <code>Object</code> to test for equality
+     * @param obj the <code>Object</code> to com.test for equality
      * @return <code>true</code> if the specified <code>Object</code>
      * equals this <code>TextHitInfo</code>; <code>false</code> otherwise.
      */

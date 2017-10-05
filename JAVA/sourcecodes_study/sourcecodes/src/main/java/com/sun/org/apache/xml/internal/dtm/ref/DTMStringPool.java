@@ -54,7 +54,7 @@ import com.sun.org.apache.xml.internal.utils.IntVector;
  * it's safer that way, but this could trivially be turned into a general
  * ObjectPool if one was needed.</p>
  *
- * <p>Status: Passed basic test in main().</p>
+ * <p>Status: Passed basic com.test in main().</p>
  * */
 public class DTMStringPool
 {
@@ -136,7 +136,7 @@ public class DTMStringPool
       return newIndex;
     }
 
-  /** Command-line unit test driver. This test relies on the fact that
+  /** Command-line unit com.test driver. This com.test relies on the fact that
    * this version of the pool assigns indices consecutively, starting
    * from zero, as new unique strings are encountered.
    */
@@ -155,7 +155,7 @@ public class DTMStringPool
 
     DTMStringPool pool=new DTMStringPool();
 
-    System.out.println("If no complaints are printed below, we passed initial test.");
+    System.out.println("If no complaints are printed below, we passed initial com.test.");
 
     for(int pass=0;pass<=1;++pass)
       {

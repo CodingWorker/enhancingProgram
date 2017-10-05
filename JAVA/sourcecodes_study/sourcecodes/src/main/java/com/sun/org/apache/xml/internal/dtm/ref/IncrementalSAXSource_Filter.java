@@ -57,7 +57,7 @@ import org.xml.sax.ext.LexicalHandler;
  * of allocating each time is trivial compared to the cost of processing
  * any nontrival stream.</p>
  *
- * <p>For a brief usage example, see the unit-test main() method.</p>
+ * <p>For a brief usage example, see the unit-com.test main() method.</p>
  *
  * <p>This is a simplification of the old CoroutineSAXParser, focusing
  * specifically on filtering. The resulting controller protocol is _far_
@@ -739,7 +739,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
 
 
   //================================================================
-  /** Simple unit test. Attempt coroutine parsing of document indicated
+  /** Simple unit com.test. Attempt coroutine parsing of document indicated
    * by first argument (as a URI), report progress.
    */
     /*
@@ -781,7 +781,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
         {
           System.out.println("\nSome parsing successful, trying more.\n");
 
-          // Special test: Terminate parsing early.
+          // Special com.test: Terminate parsing early.
           if(arg+1<args.length && "!".equals(args[arg+1]))
           {
             ++arg;

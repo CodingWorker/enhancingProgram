@@ -135,7 +135,7 @@ final class ChunkedIntArray
   // RETURN -1. If position is NOT an ancestor, return position.
   // Special case: The Document node (position==0) is acceptable.
   //
-  // This test supports DTM.getNextPreceding.
+  // This com.test supports DTM.getNextPreceding.
   int specialFind(int startPos, int position)
   {
           // We have to look all the way up the ancestor chain

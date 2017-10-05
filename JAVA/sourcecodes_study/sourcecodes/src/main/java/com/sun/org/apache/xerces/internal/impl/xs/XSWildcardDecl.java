@@ -84,8 +84,8 @@ public class XSWildcardDecl implements XSWildcard {
             return true;
 
         // 2 All of the following must be true:
-        // 2.1 The constraint is a pair of not and a namespace name or absent ([Definition:]  call this the namespace test).
-        // 2.2 The value must not be identical to the namespace test.
+        // 2.1 The constraint is a pair of not and a namespace name or absent ([Definition:]  call this the namespace com.test).
+        // 2.2 The value must not be identical to the namespace com.test.
         // 2.3 The value must not be absent.
         // / we store ##other as not(list), so our actual rule is
         // / 2 The constraint is a pair of not and a set, and the value is not in such set.

@@ -557,7 +557,7 @@ public class OpCodes
    * [FROM_stepType]
    * [length, including predicates]
    * [length of just the step, without the predicates]
-   * {node test}
+   * {node com.test}
    * {predicates}?
    *
    * returns:

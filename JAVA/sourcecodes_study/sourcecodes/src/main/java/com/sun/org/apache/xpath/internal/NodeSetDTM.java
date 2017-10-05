@@ -785,7 +785,7 @@ public class NodeSetDTM extends NodeVector
    * Add the node into a vector of nodes where it should occur in
    * document order.
    * @param node The node to be added.
-   * @param test true if we should test for doc order
+   * @param test true if we should com.test for doc order
    * @param support The XPath runtime context.
    * @return insertIndex.
    * @throws RuntimeException thrown if this NodeSetDTM is not of
@@ -803,7 +803,7 @@ public class NodeSetDTM extends NodeVector
     {
 
       // This needs to do a binary search, but a binary search
-      // is somewhat tough because the sequence test involves
+      // is somewhat tough because the sequence com.test involves
       // two nodes.
       int size = size(), i;
 

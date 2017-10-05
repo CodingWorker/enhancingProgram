@@ -372,7 +372,7 @@ public class OpMap
   }
 
   /**
-   * Get the test type of the step, i.e. NODETYPE_XXX value.
+   * Get the com.test type of the step, i.e. NODETYPE_XXX value.
    *
    * @param opPosOfStep The position of the FROM_XXX step.
    *

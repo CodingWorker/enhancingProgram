@@ -255,7 +255,7 @@ public class Constants extends com.sun.org.apache.xml.internal.utils.Constants
       ATTRNAME_STYLE = "style",
       ATTRNAME_STYLESHEET_PREFIX = "stylesheet-prefix",
       ATTRNAME_TERMINATE = "terminate",
-      ATTRNAME_TEST = "test",
+      ATTRNAME_TEST = "com.test",
       ATTRNAME_TOSTRING = "to-string",
       ATTRNAME_TYPE = "type",
       ATTRNAME_USE = "use",

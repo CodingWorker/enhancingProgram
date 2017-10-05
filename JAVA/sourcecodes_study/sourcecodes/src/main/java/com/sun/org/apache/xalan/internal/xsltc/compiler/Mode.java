@@ -127,7 +127,7 @@ final class Mode implements Constants {
 
 
     /**
-     * A mapping between templates and test sequences.
+     * A mapping between templates and com.test sequences.
      */
     private Map<Template, Object> _neededTemplates = new HashMap<>();
 
@@ -243,7 +243,7 @@ final class Mode implements Constants {
     }
 
     /**
-     * Process all the test patterns in this mode
+     * Process all the com.test patterns in this mode
      */
     public void processPatterns(Map<String, Key> keys) {
         _keys = keys;
@@ -285,7 +285,7 @@ for (int i = 0; i < _templates.size(); i++) {
                 _namedTemplates.put(template, this);
             }
 
-            // Add this template to a test sequence if it has a pattern
+            // Add this template to a com.test sequence if it has a pattern
             final Pattern pattern = template.getPattern();
             if (pattern != null) {
                 flattenAlternative(pattern, template, keys);
@@ -317,7 +317,7 @@ for (int i = 0; i < _templates.size(); i++) {
             flattenAlternative(alt.getLeft(), template, keys);
             flattenAlternative(alt.getRight(), template, keys);
         }
-        // Finally we have a pattern that can be added to a test sequence!
+        // Finally we have a pattern that can be added to a com.test sequence!
         else if (pattern instanceof LocationPathPattern) {
             final LocationPathPattern lpp = (LocationPathPattern)pattern;
             lpp.setTemplate(template);
@@ -401,7 +401,7 @@ for (int i = 0; i < _templates.size(); i++) {
     }
 
     /**
-     * Complete test sequences of a given type by adding all patterns
+     * Complete com.test sequences of a given type by adding all patterns
      * from a given group.
      */
     private void completeTestSequences(int nodeType, Vector patterns) {
@@ -420,27 +420,27 @@ for (int i = 0; i < _templates.size(); i++) {
     }
 
     /**
-     * Build test sequences. The first step is to complete the test sequences
-     * by including patterns of "*" and "node()" kernel to all element test
-     * sequences, and of "@*" to all attribute test sequences.
+     * Build com.test sequences. The first step is to complete the com.test sequences
+     * by including patterns of "*" and "node()" kernel to all element com.test
+     * sequences, and of "@*" to all attribute com.test sequences.
      */
     private void prepareTestSequences() {
         final Vector starGroup = _patternGroups[DTM.ELEMENT_NODE];
         final Vector atStarGroup = _patternGroups[DTM.ATTRIBUTE_NODE];
 
-        // Complete test sequence for "text()" with "child::node()"
+        // Complete com.test sequence for "text()" with "child::node()"
         completeTestSequences(DTM.TEXT_NODE, _childNodeGroup);
 
-        // Complete test sequence for "*" with "child::node()"
+        // Complete com.test sequence for "*" with "child::node()"
         completeTestSequences(DTM.ELEMENT_NODE, _childNodeGroup);
 
-        // Complete test sequence for "pi()" with "child::node()"
+        // Complete com.test sequence for "pi()" with "child::node()"
         completeTestSequences(DTM.PROCESSING_INSTRUCTION_NODE, _childNodeGroup);
 
-        // Complete test sequence for "comment()" with "child::node()"
+        // Complete com.test sequence for "comment()" with "child::node()"
         completeTestSequences(DTM.COMMENT_NODE, _childNodeGroup);
 
-        // Complete test sequence for "@*" with "attribute::node()"
+        // Complete com.test sequence for "@*" with "attribute::node()"
         completeTestSequences(DTM.ATTRIBUTE_NODE, _attribNodeGroup);
 
         final Vector names = _stylesheet.getXSLTC().getNamesIndex();
@@ -449,24 +449,24 @@ for (int i = 0; i < _templates.size(); i++) {
         {
             final int n = _patternGroups.length;
 
-            // Complete test sequence for user-defined types
+            // Complete com.test sequence for user-defined types
             for (int i = DTM.NTYPES; i < n; i++) {
                 if (_patternGroups[i] == null) continue;
 
                 final String name = (String) names.elementAt(i - DTM.NTYPES);
 
                 if (isAttributeName(name)) {
-                    // If an attribute then copy "@*" to its test sequence
+                    // If an attribute then copy "@*" to its com.test sequence
                     completeTestSequences(i, atStarGroup);
 
-                    // And also copy "attribute::node()" to its test sequence
+                    // And also copy "attribute::node()" to its com.test sequence
                     completeTestSequences(i, _attribNodeGroup);
                 }
                 else {
-                    // If an element then copy "*" to its test sequence
+                    // If an element then copy "*" to its com.test sequence
                     completeTestSequences(i, starGroup);
 
-                    // And also copy "child::node()" to its test sequence
+                    // And also copy "child::node()" to its com.test sequence
                     completeTestSequences(i, _childNodeGroup);
                 }
             }
@@ -675,7 +675,7 @@ for (int i = 0; i < _templates.size(); i++) {
         final XSLTC xsltc = classGen.getParser().getXSLTC();
         final ConstantPoolGen cpg = classGen.getConstantPool();
 
-        // Append switch() statement - namespace test dispatch loop
+        // Append switch() statement - namespace com.test dispatch loop
         final Vector namespaces = xsltc.getNamespaceIndex();
         final Vector names = xsltc.getNamesIndex();
         final int namespaceCount = namespaces.size() + 1;
@@ -694,7 +694,7 @@ for (int i = 0; i < _templates.size(); i++) {
                 types[i] = i;
             }
 
-            // Add test sequences for known namespace types
+            // Add com.test sequences for known namespace types
             for (int i = DTM.NTYPES; i < (DTM.NTYPES+namesCount); i++) {
                 if ((isNamespace[i]) && (isAttribute[i] == attrFlag)) {
                     String name = (String)names.elementAt(i-DTM.NTYPES);
@@ -712,7 +712,7 @@ for (int i = 0; i < _templates.size(); i++) {
                 }
             }
 
-            // Return "null" if no test sequences were compiled
+            // Return "null" if no com.test sequences were compiled
             if (!compiled) return(null);
 
             // Append first code in applyTemplates() - get type of current node
@@ -982,7 +982,7 @@ for (int i = 0; i < _templates.size(); i++) {
         targets[DTM.NOTATION_NODE] = ihLoop;
 
 
-        // Now compile test sequences for various match patterns:
+        // Now compile com.test sequences for various match patterns:
         for (int i = DTM.NTYPES; i < targets.length; i++) {
             final TestSeq testSeq = _testSeq[i];
             // Jump straight to namespace tests ?
@@ -1326,7 +1326,7 @@ for (int i = 0; i < _templates.size(); i++) {
 
 
 
-        // Now compile test sequences for various match patterns:
+        // Now compile com.test sequences for various match patterns:
         for (int i = DTM.NTYPES; i < targets.length; i++) {
             final TestSeq testSeq = _testSeq[i];
             // Jump straight to namespace tests ?

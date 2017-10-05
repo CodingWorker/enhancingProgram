@@ -1382,7 +1382,7 @@ public class XMLGregorianCalendarImpl
 
         setFractionalSecond(fractional);
 
-        // must test hour after setting seconds
+        // must com.test hour after setting seconds
         testHour();
     }
 
@@ -1417,7 +1417,7 @@ public class XMLGregorianCalendarImpl
         }
         setMillisecond(millisecond);
 
-        // must test hour after setting seconds
+        // must com.test hour after setting seconds
         testHour();
     }
 

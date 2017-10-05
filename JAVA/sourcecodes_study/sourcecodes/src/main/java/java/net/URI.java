@@ -2173,7 +2173,7 @@ public final class URI
     // possible, otherwise return the number of segments found.
     //
     // This method takes a string argument rather than a char array so that
-    // this test can be performed without invoking path.toCharArray().
+    // this com.test can be performed without invoking path.toCharArray().
     //
     static private int needsNormalization(String path) {
         boolean normal = true;

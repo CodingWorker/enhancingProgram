@@ -267,10 +267,10 @@ public class Canonicalizer {
         DocumentBuilder db = dfactory.newDocumentBuilder();
 
         /*
-         * for some of the test vectors from the specification,
+         * for some of the com.test vectors from the specification,
          * there has to be a validating parser for ID attributes, default
          * attribute values, NMTOKENS, etc.
-         * Unfortunately, the test vectors do use different DTDs or
+         * Unfortunately, the com.test vectors do use different DTDs or
          * even no DTD. So Xerces 1.3.1 fires many warnings about using
          * ErrorHandlers.
          *

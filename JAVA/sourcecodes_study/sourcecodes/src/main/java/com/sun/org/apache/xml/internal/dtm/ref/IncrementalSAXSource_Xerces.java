@@ -43,7 +43,7 @@ import org.xml.sax.XMLReader;
  *
  * <p>Usage example: See main().</p>
  *
- * <p>Status: Passes simple main() unit-test. NEEDS JAVADOC.</p>
+ * <p>Status: Passes simple main() unit-com.test. NEEDS JAVADOC.</p>
  * */
 public class IncrementalSAXSource_Xerces
   implements IncrementalSAXSource
@@ -382,7 +382,7 @@ public class IncrementalSAXSource_Xerces
 
 
   //================================================================
-  /** Simple unit test. Attempt coroutine parsing of document indicated
+  /** Simple unit com.test. Attempt coroutine parsing of document indicated
    * by first argument (as a URI), report progress.
    */
   public static void _main(String args[])
@@ -421,7 +421,7 @@ public class IncrementalSAXSource_Xerces
         {
           System.out.println("\nSome parsing successful, trying more.\n");
 
-          // Special test: Terminate parsing early.
+          // Special com.test: Terminate parsing early.
           if(arg+1<args.length && "!".equals(args[arg+1]))
           {
             ++arg;

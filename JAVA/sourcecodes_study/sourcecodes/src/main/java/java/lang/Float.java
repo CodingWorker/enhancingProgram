@@ -692,7 +692,7 @@ public final class Float extends Number implements Comparable<Float> {
      *     has the value {@code false}.
      * <li>If {@code f1} represents {@code +0.0f} while
      *     {@code f2} represents {@code -0.0f}, or vice
-     *     versa, the {@code equal} test has the value
+     *     versa, the {@code equal} com.test has the value
      *     {@code false}, even though {@code 0.0f==-0.0f}
      *     has the value {@code true}.
      * </ul>

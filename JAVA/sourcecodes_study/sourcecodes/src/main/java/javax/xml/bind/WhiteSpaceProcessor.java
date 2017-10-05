@@ -32,7 +32,7 @@ package javax.xml.bind;
  */
 abstract class WhiteSpaceProcessor {
 
-// benchmarking (see test/src/ReplaceTest.java in the CVS Attic)
+// benchmarking (see com.test/src/ReplaceTest.java in the CVS Attic)
 // showed that this code is slower than the current code.
 //
 //    public static String replace(String text) {

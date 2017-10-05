@@ -246,7 +246,7 @@ public final class Utility {
 
     /*
      * Clear the stub/tie caches. Intended for use by
-     * test code.
+     * com.test code.
      */
     public static void clearCaches() {
         synchronized (tieToStubCache) {

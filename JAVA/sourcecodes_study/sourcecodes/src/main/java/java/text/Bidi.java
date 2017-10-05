@@ -295,9 +295,9 @@ public final class Bidi {
      * Text in the Arabic Presentation Forms area of Unicode is presumed to already be shaped
      * and ordered for display, and so will not cause this function to return true.
      *
-     * @param text the text containing the characters to test
-     * @param start the start of the range of characters to test
-     * @param limit the limit of the range of characters to test
+     * @param text the text containing the characters to com.test
+     * @param start the start of the range of characters to com.test
+     * @param limit the limit of the range of characters to com.test
      * @return true if the range of characters requires bidi analysis
      */
     public static boolean requiresBidi(char[] text, int start, int limit) {

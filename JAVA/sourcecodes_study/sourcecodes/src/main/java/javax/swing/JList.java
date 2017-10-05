@@ -1455,7 +1455,7 @@ public class JList<E> extends JComponent implements Scrollable, Accessible
      * Returns the next list element whose {@code toString} value
      * starts with the given prefix.
      *
-     * @param prefix the string to test for a match
+     * @param prefix the string to com.test for a match
      * @param startIndex the index for starting the search
      * @param bias the search direction, either
      * Position.Bias.Forward or Position.Bias.Backward.

@@ -596,11 +596,11 @@ public abstract class NodeImpl
      * Introduced in DOM Level 2. <p>
      * Tests whether the DOM implementation implements a specific feature and
      * that feature is supported by this node.
-     * @param feature The package name of the feature to test. This is the same
+     * @param feature The package name of the feature to com.test. This is the same
      * name as what can be passed to the method hasFeature on
      * DOMImplementation.
      * @param version This is the version number of the package name to
-     * test. In Level 2, version 1, this is the string "2.0". If the version is
+     * com.test. In Level 2, version 1, this is the string "2.0". If the version is
      * not specified, supporting any version of the feature will cause the
      * method to return true.
      * @return boolean Returns true if this node defines a subtree within which
@@ -1368,7 +1368,7 @@ public abstract class NodeImpl
      * used completely interchangably, such that all attributes have the
      * same values and calling the same DOM method on either reference
      * always has exactly the same effect.
-     * @param other The node to test against.
+     * @param other The node to com.test against.
      * @return Returns <code>true</code> if the nodes are the same,
      *   <code>false</code> otherwise.
      * @since DOM Level 3

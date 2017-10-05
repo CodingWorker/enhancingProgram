@@ -473,7 +473,7 @@ public class ElementImpl
      * Again, setAttributeNode can be used to achieve other results.
      *
      * @throws DOMException(INVALID_NAME_ERR) if the name is not acceptable.
-     * (Attribute factory will do that test for us.)
+     * (Attribute factory will do that com.test for us.)
      *
      * @throws DOMException(NO_MODIFICATION_ALLOWED_ERR) if the node is
      * readonly.

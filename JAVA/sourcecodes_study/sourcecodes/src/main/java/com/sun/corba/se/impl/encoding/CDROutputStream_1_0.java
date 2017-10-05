@@ -951,7 +951,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
 
             // Write Value chunk
             end_flag--;
-            // no need to test for custom on the non-chunked path
+            // no need to com.test for custom on the non-chunked path
             factory.write_value(parent, object);
 
             // Write end tag

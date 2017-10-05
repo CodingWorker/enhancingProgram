@@ -152,7 +152,7 @@ public class PropertyChangeSupport implements Serializable {
      * the returned array will be a mixture of PropertyChangeListeners
      * and <code>PropertyChangeListenerProxy</code>s. If the calling
      * method is interested in distinguishing the listeners then it must
-     * test each element to see if it's a
+     * com.test each element to see if it's a
      * <code>PropertyChangeListenerProxy</code>, perform the cast, and examine
      * the parameter.
      *

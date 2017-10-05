@@ -69,7 +69,7 @@ import org.xml.sax.SAXNotSupportedException;
  * that it is not possible to report {@link org.xml.sax.ContentHandler#skippedEntity
  * skippedEntity} events, since SAX1 does not make that information available.</p>
  *
- * <p>This adapter does not test for duplicate Namespace-qualified
+ * <p>This adapter does not com.test for duplicate Namespace-qualified
  * attribute names.</p>
  *
  * @since SAX 2.0

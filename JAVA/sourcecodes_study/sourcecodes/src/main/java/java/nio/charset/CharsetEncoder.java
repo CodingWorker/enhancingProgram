@@ -925,7 +925,7 @@ public abstract class CharsetEncoder {
      * surrogate character; such characters can be interpreted only when they
      * are members of a pair consisting of a high surrogate followed by a low
      * surrogate.  The {@link #canEncode(java.lang.CharSequence)
-     * canEncode(CharSequence)} method may be used to test whether or not a
+     * canEncode(CharSequence)} method may be used to com.test whether or not a
      * character sequence can be encoded.
      *
      * <p> This method may modify this encoder's state; it should therefore not

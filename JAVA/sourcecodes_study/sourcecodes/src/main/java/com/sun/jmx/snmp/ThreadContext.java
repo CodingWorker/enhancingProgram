@@ -246,7 +246,7 @@ public class ThreadContext implements Cloneable {
      */
     public static void restore(ThreadContext oldContext)
             throws NullPointerException, IllegalArgumentException {
-        /* The following test is not strictly necessary in the code as it
+        /* The following com.test is not strictly necessary in the code as it
            stands today, since the reference to "oldContext.key" would
            generate a NullPointerException anyway.  But if someone
            didn't notice that during subsequent changes, they could
@@ -306,7 +306,7 @@ public class ThreadContext implements Cloneable {
        later in that chain using "restore".  */
     public void setInitialContext(ThreadContext context)
             throws IllegalArgumentException {
-        /* The following test assumes that we discard sentinels when the
+        /* The following com.test assumes that we discard sentinels when the
            stack is empty.  */
         if (getContext() != null)
             throw new IllegalArgumentException("previous context not empty");

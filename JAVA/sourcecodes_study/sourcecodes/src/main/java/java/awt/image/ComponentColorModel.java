@@ -2404,8 +2404,8 @@ public class ComponentColorModel extends ColorModel {
         }
         if (min != null) {
             // Normally (i.e. when this class is not subclassed to override
-            // this method), the test (min != null) will be equivalent to
-            // the test (nonStdScale).  However, there is an unlikely, but
+            // this method), the com.test (min != null) will be equivalent to
+            // the com.test (nonStdScale).  However, there is an unlikely, but
             // possible case, in which this method is overridden, nonStdScale
             // is set true by initScale(), the subclass method for some
             // reason calls this superclass method, but the min and
@@ -2777,7 +2777,7 @@ public class ComponentColorModel extends ColorModel {
       * Returns true if <CODE>raster</CODE> is compatible with this
       * <CODE>ColorModel</CODE>; false if it is not.
       *
-      * @param raster The <CODE>Raster</CODE> object to test for compatibility.
+      * @param raster The <CODE>Raster</CODE> object to com.test for compatibility.
       *
       * @return <CODE>true</CODE> if <CODE>raster</CODE> is compatible with this
       * <CODE>ColorModel</CODE>, <CODE>false</CODE> if it is not.
@@ -2871,7 +2871,7 @@ public class ComponentColorModel extends ColorModel {
      * Checks whether or not the specified <CODE>SampleModel</CODE>
      * is compatible with this <CODE>ColorModel</CODE>.
      *
-     * @param sm The <CODE>SampleModel</CODE> to test for compatibility.
+     * @param sm The <CODE>SampleModel</CODE> to com.test for compatibility.
      *
      * @return <CODE>true</CODE> if the <CODE>SampleModel</CODE> is
      * compatible with this <CODE>ColorModel</CODE>, <CODE>false</CODE>

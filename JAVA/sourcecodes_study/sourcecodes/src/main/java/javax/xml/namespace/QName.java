@@ -350,7 +350,7 @@ public class QName implements Serializable {
      * <p>This method satisfies the general contract of {@link
      * java.lang.Object#equals(Object) Object.equals(Object)}</p>
      *
-     * @param objectToTest the <code>Object</code> to test for
+     * @param objectToTest the <code>Object</code> to com.test for
      * equality with this <code>QName</code>
      * @return <code>true</code> if the given <code>Object</code> is
      * equal to this <code>QName</code> else <code>false</code>

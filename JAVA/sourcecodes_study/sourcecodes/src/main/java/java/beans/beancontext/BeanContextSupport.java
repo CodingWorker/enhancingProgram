@@ -77,7 +77,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
                   PropertyChangeListener,
                   VetoableChangeListener {
 
-    // Fix for bug 4282900 to pass JCK regression test
+    // Fix for bug 4282900 to pass JCK regression com.test
     static final long serialVersionUID = -4879613978649577204L;
 
     /**
@@ -381,7 +381,7 @@ public class      BeanContextSupport extends BeanContextChildSupport
         // The specification requires that we do nothing if the child
         // is already nested herein.
 
-        if (children.containsKey(targetChild)) return false; // test before locking
+        if (children.containsKey(targetChild)) return false; // com.test before locking
 
         synchronized(BeanContext.globalHierarchyLock) {
             if (children.containsKey(targetChild)) return false; // check again

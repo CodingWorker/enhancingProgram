@@ -2962,7 +2962,7 @@ assertEquals("boojum", (String) catTrace.invokeExact("boo", "jum"));
      * If the guard fails, a fallback handle is called instead.
      * All three method handles must have the same corresponding
      * argument and return types, except that the return type
-     * of the test must be boolean, and the test is allowed
+     * of the com.test must be boolean, and the com.test is allowed
      * to have fewer arguments than the other two method handles.
      * <p> Here is pseudocode for the resulting adapter:
      * <blockquote><pre>{@code

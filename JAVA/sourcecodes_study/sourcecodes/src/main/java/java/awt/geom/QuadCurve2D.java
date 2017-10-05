@@ -1097,9 +1097,9 @@ public abstract class QuadCurve2D implements Shape, Cloneable {
 
     /**
      * Determine if the pttag represents a coordinate that is already
-     * in its test range, or is on the border with either of the two
+     * in its com.test range, or is on the border with either of the two
      * opttags representing another coordinate that is "towards the
-     * inside" of that test range.  In other words, are either of the
+     * inside" of that com.test range.  In other words, are either of the
      * two "opt" points "drawing the pt inward"?
      */
     private static boolean inwards(int pttag, int opt1tag, int opt2tag) {
@@ -1283,7 +1283,7 @@ public abstract class QuadCurve2D implements Shape, Cloneable {
         //
         // We have to calculate this one the straightforward way.
         // Note that the c2tag can still tell us which vertical edge
-        // to test against.
+        // to com.test against.
         fillEqn(eqn, (c2tag < INSIDE ? x : x+w), x1, ctrlx, x2);
         int num = solveQuadratic(eqn, res);
 

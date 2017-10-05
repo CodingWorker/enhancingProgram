@@ -480,7 +480,7 @@ public abstract class DTMDefaultBase implements DTM
   {
         if (identity == DTM.NULL)
         return NULL;
-    // Reorganized test and loop into single flow
+    // Reorganized com.test and loop into single flow
     // Tiny performance improvement, saves a few bytes of code, clearer.
     // %OPT% Other internal getters could be treated simliarly
     while (identity>=m_size)
@@ -865,7 +865,7 @@ public abstract class DTMDefaultBase implements DTM
   // ========= Document Navigation Functions =========
 
   /**
-   * Given a node handle, test if it has child nodes.
+   * Given a node handle, com.test if it has child nodes.
    * <p> %REVIEW% This is obviously useful at the DOM layer, where it
    * would permit testing this without having to create a proxy
    * node. It's less useful in the DTM API, where
@@ -938,7 +938,7 @@ public abstract class DTMDefaultBase implements DTM
 
       int whichDTMindex=nodeHandle>>>DTMManager.IDENT_DTM_NODE_BITS;
 
-      // %REVIEW% Wish I didn't have to perform the pre-test, but
+      // %REVIEW% Wish I didn't have to perform the pre-com.test, but
       // someone is apparently asking DTMs whether they contain nodes
       // which really don't belong to them. That's probably a bug
       // which should be fixed, but until it is:
@@ -1893,8 +1893,8 @@ public abstract class DTMDefaultBase implements DTM
    * Tests whether DTM DOM implementation implements a specific feature and
    * that feature is supported by this node.
    *
-   * @param feature The name of the feature to test.
-   * @param version This is the version number of the feature to test.
+   * @param feature The name of the feature to com.test.
+   * @param version This is the version number of the feature to com.test.
    *   If the version is not
    *   specified, supporting any version of the feature will cause the
    *   method to return <code>true</code>.

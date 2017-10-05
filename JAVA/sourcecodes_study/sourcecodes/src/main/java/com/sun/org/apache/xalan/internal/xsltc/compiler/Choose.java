@@ -56,7 +56,7 @@ final class Choose extends Instruction {
     }
 
     /**
-     * Translate this Choose element. Generate a test-chain for the various
+     * Translate this Choose element. Generate a com.test-chain for the various
      * <xsl:when> elements and default to the <xsl:otherwise> if present.
      */
     public void translate(ClassGenerator classGen, MethodGenerator methodGen) {
@@ -105,7 +105,7 @@ final class Choose extends Instruction {
         InstructionList il = methodGen.getInstructionList();
 
         // next element will hold a handle to the beginning of next
-        // When/Otherwise if test on current When fails
+        // When/Otherwise if com.test on current When fails
         BranchHandle nextElement = null;
         Vector exitHandles = new Vector();
         InstructionHandle exit = null;

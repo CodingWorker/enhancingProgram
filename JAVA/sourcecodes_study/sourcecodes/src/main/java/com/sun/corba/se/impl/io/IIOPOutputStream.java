@@ -184,7 +184,7 @@ public class IIOPOutputStream
             currentClassDesc = prevClassDesc;
         }
 
-        /* If the recursion depth is 0, test for and clear the pending exception.
+        /* If the recursion depth is 0, com.test for and clear the pending exception.
          * If there is a pending exception throw it.
          */
         IOException pending = abortIOException;

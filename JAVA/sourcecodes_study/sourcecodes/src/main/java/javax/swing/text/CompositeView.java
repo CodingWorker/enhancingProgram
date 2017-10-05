@@ -55,10 +55,10 @@ import javax.swing.SwingConstants;
  * subclasses of <code>CompositeView</code> will need to
  * override:
  * <ul>
- * <li>{@link #isBefore} - Used to test if a given
+ * <li>{@link #isBefore} - Used to com.test if a given
  *     <code>View</code> location is before the visual space
  *     of the <code>CompositeView</code>.
- * <li>{@link #isAfter} - Used to test if a given
+ * <li>{@link #isAfter} - Used to com.test if a given
  *     <code>View</code> location is after the visual space
  *     of the <code>CompositeView</code>.
  * <li>{@link #getViewAtPoint} - Returns the view at

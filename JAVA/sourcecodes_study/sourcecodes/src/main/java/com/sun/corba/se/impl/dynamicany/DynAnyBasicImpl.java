@@ -102,7 +102,7 @@ public class DynAnyBasicImpl extends DynAnyImpl
             return true;
         }
         // If the other DynAny is a constructed one we don't want it to have
-        // to create its Any representation just for this test.
+        // to create its Any representation just for this com.test.
         if ( ! any.type().equal(dyn_any.type())) {
             return false;
         }

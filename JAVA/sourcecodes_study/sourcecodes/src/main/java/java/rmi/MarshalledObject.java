@@ -197,7 +197,7 @@ public final class MarshalledObject<T> implements Serializable {
             if (objBytes == null || other.objBytes == null)
                 return objBytes == other.objBytes;
 
-            // quick, easy test
+            // quick, easy com.test
             if (objBytes.length != other.objBytes.length)
                 return false;
 

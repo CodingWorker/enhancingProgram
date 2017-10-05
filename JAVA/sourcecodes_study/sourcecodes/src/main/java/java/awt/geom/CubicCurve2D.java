@@ -1404,7 +1404,7 @@ public abstract class CubicCurve2D implements Shape, Cloneable {
     public boolean contains(double x, double y) {
         if (!(x * 0.0 + y * 0.0 == 0.0)) {
             /* Either x or y was infinite or NaN.
-             * A NaN always produces a negative response to any test
+             * A NaN always produces a negative response to any com.test
              * and Infinity values cannot be "inside" any path so
              * they should return false as well.
              */

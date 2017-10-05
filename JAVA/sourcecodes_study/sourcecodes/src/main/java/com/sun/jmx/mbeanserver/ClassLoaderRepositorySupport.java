@@ -217,7 +217,7 @@ final class ClassLoaderRepositorySupport
                    recursion.  But the rule whereby the MLet only
                    consults loaders that precede it in the CLR (via
                    loadClassBefore) means that the recursion can't
-                   happen, and the test here caused some legitimate
+                   happen, and the com.test here caused some legitimate
                    classloading to fail.  For example, if you have
                    dependencies C->D->E with loaders {E D C} in the
                    CLR in that order, you would expect to be able to

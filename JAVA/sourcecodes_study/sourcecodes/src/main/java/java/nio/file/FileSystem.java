@@ -233,7 +233,7 @@ public abstract class FileSystem
      * therefore the set contains at least one element, "basic".
      *
      * <p> The {@link FileStore#supportsFileAttributeView(String)
-     * supportsFileAttributeView(String)} method may be used to test if an
+     * supportsFileAttributeView(String)} method may be used to com.test if an
      * underlying {@link FileStore} supports the file attributes identified by a
      * file attribute view.
      *
@@ -393,7 +393,7 @@ public abstract class FileSystem
      *   <li><p> Leading period<tt>&#47;</tt>dot characters in file name are
      *   treated as regular characters in match operations. For example,
      *   the {@code "*"} glob pattern matches file name {@code ".login"}.
-     *   The {@link Files#isHidden} method may be used to test whether a file
+     *   The {@link Files#isHidden} method may be used to com.test whether a file
      *   is considered hidden.
      *   </p></li>
      *

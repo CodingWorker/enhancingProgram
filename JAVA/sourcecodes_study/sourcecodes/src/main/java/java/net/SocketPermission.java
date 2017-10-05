@@ -225,7 +225,7 @@ public final class SocketPermission extends Permission
     private transient boolean defaultDeny = false;
 
     // true if this SocketPermission represents a hostname
-    // that failed our reverse mapping heuristic test
+    // that failed our reverse mapping heuristic com.test
     private transient boolean untrusted;
     private transient boolean trusted;
 
@@ -1002,7 +1002,7 @@ public final class SocketPermission extends Permission
     /**
      * Checks two SocketPermission objects for equality.
      * <P>
-     * @param obj the object to test for equality with this object.
+     * @param obj the object to com.test for equality with this object.
      *
      * @return true if <i>obj</i> is a SocketPermission, and has the
      *  same hostname, port range, and actions as this

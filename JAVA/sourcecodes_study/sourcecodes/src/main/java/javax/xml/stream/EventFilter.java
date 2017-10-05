@@ -43,7 +43,7 @@ public interface EventFilter {
    * will return true if this filter accepts this event and false
    * otherwise.
    *
-   * @param event the event to test
+   * @param event the event to com.test
    * @return true if this filter accepts this event, false otherwise
    */
   public boolean accept(XMLEvent event);

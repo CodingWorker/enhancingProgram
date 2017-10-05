@@ -335,7 +335,7 @@ public abstract class FloatControl extends Control {
      * @see #getUpdatePeriod
      */
     public void shift(float from, float to, int microseconds) {
-        // test "from" value, "to" value will be tested by setValue()
+        // com.test "from" value, "to" value will be tested by setValue()
         if (from < minimum) {
             throw new IllegalArgumentException("Requested value " + from
                     + " smaller than allowable minimum value " + minimum + ".");

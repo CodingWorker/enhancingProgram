@@ -109,8 +109,8 @@ public class RETest
     }
 
     /**
-     * Compile and test matching against a single expression
-     * @param expr Expression to compile and test
+     * Compile and com.test matching against a single expression
+     * @param expr Expression to compile and com.test
      */
     void runInteractiveTests(String expr)
     {
@@ -237,17 +237,17 @@ public class RETest
     }
 
     /*
-     * number in automated test
+     * number in automated com.test
      */
     int testCount = 0;
 
     /*
-     * Count of failures in automated test
+     * Count of failures in automated com.test
      */
     int failures = 0;
 
     /**
-     * Run automated tests in RETest.txt file (from Perl 4.0 test battery)
+     * Run automated tests in RETest.txt file (from Perl 4.0 com.test battery)
      * @exception Exception thrown in case of error
      */
     void runAutomatedTests(String testDocument) throws Exception
@@ -294,12 +294,12 @@ public class RETest
     }
 
     /**
-     * Run automated unit test
+     * Run automated unit com.test
      * @exception Exception thrown in case of error
      */
     void testOther() throws Exception
     {
-        // Serialization test 1: Compile regexp and serialize/deserialize it
+        // Serialization com.test 1: Compile regexp and serialize/deserialize it
         RE r = new RE("(a*)b");
         say("Serialized/deserialized (a*)b");
         ByteArrayOutputStream out = new ByteArrayOutputStream(128);
@@ -314,7 +314,7 @@ public class RETest
             showParens(r);
         }
 
-        // Serialization test 2: serialize/deserialize used regexp
+        // Serialization com.test 2: serialize/deserialize used regexp
         out.reset();
         say("Deserialized (a*)b");
         new ObjectOutputStream(out).writeObject(r);
@@ -438,7 +438,7 @@ public class RETest
 
         REProgram re1 = new REProgram(re1Instructions);
 
-        // Simple test of pre-compiled regular expressions
+        // Simple com.test of pre-compiled regular expressions
         RE r = new RE(re1);
         say("a*b");
         boolean result = r.match("aaab");
@@ -562,16 +562,16 @@ public class RETest
         }
         else
         {
-            // Bad test script
+            // Bad com.test script
             die("Test script error!");
             return false; //to please javac
         }
     }
 
     /**
-     * Finds next test description in a given script.
+     * Finds next com.test description in a given script.
      * @param br <code>BufferedReader</code> for a script file
-     * @return strign tag for next test description
+     * @return strign tag for next com.test description
      * @exception IOException if some io problems occured
      */
     private String findNextTest(BufferedReader br) throws IOException
@@ -600,14 +600,14 @@ public class RETest
     }
 
     /**
-     * Creates testcase for the next test description in the script file.
+     * Creates testcase for the next com.test description in the script file.
      * @param br <code>BufferedReader</code> for script file.
      * @return a new tescase or null.
      * @exception IOException if some io problems occured
      */
     private RETestCase getNextTestCase(BufferedReader br) throws IOException
     {
-        // Find next re test case
+        // Find next re com.test case
         final String tag = findNextTest(br);
 
         // Are we done?
@@ -619,7 +619,7 @@ public class RETest
         // Get expression
         final String expr = br.readLine();
 
-        // Get test information
+        // Get com.test information
         final String matchAgainst = br.readLine();
         final boolean badPattern = "ERR".equals(matchAgainst);
         boolean shouldMatch = false;
@@ -739,7 +739,7 @@ final class RETestCase
             // Check result, parens, and iterators
             if (checkResult(result) && (!shouldMatch || checkParens()))
             {
-                // test match(CharacterIterator, int)
+                // com.test match(CharacterIterator, int)
                 // for every CharacterIterator implementation.
                 log.append("   Match using StringCharacterIterator\n");
                 if (!tryMatchUsingCI(new StringCharacterIterator(toMatch)))
@@ -811,7 +811,7 @@ final class RETestCase
             // Compare expected result with actual
             if ("null".equals(parens[p]) && regexp.getParen(p) == null)
             {
-                // Consider "null" in test file equal to null
+                // Consider "null" in com.test file equal to null
                 continue;
             }
             if (!assertEquals(log, "Wrong register " + p, parens[p], regexp.getParen(p)))

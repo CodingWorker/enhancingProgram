@@ -47,7 +47,7 @@ import com.sun.corba.se.spi.transport.IIOPPrimaryToContactInfo;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
 
-// REVISIT: create a unit test for this class.
+// REVISIT: create a unit com.test for this class.
 
 public class CorbaContactInfoListIteratorImpl
     implements

@@ -310,7 +310,7 @@ public class CompositeType extends OpenType<CompositeData> {
         //
         CompositeData value = (CompositeData) obj;
 
-        // test value's CompositeType is assignable to this CompositeType instance
+        // com.test value's CompositeType is assignable to this CompositeType instance
         //
         CompositeType valueType = value.getCompositeType();
         return this.isAssignableFrom(valueType);
@@ -379,7 +379,7 @@ public class CompositeType extends OpenType<CompositeData> {
             return false;
         }
 
-        // Now, really test for equality between this CompositeType instance and the other
+        // Now, really com.test for equality between this CompositeType instance and the other
         //
 
         // their names should be equal

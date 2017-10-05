@@ -69,7 +69,7 @@ import java.io.Serializable;
  *     }
  * </PRE>
  * You can then write code that uses the <CODE>==</CODE> and <CODE>!=</CODE>
- * operators to test enumeration values; for example:
+ * operators to com.test enumeration values; for example:
  * <PRE>
  *     Bach theComposer;
  *     . . .
@@ -77,7 +77,7 @@ import java.io.Serializable;
  *         System.out.println ("The greatest composer of all time!");
  *     }
  * </PRE>
- * The <CODE>equals()</CODE> method for an enumeration class just does a test
+ * The <CODE>equals()</CODE> method for an enumeration class just does a com.test
  * for identical objects (<CODE>==</CODE>).
  * <P>
  * You can convert an enumeration value to a string by calling {@link

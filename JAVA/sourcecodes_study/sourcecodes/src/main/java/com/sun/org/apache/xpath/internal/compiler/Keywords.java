@@ -128,22 +128,22 @@ public class Keywords {
     private static final String FROM_SELF_ABBREVIATED_STRING = ".";
 
     /**
-     * comment node test string.
+     * comment node com.test string.
      */
     private static final String NODETYPE_COMMENT_STRING = "comment";
 
     /**
-     * text node test string.
+     * text node com.test string.
      */
     private static final String NODETYPE_TEXT_STRING = "text";
 
     /**
-     * processing-instruction node test string.
+     * processing-instruction node com.test string.
      */
     private static final String NODETYPE_PI_STRING = "processing-instruction";
 
     /**
-     * Any node test string.
+     * Any node com.test string.
      */
     private static final String NODETYPE_NODE_STRING = "node";
 

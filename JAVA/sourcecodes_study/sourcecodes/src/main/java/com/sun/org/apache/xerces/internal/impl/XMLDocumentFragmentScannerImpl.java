@@ -596,7 +596,7 @@ public class XMLDocumentFragmentScannerImpl
         fStrictURI = componentManager.getFeature(STANDARD_URI_CONFORMANT, false);
 
         resetCommon();
-        //fEntityManager.test();
+        //fEntityManager.com.test();
     } // reset(XMLComponentManager)
 
 
@@ -630,7 +630,7 @@ public class XMLDocumentFragmentScannerImpl
         //we dont need to do this -- nb.
         //setScannerState(SCANNER_STATE_CONTENT);
         //setDriver(fContentDriver);
-        //fEntityManager.test();
+        //fEntityManager.com.test();
 
          // JAXP 1.5 features and properties
         XMLSecurityPropertyManager spm = (XMLSecurityPropertyManager)

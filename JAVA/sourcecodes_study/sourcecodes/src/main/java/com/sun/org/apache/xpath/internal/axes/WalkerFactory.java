@@ -175,7 +175,7 @@ public class WalkerFactory
       if (DEBUG_ITERATOR_CREATION)
         diagnoseIterator("SelfIteratorNoPredicate", analysis, compiler);
 
-      // Then use a simple iteration of the attributes, with node test
+      // Then use a simple iteration of the attributes, with node com.test
       // and predicate testing.
       iter = new SelfIteratorNoPredicate(compiler, opPos, analysis);
     }
@@ -189,7 +189,7 @@ public class WalkerFactory
         if (DEBUG_ITERATOR_CREATION)
           diagnoseIterator("ChildIterator", analysis, compiler);
 
-        // Use simple child iteration without any test.
+        // Use simple child iteration without any com.test.
         iter = new ChildIterator(compiler, opPos, analysis);
       }
       else
@@ -197,7 +197,7 @@ public class WalkerFactory
         if (DEBUG_ITERATOR_CREATION)
           diagnoseIterator("ChildTestIterator", analysis, compiler);
 
-        // Else use simple node test iteration with predicate test.
+        // Else use simple node com.test iteration with predicate com.test.
         iter = new ChildTestIterator(compiler, opPos, analysis);
       }
     }
@@ -207,7 +207,7 @@ public class WalkerFactory
       if (DEBUG_ITERATOR_CREATION)
         diagnoseIterator("AttributeIterator", analysis, compiler);
 
-      // Then use a simple iteration of the attributes, with node test
+      // Then use a simple iteration of the attributes, with node com.test
       // and predicate testing.
       iter = new AttributeIterator(compiler, opPos, analysis);
     }
@@ -219,7 +219,7 @@ public class WalkerFactory
         if (false || DEBUG_ITERATOR_CREATION)
           diagnoseIterator("OneStepIteratorForward", analysis, compiler);
 
-        // Then use a simple iteration of the attributes, with node test
+        // Then use a simple iteration of the attributes, with node com.test
         // and predicate testing.
         iter = new OneStepIteratorForward(compiler, opPos, analysis);
       }
@@ -228,7 +228,7 @@ public class WalkerFactory
         if (false || DEBUG_ITERATOR_CREATION)
           diagnoseIterator("OneStepIterator", analysis, compiler);
 
-        // Then use a simple iteration of the attributes, with node test
+        // Then use a simple iteration of the attributes, with node com.test
         // and predicate testing.
         iter = new OneStepIterator(compiler, opPos, analysis);
       }
@@ -570,7 +570,7 @@ public class WalkerFactory
 
     while (OpCodes.ENDOP != (stepType = compiler.getOp(stepOpCodePos)))
     {
-      // The DescendantIterator can only do one node test.  If there's more
+      // The DescendantIterator can only do one node com.test.  If there's more
       // than one, use another iterator.
       if(nodeTestType != OpCodes.NODETYPE_NODE && nodeTestType != OpCodes.NODETYPE_ROOT)
         return false;
@@ -796,7 +796,7 @@ public class WalkerFactory
   /**
    * Read a <a href="http://www.w3.org/TR/xpath#location-paths">LocationPath</a>
    * as a generalized match pattern.  What this means is that the LocationPath
-   * is read backwards, as a test on a given node, to see if it matches the
+   * is read backwards, as a com.test on a given node, to see if it matches the
    * criteria of the selection, and ends up at the context node.  Essentially,
    * this is a backwards query from a given node, to find the context node.
    * <p>So, the selection "foo/daz[2]" is, in non-abreviated expanded syntax,
@@ -1669,7 +1669,7 @@ public class WalkerFactory
         if(foundWildAttribute) // Maybe not needed, but be safe.
           return false;
 
-        // This doesn't seem to work as a test for wild card.  Hmph.
+        // This doesn't seem to work as a com.test for wild card.  Hmph.
         // int nodeTestType = compiler.getStepTestType(stepOpCodePos);
 
         String localName = compiler.getStepLocalName(stepOpCodePos);
@@ -1815,7 +1815,7 @@ public class WalkerFactory
   public static final int BIT_ANY_DESCENDANT_FROM_ROOT = (0x00001000 << 17);
 
   /**
-   * Bit is on if any of the walkers contain an node() test.  This is
+   * Bit is on if any of the walkers contain an node() com.test.  This is
    *  really only useful if the count is 1.
    */
   public static final int BIT_NODETEST_ANY = (0x00001000 << 18);

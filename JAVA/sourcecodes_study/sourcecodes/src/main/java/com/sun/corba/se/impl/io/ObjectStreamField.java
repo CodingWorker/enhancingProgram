@@ -184,7 +184,7 @@ public class ObjectStreamField implements Comparable
     }
 
     /**
-     * test if this field is a primitive or not.
+     * com.test if this field is a primitive or not.
      */
     public boolean isPrimitive() {
         return (type != '[' && type != 'L');

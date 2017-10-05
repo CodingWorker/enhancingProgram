@@ -114,7 +114,7 @@ public class SocketOrChannelConnectionImpl
     }
 
     // REVISIT:
-    // protected for test: genericRPCMSGFramework.IIOPConnection constructor.
+    // protected for com.test: genericRPCMSGFramework.IIOPConnection constructor.
     protected CorbaContactInfo contactInfo;
     protected Acceptor acceptor;
     protected ConnectionCache connectionCache;
@@ -167,7 +167,7 @@ public class SocketOrChannelConnectionImpl
     // SelectorThread and WorkerThread.
     protected CorbaMessageMediator partialMessageMediator = null;
 
-    // Used in genericRPCMSGFramework test.
+    // Used in genericRPCMSGFramework com.test.
     protected SocketOrChannelConnectionImpl(ORB orb)
     {
         this.orb = orb;
@@ -719,7 +719,7 @@ public class SocketOrChannelConnectionImpl
         throws IOException
     {
         if (shouldUseDirectByteBuffers()) {
-            /* NOTE: cannot perform this test.  If one ask for a
+            /* NOTE: cannot perform this com.test.  If one ask for a
                ByteBuffer from the pool which is bigger than the size
                of ByteBuffers managed by the pool, then the pool will
                return a HeapByteBuffer.

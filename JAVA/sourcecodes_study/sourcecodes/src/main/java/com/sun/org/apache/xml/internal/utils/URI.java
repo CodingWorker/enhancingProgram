@@ -1337,7 +1337,7 @@ public class URI implements Serializable
   /**
    * Determines if the passed-in Object is equivalent to this URI.
    *
-   * @param p_test the Object to test for equality.
+   * @param p_test the Object to com.test for equality.
    *
    * @return true if p_test is a URI with all values equal to this
    *         URI, false otherwise

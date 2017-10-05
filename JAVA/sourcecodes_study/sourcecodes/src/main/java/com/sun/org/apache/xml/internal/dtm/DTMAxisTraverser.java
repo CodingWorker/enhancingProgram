@@ -90,7 +90,7 @@ public abstract class DTMAxisTraverser
    * @param current The current node of the traversal. This is the last known
    * location in the traversal, typically the node-handle returned by the
    * previous traversal step. For the first traversal step, context
-   * should be set equal to current. Note that in order to test whether
+   * should be set equal to current. Note that in order to com.test whether
    * context is in the set, you must use the first() method instead.
    *
    * @return the next node in the iteration, or DTM.NULL.
@@ -107,7 +107,7 @@ public abstract class DTMAxisTraverser
    * @param current The current node of the traversal. This is the last known
    * location in the traversal, typically the node-handle returned by the
    * previous traversal step. For the first traversal step, context
-   * should be set equal to current. Note that in order to test whether
+   * should be set equal to current. Note that in order to com.test whether
    * context is in the set, you must use the first() method instead.
    * @param extendedTypeID The extended type ID that must match.
    *

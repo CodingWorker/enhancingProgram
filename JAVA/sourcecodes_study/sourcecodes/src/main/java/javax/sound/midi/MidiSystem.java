@@ -1426,7 +1426,7 @@ public class MidiSystem {
         it implements neither Synthesizer nor Transmitter, and if it can
         provide at least one Receiver or Transmitter, respectively.
 
-        @param device the MidiDevice to test
+        @param device the MidiDevice to com.test
         @param allowSynthesizer if true, Synthesizers are considered
         appropriate. Otherwise only pure MidiDevices are considered
         appropriate (unless allowSequencer is true). This flag only has an

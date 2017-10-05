@@ -625,7 +625,7 @@ class XPStyle {
          * @param dh  the height of the area to fill, may cause
          *                  the image to be stretched or tiled
          * @param state which state to paint
-         * @param borderFill should test if the component uses a border fill
+         * @param borderFill should com.test if the component uses a border fill
                             and skip painting if it is
          */
         void paintSkin(Graphics g, int dx, int dy, int dw, int dh, State state,

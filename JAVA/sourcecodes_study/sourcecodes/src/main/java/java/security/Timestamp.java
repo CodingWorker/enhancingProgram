@@ -117,7 +117,7 @@ public final class Timestamp implements Serializable {
      * timestamp. Two timestamps are considered equal if the date and time of
      * their timestamp's and their signer's certificate paths are equal.
      *
-     * @param obj the object to test for equality with this timestamp.
+     * @param obj the object to com.test for equality with this timestamp.
      *
      * @return true if the timestamp are considered equal, false otherwise.
      */

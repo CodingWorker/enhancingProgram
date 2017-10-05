@@ -101,7 +101,7 @@ public class DesktopProperty implements UIDefaults.ActiveValue {
      */
     private static void updateAllUIs() {
         // Check if the current UI is WindowsLookAndfeel and flush the XP style map.
-        // Note: Change the package test if this class is moved to a different package.
+        // Note: Change the package com.test if this class is moved to a different package.
         Class uiClass = UIManager.getLookAndFeel().getClass();
         if (uiClass.getPackage().equals(DesktopProperty.class.getPackage())) {
             XPStyle.invalidateStyle();

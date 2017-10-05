@@ -290,7 +290,7 @@ public class FontRenderContext {
     /**
      * Return true if obj is an instance of FontRenderContext and has the same
      * transform, antialiasing, and fractional metrics values as this.
-     * @param obj the object to test for equality
+     * @param obj the object to com.test for equality
      * @return <code>true</code> if the specified object is equal to
      *         this <code>FontRenderContext</code>; <code>false</code>
      *         otherwise.
@@ -307,7 +307,7 @@ public class FontRenderContext {
     /**
      * Return true if rhs has the same transform, antialiasing,
      * and fractional metrics values as this.
-     * @param rhs the <code>FontRenderContext</code> to test for equality
+     * @param rhs the <code>FontRenderContext</code> to com.test for equality
      * @return <code>true</code> if <code>rhs</code> is equal to
      *         this <code>FontRenderContext</code>; <code>false</code>
      *         otherwise.

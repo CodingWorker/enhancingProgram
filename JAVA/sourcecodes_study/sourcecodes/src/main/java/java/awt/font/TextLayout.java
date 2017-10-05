@@ -2488,7 +2488,7 @@ public final class TextLayout implements Cloneable {
             }
         }
 
-        // revised hit test
+        // revised hit com.test
         // the original seems too complex and fails miserably with italic offsets
         // the natural tendency is to move towards the character you want to hit
         // so we'll just measure distance to the center of each character's visual
@@ -2584,7 +2584,7 @@ public final class TextLayout implements Cloneable {
      * Returns <code>true</code> if the specified <code>Object</code> is a
      * <code>TextLayout</code> object and if the specified <code>Object</code>
      * equals this <code>TextLayout</code>.
-     * @param obj an <code>Object</code> to test for equality
+     * @param obj an <code>Object</code> to com.test for equality
      * @return <code>true</code> if the specified <code>Object</code>
      *      equals this <code>TextLayout</code>; <code>false</code>
      *      otherwise.

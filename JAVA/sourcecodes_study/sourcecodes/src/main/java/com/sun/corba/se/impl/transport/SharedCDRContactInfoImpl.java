@@ -50,9 +50,9 @@ public class SharedCDRContactInfoImpl
     extends
         CorbaContactInfoBase
 {
-    // This is only necessary for the pi.clientrequestinfo test.
+    // This is only necessary for the pi.clientrequestinfo com.test.
     // It tests that request ids are different.
-    // Rather than rewrite the test, just fake it.
+    // Rather than rewrite the com.test, just fake it.
     private static int requestId = 0;
 
     protected ORBUtilSystemException wrapper;

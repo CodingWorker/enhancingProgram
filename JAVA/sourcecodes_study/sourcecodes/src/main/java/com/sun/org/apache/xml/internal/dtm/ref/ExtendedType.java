@@ -103,7 +103,7 @@ public final class ExtendedType
     /**
      * Test if this ExtendedType object is equal to the given ExtendedType.
      *
-     * @param other The other ExtendedType object to test for equality
+     * @param other The other ExtendedType object to com.test for equality
      * @return true if the two ExtendedType objects are equal.
      */
     public boolean equals(ExtendedType other)

@@ -98,8 +98,8 @@ import static sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION;
  * For example, the following produces two {@code DataFlavors} that
  * are considered identical:
  * <pre>
- *   DataFlavor flavor1 = new DataFlavor(Object.class, &quot;X-test/test; class=&lt;java.lang.Object&gt;; foo=bar&quot;);
- *   DataFlavor flavor2 = new DataFlavor(Object.class, &quot;X-test/test; class=&lt;java.lang.Object&gt;; x=y&quot;);
+ *   DataFlavor flavor1 = new DataFlavor(Object.class, &quot;X-com.test/com.test; class=&lt;java.lang.Object&gt;; foo=bar&quot;);
+ *   DataFlavor flavor2 = new DataFlavor(Object.class, &quot;X-com.test/com.test; class=&lt;java.lang.Object&gt;; x=y&quot;);
  *   // The following returns true.
  *   flavor1.equals(flavor2);
  * </pre>

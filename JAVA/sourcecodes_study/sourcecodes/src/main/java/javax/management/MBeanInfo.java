@@ -540,7 +540,7 @@ public class MBeanInfo implements Cloneable, Serializable, DescriptorRead {
      * to be immutable.  The subclass <code>subclass</code> is
      * considered immutable if it does not override any public method
      * of <code>immutableClass</code> whose name begins with "get".
-     * This is obviously not an infallible test for immutability,
+     * This is obviously not an infallible com.test for immutability,
      * but it works for the public interfaces of the MBean*Info classes.
     */
     static boolean arrayGettersSafe(Class<?> subclass, Class<?> immutableClass) {

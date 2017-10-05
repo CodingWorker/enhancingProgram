@@ -225,7 +225,7 @@ public interface DTM
   public DTMAxisIterator getTypedAxisIterator(final int axis, final int type);
 
   /**
-   * Given a node handle, test if it has child nodes.
+   * Given a node handle, com.test if it has child nodes.
    * <p> %REVIEW% This is obviously useful at the DOM layer, where it
    * would permit testing this without having to create a proxy
    * node. It's less useful in the DTM API, where
@@ -558,8 +558,8 @@ public interface DTM
   /**
    * Tests whether DTM DOM implementation implements a specific feature and
    * that feature is supported by this node.
-   * @param feature The name of the feature to test.
-   * @param version This is the version number of the feature to test.
+   * @param feature The name of the feature to com.test.
+   * @param version This is the version number of the feature to com.test.
    *   If the version is not
    *   specified, supporting any version of the feature will cause the
    *   method to return <code>true</code>.

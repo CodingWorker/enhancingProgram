@@ -785,7 +785,7 @@ public final class Double extends Number implements Comparable<Double> {
      *     {@code false}.
      * <li>If {@code d1} represents {@code +0.0} while
      *     {@code d2} represents {@code -0.0}, or vice versa,
-     *     the {@code equal} test has the value {@code false},
+     *     the {@code equal} com.test has the value {@code false},
      *     even though {@code +0.0==-0.0} has the value {@code true}.
      * </ul>
      * This definition allows hash tables to operate properly.

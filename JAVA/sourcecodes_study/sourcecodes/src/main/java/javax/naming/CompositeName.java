@@ -264,7 +264,7 @@ public class CompositeName implements Name {
       * Two composite names are equal if each component in one is equal
       * to the corresponding component in the other. This implies
       * both have the same number of components, and each component's
-      * equals() test against the corresponding component in the other name
+      * equals() com.test against the corresponding component in the other name
       * returns true.
       *
       * @param  obj     The possibly null object to compare against.

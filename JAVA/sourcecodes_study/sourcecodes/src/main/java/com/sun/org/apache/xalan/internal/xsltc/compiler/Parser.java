@@ -655,9 +655,9 @@ public class Parser implements Constants, ContentHandler {
             new String[] {"id", "version", "extension-element-prefixes",
                 "exclude-result-prefixes"});
         initAttrTable("text", new String[] {"disable-output-escaping"});
-        initAttrTable("if", new String[] {"test"});
+        initAttrTable("if", new String[] {"com.test"});
         initAttrTable("choose", new String[] {});
-        initAttrTable("when", new String[] {"test"});
+        initAttrTable("when", new String[] {"com.test"});
         initAttrTable("otherwise", new String[] {});
         initAttrTable("for-each", new String[] {"select"});
         initAttrTable("message", new String[] {"terminate"});

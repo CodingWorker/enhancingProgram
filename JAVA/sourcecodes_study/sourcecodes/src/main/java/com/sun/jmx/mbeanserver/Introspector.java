@@ -232,7 +232,7 @@ public class Introspector {
      * Tests the given interface class for being a compliant MXBean interface.
      * A compliant MXBean interface is any publicly accessible interface
      * following the {@link MXBean} conventions.
-     * @param interfaceClass An interface class to test for the MXBean compliance
+     * @param interfaceClass An interface class to com.test for the MXBean compliance
      * @throws NotCompliantMBeanException Thrown when the tested interface
      * is not public or contradicts the {@link MXBean} conventions.
      */
@@ -245,7 +245,7 @@ public class Introspector {
      * Tests the given interface class for being a compliant MBean interface.
      * A compliant MBean interface is any publicly accessible interface
      * following the {@code MBean} conventions.
-     * @param interfaceClass An interface class to test for the MBean compliance
+     * @param interfaceClass An interface class to com.test for the MBean compliance
      * @throws NotCompliantMBeanException Thrown when the tested interface
      * is not public or contradicts the {@code MBean} conventions.
      */

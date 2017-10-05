@@ -494,7 +494,7 @@ public final class AttributeSetUtilities {
      * implements the given interface, which is assumed to be interface {@link
      * Attribute Attribute} or a subinterface thereof.
      *
-     * @param  object     Object to test.
+     * @param  object     Object to com.test.
      * @param  interfaceName  Interface the object must implement.
      *
      * @return  If <CODE>object</CODE> is a {@link java.lang.Class Class}
@@ -526,7 +526,7 @@ public final class AttributeSetUtilities {
      * is assumed to be interface {@link Attribute Attribute} or a subinterface
      * thereof.
      *
-     * @param  object     Object to test.
+     * @param  object     Object to com.test.
      * @param  interfaceName  Interface of which the object must be an instance.
      *
      * @return  If <CODE>object</CODE> is an instance of
@@ -558,8 +558,8 @@ public final class AttributeSetUtilities {
      * category of the given attribute value object. If so, this method
      * returns doing nothing. If not, this method throws an exception.
      *
-     * @param  category   Attribute category to test.
-     * @param  attribute  Attribute value to test.
+     * @param  category   Attribute category to com.test.
+     * @param  attribute  Attribute value to com.test.
      *
      * @exception  NullPointerException
      *     (unchecked exception) Thrown if the <CODE>category</CODE> is

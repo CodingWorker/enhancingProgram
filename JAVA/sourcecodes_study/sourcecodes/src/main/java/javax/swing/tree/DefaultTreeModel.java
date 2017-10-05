@@ -101,7 +101,7 @@ public class DefaultTreeModel implements Serializable, TreeModel {
     }
 
     /**
-      * Sets whether or not to test leafness by asking getAllowsChildren()
+      * Sets whether or not to com.test leafness by asking getAllowsChildren()
       * or isLeaf() to the TreeNodes.  If newvalue is true, getAllowsChildren()
       * is messaged, otherwise isLeaf() is messaged.
       */
@@ -188,7 +188,7 @@ public class DefaultTreeModel implements Serializable, TreeModel {
 
     /**
      * Returns whether the specified node is a leaf node.
-     * The way the test is performed depends on the
+     * The way the com.test is performed depends on the
      * <code>askAllowsChildren</code> setting.
      *
      * @param node the node to check

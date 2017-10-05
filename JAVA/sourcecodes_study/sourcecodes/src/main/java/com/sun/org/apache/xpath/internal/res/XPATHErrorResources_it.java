@@ -660,12 +660,12 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_EXPECTED_LOC_STEP,
        "\u00C8 previsto un passo di posizione dopo il token '/' o '//'."},
 
-  // Note to translators:  A node test is part of an XPath expression that is
-  // used to test for particular kinds of nodes.  In this case, a node test that
+  // Note to translators:  A node com.test is part of an XPath expression that is
+  // used to com.test for particular kinds of nodes.  In this case, a node com.test that
   // consists of an NCName followed by a colon and an asterisk or that consists
   // of a QName was expected, but was not found.
   { ER_EXPECTED_NODE_TEST,
-       "\u00C8 previsto un test del nodo che corrisponda a NCName:* o a QName."},
+       "\u00C8 previsto un com.test del nodo che corrisponda a NCName:* o a QName."},
 
   // Note to translators:  A step pattern is part of an XPath expression.
   // The message indicates that syntactically such an expression was expected,

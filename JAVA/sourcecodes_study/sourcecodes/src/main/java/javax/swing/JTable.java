@@ -384,13 +384,13 @@ public class JTable extends JComponent implements TableModelListener, Scrollable
     private PropertyChangeListener editorRemover = null;
     /**
      * The last value of getValueIsAdjusting from the column selection models
-     * columnSelectionChanged notification. Used to test if a repaint is
+     * columnSelectionChanged notification. Used to com.test if a repaint is
      * needed.
      */
     private boolean columnSelectionAdjusting;
     /**
      * The last value of getValueIsAdjusting from the row selection models
-     * valueChanged notification. Used to test if a repaint is needed.
+     * valueChanged notification. Used to com.test if a repaint is needed.
      */
     private boolean rowSelectionAdjusting;
 

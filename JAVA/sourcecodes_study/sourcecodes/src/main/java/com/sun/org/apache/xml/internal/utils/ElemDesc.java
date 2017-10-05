@@ -131,8 +131,8 @@ class ElemDesc
    * This might more properly be called areFlagsSet(). It accepts an
    * integer (being used as a bitvector) and checks whether all the
    * corresponding bits are set in our internal flags. Note that this
-   * test is performed as a bitwise AND, not an equality test, so a
-   * 0 bit in the input means "don't test", not "must be set false".
+   * com.test is performed as a bitwise AND, not an equality com.test, so a
+   * 0 bit in the input means "don't com.test", not "must be set false".
    *
    * @param flags Vector of flags to compare against this element's flags
    *

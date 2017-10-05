@@ -615,11 +615,11 @@ public class MBeanPermission extends Permission {
         /*
          * BE CAREFUL HERE! PARSING ORDER IS IMPORTANT IN THIS ALGORITHM.
          *
-         * The 'string length' test must be performed for the lengthiest
+         * The 'string length' com.test must be performed for the lengthiest
          * strings first.
          *
-         * In this permission if the "unregisterMBean" string length test is
-         * performed after the "registerMBean" string length test the algorithm
+         * In this permission if the "unregisterMBean" string length com.test is
+         * performed after the "registerMBean" string length com.test the algorithm
          * considers the 'unregisterMBean' action as being the 'registerMBean'
          * action and a parsing error is returned.
          */

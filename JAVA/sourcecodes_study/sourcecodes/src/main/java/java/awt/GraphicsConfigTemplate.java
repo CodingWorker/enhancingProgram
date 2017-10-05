@@ -97,7 +97,7 @@ public abstract class GraphicsConfigTemplate implements Serializable {
      * not the specified <code>GraphicsConfiguration</code> can be
      * used to create a drawing surface that supports the indicated
      * features.
-     * @param gc the <code>GraphicsConfiguration</code> object to test
+     * @param gc the <code>GraphicsConfiguration</code> object to com.test
      * @return <code>true</code> if this
      * <code>GraphicsConfiguration</code> object can be used to create
      * surfaces that support the indicated features;

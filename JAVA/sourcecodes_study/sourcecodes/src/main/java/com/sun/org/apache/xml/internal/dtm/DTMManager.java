@@ -317,7 +317,7 @@ public abstract class DTMManager
   // -------------------- private methods --------------------
 
    /**
-   * Temp debug code - this will be removed after we test everything
+   * Temp debug code - this will be removed after we com.test everything
    */
   private static boolean debug;
 

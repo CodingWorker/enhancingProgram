@@ -356,7 +356,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
     /**
      * Indicates whether the given Class performs custom or
      * default marshaling.
-     * @param clz The class to test for custom marshaling.
+     * @param clz The class to com.test for custom marshaling.
      * @return True if the class performs custom marshaling, false
      * if it does not.
      **/

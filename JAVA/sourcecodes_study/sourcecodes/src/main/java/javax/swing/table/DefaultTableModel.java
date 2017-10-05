@@ -613,7 +613,7 @@ public class DefaultTableModel extends AbstractTableModel implements Serializabl
      */
     public String getColumnName(int column) {
         Object id = null;
-        // This test is to cover the case when
+        // This com.test is to cover the case when
         // getColumnCount has been subclassed by mistake ...
         if (column < columnIdentifiers.size() && (column >= 0)) {
             id = columnIdentifiers.elementAt(column);

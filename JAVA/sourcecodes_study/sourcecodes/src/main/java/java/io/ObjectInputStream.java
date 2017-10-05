@@ -1568,7 +1568,7 @@ public class ObjectInputStream
             } else if (!Proxy.isProxyClass(cl)) {
                 throw new InvalidClassException("Not a proxy");
             } else {
-                // ReflectUtil.checkProxyPackageAccess makes a test
+                // ReflectUtil.checkProxyPackageAccess makes a com.test
                 // equivalent to isCustomSubclass so there's no need
                 // to condition this call to isCustomSubclass == true here.
                 ReflectUtil.checkProxyPackageAccess(

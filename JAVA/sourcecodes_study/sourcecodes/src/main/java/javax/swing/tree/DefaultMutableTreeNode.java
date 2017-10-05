@@ -427,7 +427,7 @@ public class DefaultMutableTreeNode implements Cloneable,
      *
      * @see             #isNodeDescendant
      * @see             #getSharedAncestor
-     * @param   anotherNode     node to test as an ancestor of this node
+     * @param   anotherNode     node to com.test as an ancestor of this node
      * @return  true if this node is a descendant of <code>anotherNode</code>
      */
     public boolean isNodeAncestor(TreeNode anotherNode) {
@@ -456,7 +456,7 @@ public class DefaultMutableTreeNode implements Cloneable,
      *
      * @see     #isNodeAncestor
      * @see     #getSharedAncestor
-     * @param   anotherNode     node to test as descendant of this node
+     * @param   anotherNode     node to com.test as descendant of this node
      * @return  true if this node is an ancestor of <code>anotherNode</code>
      */
     public boolean isNodeDescendant(DefaultMutableTreeNode anotherNode) {
@@ -971,7 +971,7 @@ public class DefaultMutableTreeNode implements Cloneable,
      * same parent as) this node.  A node is its own sibling.  If
      * <code>anotherNode</code> is null, returns false.
      *
-     * @param   anotherNode     node to test as sibling of this node
+     * @param   anotherNode     node to com.test as sibling of this node
      * @return  true if <code>anotherNode</code> is a sibling of this node
      */
     public boolean isNodeSibling(TreeNode anotherNode) {

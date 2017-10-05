@@ -367,7 +367,7 @@ class Crypt {
     }
 
     /**
-     * program to test the crypt routine.
+     * program to com.test the crypt routine.
      *
      * The first parameter is the cleartext password, the second is
      * the salt to use. The salt should be two characters from the

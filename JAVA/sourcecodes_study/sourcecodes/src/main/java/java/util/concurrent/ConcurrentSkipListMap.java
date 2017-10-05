@@ -460,7 +460,7 @@ public class ConcurrentSkipListMap<K,V> extends AbstractMap<K,V>
          * actually called in any current code checking for markers
          * because callers will have already read value field and need
          * to use that read (not another done here) and so directly
-         * test if value points to node.
+         * com.test if value points to node.
          *
          * @return true if this node is a marker node
          */
@@ -855,7 +855,7 @@ public class ConcurrentSkipListMap<K,V> extends AbstractMap<K,V>
         }
 
         int rnd = ThreadLocalRandom.nextSecondarySeed();
-        if ((rnd & 0x80000001) == 0) { // test highest and lowest bits
+        if ((rnd & 0x80000001) == 0) { // com.test highest and lowest bits
             int level = 1, max;
             while (((rnd >>>= 1) & 1) != 0)
                 ++level;

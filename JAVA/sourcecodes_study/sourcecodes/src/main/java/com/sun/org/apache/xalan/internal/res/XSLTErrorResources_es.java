@@ -507,7 +507,7 @@ public class XSLTErrorResources_es extends ListResourceBundle
      "{0} necesita el atributo: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} debe tener un atributo ''test''."},
+      "{0} debe tener un atributo ''com.test''."},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "Valor err\u00F3neo en el atributo level: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_es extends ListResourceBundle
      "{0} necesita un atributo select."},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when debe tener un atributo 'test'."},
+      "xsl:when debe tener un atributo 'com.test'."},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param debe tener un atributo 'name'."},

@@ -133,7 +133,7 @@ public class Beans {
      * different environment than applets running inside browsers.  In
      * particular, bean applets have no access to "parameters", so they may
      * wish to provide property get/set methods to set parameter values.  We
-     * advise bean-applet developers to test their bean-applets against both
+     * advise bean-applet developers to com.test their bean-applets against both
      * the JDK appletviewer (for a reference browser environment) and the
      * BDK BeanBox (for a reference bean container).
      *

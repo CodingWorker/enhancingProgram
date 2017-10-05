@@ -265,7 +265,7 @@ public class OpenMBeanInfoSupport
             return false;
         }
 
-        // Now, really test for equality between this OpenMBeanInfo
+        // Now, really com.test for equality between this OpenMBeanInfo
         // implementation and the other:
         //
 

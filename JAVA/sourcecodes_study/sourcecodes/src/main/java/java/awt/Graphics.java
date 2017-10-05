@@ -1203,10 +1203,10 @@ public abstract class Graphics {
      * methods of this graphics context as well as the clipping
      * associated with the device or image bounds and window visibility.
      *
-     * @param x the x coordinate of the rectangle to test against the clip
-     * @param y the y coordinate of the rectangle to test against the clip
-     * @param width the width of the rectangle to test against the clip
-     * @param height the height of the rectangle to test against the clip
+     * @param x the x coordinate of the rectangle to com.test against the clip
+     * @param y the y coordinate of the rectangle to com.test against the clip
+     * @param width the width of the rectangle to com.test against the clip
+     * @param height the height of the rectangle to com.test against the clip
      * @return <code>true</code> if the specified rectangle intersects
      *         the bounds of the current clip; <code>false</code>
      *         otherwise.

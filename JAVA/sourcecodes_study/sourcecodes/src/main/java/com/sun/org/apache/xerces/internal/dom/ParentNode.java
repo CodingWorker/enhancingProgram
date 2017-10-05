@@ -865,7 +865,7 @@ public abstract class ParentNode
         if (!super.isEqualNode(arg)) {
             return false;
         }
-        // there are many ways to do this test, and there isn't any way
+        // there are many ways to do this com.test, and there isn't any way
         // better than another. Performance may vary greatly depending on
         // the implementations involved. This one should work fine for us.
         Node child1 = getFirstChild();

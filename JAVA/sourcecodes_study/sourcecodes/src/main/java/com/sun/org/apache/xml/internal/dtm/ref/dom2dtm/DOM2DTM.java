@@ -550,7 +550,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
                     // NOTE that XML Namespaces were not originally
                     // defined as being namespace-aware (grrr), and
                     // while the W3C is planning to fix this it's
-                    // safer for now to test the QName and trust the
+                    // safer for now to com.test the QName and trust the
                     // parsers to prevent anyone from redefining the
                     // reserved xmlns: prefix
                     if(!m_processedFirstElement
@@ -653,7 +653,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * this call to handle nodes which would be in this DTM but
    * have not yet been built, which might or might not be a Good Thing.</p>
    *
-   * %REVIEW% This relies on being able to test node-identity via
+   * %REVIEW% This relies on being able to com.test node-identity via
    * object-identity. DTM2DOM proxying is a great example of a case where
    * that doesn't work. DOM Level 3 will provide the isSameNode() method
    * to fix that, but until then this is going to be flaky.
@@ -693,7 +693,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    *
    * <p>%OPT% This will be pretty slow.</p>
    *
-   * %REVIEW% This relies on being able to test node-identity via
+   * %REVIEW% This relies on being able to com.test node-identity via
    * object-identity. DTM2DOM proxying is a great example of a case where
    * that doesn't work. DOM Level 3 will provide the isSameNode() method
    * to fix that, but until then this is going to be flaky.
@@ -775,7 +775,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
                                 // If not we need a separate function... which may be desirable
                                 // architecturally, but which is ugly from a code point of view.
                                 // (If we REALLY insist on it, this code should become a subroutine
-                                // of both -- retrieve the node, then test if the type matches
+                                // of both -- retrieve the node, then com.test if the type matches
                                 // what you're looking for.)
         if (type == DTM.ATTRIBUTE_NODE || type==DTM.NAMESPACE_NODE)
         {

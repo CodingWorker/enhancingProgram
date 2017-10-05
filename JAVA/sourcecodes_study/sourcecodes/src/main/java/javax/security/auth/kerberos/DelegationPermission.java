@@ -156,7 +156,7 @@ public final class DelegationPermission extends BasicPermission
     /**
      * Checks two DelegationPermission objects for equality.
      * <P>
-     * @param obj the object to test for equality with this object.
+     * @param obj the object to com.test for equality with this object.
      *
      * @return true if <i>obj</i> is a DelegationPermission, and
      *  has the same subordinate and service principal as this.

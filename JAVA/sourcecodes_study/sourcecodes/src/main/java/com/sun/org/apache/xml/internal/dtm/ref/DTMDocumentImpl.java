@@ -493,7 +493,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 
     // %TBD% I'm assuming that DTM will require resequencing of
     // NS decls before other attrs, hence two passes are taken.
-    // %TBD% Is there an easier way to test for NSDecl?
+    // %TBD% Is there an easier way to com.test for NSDecl?
     int nAtts=(atts==null) ? 0 : atts.getLength();
     // %TBD% Countdown is more efficient if nobody cares about sequence.
     for(int i=nAtts-1;i>=0;--i)
@@ -986,7 +986,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 
         // ========= Document Navigation Functions =========
 
-        /** Given a node handle, test if it has child nodes.
+        /** Given a node handle, com.test if it has child nodes.
          * <p> %REVIEW% This is obviously useful at the DOM layer, where it
          * would permit testing this without having to create a proxy
          * node. It's less useful in the DTM API, where
@@ -1064,7 +1064,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
         public int getLastChild(int nodeHandle) {
                 // ###shs put trace/debug later
                 nodeHandle &= NODEHANDLE_MASK;
-                // do not need to test node type since getFirstChild does that
+                // do not need to com.test node type since getFirstChild does that
                 int lastChild = NULL;
                 for (int nextkid = getFirstChild(nodeHandle); nextkid != NULL;
                                 nextkid = getNextSibling(nextkid)) {
@@ -1153,7 +1153,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
          * sibling; eg, the last attr's next sib is the first
          * child. In the old DTM, the DOM proxy layer provided the
          * additional logic for the public view.  If we're rewriting
-         * for XPath emulation, that test must be done here.
+         * for XPath emulation, that com.test must be done here.
          *
          * %TBD% CODE INTERACTION WITH INCREMENTAL PARSE - If not yet
          * resolved, should wait for more nodes to be added to the document
@@ -1756,8 +1756,8 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
          * Tests whether DTM DOM implementation implements a specific feature and
          * that feature is supported by this node.
          *
-         * @param feature The name of the feature to test.
-         * @param version This is the version number of the feature to test.
+         * @param feature The name of the feature to com.test.
+         * @param version This is the version number of the feature to com.test.
          *   If the version is not
          *   specified, supporting any version of the feature will cause the
          *   method to return <code>true</code>.

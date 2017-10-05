@@ -67,7 +67,7 @@ public class PSVIDOMImplementationImpl extends CoreDOMImplementationImpl {
      * Test if the DOM implementation supports a specific "feature" --
      * currently meaning language and level thereof.
      *
-     * @param feature      The package name of the feature to test.
+     * @param feature      The package name of the feature to com.test.
      * In Level 1, supported values are "HTML" and "XML" (case-insensitive).
      * At this writing, com.sun.org.apache.xerces.internal.dom supports only XML.
      *

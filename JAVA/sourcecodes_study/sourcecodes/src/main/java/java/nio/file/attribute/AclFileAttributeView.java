@@ -51,7 +51,7 @@ import java.io.IOException;
  * <p> When a file system provides access to a set of {@link FileStore
  * file-systems} that are not homogeneous then only some of the file systems may
  * support ACLs. The {@link FileStore#supportsFileAttributeView
- * supportsFileAttributeView} method can be used to test if a file system
+ * supportsFileAttributeView} method can be used to com.test if a file system
  * supports ACLs.
  *
  * <h2>Interoperability</h2>

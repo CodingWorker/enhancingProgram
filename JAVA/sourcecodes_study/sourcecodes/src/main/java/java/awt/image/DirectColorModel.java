@@ -1346,7 +1346,7 @@ public class DirectColorModel extends PackedColorModel {
       * Returns <code>true</code> if <code>raster</code> is compatible
       * with this <code>ColorModel</code> and <code>false</code> if it is
       * not.
-      * @param raster the {@link Raster} object to test for compatibility
+      * @param raster the {@link Raster} object to com.test for compatibility
       * @return <code>true</code> if <code>raster</code> is compatible
       * with this <code>ColorModel</code>; <code>false</code> otherwise.
       */

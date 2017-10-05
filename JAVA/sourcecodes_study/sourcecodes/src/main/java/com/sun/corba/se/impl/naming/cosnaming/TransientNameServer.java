@@ -194,7 +194,7 @@ public class TransientNameServer
 
             trace( "name service created" ) ;
 
-            // This is used for handshaking by the IBM test framework!
+            // This is used for handshaking by the IBM com.test framework!
             // Do not modify, unless another synchronization protocol is
             // used to replace this hack!
 

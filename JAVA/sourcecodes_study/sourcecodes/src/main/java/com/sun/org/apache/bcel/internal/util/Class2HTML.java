@@ -205,7 +205,7 @@ public class Class2HTML implements Constants
     if(index > -1)
       type = type.substring(0, index); // Tack of the `['
 
-    // test for basic type
+    // com.test for basic type
     if(type.equals("int")  || type.equals("short") || type.equals("boolean") || type.equals("void")   ||
        type.equals("char") || type.equals("byte")  || type.equals("long")    || type.equals("double") ||
        type.equals("float"))

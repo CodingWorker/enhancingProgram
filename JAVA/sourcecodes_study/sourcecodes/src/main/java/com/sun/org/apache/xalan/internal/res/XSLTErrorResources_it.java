@@ -507,7 +507,7 @@ public class XSLTErrorResources_it extends ListResourceBundle
      "{0} richiede l''attributo: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} deve avere un attributo \"test\"."},
+      "{0} deve avere un attributo \"com.test\"."},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "Valore non valido per l''attributo level: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_it extends ListResourceBundle
      "{0} richiede un attributo select."},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when deve avere un attributo 'test'."},
+      "xsl:when deve avere un attributo 'com.test'."},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param deve avere un attributo 'name'."},

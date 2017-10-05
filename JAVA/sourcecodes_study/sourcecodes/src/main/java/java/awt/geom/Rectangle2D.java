@@ -583,7 +583,7 @@ public abstract class Rectangle2D extends RectangularShape {
     /**
      * Tests if the specified line segment intersects the interior of this
      * <code>Rectangle2D</code>.
-     * @param l the specified {@link Line2D} to test for intersection
+     * @param l the specified {@link Line2D} to com.test for intersection
      * with the interior of this <code>Rectangle2D</code>
      * @return <code>true</code> if the specified <code>Line2D</code>
      * intersects the interior of this <code>Rectangle2D</code>;

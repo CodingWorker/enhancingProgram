@@ -507,7 +507,7 @@ public class XSLTErrorResources_pt_BR extends ListResourceBundle
      "{0} requer o atributo: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} deve ter um atributo ''test''."},
+      "{0} deve ter um atributo ''com.test''."},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "Valor inv\u00E1lido no atributo de n\u00EDvel: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_pt_BR extends ListResourceBundle
      "{0} requer um atributo de sele\u00E7\u00E3o."},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when deve ter um atributo 'test'."},
+      "xsl:when deve ter um atributo 'com.test'."},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-param deve ter um atributo 'name'."},

@@ -152,7 +152,7 @@ public abstract class Executable extends AccessibleObject
                 for(TypeVariable<?> typeparm: typeparms) {
                     if (!first)
                         sb.append(',');
-                    // Class objects can't occur here; no need to test
+                    // Class objects can't occur here; no need to com.test
                     // and call Class.getName().
                     sb.append(typeparm.toString());
                     first = false;

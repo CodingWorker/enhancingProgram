@@ -188,7 +188,7 @@ public class Oid {
     }
 
     /**
-     * A utility method to test if this Oid value is contained within the
+     * A utility method to com.test if this Oid value is contained within the
      * supplied Oid array.
      *
      * @param oids the array of Oid's to search

@@ -507,7 +507,7 @@ public class XSLTErrorResources_sv extends ListResourceBundle
      "{0} kr\u00E4ver attribut: {1}"},
 
     { ER_MUST_HAVE_TEST_ATTRIB,
-      "{0} m\u00E5ste ha ett ''test''-attribut."},
+      "{0} m\u00E5ste ha ett ''com.test''-attribut."},
 
     {ER_BAD_VAL_ON_LEVEL_ATTRIB,
       "Felaktigt v\u00E4rde i niv\u00E5attribut: {0}"},
@@ -543,7 +543,7 @@ public class XSLTErrorResources_sv extends ListResourceBundle
      "{0} kr\u00E4ver ett select-attribut."},
 
     { ER_NEED_TEST_ATTRIB ,
-      "xsl:when m\u00E5ste ha ett 'test'-attribut."},
+      "xsl:when m\u00E5ste ha ett 'com.test'-attribut."},
 
     { ER_NEED_NAME_ATTRIB,
       "xsl:with-parametern m\u00E5ste ha ett 'namn'-attribut."},

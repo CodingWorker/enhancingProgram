@@ -1511,7 +1511,7 @@ public abstract class DTMDefaultBaseTraversers extends DTMDefaultBase
 
       for (current = makeNodeIdentity(current) + 1; ; current++)
       {
-                                // Kluge test: Just make sure +1 yielded a real node
+                                // Kluge com.test: Just make sure +1 yielded a real node
         int type = _type(current);  // may call nextNode()
         if (type == NULL)
           return NULL;

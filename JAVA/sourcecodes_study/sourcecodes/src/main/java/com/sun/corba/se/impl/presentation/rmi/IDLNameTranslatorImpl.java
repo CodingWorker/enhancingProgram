@@ -266,7 +266,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         }
 
         //
-        // Perform case sensitivity test first.  This applies to all
+        // Perform case sensitivity com.test first.  This applies to all
         // method names AND attributes.  Compare each method name and
         // attribute to all other method names and attributes.  If names
         // differ only in case, apply mangling as defined in section 1.3.2.7
@@ -428,8 +428,8 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         String mangledName = identifier;
 
         //
-        // Apply leading underscore test (1.3.2.3)
-        // This should be done before IDL Keyword clash test, since clashing
+        // Apply leading underscore com.test (1.3.2.3)
+        // This should be done before IDL Keyword clash com.test, since clashing
         // IDL keywords are mangled by adding a leading underscore.
         //
         if( hasLeadingUnderscore(mangledName) ) {
@@ -437,7 +437,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         }
 
         //
-        // Apply IDL keyword clash test (1.3.2.2).
+        // Apply IDL keyword clash com.test (1.3.2.2).
         // This is not needed for attributes since when the full property
         // name is composed it cannot clash with an IDL keyword.
         // (Also, rmic doesn't do it.)
@@ -646,7 +646,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
         // NOTE that we can't use the java.lang.Character
         // isUpperCase, isLowerCase, etc. methods since they
         // include many characters other than the Alphabetic list in
-        // the CORBA spec.  Instead, we test for inclusion in the
+        // the CORBA spec.  Instead, we com.test for inclusion in the
         // Unicode value ranges for the corresponding legal characters.
 
         boolean alphaChar =
@@ -792,7 +792,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
                     // rules for mapping java packages to IDL modules and for
                     // mangling module name portion of type name.  NOTE that
                     // of the individual identifier mangling rules,
-                    // only the leading underscore test is done here.
+                    // only the leading underscore com.test is done here.
                     // The other two(IDL Keyword, Illegal Unicode chars) are
                     // done in mangleOverloadedMethodName.
                     StringTokenizer tokenizer =

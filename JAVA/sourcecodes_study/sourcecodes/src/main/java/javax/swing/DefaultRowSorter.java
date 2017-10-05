@@ -710,7 +710,7 @@ public abstract class DefaultRowSorter<M, I> extends RowSorter<M> {
      * subclasses, such as <code>TableRowSorter</code>, to honor this value
      * in their <code>ModelWrapper</code> implementation.
      *
-     * @param column the index of the column to test, in terms of the
+     * @param column the index of the column to com.test, in terms of the
      *        underlying model
      * @throws IndexOutOfBoundsException if <code>column</code> is not valid
      */

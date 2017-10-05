@@ -2704,7 +2704,7 @@ public abstract class ImageReader {
     }
 
     /**
-     * A utility method that may be used by readers to test the
+     * A utility method that may be used by readers to com.test the
      * validity of the source and destination band settings of an
      * <code>ImageReadParam</code>.  This method may be called as soon
      * as the reader knows both the number of bands of the source

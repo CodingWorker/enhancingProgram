@@ -30,7 +30,7 @@ import com.sun.org.apache.xpath.internal.compiler.Compiler;
 
 /**
  * This class implements an optimized iterator for
- * children patterns that have a node test, and possibly a predicate.
+ * children patterns that have a node com.test, and possibly a predicate.
  * @see com.sun.org.apache.xpath.internal.axes.BasicTestIterator
  * @xsl.usage advanced
  */

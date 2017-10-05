@@ -263,12 +263,12 @@ public class Frame extends Window implements MenuContainer {
      * convenience alias for
      * <code>MAXIMIZED_VERT&nbsp;|&nbsp;MAXIMIZED_HORIZ</code>.
      *
-     * <p>Note that the correct test for frame being fully maximized is
+     * <p>Note that the correct com.test for frame being fully maximized is
      * <pre>
      *     (state &amp; Frame.MAXIMIZED_BOTH) == Frame.MAXIMIZED_BOTH
      * </pre>
      *
-     * <p>To test is frame is maximized in <em>some</em> direction use
+     * <p>To com.test is frame is maximized in <em>some</em> direction use
      * <pre>
      *     (state &amp; Frame.MAXIMIZED_BOTH) != 0
      * </pre>

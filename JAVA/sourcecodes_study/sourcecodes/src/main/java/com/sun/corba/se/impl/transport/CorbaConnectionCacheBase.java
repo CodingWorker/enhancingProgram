@@ -229,7 +229,7 @@ public abstract class CorbaConnectionCacheBase
     // Implementation
     //
 
-    // This is public so folb.Server test can access it.
+    // This is public so folb.Server com.test can access it.
     public abstract Collection values();
 
     protected abstract Object backingStore();

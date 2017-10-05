@@ -1480,7 +1480,7 @@ public class DTMNodeProxy
    * <p>
    * An attribute specifying whether errors checking is enforced or not.
    * When set to <code>false</code>, the implementation is free to not
-   * test every possible error case normally defined on DOM operations,
+   * com.test every possible error case normally defined on DOM operations,
    * and not raise any <code>DOMException</code>. In case of error, the
    * behavior is undefined. This attribute is <code>true</code> by
    * defaults.
@@ -1501,7 +1501,7 @@ public class DTMNodeProxy
    * <p>
    * An attribute specifying whether errors checking is enforced or not.
    * When set to <code>false</code>, the implementation is free to not
-   * test every possible error case normally defined on DOM operations,
+   * com.test every possible error case normally defined on DOM operations,
    * and not raise any <code>DOMException</code>. In case of error, the
    * behavior is undefined. This attribute is <code>true</code> by
    * defaults.
@@ -1589,7 +1589,7 @@ public class DTMNodeProxy
      * casting methods but is not necessarily expected to, as discussed in Mixed DOM implementations
 .
      * @param feature The name of the feature requested (case-insensitive).
-     * @param version  This is the version number of the feature to test. If
+     * @param version  This is the version number of the feature to com.test. If
      *   the version is <code>null</code> or the empty string, supporting
      *   any version of the feature will cause the method to return an
      *   object that supports at least one version of the feature.
@@ -1643,7 +1643,7 @@ public class DTMNodeProxy
      * specialized object may also be obtained by using binding-specific
      * casting methods but is not necessarily expected to, as discussed in Mixed DOM implementations.
      * @param feature The name of the feature requested (case-insensitive).
-     * @param version  This is the version number of the feature to test. If
+     * @param version  This is the version number of the feature to com.test. If
      *   the version is <code>null</code> or the empty string, supporting
      *   any version of the feature will cause the method to return an
      *   object that supports at least one version of the feature.
@@ -2008,7 +2008,7 @@ public class DTMNodeProxy
      * used completely interchangably, such that all attributes have the
      * same values and calling the same DOM method on either reference
      * always has exactly the same effect.
-     * @param other The node to test against.
+     * @param other The node to com.test against.
      * @return Returns <code>true</code> if the nodes are the same,
      *   <code>false</code> otherwise.
      * @since DOM Level 3

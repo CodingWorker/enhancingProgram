@@ -100,7 +100,7 @@ abstract public class Any implements IDLEntity {
      * given <code>Any</code> object.  Two <code>Any</code> objects are
      * equal if both their values and type codes are equal.
      *
-     * @param a the <code>Any</code> object to test for equality
+     * @param a the <code>Any</code> object to com.test for equality
      * @return  <code>true</code> if the <code>Any</code> objects are equal;
      * <code>false</code> otherwise
      * @see <a href="package-summary.html#unimpl"><code>CORBA</code> package

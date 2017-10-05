@@ -78,7 +78,7 @@ import sun.text.normalizer.NormalizerBase;
  * <blockquote>
  * <pre>
  *
- *  String testString = "This is a test";
+ *  String testString = "This is a com.test";
  *  Collator col = Collator.getInstance();
  *  if (col instanceof RuleBasedCollator) {
  *      RuleBasedCollator ruleBasedCollator = (RuleBasedCollator)col;

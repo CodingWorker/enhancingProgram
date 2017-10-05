@@ -381,7 +381,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
                     }
                     else
                 {
-                        if (!EMPTYSTRING.equals(uri)) // hack for XSLTC attribset16 test
+                        if (!EMPTYSTRING.equals(uri)) // hack for XSLTC attribset16 com.test
                         {                             // that maps ns1 prefix to "" URI
                             name = "xmlns:" + prefix;
 

@@ -86,7 +86,7 @@ public class SortingFocusTraversalPolicy
     transient private Container cachedRoot;
     transient private List<Component> cachedCycle;
 
-    // Delegate our fitness test to ContainerOrder so that we only have to
+    // Delegate our fitness com.test to ContainerOrder so that we only have to
     // code the algorithm once.
     private static final SwingContainerOrderFocusTraversalPolicy
         fitnessTestPolicy = new SwingContainerOrderFocusTraversalPolicy();

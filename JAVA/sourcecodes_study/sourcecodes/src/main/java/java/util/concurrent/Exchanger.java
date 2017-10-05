@@ -189,7 +189,7 @@ public class Exchanger<V> {
      * waits just omit the blocking part, and instead cancel. The spin
      * count is empirically chosen to be a value that avoids blocking
      * 99% of the time under maximum sustained exchange rates on a
-     * range of test machines. Spins and yields entail some limited
+     * range of com.test machines. Spins and yields entail some limited
      * randomness (using a cheap xorshift) to avoid regular patterns
      * that can induce unproductive grow/shrink cycles. (Using a
      * pseudorandom also helps regularize spin cycle duration by

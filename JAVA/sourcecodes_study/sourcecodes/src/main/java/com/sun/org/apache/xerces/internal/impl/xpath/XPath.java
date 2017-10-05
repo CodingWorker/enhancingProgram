@@ -318,7 +318,7 @@ public class XPath {
     } // parseExpression(SymbolTable,NamespaceContext)
 
     /**
-     * Used by {@link #parseExpression} to parse a node test
+     * Used by {@link #parseExpression} to parse a node com.test
      * from the token list.
      */
     private NodeTest parseNodeTest( int typeToken, Tokens xtokens, NamespaceContext context )
@@ -431,7 +431,7 @@ public class XPath {
     } // class locationPath
 
     /**
-     * A location path step comprised of an axis and node test.
+     * A location path step comprised of an axis and node com.test.
      *
      * @xerces.internal
      *
@@ -447,14 +447,14 @@ public class XPath {
         /** Axis. */
         public Axis axis;
 
-        /** Node test. */
+        /** Node com.test. */
         public NodeTest nodeTest;
 
         //
         // Constructors
         //
 
-        /** Constructs a step from an axis and node test. */
+        /** Constructs a step from an axis and node com.test. */
         public Step(Axis axis, NodeTest nodeTest) {
             this.axis = axis;
             this.nodeTest = nodeTest;
@@ -564,7 +564,7 @@ public class XPath {
     } // class Axis
 
     /**
-     * Node test.
+     * Node com.test.
      *
      * @xerces.internal
      *
@@ -593,7 +593,7 @@ public class XPath {
         // Data
         //
 
-        /** Node test type. */
+        /** Node com.test type. */
         public short type;
 
         /** Node qualified name. */
@@ -603,17 +603,17 @@ public class XPath {
         // Constructors
         //
 
-        /** Constructs a node test of type WILDCARD or NODE. */
+        /** Constructs a node com.test of type WILDCARD or NODE. */
         public NodeTest(short type) {
             this.type = type;
         } // <init>(int)
 
-        /** Constructs a node test of type QName. */
+        /** Constructs a node com.test of type QName. */
         public NodeTest(QName name) {
             this.type = QNAME;
             this.name.setValues(name);
         } // <init>(QName)
-        /** Constructs a node test of type Namespace. */
+        /** Constructs a node com.test of type Namespace. */
         public NodeTest(String prefix, String uri) {
             this.type = NAMESPACE;
             this.name.setValues(prefix, null, null, uri);
