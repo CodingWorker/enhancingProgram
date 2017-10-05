@@ -1,13 +1,13 @@
 package com.test.java.lang;
-
+/**
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
-/**
+
  * Created by daiya on 2017/9/11.
- */
+
 public class StringTest {
     @Test
     public void run(){
@@ -155,3 +155,4 @@ public class StringTest {
         System.out.println(str.intern());
     }
 }
+ */

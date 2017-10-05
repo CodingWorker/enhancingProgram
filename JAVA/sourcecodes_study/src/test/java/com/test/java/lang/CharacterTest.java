@@ -1,10 +1,11 @@
 package com.test.java.lang;
-
+/**
 import org.junit.Test;
 
-/**
+
  * Created by daiya on 2017/9/12.
- */
+
+
 public class CharacterTest {
     @Test
     public void run0(){
@@ -24,3 +25,4 @@ public class CharacterTest {
         System.out.println((int)'a');
     }
 }
+ */

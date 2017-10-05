@@ -136,7 +136,7 @@ public final class Integer extends Number implements Comparable<Integer> {
             return toString(i);
         }
 
-        char buf[] = new char[33];
+        char buf[] = new char[33];//最大位数才32位
         boolean negative = (i < 0);
         int charPos = 32;
 
