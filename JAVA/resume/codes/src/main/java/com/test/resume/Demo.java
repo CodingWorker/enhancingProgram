@@ -14,6 +14,7 @@ public class Demo {
         System.out.println(str1==str2);
         System.out.println(str1==str3);
         System.out.println(str1==str1.intern());
+        System.out.println(Food.Coffee.CAPPUCCINO);
     }
 
     static class StaticInnerClass{
