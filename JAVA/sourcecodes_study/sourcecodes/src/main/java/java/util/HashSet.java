@@ -95,6 +95,8 @@ public class HashSet<E>
     private transient HashMap<E,Object> map;
 
     // Dummy value to associate with an Object in the backing Map
+    //定义一个虚拟的Object对象作为HashMap的valu，将此对象设置为final和static的
+    //以为底层实现是hashmap，但是不需要使用value所以定义了一个虚拟的常量
     private static final Object PRESENT = new Object();
 
     /**
@@ -115,7 +117,7 @@ public class HashSet<E>
      * @throws NullPointerException if the specified collection is null
      */
     public HashSet(Collection<? extends E> c) {
-        map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
+        map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));//默认容量是16，增长因子为0.75
         addAll(c);
     }
 

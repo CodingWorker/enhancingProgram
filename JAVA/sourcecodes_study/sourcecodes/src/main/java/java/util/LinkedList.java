@@ -78,6 +78,10 @@ import java.util.function.Consumer;
  * @see     ArrayList
  * @since 1.2
  * @param <E> the type of elements held in this collection
+ *  1. 实现了list，可以作为队列
+ *  2. 实现了Deque，扩作为队列
+ *  3. 实现了Cloneable,能够被克隆
+ *  4. 实现了Serializable接口，可以序列化或串行化
  */
 
 public class LinkedList<E>
@@ -91,7 +95,7 @@ public class LinkedList<E>
      * Invariant: (first == null && last == null) ||
      *            (first.prev == null && first.item != null)
      */
-    transient Node<E> first;
+    transient Node<E> first;//所以说LinkedList是双端队列，因为它可以从任何一段入队和出队
 
     /**
      * Pointer to last node.
@@ -967,7 +971,7 @@ public class LinkedList<E>
         }
     }
 
-    private static class Node<E> {
+    private static class Node<E> {//实现队列元素，双向链表
         E item;
         Node<E> next;
         Node<E> prev;

@@ -115,6 +115,7 @@ public class ArrayList<E> extends AbstractList<E>
 
     /**
      * Shared empty array instance used for empty instances.
+     * 共享空数组，作为空的list
      */
     private static final Object[] EMPTY_ELEMENTDATA = {};
 
@@ -130,12 +131,15 @@ public class ArrayList<E> extends AbstractList<E>
      * The capacity of the ArrayList is the length of this array buffer. Any
      * empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
      * will be expanded to DEFAULT_CAPACITY when the first element is added.
+     * 数组缓冲
+     * 当添加了第一元素的时候，就会将数组扩展值默认大小
+     * 此成员变量不会被序列化
      */
     transient Object[] elementData; // non-private to simplify nested class access
 
     /**
      * The size of the ArrayList (the number of elements it contains).
-     *
+     * 数组元素的个数，即通过size方法得到的值，是实际存储的元素的个数
      * @serial
      */
     private int size;
@@ -149,8 +153,10 @@ public class ArrayList<E> extends AbstractList<E>
      */
     public ArrayList(int initialCapacity) {
         if (initialCapacity > 0) {
+            //根据要设置指定大小的arraylist
             this.elementData = new Object[initialCapacity];
         } else if (initialCapacity == 0) {
+            //此空的数组EMPTY_ELEMENTDATA是被所有空的arraylist共享的
             this.elementData = EMPTY_ELEMENTDATA;
         } else {
             throw new IllegalArgumentException("Illegal Capacity: "+
@@ -172,10 +178,12 @@ public class ArrayList<E> extends AbstractList<E>
      *
      * @param c the collection whose elements are to be placed into this list
      * @throws NullPointerException if the specified collection is null
+     * in the order  ==>带有顺序
      */
     public ArrayList(Collection<? extends E> c) {
         elementData = c.toArray();
-        if ((size = elementData.length) != 0) {
+        if ((size = elementData.length) != 0) {//size需要单独去设置，因为它不是返回的数组的length，
+            // 因为数组并不是每个元素的存储了有效的值
             // c.toArray might (incorrectly) not return Object[] (see 6260652)
             if (elementData.getClass() != Object[].class)
                 elementData = Arrays.copyOf(elementData, size, Object[].class);
@@ -252,7 +260,8 @@ public class ArrayList<E> extends AbstractList<E>
     private void grow(int minCapacity) {
         // overflow-conscious code
         int oldCapacity = elementData.length;
-        int newCapacity = oldCapacity + (oldCapacity >> 1);
+        int newCapacity = oldCapacity + (oldCapacity >> 1);//1.5倍的扩容，这是很消耗资源的，
+        //所以如果知道具体的list的大小，最好在创建时指定list的容量
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
         if (newCapacity - MAX_ARRAY_SIZE > 0)
