@@ -79,7 +79,7 @@ import java.util.function.Consumer;
  * @since 1.2
  * @param <E> the type of elements held in this collection
  *  1. 实现了list，可以作为队列
- *  2. 实现了Deque，扩作为队列
+ *  2. 实现了Deque，可作为队列
  *  3. 实现了Cloneable,能够被克隆
  *  4. 实现了Serializable接口，可以序列化或串行化
  */
