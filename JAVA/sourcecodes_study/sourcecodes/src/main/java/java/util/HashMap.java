@@ -136,7 +136,11 @@ import java.util.function.Function;
  */
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
+    //hashmap实现了Cloneable接口因此可以被克隆，可以在原型模式下使用
+    //hashmap同时实现了Serializable接口，因此可以被串行化，但是某些字段使用了
+    //关键字transient修饰所以在串行化是会忽略相关的字段
 
+    //序列化id，在串行化和反串行化时会验证
     private static final long serialVersionUID = 362498820763181265L;
 
     /*
@@ -231,6 +235,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * The default initial capacity - MUST be a power of two.
+     * hashmap底层实现是数组+单链表，这里初始化的大小值得是初始化数组的大小，为16
      */
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
 
@@ -238,11 +243,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * The maximum capacity, used if a higher value is implicitly specified
      * by either of the constructors with arguments.
      * MUST be a power of two <= 1<<30.
+     * 这里设置的而是最大的数组的大小为2^30
      */
     static final int MAXIMUM_CAPACITY = 1 << 30;
 
     /**
      * The load factor used when none specified in constructor.
+     * 这里设置了增长因子，为了当存储数组已经满的时候而自动扩容的大小
      */
     static final float DEFAULT_LOAD_FACTOR = 0.75f;
 
@@ -253,6 +260,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * than 2 and should be at least 8 to mesh with assumptions in
      * tree removal about conversion back to plain bins upon
      * shrinkage.
+     * 由链表转换成树的阈值TREEIFY_THRESHOLD
      */
     static final int TREEIFY_THRESHOLD = 8;
 
@@ -260,6 +268,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * The bin count threshold for untreeifying a (split) bin during a
      * resize operation. Should be less than TREEIFY_THRESHOLD, and at
      * most 6 to mesh with shrinkage detection under removal.
+     * 有树转换为链表的阈值
      */
     static final int UNTREEIFY_THRESHOLD = 6;
 
@@ -268,16 +277,21 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * (Otherwise the table is resized if too many nodes in a bin.)
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
+     * 最小树容量
      */
     static final int MIN_TREEIFY_CAPACITY = 64;
 
     /**
      * Basic hash bin node, used for most entries.  (See below for
      * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
+     * 包内访问级别静态内部类，底层存储hashmap数据的节点
+     * 单链表节点
+     * 包内级别是为了hashtable和concurrentHashMap使用
      */
     static class Node<K,V> implements Map.Entry<K,V> {
         final int hash;
-        final K key;
+        final K key;//之所以存储key是为了在碰撞的时候比较
+        //equals返回truehashcode必须相等，hashcode相等但是对象可以不相等
         V value;
         Node<K,V> next;
 
@@ -292,6 +306,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         public final V getValue()      { return value; }
         public final String toString() { return key + "=" + value; }
 
+        //调用Objects的hashcode方法来得到对象的hashcode,内部调用了native方法
         public final int hashCode() {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
@@ -302,6 +317,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             return oldValue;
         }
 
+        //碰撞时比较，比较key和value
         public final boolean equals(Object o) {
             if (o == this)
                 return true;
@@ -332,6 +348,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * cheapest possible way to reduce systematic lossage, as well as
      * to incorporate impact of the highest bits that would otherwise
      * never be used in index calculations because of table bounds.
+     * key为null的hashcode为0
      */
     static final int hash(Object key) {
         int h;
@@ -391,17 +408,20 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * necessary. When allocated, length is always a power of two.
      * (We also tolerate length zero in some operations to allow
      * bootstrapping mechanics that are currently not needed.)
+     * hash 槽
      */
     transient Node<K,V>[] table;
 
     /**
      * Holds cached entrySet(). Note that AbstractMap fields are used
      * for keySet() and values().
+     * entrySet的缓存
      */
     transient Set<Map.Entry<K,V>> entrySet;
 
     /**
      * The number of key-value mappings contained in this map.
+     * map的数据，因为map使用数组和链表来存储数据，因此使用size来记录map的的有效元素数量
      */
     transient int size;
 
@@ -411,6 +431,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * the HashMap or otherwise modify its internal structure (e.g.,
      * rehash).  This field is used to make iterators on Collection-views of
      * the HashMap fail-fast.  (See ConcurrentModificationException).
+     * map被修改的次数
      */
     transient int modCount;
 
@@ -427,7 +448,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * The load factor for the hash table.
-     *
+     * 装载因子
      * @serial
      */
     final float loadFactor;
