@@ -175,46 +175,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/HashMap.java">
+      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="1438" column="46" lean-forward="true" selection-start-line="1438" selection-start-column="46" selection-end-line="1438" selection-end-column="46" />
-              <folding>
-                <element signature="class#Node#0;class#HashMap#0" expanded="false" />
-                <element signature="method#Node#0;class#Node#0;class#HashMap#0" expanded="false" />
-                <element signature="e#13386#13387#0" expanded="true" />
-                <element signature="e#13464#13465#0" expanded="true" />
-                <element signature="method#HashMap#0;class#HashMap#0" expanded="false" />
-                <element signature="method#putMapEntries#0;class#HashMap#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hashtable.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Hashtable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="-774">
+              <caret line="170" column="42" lean-forward="true" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IntegerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/test/java/lang/IntegerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <element signature="method#minAndMax#0;class#IntegerTest#0" expanded="false" />
-                <element signature="e#551#552#0" expanded="false" />
-                <element signature="e#604#605#0" expanded="false" />
-                <element signature="method#charToInt#0;class#IntegerTest#0" expanded="false" />
-                <element signature="method#radixInt#0;class#IntegerTest#0" expanded="false" />
-                <element signature="method#unsignedRadixInt#0;class#IntegerTest#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1336,15 +1302,15 @@
       <updated>1507202615164</updated>
       <workItem from="1507202617264" duration="6964000" />
       <workItem from="1507246146337" duration="49000" />
-      <workItem from="1508931723898" duration="1764000" />
+      <workItem from="1508931723898" duration="3863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8777000" />
+    <option name="totallyTimeSpent" value="10876000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1361,7 +1327,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23141123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07663126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13732928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1518,10 +1484,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Map.java">
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedHashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8640">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="276">
+          <caret line="197" column="0" lean-forward="true" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Hashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1541,10 +1515,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Hashtable.java">
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="-8640">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-774">
+          <caret line="170" column="42" lean-forward="true" selection-start-line="170" selection-start-column="42" selection-end-line="170" selection-end-column="42" />
           <folding />
         </state>
       </provider>
