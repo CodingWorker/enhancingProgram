@@ -145,7 +145,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="486">
               <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
               <folding />
             </state>
@@ -155,7 +155,7 @@
       <file leaf-file-name="Integer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/lang/Integer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22050">
+            <state relative-caret-position="19845">
               <caret line="804" column="44" lean-forward="false" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
               <folding>
                 <element signature="method#getChars#0;class#Integer#0" expanded="false" />
@@ -178,21 +178,11 @@
       <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="135">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            <state relative-caret-position="216">
+              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1091#1092#0" expanded="true" />
-                <element signature="e#1254#1255#0" expanded="true" />
-                <element signature="e#1279#1280#0" expanded="true" />
               </folding>
-=======
-            <state relative-caret-position="30">
-              <caret line="266" column="33" lean-forward="false" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="33" />
-              <folding />
->>>>>>> 8b44b9725ea62962ca8cb6be2f8583736cc5a6ae
             </state>
           </provider>
         </entry>
@@ -200,18 +190,28 @@
       <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="25110">
               <caret line="991" column="0" lean-forward="false" selection-start-line="988" selection-start-column="0" selection-end-line="991" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedHashMap.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinkedHashMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedHashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="192" column="33" lean-forward="true" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+            <state relative-caret-position="483">
+              <caret line="182" column="69" lean-forward="true" selection-start-line="182" selection-start-column="69" selection-end-line="182" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConcurrentHashMapTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/test/java/util/concurrent/ConcurrentHashMapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -237,12 +237,12 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="D:\gradle-4.0-bin\gradle-4.0" />
+        <entry key="$PROJECT_DIR$" value="E:\gradle-3.1" />
       </map>
     </option>
     <option name="myGradleVersions">
       <map>
-        <entry key="$PROJECT_DIR$" value="4.0" />
+        <entry key="$PROJECT_DIR$" value="3.1" />
       </map>
     </option>
     <option name="availableProjects">
@@ -257,12 +257,12 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="my-study" />
-                <option name="path" value="$PROJECT_DIR$" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
                 <option name="name" value=":sourcecodes" />
                 <option name="path" value="$PROJECT_DIR$/sourcecodes" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="my-study" />
+                <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -295,17 +295,12 @@
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'my-study'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="dependentComponents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in root project 'my-study'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="wrapper" />
               </ExternalTaskPojo>
@@ -344,7 +339,7 @@
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Initializes a new Gradle build." />
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="init" />
               </ExternalTaskPojo>
@@ -438,11 +433,6 @@
                 <option name="description" value="Assembles main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/sourcecodes" />
                 <option name="name" value="classes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in project ':sourcecodes'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/sourcecodes" />
-                <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in project ':sourcecodes'." />
@@ -555,7 +545,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4517503927883" />
+        <entry key="$PROJECT_DIR$" value="4515293212246" />
         <entry key="$PROJECT_DIR$/build.gradle" value="2585467712" />
       </map>
     </option>
@@ -585,75 +575,73 @@
               <option name="name" value="my-study" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/ant-1.9.6.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/ant-launcher-1.9.6.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-base-services-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-base-services-groovy-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-cli-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-core-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-docs-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-installation-beacon-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-jvm-services-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-launcher-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-logging-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-messaging-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-model-core-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-model-groovy-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-native-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-process-services-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-resources-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-runtime-api-info-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-script-kotlin-0.9.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-script-kotlin-compiler-plugin-0.9.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-script-kotlin-tooling-builders-0.9.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-script-kotlin-tooling-models-0.9.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-tooling-api-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/gradle-wrapper-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/groovy-all-2.4.11.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-announce-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-antlr-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-build-cache-http-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-build-comparison-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-build-init-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-code-quality-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-composite-builds-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-dependency-management-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-diagnostics-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-ear-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-ide-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-ide-native-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-ide-play-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-ivy-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-jacoco-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-javascript-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-language-groovy-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-language-java-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-language-jvm-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-language-native-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-language-scala-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-maven-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-osgi-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-platform-base-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-platform-jvm-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-platform-native-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-platform-play-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-plugin-development-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-plugin-use-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-plugins-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-publish-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-reporting-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-resources-http-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-resources-s3-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-resources-sftp-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-scala-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-signing-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-test-kit-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-testing-base-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-testing-jvm-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-testing-native-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-tooling-api-builders-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/gradle-workers-4.0.jar" />
-                  <option value="D:/gradle-4.0-bin/gradle-4.0/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="E:/gradle-3.1/lib/ant-1.9.6.jar" />
+                  <option value="E:/gradle-3.1/lib/ant-launcher-1.9.6.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-base-services-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-base-services-groovy-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-cli-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-core-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-docs-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-installation-beacon-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-jvm-services-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-launcher-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-logging-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-messaging-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-model-core-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-model-groovy-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-native-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-open-api-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-process-services-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-resources-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-script-kotlin-0.3.2.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-tooling-api-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-ui-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/gradle-wrapper-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/groovy-all-2.4.7.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-announce-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-antlr-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-build-comparison-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-build-init-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-code-quality-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-composite-builds-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-dependency-management-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-diagnostics-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-ear-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-ide-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-ide-native-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-ide-play-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-ivy-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-jacoco-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-javascript-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-jetty-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-language-groovy-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-language-java-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-language-jvm-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-language-native-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-language-scala-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-maven-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-osgi-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-platform-base-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-platform-jvm-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-platform-native-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-platform-play-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-plugin-development-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-plugin-use-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-plugins-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-publish-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-reporting-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-resources-http-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-resources-s3-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-resources-sftp-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-scala-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-signing-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-task-cache-http-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-test-kit-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-testing-base-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-testing-jvm-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-testing-native-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/gradle-tooling-api-builders-3.1.jar" />
+                  <option value="E:/gradle-3.1/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -678,6 +666,7 @@
         <option value="$PROJECT_DIR$/sourcecodes/src/main/java/java/lang/Integer.java" />
         <option value="$PROJECT_DIR$/sourcecodes/src/main/java/java/util/HashMap.java" />
         <option value="$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedList.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/test/java/util/concurrent/ConcurrentHashMapTest.java" />
       </list>
     </option>
   </component>
@@ -690,8 +679,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1932" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -702,15 +691,13 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -736,6 +723,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -751,7 +742,87 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes_study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="concurrent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes_study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -781,8 +852,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes_study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sourcecodes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes_study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes_study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sourcecodes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -877,6 +1002,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -900,7 +1027,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IntegerTest">
+  <component name="RunManager" selected="JUnit.ConcurrentHashMapTest.run">
     <configuration default="false" name="sourcecodes_study [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -955,6 +1082,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="my-study_test" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConcurrentHashMapTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.test.java.util.concurrent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="my-study_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.test.java.util.concurrent" />
+      <option name="MAIN_CLASS_NAME" value="com.test.java.util.concurrent.ConcurrentHashMapTest" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1344,16 +1497,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildDependents]" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildNeeded]" />
       <item index="2" class="java.lang.String" itemvalue="Application.IntegerTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ConcurrentHashMapTest.run" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.IntegerTest" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildNeeded]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildDependents]" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ConcurrentHashMapTest.run" />
+        <item index="1" class="java.lang.String" itemvalue="Application.IntegerTest" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildNeeded]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.sourcecodes_study [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -1366,66 +1521,47 @@
       <created>1507202615164</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
       <updated>1508827879398</updated>
       <workItem from="1508827883012" duration="5287000" />
       <workItem from="1508904613115" duration="1043000" />
       <workItem from="1508912393860" duration="9227000" />
-=======
-      <updated>1507202615164</updated>
-      <workItem from="1507202617264" duration="6964000" />
-      <workItem from="1507246146337" duration="49000" />
-      <workItem from="1508931723898" duration="5038000" />
-      <workItem from="1508969318412" duration="584000" />
->>>>>>> 8b44b9725ea62962ca8cb6be2f8583736cc5a6ae
+      <workItem from="1509004000370" duration="350000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ConcurrentHashMapTest_run - 2017.10.26 at 15h 50m 06s.xml">
+      <configuration name="ConcurrentHashMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConcurrentHashMapTest_run - 2017.10.26 at 15h 50m 47s.xml">
+      <configuration name="ConcurrentHashMapTest.run" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="15557000" />
+    <option name="totallyTimeSpent" value="15907000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-=======
-    <option name="totallyTimeSpent" value="12635000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
->>>>>>> 8b44b9725ea62962ca8cb6be2f8583736cc5a6ae
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3273743" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23827292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2409188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03144989" sideWeight="0.49333334" order="10" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2912254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13615733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> 8b44b9725ea62962ca8cb6be2f8583736cc5a6ae
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.030982906" sideWeight="0.49333334" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1435,9 +1571,13 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19083156" sideWeight="0.50666666" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1456,6 +1596,59 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21708">
+          <caret line="804" column="44" lean-forward="false" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
+          <folding>
+            <element signature="method#getChars#0;class#Integer#0" expanded="false" />
+            <element signature="method#stringSize#0;class#Integer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25110">
+          <caret line="991" column="0" lean-forward="false" selection-start-line="988" selection-start-column="0" selection-end-line="991" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4482">
+          <caret line="192" column="33" lean-forward="true" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1487,7 +1680,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7980">
           <caret line="266" column="33" lean-forward="true" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1552,7 +1747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="486">
           <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
           <folding />
         </state>
@@ -1581,7 +1776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22050">
+        <state relative-caret-position="19845">
           <caret line="804" column="44" lean-forward="false" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
           <folding>
             <element signature="method#getChars#0;class#Integer#0" expanded="false" />
@@ -1623,15 +1818,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="266" column="33" lean-forward="false" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="25110">
           <caret line="991" column="0" lean-forward="false" selection-start-line="988" selection-start-column="0" selection-end-line="991" selection-end-column="0" />
           <folding />
         </state>
@@ -1639,21 +1836,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sourcecodes/src/main/java/java/util/LinkedHashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="135">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1279#1280#0" expanded="true" />
-          </folding>
-=======
-        <state relative-caret-position="186">
-          <caret line="192" column="33" lean-forward="true" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+        <state relative-caret-position="483">
+          <caret line="182" column="69" lean-forward="true" selection-start-line="182" selection-start-column="69" selection-end-line="182" selection-end-column="69" />
           <folding />
->>>>>>> 8b44b9725ea62962ca8cb6be2f8583736cc5a6ae
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/java/util/concurrent/ConcurrentHashMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

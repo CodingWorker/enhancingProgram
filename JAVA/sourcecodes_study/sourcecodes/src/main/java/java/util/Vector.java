@@ -79,6 +79,8 @@ import java.util.function.UnaryOperator;
  * @see Collection
  * @see LinkedList
  * @since   JDK1.0
+ * 实现了cloneable，能够被克隆，可以使用圆形模式
+ * 实现了Serializable.能够被串行化
  */
 public class Vector<E>
     extends AbstractList<E>
@@ -92,6 +94,7 @@ public class Vector<E>
      * <p>Any array elements following the last element in the Vector are null.
      *
      * @serial
+     * vector基于数组实现，elementData为底层真实存储元素的数组
      */
     protected Object[] elementData;
 
