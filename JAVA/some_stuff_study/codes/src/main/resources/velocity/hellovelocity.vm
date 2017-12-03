@@ -1,0 +1,13 @@
+#set($greet = 'hello')
+$greet $name
+#foreach($i in $numbers)
+    $i
+    ${velocityCount}
+#end
+
+
+#sayHello($name)
+##编辑宏
+#macro(sayHello $name)
+    hello $name
+#end

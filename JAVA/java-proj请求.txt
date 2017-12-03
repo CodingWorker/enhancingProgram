@@ -1,0 +1,48 @@
+ private String post(){
+            String userAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36";
+            long timeStamp=Calendar.getInstance().getTimeInMillis();
+            String cookieStr="weimao_session=s%3AqMw2MW91Ja1BNVF0V2219smkXk7KAoR1.BriuuIb%2BZ2q2je%2FIMjmBw4gI7ibevI58pv7KcqD5R8g; Hm_lvt_c99fc61dc621e6b02c50ffce880b90b7=1504077167,1504158671,1505197068; Hm_lpvt_c99fc61dc621e6b02c50ffce880b90b7="+timeStamp/1000;
+            CloseableHttpClient httpClient= HttpClients.custom()
+                    .setUserAgent(userAgent)
+                    .build();
+
+            HttpPost httpPost=new HttpPost(url);
+            List<NameValuePair> params=new ArrayList<>();
+            params.add(new BasicNameValuePair("type","operation"));
+            httpPost.setEntity(new UrlEncodedFormEntity(params, Consts.UTF_8));
+
+            List<Header> headerList=new ArrayList<>();
+            headerList.add(new BasicHeader("Cookie",cookieStr));
+            Header[] headers=new Header[headerList.size()];
+            for(int i=0;i<headerList.size();i++){
+                headers[i]=headerList.get(i);
+            }
+
+            httpPost.setHeaders(headers);
+            try{
+                HttpResponse resp= httpClient.execute(httpPost);
+                HttpEntity entity=null;
+                if(resp!=null){
+                    entity= resp.getEntity();
+                }
+
+                if(entity!=null) {
+                    InputStreamReader inReader=new InputStreamReader(entity.getContent(),Consts.UTF_8);
+                    BufferedReader buf=new BufferedReader(inReader);
+                    StringBuilder sb = new StringBuilder();
+
+                    String line=buf.readLine();
+                    while(line!=null){
+                        sb.append(line);
+                        line=buf.readLine();
+                    }
+                    inReader.close();
+
+                    return sb.toString();
+                }
+            }catch(IOException ex){
+                ex.printStackTrace();
+            }
+
+            return null;
+        }
